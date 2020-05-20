@@ -18,11 +18,12 @@ Visualiser rapidement les dernières news de son pays
 ## URL de l'API utilisée
 
 https://newsapi.org/v2/
+https://restcountries.eu/
 
 ## Liste des routes sollicitées
 
 - /top-headlines
-- ..
+- /all
 - ..
 
 ## Fonctionnement détaillé de l'application
