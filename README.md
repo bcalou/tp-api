@@ -9,18 +9,22 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Visualiser rapidement les dernières news de son pays
 
 ## URL de l'API utilisée
 
-À remplir
+https://newsapi.org/v2/
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- /top-headlines
+- ..
+- ..
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+On peut sélectionner un pays parmis les 3 proposées pour ensuite visualiser les dernières news de ce pays.
+
+## Technos utilisées
+
+HTML / SCSS / TypeScript / Bootstrap
