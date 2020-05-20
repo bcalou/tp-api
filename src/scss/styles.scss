@@ -12,3 +12,24 @@
 .rollingFlags {
   animation: rollingFlags 400s infinite alternate linear;
 }
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 36px !important;
+  }
+  .form-inline {
+    .input-group {
+      display: flex;
+      flex-direction: column;
+
+      .custom-select {
+        width: 100%;
+      }
+      .input-group-append {
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
