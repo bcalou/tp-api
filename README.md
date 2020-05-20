@@ -1,5 +1,7 @@
 # TP API
 
+Charles COUSIN
+
 ## Installation
 
 ```
