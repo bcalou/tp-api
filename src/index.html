@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="scss/styles.scss" />
+  <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+  <form action="" class='form'>
+    <h1>Search a recipe by name<img src="assets/meal-1320568026248944827.png" alt="meal-icon"></h1>
+    <input type="text" name="name" class="name">
+    <button class='btn' type="submit">Search</button>
+    <button class='btn_random' type="submit">Random Search</button>
+
+  </form>
+
+  <div class="recipe">
+    <h3 class="title"></h3>
+    <div class="image">
+    </div>
+    <div class="ingredients"></div>
+    <ol class="recipe__instructions">
+    </ol>
+  </div>
+
+</body>
+
 </html>
