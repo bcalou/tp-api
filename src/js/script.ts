@@ -19,19 +19,15 @@ $formNews.addEventListener("submit", (e) => {
   categorySelected = (document.getElementById(
     "category-select"
   ) as HTMLInputElement).value;
-  console.log(categorySelected);
   let additionalQuery: string = categorySelected
     ? `&category=${categorySelected}`
     : "";
-  console.log(
-    `${NEWS_ENDPOINT}/top-headlines?country=${countrySelected}${additionalQuery}&apiKey=${NEWS_API_KEY}`
-  );
+
   fetch(
     `${NEWS_ENDPOINT}/top-headlines?country=${countrySelected}${additionalQuery}&apiKey=${NEWS_API_KEY}`
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.articles);
       let articles = data.articles;
       eraseArticle();
       articles.forEach((article: Object) => {
@@ -84,12 +80,10 @@ function getAllCountry(): void {
   fetch(`${REST_COUNTRY_ENDPOINT}/all`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       data.forEach((country) => {
         let select = document.createElement("option");
         select.innerText = country.name;
         select.setAttribute("value", country.alpha2Code);
-        console.log(select);
         $countrySelect.appendChild(select);
       });
     });
