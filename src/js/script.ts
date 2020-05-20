@@ -1,23 +1,33 @@
-const API_KEY: string = "f948f26cdab7436aa9731869f4fc9d59";
-const ENDPOINT: string = "https://newsapi.org/v2/";
+const NEWS_API_KEY: string = "f948f26cdab7436aa9731869f4fc9d59";
+const NEWS_ENDPOINT: string = "https://newsapi.org/v2";
+
+const REST_COUNTRY_ENDPOINT: string = "https://restcountries.eu/rest/v2";
 
 const $formNews: HTMLElement = document.getElementById("form-news");
 const $submitNews: HTMLElement = document.getElementById("submit-news");
 const $articlesList: HTMLElement = document.getElementById("articles-list");
+const $countrySelect: HTMLElement = document.getElementById("country-select");
 
-let country: string;
-let category: string;
+let countrySelected: string;
+let categorySelected: string;
 
 $formNews.addEventListener("submit", (e) => {
   e.preventDefault();
-  country = (document.getElementById("country-select") as HTMLInputElement)
-    .value;
-  category = (document.getElementById("category-select") as HTMLInputElement)
-    .value;
-  console.log(category);
-  let additionalQuery: string = category ? `&category=${category}` : "";
+  countrySelected = (document.getElementById(
+    "country-select"
+  ) as HTMLInputElement).value;
+  categorySelected = (document.getElementById(
+    "category-select"
+  ) as HTMLInputElement).value;
+  console.log(categorySelected);
+  let additionalQuery: string = categorySelected
+    ? `&category=${categorySelected}`
+    : "";
+  console.log(
+    `${NEWS_ENDPOINT}/top-headlines?country=${countrySelected}${additionalQuery}&apiKey=${NEWS_API_KEY}`
+  );
   fetch(
-    `${ENDPOINT}/top-headlines?country=${country}${additionalQuery}&apiKey=${API_KEY}`
+    `${NEWS_ENDPOINT}/top-headlines?country=${countrySelected}${additionalQuery}&apiKey=${NEWS_API_KEY}`
   )
     .then((res) => res.json())
     .then((data) => {
@@ -30,8 +40,18 @@ $formNews.addEventListener("submit", (e) => {
     });
 });
 
-function eraseArticle() {
+function eraseArticle(): void {
   $articlesList.innerHTML = "";
+}
+
+function getPublishedTime(time: string): string {
+  let dateNow: any = new Date();
+  let d2: any = new Date(time);
+
+  let diff: any = dateNow - d2; // Can't find a way to substract 2 Date variables in TypeScript
+
+  if (diff > 60e3) return `${Math.floor(diff / 60e3)} minutes ago`;
+  else return `${Math.floor(diff / 1e3)} seconds ago`;
 }
 
 function createArticle(article: any) {
@@ -46,11 +66,33 @@ function createArticle(article: any) {
   <img src="${article.urlToImage}" class="card-img-top" alt="...">
     <h5 class="card-title">${article.title}</h5>
     <p class="card-text">${article.description}</p>
-    <p class="card-text"><small class="text-muted">Last updated ${article.publishedAt} mins ago</small></p>
-    <button type="button" href=${article.url} class="btn btn-info">Read the article</button>
+    <p class="card-text"><small class="text-muted">Last updated ${getPublishedTime(
+      article.publishedAt
+    )} </small></p>
+    <a type="button" target="_blank" href=${
+      article.url
+    } class="btn btn-info">Read the article</a>
 
   </div>
 `;
   $fragment.appendChild($container);
   $articlesList.appendChild($fragment);
 }
+
+function getAllCountry(): void {
+  let countries = [];
+  fetch(`${REST_COUNTRY_ENDPOINT}/all`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      data.forEach((country) => {
+        let select = document.createElement("option");
+        select.innerText = country.name;
+        select.setAttribute("value", country.alpha2Code);
+        console.log(select);
+        $countrySelect.appendChild(select);
+      });
+    });
+}
+
+getAllCountry();
