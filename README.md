@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Afficher les 10 derniers articles tech de google news
 
 ## URL de l'API utilisée
 
-À remplir
+https://newsapi.org/s/google-news-api
 
 ## Liste des routes sollicitées
 
