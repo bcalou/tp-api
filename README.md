@@ -13,7 +13,7 @@ npm run dev
 
 ## URL de l'API utilisée
 
-À remplir
+URL: https://pokeapi.co/api/v2
 
 ## Liste des routes sollicitées
 
