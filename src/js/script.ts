@@ -29,6 +29,9 @@ $formNews.addEventListener("submit", (e) => {
     .then((res) => res.json())
     .then((data) => {
       let articles = data.articles;
+      if (articles.length === 0) {
+        showAlert();
+      }
       eraseArticle();
       articles.forEach((article: Object) => {
         createArticle(article);
@@ -87,6 +90,10 @@ function getAllCountry(): void {
         $countrySelect.appendChild(select);
       });
     });
+}
+
+function showAlert() {
+  alert("No news were found, try another country");
 }
 
 getAllCountry();

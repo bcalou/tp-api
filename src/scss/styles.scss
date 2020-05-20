@@ -1,1 +1,14 @@
 @import "vendors/reset";
+
+@keyframes rollingFlags {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.rollingFlags {
+  animation: rollingFlags 400s infinite alternate linear;
+}
