@@ -1,0 +1,39 @@
+//ICI DÉCLARATIONS DES @fontface...
+
+
+/*************************** NUNITO ******************************/
+
+
+
+@font-face {
+  font-family: 'Nunito Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Nunito Regular'), url('/fonts/Nunito-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+
+
+
+
+@font-face {
+  font-family: 'Nunito Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Nunito Light'), url('/fonts/Nunito-Light.woff') format('woff');
+  font-display: swap;
+}
+
+
+
+
+
+
+@font-face {
+  font-family: 'Nunito Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Nunito Bold'), url('/fonts/Nunito-Bold.woff') format('woff');
+  font-display: swap;
+}
