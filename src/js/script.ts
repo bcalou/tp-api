@@ -97,7 +97,7 @@ function createArticle(article: Article) {
   }" class="card-img-top" alt="Article image">
     <h5 class="card-title">${article.title || ""}</h5>
     <p class="card-text">${article.description || ""}</p>
-    <p class="card-text"><small class="text-muted">Last updated ${getPublishedTime(
+    <p class="card-text"><small class="text-muted">Published ${getPublishedTime(
       article.publishedAt || ""
     )} </small></p>
     <a type="button" target="_blank" href=${
