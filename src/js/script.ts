@@ -6,20 +6,25 @@ const $submitNews: HTMLElement = document.getElementById("submit-news");
 const $articlesList: HTMLElement = document.getElementById("articles-list");
 
 let country: string;
-
-console.log($submitNews);
+let category: string;
 
 $formNews.addEventListener("submit", (e) => {
   e.preventDefault();
   country = (document.getElementById("country-select") as HTMLInputElement)
     .value;
-  fetch(`${ENDPOINT}/top-headlines?country=${country}&apiKey=${API_KEY}`)
+  category = (document.getElementById("category-select") as HTMLInputElement)
+    .value;
+  console.log(category);
+  let additionalQuery: string = category ? `&category=${category}` : "";
+  fetch(
+    `${ENDPOINT}/top-headlines?country=${country}${additionalQuery}&apiKey=${API_KEY}`
+  )
     .then((res) => res.json())
     .then((data) => {
       console.log(data.articles);
       let articles = data.articles;
+      eraseArticle();
       articles.forEach((article: Object) => {
-        eraseArticle();
         createArticle(article);
       });
     });
@@ -31,7 +36,7 @@ function eraseArticle() {
 
 function createArticle(article: any) {
   let $container: HTMLElement = document.createElement("div");
-  let $fragment: HTMLElement = document.createDocumentFragment();
+  let $fragment: any = document.createDocumentFragment();
   $container.classList.add("card");
   $container.classList.add("mb-3");
   $container.classList.add("mt-5");

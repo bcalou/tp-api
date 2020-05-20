@@ -25,6 +25,7 @@
       <form id="form-news" class="form-inline">
         <div class="input-group">
           <select
+            required
             name="country"
             class="custom-select"
             id="country-select"
@@ -34,6 +35,21 @@
             <option value="US">United State</option>
             <option value="FR">France</option>
             <option value="IT">Italy</option>
+          </select>
+          <select
+            name="category"
+            class="custom-select"
+            id="category-select"
+            aria-label="Example select with button addon"
+          >
+            <option selected>Choose a category</option>
+            <option value="">All Category</option>
+            <option value="business">💰Business</option>
+            <option value="entertainment">🎙️Entertainment</option>
+            <option value="science">🔬Science</option>
+            <option value="health">🏥Health</option>
+            <option value="sports">🏉Sports</option>
+            <option value="technology">💻Technology</option>
           </select>
           <div class="input-group-append">
             <button
