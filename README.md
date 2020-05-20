@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Générer des images d'adorables chats attendrissants.
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.thecatapi.com/v1/images/search
 
 ## Liste des routes sollicitées
 
