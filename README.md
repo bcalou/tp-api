@@ -23,7 +23,7 @@ https://restcountries.eu/
 ## Liste des routes sollicitées
 
 - /top-headlines
-- all
+- /all
 - ..
 
 ## Fonctionnement détaillé de l'application
