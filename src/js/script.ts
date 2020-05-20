@@ -161,8 +161,6 @@ function shouldDisplayBackToTop(shouldDisplay: boolean): void {
   } else {
     $backToTopBtn.classList.remove("visible");
     $backToTopBtn.classList.add("invisible");
-
-    console.log("no");
   }
 }
 
