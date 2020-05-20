@@ -6,9 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <script src="js/script.ts" defer></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div
+      class="w-75 p-3 m-auto d-flex flex-column justify-content-center align-items-center"
+      style="background-color: #eee;"
+    >
+      <h1>Read the latest news of your country</h1>
+      <form id="form-news" class="form-inline">
+        <div class="input-group">
+          <select
+            name="country"
+            class="custom-select"
+            id="country-select"
+            aria-label="Example select with button addon"
+          >
+            <option selected>Choose a country</option>
+            <option value="US">United State</option>
+            <option value="FR">France</option>
+            <option value="IT">Italy</option>
+          </select>
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="sumbit"
+              id="submit-news"
+            >
+              Search News
+            </button>
+          </div>
+        </div>
+      </form>
+      <div id="articles-list"></div>
+    </div>
   </body>
 </html>
