@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Parler le langage des Minions
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.funtranslations.com/translate/minion.json
 
 ## Liste des routes sollicitées
 
