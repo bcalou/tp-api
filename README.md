@@ -13,7 +13,7 @@ npm run dev
 
 ## URL de l'API utilisée
 
-À remplir
+https://www.themealdb.com/api/json/v1/1/filter.php?a=french
 
 ## Liste des routes sollicitées
 
