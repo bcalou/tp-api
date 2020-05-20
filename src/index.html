@@ -7,11 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Document</title>
   <link rel="stylesheet" href="scss/styles.scss" />
-  <script src="js/script.js"></script>
+  <script defer src="js/script.js"></script>
 </head>
 
 <body>
-  <h1>Générateur d'images aléatoires de chatons</h1>
+  <div class="title__box">
+    <h1 class="title">adorable cat image generator</h1>
+  </div>
+  <section class="cat__container">
+    <img id="img_cat" src="" alt="cute cat image">
+    <p id="error"></p>
+  </section>
+  <div class="container__button">
+    <button class=button__generator>GENERATE</button>
+  </div>
 </body>
 
 </html>
