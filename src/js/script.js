@@ -7,7 +7,7 @@ axios.get('users')
   .catch(err => console.error(err))
 */
 
-//axios.defaults.baseURL = 'https://api.github.com/'
-axios.get('http://api.open-notify.org/iss-now.json')
+axios.defaults.baseURL = 'https://kitsu.io/api/edge'
+axios.get('anime')
   .then(res => console.log(res.data))
   .catch(err => console.error(err))
