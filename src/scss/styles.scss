@@ -1,5 +1,12 @@
 @import 'vendors/reset';
+@import '../scss/header.scss';
+@import '../scss/searchBar.scss';
+@import '../scss/container.scss';
 
 body {
   background-color: lightblue;
+}
+
+.pokemon{
+  background-color: wheat;
 }

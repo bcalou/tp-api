@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: space-evenly;
+  margin-top: 30px;
+
+  &__cardsPokemon{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 25%;
+    align-items: center;
+    margin-bottom: 10%;
+    justify-content: space-evenly;
+    background-color: rgb(73, 143, 167);
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  &__imgPokemon{
+    width: 50%;
+    object-fit: cover;
+  }
+}
