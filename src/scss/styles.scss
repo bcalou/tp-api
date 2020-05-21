@@ -25,11 +25,20 @@ header {
   
 }
 
+.forms {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid blue;
+  padding: 3vw;
 
   label {
     margin: 2vw 0;
@@ -45,7 +54,7 @@ form {
     border: 0.5vw solid #F7F7F7;
     width: 50%;
     border-radius: 5px;
-    font-size: 6vw;
+    font-size: 5vw;
     box-shadow:$box-shadow;
     color: $primary-blue;
 
@@ -133,8 +142,9 @@ select {
 }
 
 h2 {
-  font-size: 12vw;
+  font-size: 7vw;
   color: $primary-blue;
   text-align: center;
   margin-top: 4vw;
+  font-weight: bold;
 }

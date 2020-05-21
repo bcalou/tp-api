@@ -14,35 +14,76 @@
       <h1>NEWS</h1>
     </header>
 
-    <form class="search-form">
-      <input name="keywords" class="search" placeholder="Enter a keyword">
-        <select id= "language" name="language" size="1">
-          <option selected value="">Language</option>
-          <option value="fr">FR</option>
-          <option value="en">EN</option>
-          <option value="es">ES</option>
-          <option value="it">IT</option>
-          <option value="de">DE</option>
-          <option value="ru">RU</option>
-        </select>
-        <select id= "pageSize" name="pageSize" size="1">
-          <option selected value="">Number of articles</option>
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option value="25">25</option>
-        </select>
-        <select id= "sortBy" name="sortBy" size="1">
-          <option selected value="">Filter for the Search</option>
-          <option value="relevancy">Closely</option>
-          <option value="popularity">Popular</option>
-          <option value="publishedAt">Newest</option>
-        </select>
+    <section class="forms">
+
+      <div class="first-form">
+        <h2>Search by keyword</h2>
+        <form class="search-form1">
+          <input name="keywords" class="search" placeholder="Enter a keyword">
+
+            <select id= "language" name="language" size="1">
+              <option selected value="">Language</option>
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+              <option value="it">IT</option>
+              <option value="de">DE</option>
+              <option value="ru">RU</option>
+            </select>
+
+            <select id= "pageSize" name="pageSize" size="1">
+              <option selected value="">Number of articles</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+            </select>
+
+            <select id= "sortBy" name="sortBy" size="1">
+              <option selected value="">Filter for the Search</option>
+              <option value="relevancy">Closely</option>
+              <option value="popularity">Popular</option>
+              <option value="publishedAt">Newest</option>
+            </select>
+            <button id="searchButton">Search</button>
+        </form>
+      </div>
+
+      <div class="second-form">
+        <h2>Search by category</h2>
+        <form class="search-form2">
+          <select id= "country" name="country" size="1">
+            <option selected value="">Country</option>
+            <option value="fr">France</option>
+            <option value="en">England</option>
+            <option value="es">Spain</option>
+            <option value="it">Italy</option>
+            <option value="de">Germany</option>
+            <option value="ru">Russia</option>
+            <option value="ch">China</option>
+            <option value="us">United States</option>
+          </select>
+
+          <select id= "category" name="category" size="1">
+            <option selected value="">Category</option>
+            <option value="business">Business</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="general">general</option>
+            <option value="health">health</option>
+            <option value="science">science</option>
+            <option value="sports">sports</option>
+            <option value="technology">technology</option>
+
+          </select>
+          <button id="searchButton">Search</button>
+        </form>
+
+      </div>
+
       
 
-      <button id="searchButton">Go</button>
-    </form>
+    </section>
 
     <section id="articlesContainer"></section>
 

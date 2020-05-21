@@ -3,28 +3,48 @@ const API_key = "519203cf48914461a65a6d8908306907";
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
 const $searchButton = document.getElementById('searchButton');
+
+const $search_form1 = document.querySelector('.search-form1')
 const $language = document.getElementById('language');
 const $pageSize = document.getElementById('pageSize');
 const $sortBy = document.getElementById('sortBy');
+
+
+
+const $search_form2 = document.querySelector('.search-form2')
+const $country = document.getElementById('country');
+const $category = document.getElementById('category');
+
+
 let $articlesContainer = document.getElementById('articlesContainer');
-let $search_form = document.querySelector('.search-form')
+
 
 let keywords;
 let language;
 let pageSize;
 let sortBy;
 
-$search_form.addEventListener('submit', (e) => {
+let country;
+let category;
+let targetUrl;
+
+// FORM 1
+$search_form1.addEventListener('submit', (e) => {
   e.preventDefault();
   getArticles();
   });
 
+// FORM 2
+$search_form2.addEventListener('submit', (e) => {
+  e.preventDefault();
+  getArticles2();
+  });
 
-// Fetch articles from API
+// Fetch articles from API from Form 1
 function getArticles() {
   createElement({type: 'h2', text: 'Is Loading', parent: $articlesContainer});
 
-  fetch(proxyUrl + getArticlesUrl())
+  fetch(proxyUrl + getArticlesUrlForm1())
       .then(res => res.json())
       .then(data => {
         let articles = data.articles;
@@ -32,8 +52,20 @@ function getArticles() {
       });
 }
 
-// include params inside API URL
-function getArticlesUrl() {
+// Fetch articles from API from Form 2
+function getArticles2() {
+  createElement({type: 'h2', text: 'Is Loading', parent: $articlesContainer});
+
+  fetch(proxyUrl + getArticlesUrlForm2())
+      .then(res => res.json())
+      .then(data => {
+        let articles = data.articles;
+        showArticles(articles);
+      });
+}
+
+// include params inside API URL for Form 1
+function getArticlesUrlForm1() {
   keywords = document.querySelector('.search').value;
   if((!keywords)) {
     alert(" Merci de renseigner un mot clé ou une catégorie");
@@ -42,6 +74,18 @@ function getArticlesUrl() {
     return `${endpoint}/everything?${queryKeywords}${getLanguage()}${getPageSize()}${getSortBy()}&apiKey=${API_key}`;
   }
 }
+
+// include params inside API URL for Form 2
+function getArticlesUrlForm2() {
+  country = document.getElementById('country').value;
+  if((!country)) {
+    alert(" Merci de renseigner un pays");
+  }else{
+    let queryCountry = `country=${country}`;
+    return `${endpoint}/top-headlines?${queryCountry}${getCategory()}&apiKey=${API_key}`;
+  }
+}
+
 
 // Get Values of selected options
 function getLanguage(){
@@ -55,6 +99,12 @@ function getPageSize(){
 function getSortBy(){
   sortBy = $sortBy.value;
   return sortBy ? `&sortBy=${sortBy}` : '';
+}
+
+function getCategory(){
+  category = $category.value;
+  return category ? `&category=${category}` : '';
+
 }
 
 
