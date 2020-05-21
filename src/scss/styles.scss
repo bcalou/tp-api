@@ -13,7 +13,7 @@ header {
   font-weight: bolder;
   background-color: $primary-blue;
   color: white;
-  height: 20vw;
+  height: 15vw;
   font-size: 10vw;
   display: table-cell;
   vertical-align: middle;
@@ -21,6 +21,7 @@ header {
   h1 {
     text-align: center;
     background-color: $primary-blue;
+    font-size: 8vw;
   }
   
 }
@@ -28,7 +29,8 @@ header {
 .forms {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  background-color: lightblue;
+
 }
 
 
@@ -37,7 +39,6 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
   padding: 3vw;
 
   label {
@@ -135,7 +136,7 @@ article {
 }
 
 select {
-  margin: 3vw 0;
+  margin: 2vw 0;
   padding: 1vw;
   box-shadow: $box-shadow;
   border-radius: 5px;

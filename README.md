@@ -9,18 +9,29 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Pouvoir chercher des news selon differents critères de recherche.
 
 ## URL de l'API utilisée
 
-À remplir
+https://newsapi.org/v2/
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- /everything
+- /top-headlines
+
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Il y a deux formulaires de recherche : 
+* 1er formulaire : Recherche par mot clé
+..* Choix de la langue 
+..* Choix du nombre d'articles 
+..* Choix du type de filtrage
+
+* 2eme Formulaire de recherche : Recherche par pays
+..* Possibilité de voir toutes les actualités du pays 
+..* Choix de la catégorie d'article 
+
+
+
