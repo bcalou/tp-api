@@ -25,13 +25,13 @@ https://newsapi.org/v2/
 
 Il y a deux formulaires de recherche : 
 * 1er formulaire : Recherche par mot clé
-..* Choix de la langue 
-..* Choix du nombre d'articles 
-..* Choix du type de filtrage
+  * Choix de la langue 
+  * Choix du nombre d'articles 
+  * Choix du type de filtrage
 
 * 2eme Formulaire de recherche : Recherche par pays
-..* Possibilité de voir toutes les actualités du pays 
-..* Choix de la catégorie d'article 
+  * Possibilité de voir toutes les actualités du pays 
+  * Choix de la catégorie d'article 
 
 
 
