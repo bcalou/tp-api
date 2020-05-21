@@ -4,23 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Pizza ou Burger ?</title>
+    <title>Météo</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
 
     <section class="title">
-      <h1>Pizza ou Burger ?</h1>
-      <h2>Vous avez 4 heures.</h2>
+      <h1>Météo</h1>
     </section>
 
-    <section class="pizza">
-      <h1>PIZZA</h1>
-    </section>
-
-    <section class="burger">
-      <h1>BURGER</h1>
+    <section class="information">
+      <select id="selection">
+        <option value="0">Aujourd'hui</option>
+        <option value="1">Demain</option>
+        <option value="2">Jour 2</option>
+        <option value="3">Jour 3</option>
+      </select>
+      <button id="go">GO</button>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Paris_-_Eiffelturm_und_Marsfeld2.jpg/1200px-Paris_-_Eiffelturm_und_Marsfeld2.jpg" id="image" alt="temps">
     </section>
 
   </body>

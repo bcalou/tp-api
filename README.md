@@ -1,26 +1,28 @@
-# TP API
+# TP API - GILLET Aymeric
 
 ## Installation
 
 ```
-npm install
-npm run dev
+npm install 'OK'
+npm run dev 'OK'
 ```
 
 ## But de l'application en une phrase
 
-À remplir
+Application qui donne la météo.
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.meteo-concept.com"
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+/api/forecast/daily/${day}
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+1. Sélectionner le jour.
+
+2. Appuyer sur le bouton "GO".
+
+3. Une image s'affichera ( soleil / pluie ).
