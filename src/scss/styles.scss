@@ -13,7 +13,7 @@ header {
   font-weight: bolder;
   background-color: $primary-blue;
   color: white;
-  height: 15vw;
+  height: 10vw;
   font-size: 10vw;
   display: table-cell;
   vertical-align: middle;
@@ -21,7 +21,7 @@ header {
   h1 {
     text-align: center;
     background-color: $primary-blue;
-    font-size: 8vw;
+    font-size: 5vw;
   }
   
 }
@@ -39,11 +39,11 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3vw;
+  margin: 2vw;
 
   label {
     margin: 2vw 0;
-    font-size: 6vw;
+    font-size: 4vw;
     color: $primary-blue;
     font-weight: bold;
   }
@@ -65,7 +65,7 @@ form {
     margin: 2vw 0;
     border-radius: 5px;
     padding: 2vw;
-    font-size: 5vw;
+    font-size: 3vw;
     background-color: $primary-blue;
     color: white;
     border: none;
@@ -143,7 +143,7 @@ select {
 }
 
 h2 {
-  font-size: 7vw;
+  font-size: 5vw;
   color: $primary-blue;
   text-align: center;
   margin-top: 4vw;
