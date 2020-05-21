@@ -1,5 +1,109 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
 body {
-  background-color: lightblue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9ecf0be;
+}
+
+.hero {
+  padding: 2rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.red-banner {
+  background-color: rgba(252, 27, 27, 0.815);
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    color: #fff;
+    font-size: 14px;
+    animation: linear fadeOut 2.5s infinite;
+  }
+  &__logoDanger {
+    width: 24px;
+    animation: linear jump 1s infinite;
+    margin-right: 0.2rem;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.1rem);
+  }
+  50% {
+    transform: translateY(-0.2rem);
+  }
+  75% {
+    transform: translateY(-0.1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.section {
+  padding-top: 2rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  position: relative;
+  p {
+    line-height: 1.2rem;
+    font-size: 14px;
+    color: #3e3e3e;
+    padding: 1rem 0;
+    border-radius: 0.2rem;
+  }
+  &__title {
+    border-bottom: 1px solid rgba(27, 39, 50, 0.2);
+    padding-bottom: 5px;
+    margin-right: 0.5rem;
+  }
+  &__logo {
+    width: 24px;
+  }
+  &__logoArrow {
+    position: absolute;
+    right: 1rem;
+  }
+  &__titleWrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.countryForm {
+  padding: 1rem 0;
+  .countryInput {
+    border-width: 1px;
+    border-radius: 2px;
+    padding: 0.2rem;
+  }
+  &__submit {
+    border-radius: 2px;
+    border: none;
+    padding: 0.3rem 0.5rem;
+  }
 }

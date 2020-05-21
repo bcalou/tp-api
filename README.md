@@ -1,19 +1,12 @@
-# TP API
-
-## Installation
-
-```
-npm install
-npm run dev
-```
+# TP API Téo Lugat
 
 ## But de l'application en une phrase
 
-À remplir
+Obtenir les dernières statistiques sur la crise sanitaire du Covid-19.
 
 ## URL de l'API utilisée
 
-À remplir
+api.covid19api.com
 
 ## Liste des routes sollicitées
 
