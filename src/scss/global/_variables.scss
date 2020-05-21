@@ -78,40 +78,21 @@ $desktop-Xlarge: 1668px;
   height: 100vh;
 }
 
-// vitesse/scale peut-être à regler.
-@mixin scale-animation {
-  transition: all 0.2s ease-in;
+@mixin animation-gradient {
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
 
-  &:hover {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-}
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
 
-@mixin scale-animation-medium {
-  transition: all 0.2s ease-in;
+    50% {
+      background-position: 100% 50%;
+    }
 
-  &:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-}
-
-@mixin scale-animation-icon {
-  transition: all 0.2s ease-in;
-
-  &:hover {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-  }
-}
-
-@mixin scale-animation-text {
-  transition: all 0.2s ease-in;
-
-  &:hover {
-    color: $textYellow;
-    -webkit-transform: scale(1.02);
-    transform: scale(1.02);
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
