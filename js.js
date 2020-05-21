@@ -1,6 +1,5 @@
 const endpoint = "https://newsapi.org/v2";
 const API_key = "519203cf48914461a65a6d8908306907";
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
 const $searchButton = document.getElementById('searchButton');
 const $language = document.getElementById('language');
@@ -30,16 +29,13 @@ $search_form.addEventListener('submit', (e) => {
     let querypageSize = pageSize ? `&pageSize=${pageSize}` : '';
     let querySortBy = sortBy ? `&sortBy=${sortBy}` : '';
 
-    let targetUrl = `${endpoint}/everything?${queryKeywords}${queryLanguage}${querypageSize}${querySortBy}&apiKey=${API_key}`;
 
-
-
-
-    fetch(proxyUrl + targetUrl)
-      .then(res => res.json())
-      .then(data => {
+    fetch(`${endpoint}/everything?${queryKeywords}${queryLanguage}${querypageSize}${querySortBy}&apiKey=${API_key}`)
+      .then((res) => res.json())
+      .then((data) => {
         let articles = data.articles;
         showArticles(articles);
+        
       });
   }
 
