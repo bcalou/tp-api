@@ -16,37 +16,49 @@ let sortBy;
 
 $search_form.addEventListener('submit', (e) => {
   e.preventDefault();
-  keywords = document.querySelector('.search').value;
-  language = $language.value;
-  pageSize = $pageSize.value;
-  sortBy = $sortBy.value;
-
-  if((!keywords)) {
-    alert(" Merci de renseigner un mot clé ou une catégorie");
-  }else{
-
-    let queryKeywords = `q=${keywords}`;
-    let queryLanguage = language ? `&language=${language}` : '';
-    let querypageSize = pageSize ? `&pageSize=${pageSize}` : '';
-    let querySortBy = sortBy ? `&sortBy=${sortBy}` : '';
-
-    let targetUrl = `${endpoint}/everything?${queryKeywords}${queryLanguage}${querypageSize}${querySortBy}&apiKey=${API_key}`;
+  getArticles();
+  });
 
 
+// Fetch articles from API
+function getArticles() {
+  createElement({type: 'h2', text: 'Is Loading', parent: $articlesContainer});
 
-
-    fetch(proxyUrl + targetUrl)
+  fetch(proxyUrl + getArticlesUrl())
       .then(res => res.json())
       .then(data => {
         let articles = data.articles;
         showArticles(articles);
       });
+}
+
+// include params inside API URL
+function getArticlesUrl() {
+  keywords = document.querySelector('.search').value;
+  if((!keywords)) {
+    alert(" Merci de renseigner un mot clé ou une catégorie");
+  }else{
+    let queryKeywords = `q=${keywords}`;
+    return `${endpoint}/everything?${queryKeywords}${getLanguage()}${getPageSize()}${getSortBy()}&apiKey=${API_key}`;
   }
+}
 
-});
+// Get Values of selected options
+function getLanguage(){
+  language = $language.value;
+  return language ? `&language=${language}` : '';
+}
+function getPageSize(){
+  pageSize = $pageSize.value;
+  return pageSize ? `&pageSize=${pageSize}` : '';
+}
+function getSortBy(){
+  sortBy = $sortBy.value;
+  return sortBy ? `&sortBy=${sortBy}` : '';
+}
 
 
-
+// Display articles
 function showArticles(articles) {
   $articlesContainer.textContent = '';
   
@@ -57,7 +69,7 @@ function showArticles(articles) {
   $articlesContainer.appendChild($fragment);
 }
 
-
+// Create articles from article object
 function getArticleElement(article) {
   const $article = createElement({type: 'article'});
 
@@ -81,6 +93,7 @@ function getArticleElement(article) {
   return $article;
 }
 
+// Create element and append it to the given parent
 function createElement(options) {
 
   const $element = document.createElement(options.type);

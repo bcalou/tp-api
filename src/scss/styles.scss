@@ -1,6 +1,7 @@
 @import 'vendors/reset';
 
 $primary-blue: #2c3e50;
+$box-shadow: 0 0 5px rgba(44, 62, 80, 0.7), inset 0 0 2px rgba(44, 62, 80, 0.19);
 
 *{
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -8,7 +9,7 @@ $primary-blue: #2c3e50;
 
 header {
   width: 100vw;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir Helvetica, Arial, sans-serif;
   font-weight: bolder;
   background-color: $primary-blue;
   color: white;
@@ -45,7 +46,7 @@ form {
     width: 50%;
     border-radius: 5px;
     font-size: 6vw;
-    box-shadow: 0 0 5px rgba(44, 62, 80, 0.7), inset 0 0 2px rgba(44, 62, 80, 0.19);
+    box-shadow:$box-shadow;
     color: $primary-blue;
 
   }
@@ -58,7 +59,7 @@ form {
     background-color: $primary-blue;
     color: white;
     border: none;
-    box-shadow: 0 0 5px rgba(44, 62, 80, 0.7), inset 0 0 2px rgba(44, 62, 80, 0.19);
+    box-shadow: $box-shadow;
 
     &:hover{
       background-color: lightblue;
@@ -79,6 +80,7 @@ article {
     margin-bottom: 4vw;
     font-weight: bold;
     background-color: lightblue;
+    color: $primary-blue;
   }
 
   img {
@@ -91,6 +93,7 @@ article {
   p {
     margin: 4vw 0;
     padding: 2vw;
+    color: $primary-blue;
   }
 
   a {
@@ -104,6 +107,7 @@ article {
     background-color: $primary-blue;
     color:white;
     border-radius: 2px;
+    cursor: pointer;
 
     &:hover {
       background-color: lightblue;
@@ -124,4 +128,13 @@ article {
 select {
   margin: 3vw 0;
   padding: 1vw;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 12vw;
+  color: $primary-blue;
+  text-align: center;
+  margin-top: 4vw;
 }
