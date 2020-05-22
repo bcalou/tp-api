@@ -9,7 +9,7 @@ npm run dev
 
 ## But de l'application en une phrase
 
-Créer sa propre ligue de justiciers Dc Comics
+Créer sa propre Team de Super Héros
 
 ## URL de l'API utilisée
 
@@ -28,6 +28,6 @@ https://superheroapi.com/index.html
 
 ## Fonctionnement détaillé de l'application
 
-- Recherche d'un super héro par son nom dans une barre de recherche
-- Une fois la recherche effectuée, une carte regroupant les caractéristiques du super héro s'affiche
-- Le bouton 'Ajouter à ma Ligue' permet d'ajouter le super héro à sa ligue de justiciers
+- Recherche d'un super héro par son nom via une barre de recherche.
+- Une fois la recherche effectuée, une carte regroupant les caractéristiques du super héro s'affiche.
+- Le bouton 'Ajouter à ma Team' permet d'ajouter' un nouveau Super à sa Team.
