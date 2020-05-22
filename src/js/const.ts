@@ -12,7 +12,7 @@ export const ALERTS: Record<string, string> = {
 export const CARD_CONTAINER: ElToCreate = {
   type: "div",
   classes: ["card", "mb-3", "mt-5"],
-  style: {
+  styles: {
     maxWidth: "540px",
   },
 };
@@ -44,6 +44,12 @@ export const CARD_SMALL: ElToCreate = {
 
 export const CARD_LINK: ElToCreate = {
   type: "a",
+  classes: ["btn", "btn-info"],
+  content: "Read the article",
+};
+
+export const COUNTRY_OPTION: ElToCreate = {
+  type: "option",
   classes: ["btn", "btn-info"],
   content: "Read the article",
 };

@@ -33,7 +33,21 @@ export function createElement(params: ElToCreate): HTMLElement {
     element.setAttribute("value", params.value);
   }
 
+  if (params.styles) {
+    element.style.maxWidth = params.styles.maxWidth;
+  }
+
   return element;
+}
+
+// Custom function to appendSeveralChild
+export function appendSeveralChild(
+  father: HTMLElement,
+  childs: Array<HTMLElement>
+): void {
+  childs.forEach((child) => {
+    father.appendChild(child);
+  });
 }
 
 // Get the diff between the time (param) and now;

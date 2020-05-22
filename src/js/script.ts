@@ -13,7 +13,6 @@ import {
   CARD_SMALL,
   CARD_TEXT,
   CARD_TITLE,
-  COUNTRY_OPTION,
 } from "./const";
 
 import { createElement, appendSeveralChild, getPublishedTime } from "./utility";
@@ -156,12 +155,10 @@ function init() {
 
 //Function to create a country option element
 function createCountryOption(country): HTMLElement {
-  let select = createElement({
-    ...COUNTRY_OPTION,
-    content: country.name,
-    value: country.alpha2Code,
-  });
-  return select;
+  let $select = document.createElement("option");
+  $select.innerText = country.name;
+  $select.setAttribute("value", country.alpha2Code);
+  return $select;
 }
 
 // Add or remove the visibility of "back to the top" Button

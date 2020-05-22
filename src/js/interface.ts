@@ -17,6 +17,8 @@ export interface ElToCreate {
   classes?: Array<string>;
   imgSrc?: string;
   url?: string;
-  style?: Object;
+  styles?: {
+    maxWidth: string;
+  };
   value?: string;
 }
