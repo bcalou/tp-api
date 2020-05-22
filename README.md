@@ -9,16 +9,17 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+En manque d'idées pour votre repas? 'Keskon Mange' vous propose des milliers d'idées de recettes
 
 ## URL de l'API utilisée
 
-À remplir
+https://spoonacular.com/food-api/
+
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
+- En arrivant sur la landing page, l'utilisateur tombe sur un formulaire lui permettant de trouver une recette
+- une fois le formulaire rempli, une liste de recettes s'affiche (en fonction de différents critères). Sur chaque recette, il peut soit en voir les détails, ou l'ajouter à sa liste de favoris
 - À remplir
 
 ## Fonctionnement détaillé de l'application
