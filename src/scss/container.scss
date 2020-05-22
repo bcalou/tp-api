@@ -22,4 +22,12 @@
     width: 50%;
     object-fit: cover;
   }
+
+  &__button{
+    border: none;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(39, 77, 90);
+    color: white;
+  }
 }

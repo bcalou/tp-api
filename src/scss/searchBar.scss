@@ -3,5 +3,18 @@
     height: 5vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: rgb(158, 11, 40);
+
+    &__label{
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    &__input{
+        margin-left: 10px;
+        border: none;
+        background-color: rgba(78, 5, 20, 0.993);
+        color: white;
+    }
 }
