@@ -68,9 +68,10 @@ function error(value) {
     $recipe__instructions.textContent = `Aucune recette trouver a ce nom : ${value}`
 }
 
-function createEl(type, content, src, srcContent) {
+function createEl(type, content, src, srcContent, elClass) {
     const el = document.createElement(type)
     el.setAttribute(src, srcContent)
+    el.className = elClass
     el.textContent = content
     return el
 }
@@ -88,11 +89,15 @@ $country__icon.forEach(item => (
 ))
 
 function showCountryMeal(facts) {
+    $cards.textContent = ''
+    console.log(facts);
+
     facts.meals.forEach(item => {
-        card = document.createElement('div')
-        title = document.createElement('p')
-        title.textContent = item.strMeal
-        card.appendChild(title)
+        card = createEl('div', null, null, null, 'card')
+        card.appendChild(createEl('img', null, 'src', item.strMealThumb))
+        card.appendChild(createEl('p', item.strMeal))
+        card.appendChild(createEl('a', 'Decouvrir plus_', 'href', `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${item.idMeal}`))
+
         $cards.appendChild(card)
     })
 }
