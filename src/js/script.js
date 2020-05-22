@@ -2,18 +2,15 @@ const endpoint = "https://newsapi.org/v2";
 const API_key = "519203cf48914461a65a6d8908306907";
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
-const $searchButton = document.getElementById('searchButton');
-
-const $search_form1 = document.querySelector('.search-form1')
+const $search_forms = document.querySelectorAll('.search-form');
 const $language = document.getElementById('language');
 const $pageSize = document.getElementById('pageSize');
 const $sortBy = document.getElementById('sortBy');
 
-
-
-const $search_form2 = document.querySelector('.search-form2')
 const $country = document.getElementById('country');
 const $category = document.getElementById('category');
+
+const $refreshButton = document.getElementById('refresh');
 
 
 let $articlesContainer = document.getElementById('articlesContainer');
@@ -28,20 +25,20 @@ let country;
 let category;
 let targetUrl;
 
-// FORM 1
-$search_form1.addEventListener('submit', (e) => {
+$search_forms.forEach(search_form => {
+  search_form.addEventListener('submit', (e) => {
   e.preventDefault();
+  deleteArticles();
   getArticles();
   });
+});
 
-// FORM 2
-$search_form2.addEventListener('submit', (e) => {
-  e.preventDefault();
-  getArticles();
-  });
+$refreshButton.addEventListener('click', () => {
+  location.reload();
+});
 
 
-// Fetch articles from API from Form 1
+// Fetch articles from API 
 function getArticles() {
   createElement({type: 'h2', text: 'Is Loading', parent: $articlesContainer});
 
@@ -49,6 +46,9 @@ function getArticles() {
       .then(res => res.json())
       .then(data => {
         let articles = data.articles;
+        if (articles.length === 0) {
+          alert('No article were found, try an other research');
+        }
         showArticles(articles);
       });
 }
@@ -62,37 +62,20 @@ function getArticlesUrl() {
     alert(" Merci de renseigner un mot clé ou un pays");
   }else if ((keywords) && (!country)){
     let queryKeywords = `q=${keywords}`;
-    return `${endpoint}/everything?${queryKeywords}${getLanguage()}${getPageSize()}${getSortBy()}&apiKey=${API_key}`;
+    return `${endpoint}/everything?${queryKeywords}${getValue(language, $language, language)}${getValue(pageSize, $pageSize, pageSize)}${getValue(sortBy, $sortBy, sortBy)}&apiKey=${API_key}`;
 
   }else if ((!keywords) && (country)){
     let queryCountry = `country=${country}`;
-    return `${endpoint}/top-headlines?${queryCountry}${getCategory()}&apiKey=${API_key}`;
+    return `${endpoint}/top-headlines?${queryCountry}${getValue(category, $category, category)}&apiKey=${API_key}`;
 
   }else{
     alert('Search error');
   }
 }
 
-
-// Get Values of selected options
-function getLanguage(){
-  language = $language.value;
-  return language ? `&language=${language}` : '';
-}
-
-function getPageSize(){
-  pageSize = $pageSize.value;
-  return pageSize ? `&pageSize=${pageSize}` : '';
-}
-
-function getSortBy(){
-  sortBy = $sortBy.value;
-  return sortBy ? `&sortBy=${sortBy}` : '';
-}
-
-function getCategory(){
-  category = $category.value;
-  return category ? `&category=${category}` : '';
+function getValue(value, $element, type) {
+  value = $element.value;
+  return value ? `&${type}=${value}` : '';
 
 }
 
@@ -148,8 +131,10 @@ function createElement(options) {
   if (options.parent) {
     options.parent.appendChild($element);
   }
-  
   return $element;
+
 }
 
-
+function deleteArticles() {
+  $articlesContainer.innerHTML = "";
+}
