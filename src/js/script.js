@@ -10,6 +10,13 @@ const $recipe__instructions = document.querySelector('.recipe__instructions')
 const $image = document.querySelector('.image')
 const $title = document.querySelector('.title')
 const $ingredients = document.querySelector('.ingredients')
+const $country = document.querySelector('.country')
+const $country__icon = document.querySelectorAll('.country__icon')
+const $cards = document.querySelector('.cards')
+
+
+
+
 
 
 
@@ -40,27 +47,18 @@ function showText(facts) {
     $title.textContent = '';
     $ingredients.textContent = '';
     $image.textContent = '';
-
-
     $title.textContent = facts.meals[0].strMeal
 
-    const img = document.createElement('img')
-    img.setAttribute('src', facts.meals[0].strMealThumb)
-    $image.appendChild(img)
+    $image.appendChild(createEl('img', null, 'src', facts.meals[0].strMealThumb))
 
     for (let i = 1; i < 20; i++) {
         if (facts.meals[0][`strIngredient${i}`]) {
-            const li = document.createElement('li');
-            li.textContent = `${facts.meals[0][`strIngredient${i}`]}`
-            $ingredients.appendChild(li)
+            $ingredients.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]}`))
         }
     }
-
     for (let i = 1; i < 20; i++) {
         if (facts.meals[0][`strIngredient${i}`]) {
-            const li = document.createElement('li');
-            li.textContent = `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}`
-            $recipe__instructions.appendChild(li)
+            $recipe__instructions.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}`))
         }
     }
 }
@@ -69,5 +67,47 @@ function showText(facts) {
 function error(value) {
     $recipe__instructions.textContent = `Aucune recette trouver a ce nom : ${value}`
 }
+
+function createEl(type, content, src, srcContent) {
+    const el = document.createElement(type)
+    el.setAttribute(src, srcContent)
+    el.textContent = content
+    return el
+}
+
+$country__icon.forEach(item => (
+    item.addEventListener('click', () => {
+        event.preventDefault()
+        let value = item.getAttribute('data-country');
+
+        fetch(`${URL}filter.php?a=${value}`)
+            .then(res => res.json())
+            .then(facts => showCountryMeal(facts))
+            .catch(e => error(value))
+    })
+))
+
+function showCountryMeal(facts) {
+    facts.meals.forEach(item => {
+        card = document.createElement('div')
+        title = document.createElement('p')
+        title.textContent = item.strMeal
+        card.appendChild(title)
+        $cards.appendChild(card)
+    })
+}
+
+// facts.meals`${[i]}[strIngredient${i}]`
+// item.addEventListener('click', () => {
+//     const value_icon = item.getAttribute('data-country')
+//     fetch(`${URL}search.php?a=${value_icon}`)
+//         .then(res => res.json())
+//         .then(facts => showText(facts))
+// })
+// countries_icon = ['vietnam.png', 'india.png', 'greece.png', 'germany.png', 'egypt.png', 'france.png', 'china.png', 'canada.png', 'usa.png', 'uk.png', 'mexico.png', 'japan.png', 'italy.png']
+
+// countries_icon.map(img => (
+//     $country.appendChild(createEl('img', null, 'src', img))
+// ))
 
 
