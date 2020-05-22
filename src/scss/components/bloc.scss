@@ -1,0 +1,49 @@
+.search {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 280px;
+  margin-top: 24px;
+  padding: 0px 24px;
+  background-color: $secondBgColor;
+  box-shadow: $boxShadow;
+  border-radius: $radius;
+}
+
+.card--presentation {
+  height: 396px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card__blocTitle {
+  width: 158px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondColor;
+  border-radius: $radius;
+}
+
+.card__content {
+  width: 100%;
+
+  p {
+    margin-bottom: 16px;
+    font-family: $textFamily;
+    font-size: $textFontSize;
+    font-weight: $textFontWeight;
+    color: $textColor;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

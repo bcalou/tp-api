@@ -95,48 +95,34 @@
       <h1>Super Hero</h1>
     </header>
     <main>
-      <section class="card card--presentation">
-        <div class="card__blocTitle">
-          <h2>Présentation</h2>
-        </div>
-        <div class="card__content">
-          <p>
-            Choisis parmis plus de 300 Super Héros pour contruire ta team.
-          </p>
-          <p>
-            Créer une team de 4 Supers et combine leurs caractéristiques pour
-            trouver le style de combat de ton équipe.
-          </p>
-          <p>
-            Auras-tu une équipe forte, smart, rapide ou alors choisiras-tu un
-            équilibre de tout ça ?
-          </p>
-          <p>A toi d’en décider !</p>
-        </div>
-        <a class="card__button" href="homePage.html">
-          <button class="mainButton" id="addButton">
-            Commencer
-          </button>
-        </a>
-      </section>
+      <div class="search">
+        <input
+          type="text"
+          name="nameHero"
+          placeholder="batman, james bond, one punch man"
+          id="searchInput"
+        />
+        <button class="search__button" id="searchButton">
+          <svg class="svg">
+            <use href="#icon-search"></use>
+          </svg>
+        </button>
+      </div>
     </main>
+
+    <button class="mainButton" id="addButton">Ajouter à ma Team</button>
+    <h3>Ma Team</h3>
     <footer class="footer">
       <div class="footer__containerLogo">
-        <a href="https://twitter.com/quentin_trouve" target="_blank">
-          <svg class="svg">
-            <use href="#icon-twitter"></use>
-          </svg>
-        </a>
-        <a href="https://github.com/quentintrouve" target="_blank">
-          <svg class="svg svgGithub">
-            <use href="#icon-github"></use>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/quentintrouve/" target="_blank">
-          <svg class="svg">
-            <use href="#icon-linkedin"></use>
-          </svg>
-        </a>
+        <svg class="svg">
+          <use href="#icon-twitter"></use>
+        </svg>
+        <svg class="svg svgGithub">
+          <use href="#icon-github"></use>
+        </svg>
+        <svg class="svg">
+          <use href="#icon-linkedin"></use>
+        </svg>
       </div>
       <p class="footer__credits">
         Par Quentin Trouvé avec
