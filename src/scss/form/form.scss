@@ -1,4 +1,9 @@
 form {
   background-color: $backgroundColor;
-  max-width: 700px;
+
+  & div,
+  small,
+  button {
+    max-width: 700px;
+  }
 }
