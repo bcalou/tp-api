@@ -1,4 +1,6 @@
 @import 'vendors/reset';
+@import 'global/fonts.scss';
+@import 'bootstrap/bootstrap.scss';
+@import 'global/globalStyle.scss';
 @import 'form/form.scss';
 @import 'recipesList/recipesList.scss';
-@import 'bootstrap/bootstrap.scss';
