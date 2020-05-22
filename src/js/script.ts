@@ -1,8 +1,12 @@
+declare var require: any; // define require to avoid Linter error on the "require"
+
 import {
   ALERTS,
   NEWS_API_KEY,
   NEWS_ENDPOINT,
   REST_COUNTRY_ENDPOINT,
+  PROXY_URL,
+  CARD_CONTAINER,
 } from "./const";
 
 import { Article, FetchParams } from "./interface";
@@ -30,26 +34,19 @@ function submitNewsForm(): void {
   ) as HTMLInputElement).value;
 
   if (categorySelected === "") {
-    fetchData({ countrySelected });
+    fetchDataNews({ countrySelected });
   } else {
-    fetchData({ countrySelected, categorySelected });
+    fetchDataNews({ countrySelected, categorySelected });
   }
 }
-
 // query and fetch data from API
-function fetchData(params: FetchParams) {
-  let { countrySelected, categorySelected } = params;
-
-  let additionalQuery = categorySelected ? `&category=${categorySelected}` : "";
-
-  let query = `country=${countrySelected}${additionalQuery}`;
-
-  fetch(`${NEWS_ENDPOINT}/top-headlines?${query}&apiKey=${NEWS_API_KEY}`)
+function fetchDataNews(params: FetchParams) {
+  fetch(PROXY_URL + getFetchUrlNews(params))
     .then((res) => res.json())
     .then((data) => {
       let articles = data.articles;
       if (articles.length === 0) {
-        showAlert();
+        showAlert(ALERTS.NO_NEWS);
       }
       eraseArticle();
 
@@ -60,6 +57,17 @@ function fetchData(params: FetchParams) {
     });
 }
 
+// get URL to fetch data
+function getFetchUrlNews(params: FetchParams): string {
+  let { countrySelected, categorySelected } = params;
+
+  let additionalQuery = categorySelected ? `&category=${categorySelected}` : "";
+
+  let query = `country=${countrySelected}${additionalQuery}`;
+
+  return `${NEWS_ENDPOINT}/top-headlines?${query}&apiKey=${NEWS_API_KEY}`;
+}
+
 // Erase article list
 function eraseArticle(): void {
   $articlesList.innerHTML = "";
@@ -67,10 +75,10 @@ function eraseArticle(): void {
 
 // Get the time that has passed since the publication of the article
 function getPublishedTime(time: string): string {
+  if (time === "") return "No informations on published time.";
   let dateNow: any = new Date();
   let d2: any = new Date(time);
-
-  let diff: any = dateNow - d2; // Can't find a way to substract 2 Date variables in TypeScript
+  let diff: any = dateNow - d2;
 
   if (diff > 60e3) {
     let minutes = Math.floor(diff / 60e3);
@@ -90,58 +98,66 @@ function getPublishedTime(time: string): string {
 function createArticle(article: Article) {
   let $container: HTMLElement = createContainerArticle();
   let $fragment: any = document.createDocumentFragment();
-  $container.innerHTML = `
-  <div class="card-body bg-light ">
-  <img src="${
-    article.urlToImage || imgNotFound
-  }" class="card-img-top" alt="Article image">
-    <h5 class="card-title">${article.title || ""}</h5>
-    <p class="card-text">${article.description || ""}</p>
-    <p class="card-text"><small class="text-muted">Published ${getPublishedTime(
-      article.publishedAt || ""
-    )} </small></p>
-    <a type="button" target="_blank" href=${
-      article.url
-    } class="btn btn-info">Read the article</a>
-
-  </div>
-`;
+  $container.innerHTML = getArticleInnerHTML(article);
   $fragment.appendChild($container);
   $articlesList.appendChild($fragment);
+}
+
+// Get the HTML for the article
+function getArticleInnerHTML(article: Article): string {
+  let urlToImage = article.urlToImage || imgNotFound;
+  let title = article.title || "";
+  let description = article.description || "";
+  let publishedAt = getPublishedTime(article.publishedAt || "");
+  let url = article.url || "";
+
+  let innerHTML = `
+  <div class="card-body bg-light ">
+  <img src="${urlToImage}" class="card-img-top" alt="Article image">
+    <h5 class="card-title">${title}</h5>
+    <p class="card-text">${description}</p>
+    <p class="card-text"><small class="text-muted">Published ${publishedAt} </small></p>
+    <a type="button" target="_blank" href=${url} class="btn btn-info">Read the article</a>
+  </div>`;
+
+  return innerHTML;
 }
 
 // Create Container for the article and return the container
 function createContainerArticle(): HTMLElement {
   let $container: HTMLElement = document.createElement("div");
-  $container.classList.add("card");
-  $container.classList.add("mb-3");
-  $container.classList.add("mt-5");
-  $container.style.maxWidth = "540px";
+  $container.className += CARD_CONTAINER.classes;
+  $container.style.maxWidth = CARD_CONTAINER.maxWidth;
   return $container;
 }
 
-// Get all country from the REST API
+// Get all country from the API
 function getAllCountry(): void {
   fetch(`${REST_COUNTRY_ENDPOINT}/all`)
     .then((res) => res.json())
     .then((data) => {
       data.forEach((country: any) => {
-        let select = document.createElement("option");
-        select.innerText = country.name;
-        select.setAttribute("value", country.alpha2Code);
-        $countrySelect.appendChild(select);
+        $countrySelect.appendChild(createCountryOption(country));
       });
     });
 }
 
 // Show a message when no articles are found for a county
-function showAlert() {
-  alert(ALERTS.NO_NEWS);
+function showAlert(string: string): void {
+  alert(string);
 }
 
 // Function that need to be call to init the webpage
 function init() {
   getAllCountry();
+}
+
+//Function to create a country option element
+function createCountryOption(country): HTMLElement {
+  let select = document.createElement("option");
+  select.innerText = country.name;
+  select.setAttribute("value", country.alpha2Code);
+  return select;
 }
 
 window.addEventListener("scroll", (e) => {
