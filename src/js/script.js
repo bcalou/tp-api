@@ -40,6 +40,7 @@ $search_form2.addEventListener('submit', (e) => {
   getArticles();
   });
 
+
 // Fetch articles from API from Form 1
 function getArticles() {
   createElement({type: 'h2', text: 'Is Loading', parent: $articlesContainer});

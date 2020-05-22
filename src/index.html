@@ -19,8 +19,10 @@
       <div class="first-form">
         <h2>🔑 Search by keyword</h2>
         <form class="search-form1">
+
           <input name="keywords" class="search" placeholder="Enter a keyword">
 
+          <div class="selects">
             <select id= "language" name="language" size="1">
               <option selected value="">Language</option>
               <option value="fr">FR</option>
@@ -41,51 +43,59 @@
             </select>
 
             <select id= "sortBy" name="sortBy" size="1">
-              <option selected value="">Filter for the Search</option>
+              <option selected value="">Filter</option>
               <option value="relevancy">Closely</option>
               <option value="popularity">Popular</option>
               <option value="publishedAt">Newest</option>
             </select>
-            <button id="searchButton">Search</button>
+          </div>
+          
+          <button id="searchButton">Search</button>
         </form>
       </div>
+
+      <hr width="70%" color="#F6AE2D" align=center size="2">
 
       <div class="second-form">
         <h2>🌍 Search by country</h2>
         <form class="search-form2">
-          <select id= "country" name="country" size="1">
-            <option selected value="">Country</option>
-            <option value="fr">France</option>
-            <option value="en">England</option>
-            <option value="es">Spain</option>
-            <option value="it">Italy</option>
-            <option value="de">Germany</option>
-            <option value="ru">Russia</option>
-            <option value="ch">China</option>
-            <option value="us">United States</option>
-          </select>
 
-          <select id= "category" name="category" size="1">
-            <option selected value="">Category</option>
-            <option value="business">Business</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="general">general</option>
-            <option value="health">health</option>
-            <option value="science">science</option>
-            <option value="sports">sports</option>
-            <option value="technology">technology</option>
+          <div class="selects">
+            <select id= "country" name="country" size="1">
+              <option selected value="">Country</option>
+              <option value="fr">France</option>
+              <option value="en">England</option>
+              <option value="es">Spain</option>
+              <option value="it">Italy</option>
+              <option value="de">Germany</option>
+              <option value="ru">Russia</option>
+              <option value="ch">China</option>
+              <option value="us">United States</option>
+            </select>
 
-          </select>
+            <select id= "category" name="category" size="1">
+              <option selected value="">Category</option>
+              <option value="business">Business</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="general">general</option>
+              <option value="health">health</option>
+              <option value="science">science</option>
+              <option value="sports">sports</option>
+              <option value="technology">technology</option>
+
+            </select>
+          </div>
           <button id="searchButton">Search</button>
         </form>
 
       </div>
 
-      
+      <hr width="70%" color="#F6AE2D" align=center size="2">
 
     </section>
 
-    <section id="articlesContainer"></section>
+    <section id="articlesContainer">
+    </section>
 
 
   </body>

@@ -1,11 +1,12 @@
 @import 'vendors/reset';
+@import 'config/variables.scss';
+@import 'config/mixins.scss';
+@import 'config/fonts.scss';
 
-$primary-blue: #2c3e50;
-$box-shadow: 0 0 5px rgba(44, 62, 80, 0.7), inset 0 0 2px rgba(44, 62, 80, 0.19);
-
-*{
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+body {
+  background-color: $secondary-grey;
 }
+
 
 header {
   width: 100vw;
@@ -13,15 +14,14 @@ header {
   font-weight: bolder;
   background-color: $primary-blue;
   color: white;
-  height: 10vw;
-  font-size: 10vw;
+  height: 12vw;
   display: table-cell;
   vertical-align: middle;
   
   h1 {
-    text-align: center;
+    @include h1-style;
     background-color: $primary-blue;
-    font-size: 5vw;
+
   }
   
 }
@@ -29,7 +29,16 @@ header {
 .forms {
   display: flex;
   flex-direction: column;
-  background-color: lightblue;
+  background-color: $secondary-grey;
+  padding-bottom: 5vw;
+
+}
+
+.selects {
+  padding-top: 2vw;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
 
 }
 
@@ -61,36 +70,30 @@ form {
 
   }
 
-  button {
-    margin: 2vw 0;
-    border-radius: 5px;
-    padding: 2vw;
-    font-size: 3vw;
-    background-color: $primary-blue;
-    color: white;
-    border: none;
-    box-shadow: $box-shadow;
+}
 
-    &:hover{
-      background-color: lightblue;
-      box-shadow: 0 0 5px rgba(173, 216, 230, 0.9), inset 0 0 2px rgba(173, 216, 230, 0.3);
-    }
+button {
+  margin: 2vw 0;
+  @include CTA-style;
 
+
+  &:hover{
+    @include hover-CTA;
+    
   }
 }
 
+
 article {
-  margin: 5vw 3vw 10vw 3vw;
+  margin: 0vw 3vw 10vw 3vw;
   border: 1px solid $primary-blue;
   position: relative;
+  background-color: $secondary-white;
 
   h3 {
-    text-align: center;
-    padding: 2vw 0;
+    @include h3-style;
     margin-bottom: 4vw;
-    font-weight: bold;
-    background-color: lightblue;
-    color: $primary-blue;
+
   }
 
   img {
@@ -102,35 +105,27 @@ article {
 
   p {
     margin: 4vw 0;
-    padding: 2vw;
-    color: $primary-blue;
+    @include p-style;
   }
 
   a {
-    border: 1px solid $primary-blue;
-    padding: 2vw;
+    @include CTA-style;
     margin-bottom: 2vw;
     position: absolute;
     bottom: 0;
     right: 2vw;
-    text-decoration: none;
-    background-color: $primary-blue;
-    color:white;
-    border-radius: 2px;
     cursor: pointer;
 
     &:hover {
-      background-color: lightblue;
-      box-shadow: 0 0 5px rgba(173, 216, 230, 0.9), inset 0 0 2px rgba(173, 216, 230, 0.3);
+      @include hover-CTA;
     }
   }
 
   time {
     display:block;
     margin: 2vw ;
-    color: lightblue;
-    font-weight: bold;
-    font-style: italic;
+    @include time-style;
+
   }
 
 }
@@ -143,9 +138,11 @@ select {
 }
 
 h2 {
-  font-size: 5vw;
-  color: $primary-blue;
-  text-align: center;
-  margin-top: 4vw;
-  font-weight: bold;
+  @include h2-style;
+
 }
+
+#articlesContainer {
+  background-color: $secondary-grey;
+}
+
