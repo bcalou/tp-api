@@ -10,3 +10,13 @@ export interface FetchParams {
   countrySelected: string;
   categorySelected?: string;
 }
+
+export interface ElToCreate {
+  type: string;
+  content?: string;
+  classes?: Array<string>;
+  imgSrc?: string;
+  url?: string;
+  style?: Object;
+  value?: string;
+}

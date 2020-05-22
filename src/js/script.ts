@@ -7,7 +7,16 @@ import {
   REST_COUNTRY_ENDPOINT,
   PROXY_URL,
   CARD_CONTAINER,
+  CARD_BODY,
+  CARD_IMG,
+  CARD_LINK,
+  CARD_SMALL,
+  CARD_TEXT,
+  CARD_TITLE,
+  COUNTRY_OPTION,
 } from "./const";
+
+import { createElement, appendSeveralChild, getPublishedTime } from "./utility";
 
 import { Article, FetchParams } from "./interface";
 
@@ -17,21 +26,17 @@ const $formNews: HTMLElement = document.getElementById("form-news");
 const $articlesList: HTMLElement = document.getElementById("articles-list");
 const $countrySelect: HTMLElement = document.getElementById("country-select");
 const $backToTopBtn: HTMLElement = document.getElementById("back-to-top");
+const $categorySelect: HTMLElement = document.getElementById("category-select");
 
 $formNews.addEventListener("submit", (e) => {
   e.preventDefault();
   submitNewsForm();
 });
 
-// submit the news form
+// Submit the news form
 function submitNewsForm(): void {
-  let countrySelected: string = (document.getElementById(
-    "country-select"
-  ) as HTMLInputElement).value;
-
-  let categorySelected: string = (document.getElementById(
-    "category-select"
-  ) as HTMLInputElement).value;
+  let countrySelected: string = ($countrySelect as HTMLInputElement).value;
+  let categorySelected: string = ($categorySelect as HTMLInputElement).value;
 
   if (categorySelected === "") {
     fetchDataNews({ countrySelected });
@@ -39,7 +44,8 @@ function submitNewsForm(): void {
     fetchDataNews({ countrySelected, categorySelected });
   }
 }
-// query and fetch data from API
+
+// Query and fetch data from API
 function fetchDataNews(params: FetchParams) {
   fetch(PROXY_URL + getFetchUrlNews(params))
     .then((res) => res.json())
@@ -51,13 +57,12 @@ function fetchDataNews(params: FetchParams) {
       eraseArticle();
 
       articles.forEach((article: any) => {
-        let { description, publishedAt, title, url, urlToImage } = article;
-        createArticle({ description, publishedAt, title, url, urlToImage });
+        createArticle(getDataReady(article));
       });
     });
 }
 
-// get URL to fetch data
+// Get URL to fetch data
 function getFetchUrlNews(params: FetchParams): string {
   let { countrySelected, categorySelected } = params;
 
@@ -73,61 +78,58 @@ function eraseArticle(): void {
   $articlesList.innerHTML = "";
 }
 
-// Get the time that has passed since the publication of the article
-function getPublishedTime(time: string): string {
-  if (time === "") return "No informations on published time.";
-  let dateNow: any = new Date();
-  let d2: any = new Date(time);
-  let diff: any = dateNow - d2;
-
-  if (diff > 60e3) {
-    let minutes = Math.floor(diff / 60e3);
-    if (minutes / 60 < 1) {
-      return `${Math.floor(diff / 60e3)} minutes ago`;
-    } else {
-      let m: number = minutes % 60;
-      let h: number = Math.floor(minutes / 60);
-      return `${h} ${h > 1 ? "hours" : "hour"} and ${m} ${
-        m > 1 ? "minutes" : "minute"
-      } ago`;
-    }
-  } else return `${Math.floor(diff / 1e3)} seconds ago`;
-}
-
 // Create an article and append it to the list
 function createArticle(article: Article) {
   let $container: HTMLElement = createContainerArticle();
   let $fragment: any = document.createDocumentFragment();
-  $container.innerHTML = getArticleInnerHTML(article);
+  let $card: HTMLElement = createCardElement(article);
+  $container.appendChild($card);
   $fragment.appendChild($container);
   $articlesList.appendChild($fragment);
 }
 
-// Get the HTML for the article
-function getArticleInnerHTML(article: Article): string {
-  let urlToImage = article.urlToImage || imgNotFound;
-  let title = article.title || "";
-  let description = article.description || "";
-  let publishedAt = getPublishedTime(article.publishedAt || "");
-  let url = article.url || "";
+// Getting raw data from the API ready for render
+function getDataReady(article: Article): Article {
+  return {
+    urlToImage: article.urlToImage || imgNotFound,
+    title: article.title || "No title",
+    description: article.description || "No description",
+    publishedAt: getPublishedTime(article.publishedAt) || "No published time",
+    url: article.url || "",
+  };
+}
 
-  let innerHTML = `
-  <div class="card-body bg-light ">
-  <img src="${urlToImage}" class="card-img-top" alt="Article image">
-    <h5 class="card-title">${title}</h5>
-    <p class="card-text">${description}</p>
-    <p class="card-text"><small class="text-muted">Published ${publishedAt} </small></p>
-    <a type="button" target="_blank" href=${url} class="btn btn-info">Read the article</a>
-  </div>`;
+// Creating the card Element
+function createCardElement(article: Article): HTMLElement {
+  let { urlToImage, title, description, publishedAt, url } = article;
 
-  return innerHTML;
+  let $card = createElement(CARD_BODY);
+  let $cardImg = createElement({ ...CARD_IMG, imgSrc: urlToImage });
+  let $cardTitle = createElement({ ...CARD_TITLE, content: title });
+  let $cardDescription = createElement({ ...CARD_TEXT, content: description });
+  let $cardDate = createElement({ ...CARD_TEXT });
+  let $cardSmall = createElement({
+    ...CARD_SMALL,
+    content: `Published ${publishedAt}.`,
+  });
+  let $cardLink = createElement({ ...CARD_LINK, url });
+
+  // Assembling the card Element
+  $cardDate.appendChild($cardSmall);
+  appendSeveralChild($card, [
+    $cardImg,
+    $cardTitle,
+    $cardDescription,
+    $cardDate,
+    $cardLink,
+  ]);
+
+  return $card;
 }
 
 // Create Container for the article and return the container
 function createContainerArticle(): HTMLElement {
-  let $container: HTMLElement = document.createElement("div");
-  $container.className += CARD_CONTAINER.classes;
-  $container.style.maxWidth = CARD_CONTAINER.maxWidth;
+  let $container: HTMLElement = createElement(CARD_CONTAINER);
   return $container;
 }
 
@@ -154,20 +156,13 @@ function init() {
 
 //Function to create a country option element
 function createCountryOption(country): HTMLElement {
-  let select = document.createElement("option");
-  select.innerText = country.name;
-  select.setAttribute("value", country.alpha2Code);
+  let select = createElement({
+    ...COUNTRY_OPTION,
+    content: country.name,
+    value: country.alpha2Code,
+  });
   return select;
 }
-
-window.addEventListener("scroll", (e) => {
-  if (window.scrollY > 300) {
-    shouldDisplayBackToTop(true);
-  }
-  if (window.scrollY === 0) {
-    shouldDisplayBackToTop(false);
-  }
-});
 
 // Add or remove the visibility of "back to the top" Button
 function shouldDisplayBackToTop(shouldDisplay: boolean): void {
