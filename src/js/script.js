@@ -4,7 +4,10 @@ import {
   infiniteLoading,
 } from './pages/recipes/recipesFuntions';
 
+import { createElement } from './global/creatElements';
+import { $nav, $list } from './components/nav/nav';
 import { $recipesPageContent } from './pages/recipes/formTemplate';
+import { $favoritePageTemplate } from './pages/favorites/favotitesTemplate';
 
 document.addEventListener('DOMContentLoaded', () => {
   class Model {
@@ -18,9 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
       this.pages = [
         {
           url: '#',
-          documentTitle: 'Recipes',
+          documentTitle: 'Trouve ta recette',
           content: $recipesPageContent,
           dynamism: this.recipesDynamism,
+        },
+        {
+          url: '#favoris',
+          documentTitle: 'Mes favoris',
+          content: $favoritePageTemplate,
         },
       ];
     }
@@ -31,12 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   class View {
-    constructor() {
+    constructor(pages) {
       this.container = document.getElementById('container');
+      this.container.innerHTML = '';
+      this.addHeader(pages);
     }
 
     changeDocumentTitle(option) {
       document.title = option;
+    }
+
+    addHeader(pages) {
+      this.container.appendChild($nav);
+      $list.innerHTML = '';
+      pages.forEach((page) => {
+        const $liElt = createElement({
+          type: 'li',
+          content: page.documentTitle,
+        });
+        $liElt.addEventListener('click', () => {
+          location.hash = page.url;
+          $nav.classList.toggle('is-visible');
+        });
+        $list.appendChild($liElt);
+      });
     }
 
     addContent(content) {
@@ -53,11 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentPage = data.getPageByUrl(location.hash || '#');
 
-    const render = new View();
+    const render = new View(data.pages);
     render.changeDocumentTitle(currentPage.documentTitle);
-    render.addContent(currentPage.content);
-    render.run(currentPage.dynamism);
+
+    if (currentPage.content) {
+      render.addContent(currentPage.content);
+    }
+
+    if (typeof currentPage.dynamism === 'function') {
+      render.run(currentPage.dynamism);
+    }
   }
+
+  window.addEventListener('hashchange', () => {
+    controller();
+  });
 
   controller();
 });

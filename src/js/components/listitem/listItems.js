@@ -6,7 +6,7 @@ export function setRecipesList(recipe) {
 
   const $recipeContent = createElement({
     type: 'li',
-    id: recipe.id,
+
     attributes: {
       class: 'p-2 mt-2 border border-secondary rounded',
     },
@@ -66,12 +66,19 @@ export function setRecipesList(recipe) {
 
   createElement({
     type: 'button',
+    id: recipe.id,
     content: 'Ajouter aux favoris',
     $parent: $buttons,
     attributes: {
       class: 'btn btn-info',
     },
+    clickFunction: addRecipeToFavorite,
   });
 
   $recipesList.appendChild(fragment);
+}
+
+function addRecipeToFavorite(e) {
+  const id = e.target.dataset.id;
+  console.log(id);
 }

@@ -29,7 +29,6 @@ function recipesQuery(search) {
 
 function getRecipesList(parameters) {
   recipesQuery(parameters).then((data) => {
-    console.log(data);
     data.results.forEach((recipe) => {
       setRecipesList(recipe);
       isLoaded = true;
@@ -70,7 +69,7 @@ export function infiniteLoading() {
   window.addEventListener('scroll', () => {
     let body = document.body.offsetHeight;
     if (queryOffset + returnresultsLength < totalResultsLength && isLoaded)
-      if (window.scrollY + window.innerHeight > body - 20) {
+      if (window.scrollY + window.innerHeight > body - 50) {
         queryOffset += 5;
         getRecipesList(formInfos);
         isLoaded = false;

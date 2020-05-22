@@ -16,6 +16,32 @@ function createFormGroup() {
     $parent: $form,
   });
 }
+//Title
+
+const $header = createElement({
+  type: 'header',
+  attributes: {
+    class: 'w-100 d-flex justify-content-center',
+  },
+  $parent: $recipesPageContent,
+});
+const $title = createElement({
+  type: 'h1',
+  content: 'Keskon mange??',
+  attributes: {
+    class: 'title my-5 text-light',
+  },
+  $parent: $header,
+});
+
+createElement({
+  type: 'p',
+  attributes: {
+    class: 'subtitle',
+  },
+  content: '1000000 recettes du monde entier',
+  $parent: $title,
+});
 
 export const $form = createElement({
   type: 'form',
@@ -24,25 +50,6 @@ export const $form = createElement({
       'd-flex flex-column align-items-center recipe-form px-3 text-light w-100 pb-5',
   },
   $parent: $recipesPageContent,
-});
-
-//Title
-const $title = createElement({
-  type: 'h1',
-  content: 'Keskon mange??',
-  attributes: {
-    class: 'title my-3',
-  },
-  $parent: $form,
-});
-
-createElement({
-  type: 'p',
-  attributes: {
-    class: 'subtitle',
-  },
-  content: 'Plus de 1000000 de recettes du monde entier',
-  $parent: $title,
 });
 
 //Search

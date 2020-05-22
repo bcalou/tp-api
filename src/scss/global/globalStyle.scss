@@ -1,6 +1,13 @@
+$backgroundColor: rgb(29, 53, 87);
+
 h1 {
   font-family: 'Lobster';
+
   & .subtitle {
     font-size: 0.7rem;
   }
+}
+
+header {
+  background-color: $backgroundColor;
 }
