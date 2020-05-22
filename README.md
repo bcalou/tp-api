@@ -9,7 +9,7 @@ npm run dev
 
 ## But de l'application en une phrase
 
-En manque d'idées pour votre repas? 'Keskon Mange' vous propose des milliers de d'idées recettes
+En manque d'idées pour votre repas? 'Keskon Mange' vous propose des milliers d'idées de recettes
 
 ## URL de l'API utilisée
 
