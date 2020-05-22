@@ -9,5 +9,5 @@ axios.get('users')
 
 axios.defaults.baseURL = 'https://kitsu.io/api/edge'
 axios.get('anime')
-  .then(res => console.log(res.data))
+  .then(res => console.log(res.data.data[5]))
   .catch(err => console.error(err))
