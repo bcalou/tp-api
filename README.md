@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Obtenir divers informations sur un film recherché
 
 ## URL de l'API utilisée
 
-À remplir
+http://www.omdbapi.com/
 
 ## Liste des routes sollicitées
 
@@ -23,4 +23,6 @@ npm run dev
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+L'utilisateur indique le nom d'un film via un input.
+L'application utilise une requete GET sur l'API pour obtenir des informations sur
+le film.
