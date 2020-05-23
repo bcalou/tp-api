@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Pokedex</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <img class="logo--pokemon" src="assets/2000px-International_Pokémon_logo.svg.png" alt="">
+    <h4 class="subtitle">Recherchez le pokémon de votre choix</h4>
+    <div class="container">
+      <form action="">
+        <label class="label__title" for="searchByName">Nom ou type du pokémon</label>
+        <input type="text" id="searchByName" class="form-control" placeholder="Recherchez">
+        <ul></ul>
+      </form>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
