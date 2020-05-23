@@ -6,64 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      rel="stylesheet"
+    />
     <script src="js/script.js"></script>
   </head>
   <body>
     <div class="container">
-      <div class="input-group mt-2 mb-4">
-        <input type="text" class="form-control themvdb-input" placeholder="Nom du film ...">
-        <div class="input-group-append">
-            <button class="btn btn-secondary search" type="button">
-                Chercher
-            </button>
-        </div>
-      </div>
+      <section class="input-group mt-2 mb-4">
+        <input
+          type="text"
+          class="form-control themvdb-input"
+          placeholder="Nom du film ..."
+        />
+        <section class="input-group-append">
+          <button class="btn btn-secondary search" type="button">
+            Chercher
+          </button>
+        </section>
+      </section>
 
       <!-- Détails du film -->
       <div class="movie-detals">
         <div class="row">
-            <div class="col-md-4">
-                <!-- Jaquette du film -->
-                <div class="movie-image">
-                    <img class="movie-poster" src="#" alt=""></img>
-                </div>
+          <section class="col-md-4">
+            <!-- Jaquette du film -->
+            <section class="movie-image">
+              <img class="movie-poster" src="#" alt="#" />
+            </section>
+          </section>
+          <section class="col-md-8">
+            <!-- Titre du film -->
+            <div class="movie-title">
+              <span class="movie-name"></span
+              ><span class="movie-release-date"></span>
             </div>
-            <div class="col-md-8">
-                <!-- Titre du film -->
-                <div class="movie-title"><span class="movie-name"></span><span class="movie-release-date"></span></div>
-                <hr>
+            <hr />
 
-                <!-- Résumé du film -->
-                <div class="movie-overview"></div>
+            <!-- Résumé du film -->
+            <div class="movie-overview"></div>
 
-                <div class="movie-vote mt-4">
-                  <div class="row">
-                    <div class="col-md-5"><span class="movie-vote-label">Note des utilisateurs</span></div>
-                    <div class="col-md-6">
-                      <!-- Popularité du film -->
-                      <div class="flex-wrapper">
-                        <div class="single-chart">
-                          <svg viewBox="0 0 36 36" class="circular-chart orange">
-                            <path class="circle-bg"
-                              d="M18 2.0845
+            <div class="movie-vote mt-4">
+              <div class="row">
+                <section class="col-md-5">
+                  <p class="movie-vote-label">Note des utilisateurs</p>
+                </section>
+                <div class="col-md-6">
+                  <!-- Popularité du film -->
+                  <div class="flex-wrapper">
+                    <section class="single-chart">
+                      <svg viewBox="0 0 36 36" class="circular-chart orange">
+                        <path
+                          class="circle-bg"
+                          d="M18 2.0845
                                 a 15.9155 15.9155 0 0 1 0 31.831
                                 a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                            <path class="circle-rate circle"
-                              stroke-dasharray="30, 100"
-                              d="M18 2.0845
+                        />
+                        <path
+                          class="circle-rate circle"
+                          stroke-dasharray="30, 100"
+                          d="M18 2.0845
                                 a 15.9155 15.9155 0 0 1 0 31.831
                                 a 15.9155 15.9155 0 0 1 0 -31.831"
-                            />
-                            <text x="18" y="20.35" class="percentage"></text>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
+                        />
+                        <text x="18" y="20.35" class="percentage"></text>
+                      </svg>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
+          </section>
         </div>
         <!-- Bande-annonce du film -->
 
@@ -78,34 +92,40 @@
 
         <!-- Acteurs du film -->
         <div class="movie-actors mt-4">
-          <div class="movie-actors-label">Acteurs principaux</div>
-            <div class="container mt-4">
-              <div class="row actors-list">
-                <div class="col-xs-12 col-sm-6 col-md-4 actor-item default">
-                  <div class="image-flip" >
-                      <div class="mainflip flip-0">
-                          <div class="frontside">
-                              <div class="card">
-                                  <div class="card-body text-center">
-                                      <p><img class="img-fluid actor-image" src="" alt="card image"></p>
-                                      <h4 class="card-title actor-name"></h4>
-                                      <p class="card-text character-name"></p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="backside">
-                              <div class="card">
-                                  <div class="card-body text-center mt-4">
-                                      <h4 class="card-title actor-name"></h4>
-                                      <p class="card-text actor-biography"></p>
-                                  </div>
-                              </div>
-                          </div>
+          <section class="movie-actors-label">Acteurs principaux</section>
+          <div class="container mt-4">
+            <div class="row actors-list">
+              <section class="col-xs-12 col-sm-6 col-md-4 actor-item default">
+                <section class="image-flip">
+                  <section class="mainflip flip-0">
+                    <section class="frontside">
+                      <div class="card">
+                        <section class="card-body text-center">
+                          <p>
+                            <img
+                              class="img-fluid actor-image"
+                              src=""
+                              alt="card image"
+                            />
+                          </p>
+                          <h4 class="card-title actor-name"></h4>
+                          <p class="card-text character-name"></p>
+                        </section>
                       </div>
-                  </div>
-                </div>
-              </div>
+                    </section>
+                    <div class="backside">
+                      <div class="card">
+                        <section class="card-body text-center mt-4">
+                          <h4 class="card-title actor-name"></h4>
+                          <p class="card-text actor-biography"></p>
+                        </section>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+              </section>
             </div>
+          </div>
         </div>
       </div>
     </div>

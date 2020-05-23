@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-npm install
+npm install parcel
 npm run dev
 ```
 
