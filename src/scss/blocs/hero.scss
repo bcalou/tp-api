@@ -7,6 +7,10 @@
   align-items: center;
   font-family: "Open Sans", sans-serif;
 
+  @include medium {
+    max-width: 580px;
+  }
+
   &__title {
     color: var(--maincolor);
     font-weight: bold;
