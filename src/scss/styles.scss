@@ -1,5 +1,16 @@
-@import 'vendors/reset';
+:root {
+  --maincolor: #f26430;
+  --maintext: #8a8a8e;
+}
+@import "vendors/reset";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
+@import "blocs/hero.scss";
 
 body {
-  background-color: lightblue;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
