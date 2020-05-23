@@ -90,29 +90,45 @@ $country__icon.forEach(item => (
 
 function showCountryMeal(facts) {
     $cards.textContent = ''
-    console.log(facts);
 
     facts.meals.forEach(item => {
         card = createEl('div', null, null, null, 'card')
-        card.appendChild(createEl('img', null, 'src', item.strMealThumb))
+        card.appendChild(createEl('img', null, 'src', item.strMealThumb, 'card__img'))
         card.appendChild(createEl('p', item.strMeal))
-        card.appendChild(createEl('a', 'Decouvrir plus_', 'href', `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${item.idMeal}`))
-
+        card.appendChild(createEl('p', 'Decouvrir plus_', null, null, 'linkToMeal'))
         $cards.appendChild(card)
+        card.addEventListener('click', () => searchMealById(item))
     })
 }
 
-// facts.meals`${[i]}[strIngredient${i}]`
-// item.addEventListener('click', () => {
-//     const value_icon = item.getAttribute('data-country')
-//     fetch(`${URL}search.php?a=${value_icon}`)
-//         .then(res => res.json())
-//         .then(facts => showText(facts))
-// })
-// countries_icon = ['vietnam.png', 'india.png', 'greece.png', 'germany.png', 'egypt.png', 'france.png', 'china.png', 'canada.png', 'usa.png', 'uk.png', 'mexico.png', 'japan.png', 'italy.png']
+function searchMealById(item) {
+    fetch(`${URL}lookup.php?i=${item.idMeal}`)
+        .then(res => res.json())
+        .then(facts => showIdMeal(facts))
+        .catch(e => error(value))
+}
 
-// countries_icon.map(img => (
-//     $country.appendChild(createEl('img', null, 'src', img))
-// ))
+function showIdMeal(facts) {
+    $cards.textContent = ''
+    card = createEl('div', null, null, null, 'card__img--id')
+    card.appendChild(createEl('img', null, 'src', facts.meals[0].strMealThumb))
+    cardDetails = createEl('div', null, null, null, 'cards__details')
+    cardDetails.appendChild(createEl('p', facts.meals[0].strMeal))
+    recipe__instructions = createEl('ol', null, null, null, 'recipe__instructions')
+    for (let i = 1; i < 20; i++) {
+        if (facts.meals[0][`strIngredient${i}`]) {
+            cardDetails.appendChild(recipe__instructions.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}`)))
+        }
+    }
+
+    $cards.appendChild(card)
+    $cards.appendChild(cardDetails)
+
+    card.addEventListener('click', () => {
+        console.log(facts.meals[0].strIngredient1);
+    })
+}
+
+
 
 
