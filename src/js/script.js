@@ -11,11 +11,15 @@ axios.defaults.baseURL = 'https://kitsu.io/api/edge'
 axios.get('anime')
   .then(res => {
     console.log(res.data.data)
-    animeName(res)
-    animeImg(res)
+    allFunctionsCalls(res)
     console.log("www")
   })
   .catch(err => console.error(err))
+
+const allFunctionsCalls = (res) => {
+  animeName(res)
+  animeImg(res)
+}
 
 const animeName = (res) => {
   let resName = res.data.data;
@@ -27,12 +31,10 @@ const animeName = (res) => {
 }
 
 const animeImg = (res) => {
-  let resImg = res.data.data;
-  
+  let resImg = res.data.data
   for (j = 0; j < resImg.length; j++) {
     let image = document.createElement('img')
-    let txt = document.createTextNode(resImg[j].attributes.coverImage)
-    image.src = txt
+    image.src = resImg[j].attributes.posterImage.medium
     body.append(image) 
   }
 }
