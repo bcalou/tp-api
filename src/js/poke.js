@@ -28,6 +28,9 @@ const generateHtml = data => {
             <span>Weight: ${data.weight}</span>
         </div>
     `;
-  const pokemonDiv = document.querySelector(".pokemon");
-  pokemonDiv.innerHTML = html;
+  const $POKEIMG = document.getElementById("pokeimg");
+  $POKEIMG.src = data.sprites.front_default;
+
+  // const pokemonDiv = document.querySelector(".pokemon");
+  // pokemonDiv.innerHTML = html;
 };
