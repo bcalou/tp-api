@@ -1,7 +1,17 @@
-fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian')
-.then(function(response){
-  return response.json()
-}).then(function(data){
-  console.log(data);
-  
-})
+$(document).ready(() =>{
+$('#searchForm').on('submit' , (e)=>{
+  let searchText = $('searchText').value();
+  getRules(searchText);
+  e.preventDefault();
+});
+});
+
+
+function  getRules(searchText){
+axios.get(''+searchText)
+  .then((response) => {
+    console.log(data);
+  }).catch((err)=>{
+    console.log(err);
+  })
+}
