@@ -17,6 +17,9 @@ header {
   height: 12vw;
   display: table-cell;
   vertical-align: middle;
+  @include desktop {
+    height: 9vw;
+  }
   
   h1 {
     @include h1-style;
@@ -31,6 +34,9 @@ header {
   flex-direction: column;
   background-color: $secondary-grey;
   padding-bottom: 5vw;
+  @include desktop {
+    padding-bottom: 3vw;
+  }
 
 }
 
@@ -50,12 +56,6 @@ form {
   align-items: center;
   margin: 2vw;
 
-  label {
-    margin: 2vw 0;
-    font-size: 4vw;
-    color: $primary-blue;
-    font-weight: bold;
-  }
 
   input {
     margin: 4vw 0;
@@ -67,6 +67,12 @@ form {
     font-size: 5vw;
     box-shadow:$box-shadow;
     color: $primary-blue;
+
+    @include desktop {
+      margin: 2vw 0;
+      font-size: 3vw;
+      width: 40%;
+    }
 
   }
 
@@ -89,6 +95,10 @@ article {
   border: 1px solid $primary-blue;
   position: relative;
   background-color: $secondary-white;
+  @include desktop {
+    max-width: 40vw;
+  }
+
 
   h3 {
     @include h3-style;
@@ -101,6 +111,9 @@ article {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    @include desktop {
+      max-width: 35vw;
+  }
   }
 
   p {
@@ -138,6 +151,10 @@ select {
   width: 30vw;
   font-size: 4vw;
   color: $primary-blue;
+  @include desktop {
+    width: 20vw;
+    font-size: 2vw;
+  }
 }
 
 h2 {
@@ -147,5 +164,14 @@ h2 {
 
 #articlesContainer {
   background-color: $secondary-grey;
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 

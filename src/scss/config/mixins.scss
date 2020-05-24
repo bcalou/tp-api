@@ -7,6 +7,9 @@
   font-size: 5vw;
   color: $secondary-white;
   letter-spacing: 1.6px;
+  @include desktop {
+    font-size: 3vw;
+  }
 }
 
 @mixin h2-style {
@@ -16,6 +19,10 @@
   text-align: center;
   margin-top: 4vw;
   font-weight: bold;
+  @include desktop {
+    font-size: 3vw;
+    margin-top: 2vw;
+  }
 }
 
 @mixin h3-style {
@@ -27,12 +34,16 @@
   color: $secondary-white;
   font-size: 4vw;
   line-height: 1.5;
+  @include desktop {
+    padding: 2vw 0.4vw;
+    font-size: 2vw;
+  }
 
 }
 
 @mixin CTA-style {
   font-family: "Poppins-Medium";
-  padding: 2.5vw;
+  padding: 2vw;
   border-radius: 5px;
   font-size: 4vw;
   background-color: $primary-yellow;
@@ -41,6 +52,10 @@
   font-weight: bold;
   letter-spacing: 1.4px;
   text-decoration: none;
+  @include desktop {
+    font-size: 2vw;
+    padding: 1vw;
+  }
 }
 
 @mixin p-style {
@@ -50,6 +65,10 @@
   padding: 5vw 3vw;
   color: $primary-blue;
   font-weight: bold;
+  @include desktop {
+    font-size: 2vw;
+    padding: 2vw 3vw;
+  }
 }
 
 @mixin time-style{
@@ -58,9 +77,19 @@
   color: $primary-yellow;
   font-weight: bold;
   font-style: italic;
-
+  @include desktop {
+  font-size: 2vw;
+  }
 }
 
 @mixin hover-CTA {
   box-shadow: $box-shadow-cta;
+}
+
+// MEDIA QUERIES
+
+@mixin desktop {
+  @media (min-width: 600px){
+    @content;
+  }
 }
