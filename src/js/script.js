@@ -1,5 +1,4 @@
 const $body = document.querySelector('body')
-const $content = document.querySelector('.content')
 
 axios.defaults.baseURL = 'https://kitsu.io/api/edge'
 axios.get('anime')
@@ -10,7 +9,7 @@ axios.get('anime')
   .catch(err => console.error(err))
 
 const allFunctionsCalls = (res) => {
-animeElement(res);
+  animeElement(res);
 }
 
 const animeElement = (res) => {
@@ -20,8 +19,8 @@ const animeElement = (res) => {
     image.src = result.attributes.posterImage.medium
     let div = document.createElement('div')
     let h2 = document.createElement('h2')
-    h2.append(result.attributes.abbreviatedTitles)
+    h2.append(result.attributes.slug)
     div.append(h2)
-    $content.append(image, div)
+    $body.append(image, div)
   }))
 }
