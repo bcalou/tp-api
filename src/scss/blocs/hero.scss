@@ -3,18 +3,12 @@
   width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   font-family: "Open Sans", sans-serif;
 
   @include medium {
     max-width: 580px;
-  }
-
-  &__title {
-    color: var(--maincolor);
-    font-weight: bold;
-    font-size: 36px;
   }
 
   &__description {
@@ -26,7 +20,7 @@
   }
 }
 
-.continue-button {
+.button {
   background-color: var(--maincolor);
   color: white;
   height: 56px;
@@ -39,6 +33,11 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
+
+  &--info {
+    width: 343px;
+    max-width: 90%;
+  }
 }
 
 .link-button {
@@ -48,4 +47,13 @@
 
 a {
   text-decoration: none;
+}
+
+.header {
+  &__title {
+    color: var(--maincolor);
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 20px;
+  }
 }
