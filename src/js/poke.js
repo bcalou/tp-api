@@ -1,43 +1,34 @@
-const apiData = {
-  url: "https://pokeapi.co/api/v2/",
-  type: "pokemon",
-  id: "26"
-};
+const $FORMNAME = document.querySelectorAll(".formName input");
+const $FINDNAME = document.querySelector(".findName");
+const $POKENAME = document.querySelector(".pokeTitle");
+const $POKEIMG = document.getElementById("pokeimg");
 
-const { url, type, id } = apiData;
+$FINDNAME.addEventListener("click", () => {
+  const apiData = {
+    url: "https://pokeapi.co/api/v2/",
+    type: "pokemon"
+  };
 
-const apiUrl = `${url}${type}/${id}`;
+  const { url, type } = apiData;
 
-fetch(apiUrl)
-  .then(data => {
-    if (data.ok) {
-      return data.json();
-    }
-    throw new Error("Response not ok.");
-  })
-  .then(pokemon => generateHtml(pokemon))
-  .catch(error => console.error("Error:", error));
+  const apiUrl = `${url}${type}/${$FORMNAME[0].value}`;
 
-const generateHtml = data => {
-  console.log(data);
-  const html = `
-        <div class="name">${data.name}</div>
-        <img src=${data.sprites.front_default}>
-        <div class="details">
-            <span>Height: ${data.height}</span>
-            <span>Weight: ${data.weight}</span>
-        </div>
-    `;
+  fetch(apiUrl)
+    .then(data => {
+      if (data.ok) {
+        return data.json();
+      }
+      throw new Error("Response not ok.");
+    })
+    .then(pokemon => generateHtml(pokemon))
+    .catch(error => console.error("Error:", error));
 
-  const $POKENAME = document.querySelector(".pokeTitle");
-
-  const $POKEIMG = document.getElementById("pokeimg");
-  $POKENAME.innerHTML = data.name;
-  $POKEIMG.src = data.sprites.front_default;
-
-  // const pokemonDiv = document.querySelector(".pokemon");
-  // pokemonDiv.innerHTML = html;
-};
+  const generateHtml = data => {
+    $POKENAME.innerHTML = data.name;
+    $POKEIMG.src = data.sprites.front_default;
+  };
+  $FORMNAME[0].value = "";
+});
 
 window.addEventListener("click", () => {
   document.querySelector(".pokedex-right-front").classList.add("hideFront");

@@ -24,24 +24,15 @@ body {
   perspective: 1000px;
 }
 
-.pokedex.is-active .pokedex-right-back,
+.pokedex.is-active,
 .pokedex:hover .pokedex-right-back {
   transform: rotateY(0);
 }
 
-.pokedex.is-active .pokedex-right-front,
+.pokedex.is-active,
 .pokedex:hover .pokedex-right-front {
   transform: rotateX(-180deg);
 }
-
-// .showBack {
-//   transform: rotateY(0);
-// }
-
-// .hideFront {
-//   transform: rotateX(-100deg);
-//   transform: translateY(100%);
-// }
 
 .pokedex-right-back {
   background-color: var(--red);
@@ -49,7 +40,7 @@ body {
   width: inherit;
   position: absolute;
   left: 0%;
-  top: 100%;
+  top: 105%;
   z-index: 2;
   transform-origin: left center;
   transform: rotateY(-180deg);
