@@ -26,4 +26,4 @@ Enjoy l'évanouissement de cette frustration qui vous empêchait de vivre depuis
 ## Fonctionnement détaillé de l'application
 
 Renvoie une liste de titre de musiques après avoir renseigné dans un formulaire un artiste ou une musique (trier par pertinence).
-Un bouton est affilié à chaque élément de cette liste pour redirer vers ses paroles.
+Un bouton est affilié à chaque élément de cette liste pour rediriger vers ses paroles.
