@@ -3,4 +3,23 @@
   width: 100%;
   text-align: center;
   padding-inline-start: 2px;
+  margin-top: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 16px;
+
+  padding: 0 8px;
+
+  button {
+    background: rgb(24, 120, 120);
+    margin-top: 8px;
+    font-size: 14px;
+    color: whitesmoke;
+    &_hover {
+    }
+  }
 }

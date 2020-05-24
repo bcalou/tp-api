@@ -1,7 +1,7 @@
 const apiData = {
   url: "https://pokeapi.co/api/v2/",
   type: "pokemon",
-  id: "25"
+  id: "26"
 };
 
 const { url, type, id } = apiData;
@@ -28,9 +28,18 @@ const generateHtml = data => {
             <span>Weight: ${data.weight}</span>
         </div>
     `;
+
+  const $POKENAME = document.querySelector(".pokeTitle");
+
   const $POKEIMG = document.getElementById("pokeimg");
+  $POKENAME.innerHTML = data.name;
   $POKEIMG.src = data.sprites.front_default;
 
   // const pokemonDiv = document.querySelector(".pokemon");
   // pokemonDiv.innerHTML = html;
 };
+
+window.addEventListener("click", () => {
+  document.querySelector(".pokedex-right-front").classList.add("hideFront");
+  document.querySelector(".pokedex-right-back").classList.add("showBack");
+});
