@@ -13,36 +13,29 @@ const $refreshButton: HTMLElement = document.getElementById('refresh');
 let $articlesContainer: HTMLElement = document.getElementById('articlesContainer');
 
 
-let keywords: string;
+
 let language: string;
 let pageSizeData: number;
 let sortBy: string;
-
-let country: string;
 let category: string;
 
 // INTERFACES
 
-// interface Article {
-//   title: string,
-//   urlToImage: string,
-//   description: string,
-//   url: string,
-//   publishedAt: string,
-// }
+interface Article {
+  title: string,
+  urlToImage: string,
+  description: string,
+  url: string,
+  publishedAt: string,
+}
 
-// interface Values {
-//   value: any,
-//   element: HTMLElement,
-//   type: string,
-// }
-
-// interface CreateElement {
-//   type: string;
-//   content: string;
-//   url?: string;
-//   parent: HTMLElement;
-// }
+interface CreateElement {
+  type: string;
+  content?: string;
+  urlToImage?: string;
+  url?: string;
+  parent?: HTMLElement;
+}
 
 
 $search_forms.forEach(search_form => {
@@ -60,12 +53,12 @@ $refreshButton.addEventListener('click', () => {
 
 // Fetch articles from API 
 function getArticles(): void {
-  createElement({type: 'h2', text: 'Is Loading', parent: $articlesContainer});
+  createElement({type: 'h2', content: 'Is Loading', parent: $articlesContainer});
 
   fetch(proxyUrl + getArticlesUrl())
       .then(res => res.json())
       .then(data => {
-        let articles = data.articles;
+        let articles: Array<Article> = data.articles;
         if (articles.length === 0) {
           alert('No article were found, try an other research');
         }
@@ -76,22 +69,28 @@ function getArticles(): void {
 
 // include params inside API URL 
 function getArticlesUrl(): string {
-  keywords = (document.querySelector('.search') as HTMLInputElement).value;
-  country = (document.getElementById('country') as HTMLInputElement).value;
+  let keywords: string = (document.querySelector('.search') as HTMLInputElement).value;
+  let country: string = (document.getElementById('country') as HTMLInputElement).value;
   if((!keywords) && (!country)) {
     alert(" Merci de renseigner un mot clé ou un pays");
   }else if ((keywords) && (!country)){
     let queryKeywords: string = `q=${keywords}`;
-    return `${endpoint}/everything?${queryKeywords}${getValue(language, $language, language)}${getValue(pageSizeData, $pageSize, 'pageSize')}${getValue(sortBy, $sortBy, sortBy)}&apiKey=${API_key}`;
+    return `${endpoint}/everything?${queryKeywords}${getValue(language, $language, 'language')}${getValue(pageSizeData, $pageSize, 'pageSize')}${getValue(sortBy, $sortBy, 'sortBy')}&apiKey=${API_key}`;
 
   }else if ((!keywords) && (country)){
     let queryCountry: string = `country=${country}`;
-    return `${endpoint}/top-headlines?${queryCountry}${getValue(category, $category, category)}&apiKey=${API_key}`;
+    return `${endpoint}/top-headlines?${queryCountry}${getValue(category, $category, 'category')}&apiKey=${API_key}`;
 
   }else{
     alert('Search error');
   }
 }
+
+// interface Values {
+//   value: string | number,
+//   $element: HTMLElement,
+//   type: string
+// }
 
 function getValue(value: any, $element: HTMLElement, type: string): string {
   value = ($element as HTMLInputElement).value;
@@ -123,18 +122,18 @@ function showArticles(articles): void {
 
 
 // Create articles from article object
-function getArticleElement(article): HTMLElement {
+function getArticleElement(article: Article): HTMLElement {
   const $article: HTMLElement = createElement({type: 'article'});
 
-  createElement({type: 'h3', text: article.title, parent: $article});
-  createElement({type: 'img', url: article.urlToImage, parent: $article});
-  createElement({type: 'p', text: article.description, parent: $article});
-  createElement({type: 'a', url: article.url, text: "Lire l'article", parent: $article});
+  createElement({type: 'h3', content: article.title, parent: $article});
+  createElement({type: 'img', urlToImage: article.urlToImage, parent: $article});
+  createElement({type: 'p', content: article.description, parent: $article});
+  createElement({type: 'a', url: article.url, content: "Lire l'article", parent: $article});
 
   const publishedAt = new Date(article.publishedAt).toLocaleString();
   const $publishedAt = createElement({
     type: 'time',
-    text: publishedAt,
+    content: publishedAt,
     parent: $article
   });
 
@@ -144,24 +143,25 @@ function getArticleElement(article): HTMLElement {
 }
 
 // Create element and append it to the given parent
-function createElement(options: any): HTMLElement {
+function createElement(options: CreateElement): HTMLElement {
   const $element = document.createElement(options.type);
 
   if (options.type === 'img') {
-    $element.src = options.url;
+    $element.setAttribute('src', options.urlToImage)
   }
 
   if (options.type === 'a') {
-    $element.href = options.url;
+    $element.setAttribute('href', options.url)
   }
 
-  if (options.text) {
-    $element.textContent = options.text;  
+  if (options.content) {
+    $element.textContent = options.content;  
   }
   
   if (options.parent) {
     options.parent.appendChild($element);
   }
+
   return $element;
 
 }
