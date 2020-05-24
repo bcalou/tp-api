@@ -1,22 +1,19 @@
 
 //Search keyword function ***In progress*** 
-var search = document.getElementsByClassName('search')[0];
+var search = document.getElementById('search');
 search.addEventListener('keydown', function(){
 var searchs = search.value; 
-
-
-encodeURIComponent()
-
+console.log("1", search)
 //***Key value for apicall & Dom add */
 /**Doc API:
  * BreakingNews : ?country= or ?category=
  * 
- * Everything : ?q=word
+ * Everything : ?q=word + &language=
  * 
  * Search : ?q=word
  * 
  */
-
+console.log("2", search)
 const apiEveryThing = "http://newsapi.org/v2/everything";
 const sort = "sortBy=popularity";
 const lang = "language=fr";
@@ -38,6 +35,5 @@ console.log(response.json(), "HELLO WOOOOOOORRRLLLDDD");
   
 }
 })*/
-
-
 })
+
