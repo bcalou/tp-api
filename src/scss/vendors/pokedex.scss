@@ -18,14 +18,12 @@ body {
   background-color: var(--blue);
   width: 400px;
   height: 500px;
-  margin: 0 auto;
+
   border-radius: 10px;
   position: relative;
   perspective: 1000px;
 }
-
-.pokedex.is-active,
-.pokedex:hover .pokedex-right-back {
+.pokedex-right-back {
   transform: rotateY(0);
 }
 

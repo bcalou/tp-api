@@ -21,11 +21,17 @@ $FINDNAME.addEventListener("click", () => {
       throw new Error("Response not ok.");
     })
     .then(pokemon => generateHtml(pokemon))
-    .catch(error => console.error("Error:", error));
+    .catch(error => catcherror());
 
   const generateHtml = data => {
     $POKENAME.innerHTML = data.name;
     $POKEIMG.src = data.sprites.front_default;
+  };
+  const catcherror = () => {
+    $POKENAME.innerHTML = "Ce pokémon n'existe pas";
+    $POKEIMG.src =
+      "https://image.noelshack.com/fichiers-md/2015/07/1423868157-3697-card-communaute.png";
+    $POKEIMG.style.width = "150px";
   };
   $FORMNAME[0].value = "";
 });
