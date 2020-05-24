@@ -19,6 +19,7 @@ let pageSizeData: number;
 let sortBy: string;
 let category: string;
 
+
 // INTERFACES
 
 interface Article {
@@ -35,6 +36,13 @@ interface CreateElement {
   urlToImage?: string;
   url?: string;
   parent?: HTMLElement;
+}
+
+interface Values {
+  data: string | number,
+  $element: HTMLElement,
+  type: string
+  
 }
 
 
@@ -75,29 +83,27 @@ function getArticlesUrl(): string {
     alert(" Merci de renseigner un mot clé ou un pays");
   }else if ((keywords) && (!country)){
     let queryKeywords: string = `q=${keywords}`;
-    return `${endpoint}/everything?${queryKeywords}${getValue(language, $language, 'language')}${getValue(pageSizeData, $pageSize, 'pageSize')}${getValue(sortBy, $sortBy, 'sortBy')}&apiKey=${API_key}`;
+    let queryLanguage: string = getValue({data: language,$element: $language, type: 'language'})
+    let queryPageSize: string = getValue({data: pageSizeData, $element: $pageSize, type: 'pageSize'})
+    let querySortBy: string = getValue({data: sortBy, $element: $sortBy, type: 'sortBy'})
+    return `${endpoint}/everything?${queryKeywords}${queryLanguage}${queryPageSize})}${querySortBy}&apiKey=${API_key}`;
 
   }else if ((!keywords) && (country)){
     let queryCountry: string = `country=${country}`;
-    return `${endpoint}/top-headlines?${queryCountry}${getValue(category, $category, 'category')}&apiKey=${API_key}`;
+    let queryCategory: string = getValue({data: category, $element: $category, type:'category'})
+    return `${endpoint}/top-headlines?${queryCountry}${queryCategory}&apiKey=${API_key}`;
 
   }else{
     alert('Search error');
   }
 }
 
-// interface Values {
-//   value: string | number,
-//   $element: HTMLElement,
-//   type: string
-// }
 
-function getValue(value: any, $element: HTMLElement, type: string): string {
-  value = ($element as HTMLInputElement).value;
-  return value ? `&${type}=${value}` : '';
+function getValue(value: Values): string {
+  value.data = (value.$element as HTMLInputElement).value;
+  return value ? `&${value.type}=${value.data}` : '';
 
 }
-
 
 // Display articles
 function showArticles(articles): void {
@@ -109,17 +115,6 @@ function showArticles(articles): void {
   
   $articlesContainer.appendChild($fragment);
 }
-
-// function getArticleData(article: Article): Article {
-//   return {
-//     title: article.title,
-//     urlToImage: article.urlToImage,
-//     description: article.description,
-//     url: article.url, 
-//     publishedAt: article.publishedAt
-//   };
-// }
-
 
 // Create articles from article object
 function getArticleElement(article: Article): HTMLElement {
