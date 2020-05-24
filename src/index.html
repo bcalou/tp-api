@@ -6,9 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <header class="header">
+      <h1 class="title">Choose your meal</h1>
+    </header>
+<div class="formSpace">
+    <form>
+      <select name="meal" id="formMeal">
+      <option value=" " selected>Choose meal origin</option>
+      <option value="FR">French</option>
+      <option value="IT">Italian</option>
+      <option value="CN">Canadian</option>
+    </select>
+    </form>
+  </div>
+    <button id="mealButton">Discover random french meal</button>
+   
+    <section id="meals">
+    </section>  
+<footer class="footer"><p class="footer__text">Created by Yoan Bensimhon</p></footer>
   </body>
 </html>

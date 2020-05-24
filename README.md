@@ -9,7 +9,8 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Pas d'idée de recette de cuisine ? 
+En un click vous saurez quoi cuisinez.
 
 ## URL de l'API utilisée
 
