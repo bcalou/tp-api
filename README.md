@@ -7,6 +7,10 @@ npm install
 npm run dev
 ```
 
+## Lien du site
+
+https://kekidi.netlify.app/
+
 ## But de l'application en une phrase
 
 Afficher les paroles de musiques
