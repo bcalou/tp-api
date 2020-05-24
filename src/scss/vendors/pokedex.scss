@@ -11,43 +11,35 @@
 body {
   color: white;
   font-family: system-ui;
-  overflow: -x hidden;
+  overflow-x: hidden;
 }
 
 .pokedex {
   background-color: var(--blue);
   width: 400px;
   height: 500px;
-
+  margin: 0 auto;
   border-radius: 10px;
   position: relative;
   perspective: 1000px;
-}
-.pokedex-right-back {
-  transform: rotateY(0);
-}
-
-.pokedex.is-active,
-.pokedex:hover .pokedex-right-front {
-  transform: rotateX(-180deg);
 }
 
 .pokedex-right-back {
   background-color: var(--red);
   height: calc(100% - 100px);
+
   width: inherit;
   position: absolute;
   left: 0%;
   top: 105%;
   z-index: 2;
-  transform-origin: left center;
-  transform: rotateY(-180deg);
+  transform: translateY(-100%);
   transition: 0.5s;
-
   border: 1px solid black;
   box-sizing: border-box;
   display: flex;
   padding: 10px;
+  animation: rotateToBack2 3s forwards;
 }
 
 .pokedex-right-front {
@@ -58,10 +50,30 @@ body {
   left: 0;
   bottom: 0;
   z-index: 3;
-  transform-origin: right center;
   transition: 0.5s;
-  backface-visibility: hidden;
   border: 1px solid black;
+  backface-visibility: hidden;
+  transform: translateY(25px);
+  animation: rotateToBack1 2s forwards;
+}
+
+@keyframes rotateToBack1 {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes rotateToBack2 {
+  0% {
+    transform: rotateX(0deg);
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
 }
 
 .pokedex-left {
