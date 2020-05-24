@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Api google news</title>
-    <link rel="stylesheet" href="scss/styles.scss" type="text/css" />
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="scss/styles.css" type="text/css" />
+    <script src="js/script.js" async></script>
   </head>
   <body>
-    <h1>Les 10 derniers articles sur le sujet de la tech</h1>
-
-    <form>
-      <input type="text" input="search"></input>
+    <h1>Recherche d'article par mots clés</h1>
+    <br>
+    <form >
+      <fieldset>
+        <legend>Nom du sujet recherché</legend>
+      <label for="name">Recherche :</label>
+      <input type="text" input="search" class="search"></input>
+      <button type="submit">Rechercher</button>
+      </fieldset>
     </form>
+
+    <div class="articleContainer"></div>
   </body>
 </html>
