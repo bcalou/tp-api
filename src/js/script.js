@@ -11,7 +11,14 @@ const fetchPokemon = () => {
         return resp.json();
       })
       .then(data => {
-        getIdPokemon(data.name, data.id, data.types.slice, i);
+        getIdPokemon(
+          data.name,
+          data.id,
+          data.types.map(type => type.type.name),
+          i
+        );
+        // getColors(data.types.map(type => type.type.name));
+        // console.log(data);
       });
   }
 };
@@ -24,7 +31,19 @@ function getIdPokemon(name, id, type, i) {
   
   <p class="container__id">${id}</p>
   <p class="container__id">${type}</p>
+  
 </div>`;
 }
 
+// function getColors(type) {
+//   const colors = {
+//     fire: '#f56',
+//     poison: '#ff6'
+//   };
+//   const container = document.querySelector('.container__id');
+//   const color = colors[`${type}`];
+//   container.style.color = color;
+// }
+
 fetchPokemon();
+// getColors();
