@@ -13,7 +13,7 @@ const fetchPokemon = () => {
         getPokemon(
           data.name,
           data.id,
-          data.types.map(type => type.type.name),
+          data.types.map(type => type.type.name).join(' | '),
           i
         );
       });
