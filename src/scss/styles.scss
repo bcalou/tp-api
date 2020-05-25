@@ -1,21 +1,37 @@
 @import "vendors/reset";
 
 body {
-  background-color: tomato;
+  background-color: rgb(59, 153, 216);
 }
 header {
   text-align: center;
+  margin-top: 20px;
 }
 img {
   width: 400px;
 }
 body {
   text-align: center;
+  font-family: "EastSeaDokdo-Regular";
 }
 section {
-  font-family: "EastSeaDokdo-Regular";
-  font-size: 30px;
+  font-size: 40px;
+  color: white;
   display: inline-block;
   margin: 50px;
-  margin-bottom: 0;
+}
+
+button {
+  font-family: "BalsamiqSans-Regular";
+  border: solid 1px white;
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(150, 199, 51);
+  transition-duration: 0.4s;
+  margin-top: 20px;
+  font-size: 15px;
+}
+button:hover {
+  background-color: rgb(199, 230, 137);
+  color: white;
 }
