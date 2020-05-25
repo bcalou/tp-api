@@ -1,0 +1,65 @@
+
+/************* COLORS ************/
+
+$testcolor: pink;
+$white: white;
+$black: black;
+$primaryColor: #37a0ae;
+
+/************* FONTS ************/
+
+$fontCookie: "Cookie-Regular";
+
+/************* GLOBAL ************/
+
+@mixin format {
+  height: 100vh;
+  width: 100vw;
+}
+
+.link {
+  text-decoration: none;
+  color: $black;
+}
+
+/************* BREAKPOINTS ************/
+
+$tablet-up: 768px;
+$tablet-down: 767px;
+
+$desktop-up: 1200px;
+$desktop-down: 1199px;
+
+@mixin tablet-up {
+  @media (min-width: $tablet-up) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: $tablet-down) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $desktop-up) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: $desktop-down) {
+    @content;
+  }
+}
+
+/************* DISPLAY ************/
+
+@mixin flexbox($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+

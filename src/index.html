@@ -8,7 +8,30 @@
     <link rel="stylesheet" href="scss/styles.scss" />
     <script src="js/script.js"></script>
   </head>
-  <body>
-    <h1>Hello World</h1>
+  <body id="home">
+    <header class="header">
+      <h1 class="header__title title">What would you like to eat today?</h1>
+      <ul class="header__menu menu">
+        <li><a class="link" href="index.html">Home</a></li>
+        <li>|</li>
+        <li>All recipes</li>
+
+      </ul>
+    </header>
+    <section class="search">
+      <div class="wrap">
+        <div class="search__searchBox searchBox">
+           <input type="text" class="searchBox__searchTerm" placeholder="Find the good food">
+           <button type="submit" class="searchBox__searchButton ">
+             search
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="popular">
+      <div></div>
+      <div></div>
+    </section>
+    
   </body>
 </html>

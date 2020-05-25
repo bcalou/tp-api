@@ -1,0 +1,55 @@
+
+
+
+.wrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.search {
+  height: 70vh;
+  width: 100vw;
+  background-color: $white;
+
+  @include desktop-up {
+    height: 70vh;
+  }
+
+  .searchBox {
+    
+      width: 100%;
+      position: relative;
+      display: flex;
+      @include flexbox(column, center, center);
+
+      &__searchTerm {
+        height: 32px;
+        width: 180px;
+        border: 3px solid $primaryColor;
+        border-radius: 5px;
+        outline: none;
+        color: #9DBFAF;
+
+        @include desktop-up {
+          width: 264px;
+          height: 36px;
+        }
+      }
+
+      &__searchButton {
+        height: 28px;
+        width: 80px;
+        border-radius: 8px;
+        margin-top: 16px;
+        font-size: 14px;
+        text-align: center;
+        background-color: $primaryColor;
+        color: $white;
+      }
+    
+  }
+
+  
+}
