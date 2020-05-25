@@ -27,14 +27,14 @@ https://www.themealdb.com/api.php
 
 ## Fonctionnement détaillé de l'application
 
-Ce protoype permet de ne plus se perdre dans vos recettes de cuisine.
+Ce protoype permet de ne plus se perdre dans vos recettes de cuisine et de pouvoir vous donnez des idées de bon plats a cuisiné .
 
 Comment le faire fonctionner ?
 
 Il suffit simplement de marque un mot du nom de la recette en anglais et les resultats s'afficherons.
 
-Ex : John want to cook penne (pasta)
+Ex : John want to cook "Spicy Arrabiata Penne" he has just to write "penne" (pasta)
 
-He write "penne" in search-bar push enter and a recipe is post . 
+He write "penne" in search-bar push enter and a recipe is post and ready to cook. 
 
 
