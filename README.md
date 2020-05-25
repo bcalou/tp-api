@@ -9,11 +9,10 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+JE SAIS PAS ENCOREEE :'(
 
 ## URL de l'API utilisée
-
-À remplir
+https://pokeapi.co/
 
 ## Liste des routes sollicitées
 
