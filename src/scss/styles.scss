@@ -1,5 +1,21 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
 body {
-  background-color: lightblue;
+  background-color: tomato;
+}
+header {
+  text-align: center;
+}
+img {
+  width: 400px;
+}
+body {
+  text-align: center;
+}
+section {
+  font-family: "EastSeaDokdo-Regular";
+  font-size: 30px;
+  display: inline-block;
+  margin: 50px;
+  margin-bottom: 0;
 }
