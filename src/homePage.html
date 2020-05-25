@@ -95,7 +95,7 @@
       <h1>Super Hero</h1>
     </header>
     <main>
-      <div class="search">
+      <section class="search">
         <input
           type="text"
           name="nameHero"
@@ -107,22 +107,98 @@
             <use href="#icon-search"></use>
           </svg>
         </button>
-      </div>
+      </section>
+      <section class="card">
+        <div class="card__img">
+          <img
+            src="https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg"
+            alt="batman"
+          />
+          <button class="card__imgButton">
+            <svg class="svg svg--arrow">
+              <use href="#icon-arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="card__content card__content--presentation">
+          <div class="card__blocTitle">
+            <h2>Présentation</h2>
+          </div>
+          <p class="card__text">
+            Crée une team de 4 Supers Héros et combine leurs caractéristiques
+            pour trouver le style de combat de ta Team.
+          </p>
+          <p>
+            Auras-tu une équipe forte, smart, rapide ou alors choisiras-tu un
+            équilibre de tout ça ?
+          </p>
+          <p>A toi d’en décider !</p>
+          <p>
+            Pour commencer, fait ta première recherche en tapant le nom de l'un
+            de ces
+            <a href="https://superheroapi.com/ids.html" target="_blank"
+              >HÉROS</a
+            >
+          </p>
+        </div>
+        <div class="card__content card__content--hero">
+          <div class="card__blocTitle">
+            <h2 id="name">Batman</h2>
+            <p id="id">#70</p>
+          </div>
+          <h3>Identité</h3>
+          <div class="card__caracteristic">
+            <ul>
+              <li>Nom :</li>
+              <li>Race :</li>
+              <li>Poids :</li>
+            </ul>
+            <ul>
+              <li id="realName">Bruce Wayne</li>
+              <li id="race">Human</li>
+              <li id="poids">95 kg</li>
+            </ul>
+          </div>
+          <h3>Combat</h3>
+          <div class="card__caracteristic">
+            <ul>
+              <li>Intelligence :</li>
+              <li>Force :</li>
+              <li>Vitesse :</li>
+              <li>Puissance :</li>
+              <li>Combat :</li>
+            </ul>
+            <ul class="card__properties">
+              <li id="intelligence">100</li>
+              <li id="force">26</li>
+              <li id="vitesse">27</li>
+              <li id="puissance">47</li>
+              <li id="combat">100</li>
+            </ul>
+          </div>
+          <button class="mainButton mainButton--card" id="addButton">
+            Ajouter à ma Team
+          </button>
+        </div>
+      </section>
     </main>
-
-    <button class="mainButton" id="addButton">Ajouter à ma Team</button>
-    <h3>Ma Team</h3>
     <footer class="footer">
       <div class="footer__containerLogo">
-        <svg class="svg">
-          <use href="#icon-twitter"></use>
-        </svg>
-        <svg class="svg svgGithub">
-          <use href="#icon-github"></use>
-        </svg>
-        <svg class="svg">
-          <use href="#icon-linkedin"></use>
-        </svg>
+        <a href="https://twitter.com/quentin_trouve" target="_blank">
+          <svg class="svg">
+            <use href="#icon-twitter"></use>
+          </svg>
+        </a>
+        <a href="https://github.com/quentintrouve" target="_blank">
+          <svg class="svg svgGithub">
+            <use href="#icon-github"></use>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/quentintrouve/" target="_blank">
+          <svg class="svg">
+            <use href="#icon-linkedin"></use>
+          </svg>
+        </a>
       </div>
       <p class="footer__credits">
         Par Quentin Trouvé avec

@@ -3,13 +3,18 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-img {
-  max-width: 100%;
-}
-
 .svg {
   width: $bigSvg;
   height: $bigSvg;
+}
+
+.svg--arrow {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease-in;
+
+  &.is-rotate {
+    transform: rotate(180deg);
+  }
 }
 
 .svgExit {
@@ -20,6 +25,9 @@ img {
 body {
   background-color: $mainBgColor;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 main {
@@ -61,16 +69,16 @@ h3 {
   font-weight: $subtitleFontWeight;
   text-transform: uppercase;
   color: $textColor;
+  margin: 16px 0 24px 0;
 }
 
 h3::before {
   content: "";
   width: 56px;
-  height: 8px;
+  height: 4px;
   position: absolute;
   bottom: -0.1rem;
   left: 2rem;
   background-color: $secondColor;
   border-radius: $radius;
-  z-index: -1;
 }

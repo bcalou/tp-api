@@ -1,49 +1,124 @@
+// SEARCH
+
 .search {
   width: 100%;
-  margin-top: 16px;
+  margin: 16px 0 24px 0;
   display: flex;
   justify-content: space-between;
 }
 
+// CARD
+
 .card {
   width: 280px;
-  margin-top: 24px;
+  height: 426px;
   padding: 0px 24px;
   background-color: $secondBgColor;
   box-shadow: $boxShadow;
   border-radius: $radius;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.card--presentation {
+.card__img {
+  position: relative;
+  top: 0;
+  left: -200px;
+  height: 100%;
+  box-shadow: $boxShadow;
+  border-radius: $radius;
+  transition: left 0.5s;
+  z-index: 10;
+
+  &.is-open {
+    left: 10px;
+  }
+
+  img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: $radius;
+    height: 426px;
+  }
+}
+
+.card__content {
+  width: 158px;
   height: 396px;
+  position: absolute;
+  top: 16px;
+  right: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  color: $textColor;
+  font-family: $textFamily;
 }
 
 .card__blocTitle {
   width: 158px;
   height: 36px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $secondColor;
   border-radius: $radius;
+
+  p {
+    margin-left: 8px;
+    font-size: 12px;
+  }
 }
 
-.card__content {
-  width: 100%;
+// CARD--PRESENTATION (index.html)
 
+.card__content--presentation {
   p {
     margin-bottom: 16px;
     font-family: $textFamily;
     font-size: $textFontSize;
     font-weight: $textFontWeight;
+    line-height: 19px;
     color: $textColor;
 
-    &:last-child {
-      margin-bottom: 0;
+    a {
+      font-weight: $titleFontWeight;
+      color: $secondColor;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: $actionColor;
     }
   }
+}
+
+.card__text {
+  margin-top: 16px;
+}
+
+// CARD--IDENTITY (homePage.html)
+
+.card__content--hero {
+  display: none;
+}
+
+.card__caracteristic {
+  display: flex;
+  font-size: 12px;
+
+  ul:first-child {
+    margin-right: 8px;
+    font-weight: $subtitleFontWeight;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+.card__properties {
+  font-weight: $titleFontWeight;
+  color: $secondColor;
 }

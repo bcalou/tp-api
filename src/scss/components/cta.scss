@@ -16,7 +16,6 @@ button {
   &:active {
     outline: none;
     border: none;
-    transform: translateY(3px);
   }
 
   &.mainButton {
@@ -27,10 +26,24 @@ button {
     font-weight: $titleFontWeight;
   }
 
+  &.mainButton--card {
+    margin-top: 16px;
+  }
+
   &.search__button {
     width: 40px;
     height: 40px;
   }
+}
+
+.card__imgButton {
+  width: 24px;
+  height: 50px;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  transform: translateY(-50%);
 }
 
 // INPUT
