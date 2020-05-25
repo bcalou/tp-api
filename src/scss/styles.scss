@@ -1,6 +1,11 @@
 @import 'vendors/reset';
+@import 'blocs/navigation';
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #fbfbfb;
   font-family: sans-serif;
   width: 100%;
@@ -10,31 +15,64 @@ img {
   width: 50px;
 }
 
-h1 {
+.title {
   letter-spacing: 3px;
+  font-size: 40px;
+  margin-top: 40px;
+  color: blue;
 }
 
 .content {
   margin-top: 80px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .container {
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.486);
+  transition: all 0.3s;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 20vh;
-  margin: 40px;
+  height: 30vh;
+  margin: 20px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 15px 10px rgba(204, 204, 204, 0.295);
+  }
 
   &__name {
     font-weight: bold;
     font-size: 20px;
   }
 
+  &__id {
+    margin-top: 20px;
+  }
+
+  &__type {
+    margin-top: 10px;
+  }
+
   img {
     margin-top: 20px;
+  }
+}
+
+.random {
+  border: 1px solid rgba(128, 128, 128, 0.486);
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+  margin-top: 80px;
+  width: 95%;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 15px 10px rgba(204, 204, 204, 0.295);
   }
 }
