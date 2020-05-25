@@ -1,35 +1,3 @@
-/* const apiKey = 'd9cc2a498a814a236ed258184dbc142d';
-const apiURL = 'http://api.openweathermap.org/data/2.5/weather';
-const $metButton = document.getElementById('metButton');
-const $result = document.getElementById('result');
-
-
-function getMeteo(){
-    fetch(getMeteoURL()) 
-    .then(res => 
-        {console.log(res.data)
-    })
-} 
-
-function getMeteoURL() {
-    return `${apiURL}?q=Paris&appid=${apiKey}`;
-}
-
-
-$metButton.addEventListener('click', function() {
-    $result.innerHTML = "data"
-}); */
-
-/* const apiURL = 'https://api.wheretheiss.at/v1/satellites/25544';
-
-async function getISS() {
-    const response = await fetch(apiURL);
-    const data = await response.json();
-    console.log(data);
-}
-
-getISS(); */
-
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 const result = document.getElementById('result');

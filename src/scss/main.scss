@@ -98,11 +98,10 @@ header {
                 position: absolute;
                 right: -20px;
                 left: -20px;
-                bottom: -4px;
+                bottom: -8px;
                 height: 3px;
                 background: $pink;
                 display: inline-block;
-                border-radius: 50px;
             }
 
             div {
@@ -118,6 +117,52 @@ header {
                 font-size:16px;
                 cursor: pointer;
                 padding: 4px 10px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        margin-top: 32px;
+        left:50%;
+        transform: translate(-50%, -50%);
+
+        form {
+            width: 300px;
+        }
+
+        input {
+            height: 30px;
+            max-width: 1000%;
+        }
+
+        button {
+            width: 100px;
+        }
+    }
+
+    .result {
+        h2 {
+            font-size: 40px;
+            margin: 24px;
+        }
+
+        .song-list {
+            left: 50%;
+            transform: translate(-50%, 0);
+    
+            li {
+                width: 300px;
+    
+                &::after{
+                    content: "";
+                    position: absolute;
+                    right: -00px;
+                    left: -0px;
+                    height: 2px;
+                }
             }
         }
     }
