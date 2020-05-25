@@ -7,12 +7,18 @@
   --blue: #519afb;
   font-size: 16px;
 }
-
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   color: white;
   font-family: system-ui;
   overflow-x: hidden;
   max-width: 100vw;
+}
+html {
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -21,7 +27,7 @@ body {
 
 .pokedex {
   background-color: var(--blue);
-  width: 400px;
+  width: 100%;
   height: 500px;
   margin: 0 auto;
   border-radius: 10px;
