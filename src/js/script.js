@@ -10,7 +10,7 @@ const fetchPokemon = () => {
         return resp.json();
       })
       .then(data => {
-        getIdPokemon(
+        getPokemon(
           data.name,
           data.id,
           data.types.map(type => type.type.name),
@@ -20,7 +20,7 @@ const fetchPokemon = () => {
   }
 };
 
-function getIdPokemon(name, id, type, i) {
+function getPokemon(name, id, type, i) {
   document.querySelector('.content').innerHTML += ` 
    <div class="container">
   <h2 class="container__name">${name}</h2>
