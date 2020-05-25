@@ -3,6 +3,12 @@
   --maintext: #8a8a8e;
   --secondarytext: #c5c5c7;
   --secondarycolor: #cccccc;
+  --smalltext: 16px;
+  --smallline: 24px;
+  --smalltitle: 28px;
+  --mediumtext: 18px;
+  --mediumline: 27px;
+  --mediumtitle: 32px;
 }
 @import "vendors/reset";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
@@ -11,15 +17,9 @@
 @import "blocs/info.scss";
 
 body {
-  height: 90vh;
+  // height: 90vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-
-  @include medium {
-    height: 85vh;
-    max-height: 720px;
-  }
 }
