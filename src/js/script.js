@@ -11,7 +11,7 @@ $(document).ready(() =>{
   axios.get('https://www.themealdb.com/api/json/v1/1/search.php?s='+searchText)
     .then((response) => {
       console.log(response);
-      let meals = response.data;
+      let meals = response.data.meals;
       console.log(meals);
       
       let output = '';
@@ -19,9 +19,9 @@ $(document).ready(() =>{
         output += `
         <div class="col-md-3">
         <div class="well text-center">
-        <img src="${meals.strMealThumb}"/>
-        <h5>${meals.strMeal}</h5>
-        <a onclick="mealSelected('${meals.idMeal}')"class="btn btn-prymary" href="#">Meal Details</a>
+        <img src="${meal.strMealThumb}"/>
+        <h5>${meal.strMeal}</h5>
+        <a onclick="mealSelected('${meal.idMeal}')"class=" btn btn-primary" href="#">Meal Details</a>
         </div>
         </div>
         `;
