@@ -2,22 +2,22 @@
 
 body {
   background-color: rgb(59, 153, 216);
+  text-align: center;
+  font-family: "EastSeaDokdo-Regular";
 }
 header {
   text-align: center;
   margin-top: 20px;
 }
+
 img {
-  width: 400px;
+  max-width: 50%;
 }
-body {
-  text-align: center;
-  font-family: "EastSeaDokdo-Regular";
-}
+
 section {
-  font-size: 40px;
-  color: white;
   display: inline-block;
+  font-size: 35px;
+  color: white;
   margin: 50px;
 }
 
