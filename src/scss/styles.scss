@@ -1,5 +1,19 @@
 @import 'vendors/reset';
 
-body {
-  background-color: lightblue;
+main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+main div {
+  background-color: #f1e5b5;
+  display: flex;
+  flex-direction:column ;
+  align-items: center;
+  margin: 15px;
+}
+
+img{
+  width: 100px;
 }
