@@ -36,13 +36,15 @@ form {
 
 #responseAge , #responseCount {
   color: white;
-  border: 1px solid black;
+  border: 1px solid white;
   height: 150px;
   width: 250px;
   margin-top: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 19px;
+  padding: 0 5px 0 5px;
 }
 
 

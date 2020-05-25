@@ -14,14 +14,21 @@ $discoverAge.addEventListener("click", function (e) {
     fetch(`${API_URL}?name=${val}`)
         .then(res => res.json())
         .then(res => {
-            let response = res.age == null ? "ton prénom n'est pas connu ! " : " Voilà l'âge moyen de " + val + " dans le monde " + ": " + res.age + " ans. ";
-            $responseAge.value = response;
-            $responseAge.innerHTML = $responseAge.value;
-        }).catch(error => console.log(error));
+            if (val == "") {
+                $responseAge.innerHTML = "Entre un nom valide !"
+            } else {
+                let responseAge = res.age == null ? "Ton prénom n'est pas connu ! " : " Voilà l'âge moyen de " + val + " en France " + ": " + res.age + " ans. ";
+                let responseCount = "Il y a " + res.count + " " + val + " en France " + " ! ";
+                $responseCount.value = responseCount;
+                $responseAge.value = responseAge;
+                $responseAge.innerHTML = $responseAge.value;
+                $responseCount.innerHTML = $responseCount.value;
+            }
+        })
+        .catch(error => console.log(error));
     $enterName.value = "";
 
 });
-
 
 
 
