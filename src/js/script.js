@@ -4,15 +4,16 @@ axios.defaults.baseURL = 'https://kitsu.io/api/edge'
 axios.get('anime')
   .then(res => {
     allFunctionsCalls(res)
-    console.log(res.data.data)
+    console.log("data", res.data.data)
   })
   .catch(err => console.error(err))
 
 const allFunctionsCalls = (res) => {
   animeElement(res);
+  synopsHover(res)
 }
 
-const animeElement = (res) => {
+const animeElement = res => {
   let results = res.data.data;
   results.forEach((result => {
     let image = document.createElement('img')
@@ -23,4 +24,14 @@ const animeElement = (res) => {
     div.append(h2)
     $body.append(image, div)
   }))
+}
+
+const synopsHover = res => {
+  let results = res.data.data;
+  let divsHover = document.querySelectorAll('.descHover')
+  results.forEach((result, index) => {
+    let paraph = document.createElement("p")
+    paraph.append(result.attributes.synopsis)
+    divsHover[index].appendChild(paraph)
+  })
 }

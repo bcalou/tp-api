@@ -32,7 +32,7 @@ img {
   height: 400px;
   border-radius: 6px;
 }
-.hover1 {
+#hover1 {
   position: absolute;
   top: 250px;
   left: 42px;
@@ -47,7 +47,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover2 {
+#hover2 {
   position: absolute;
   top: 720px;
   left: 42px;
@@ -62,7 +62,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover3 {
+#hover3 {
   position: absolute;
   top: 1186px;
   left: 42px;
@@ -77,7 +77,22 @@ img {
     opacity: 0.8;
   }
 }
-.hover4 {
+.descHover {
+  overflow: hidden;
+
+  p {
+    font-family: "sen-reg";
+    color: white;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: left;
+    padding: 15px 15px 0 15px;
+    height: 330px;
+    width: 220px;
+    overflow-y: hidden;
+  }
+}
+#hover4 {
   position: absolute;
   top: 1656px;
   left: 42px;
@@ -92,22 +107,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover4 {
-  position: absolute;
-  top: 1656px;
-  left: 42px;
-  height: 340px;
-  width: 240px;
-  background: blue;
-  opacity: 0;
-  z-index: 2;
-  transition: opacity 0.3s ease-out;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
-}
-.hover5 {
+#hover5 {
   position: absolute;
   top: 2124px;
   left: 42px;
@@ -122,7 +122,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover6 {
+#hover6 {
   position: absolute;
   top: 2592px;
   left: 42px;
@@ -137,7 +137,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover7 {
+#hover7 {
   position: absolute;
   top: 3060px;
   left: 42px;
@@ -152,7 +152,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover8 {
+#hover8 {
   position: absolute;
   top: 3527px;
   left: 42px;
@@ -167,7 +167,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover9 {
+#hover9 {
   position: absolute;
   top: 3994px;
   left: 42px;
@@ -182,7 +182,7 @@ img {
     opacity: 0.8;
   }
 }
-.hover10 {
+#hover10 {
   position: absolute;
   top: 4463px;
   left: 42px;
