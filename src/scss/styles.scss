@@ -1,5 +1,17 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
 body {
   background-color: lightblue;
+}
+.RandomJokeButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .jokeArea {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
