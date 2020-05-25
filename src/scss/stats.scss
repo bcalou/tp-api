@@ -1,0 +1,17 @@
+.pokeStats {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  div {
+    margin-top: 10px;
+  }
+}
+
+.seeStats {
+  background: rgb(24, 120, 120);
+  margin-top: 8px;
+  font-size: 14px;
+  color: whitesmoke;
+  border: none;
+}
