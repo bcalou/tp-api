@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movinfo | OMDb API</title>
     <link rel="stylesheet" href="../scss/styles.scss" />
-    <script src="../js/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="../js/script.js" defer></script>
   </head>
   <body>
     <main class="infos">
@@ -13,9 +17,15 @@
         <h1 class="header__title">Mov!nfo</h1>
       </a>
       <form class="infos__form">
-        <input type="text" placeholder="Movie title" class="infos__input" />
+        <input
+          type="text"
+          id="movie"
+          name="movie"
+          placeholder="Movie title"
+          class="infos__input"
+        />
       </form>
-      <button class="button button--info">Search</button>
+      <button class="button button--info" id="search-button">Search</button>
     </main>
     <article class="movie">
       <h2 class="movie__title">Captain Marvel</h2>
