@@ -4,22 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>POK'BATTLE - FIGHTING ZONE</title>
 
     <link rel="stylesheet" href="scss/styles.scss" />
   </head>
   <body>
-    <h1 class="title">POKEDEX</h1>
+    <div class="header">
+      <h1 class="header__title">POK'BATTLE</h1>
+      <h1 class="header__subtitle">minimalist.</h1>
+    </div>
 
     <nav class="navigation">
       <ul class="navigation__links">
-        <li class="is-active"><a href="index.html">pokedex</a></li>
-        <li><a href="battle.html">battle</a></li>
+        <li><a href="index.html">pokedex</a></li>
+        <li class="is-active"><a href="battle.html">fighting zone</a></li>
       </ul>
     </nav>
 
-    <div class="battle"></div>
+    <div class="battle">
+      <div class="battle__player1 player"></div>
+      <div class="battle__player2 player"></div>
+    </div>
 
-    <script src="js/script.js"></script>
+    <label for="number">Choose your pokemon!</label>
+    <input type="number" id="test" placeholder="enter a number" />
+    <input type="submit" id="submit" value="valide moi ca gros bg" />
+
+    <script src="js/battle.js"></script>
   </body>
 </html>

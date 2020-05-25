@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &__title {
+    letter-spacing: 3px;
+    font-size: 40px;
+    margin-top: 20px;
+    color: blue;
+    font-weight: bold;
+  }
+  &__subtitle {
+    margin-top: 20px;
+    letter-spacing: 14px;
+  }
+}

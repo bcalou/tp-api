@@ -1,5 +1,8 @@
 @import 'vendors/reset';
+
+@import 'blocs/header';
 @import 'blocs/navigation';
+@import 'blocs/battle';
 
 body {
   display: flex;
@@ -7,7 +10,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #fbfbfb;
-  font-family: sans-serif;
+  font-family: Verdana, sans-serif;
   width: 100%;
   color: #202020;
 
@@ -19,13 +22,6 @@ body {
 
 img {
   width: 80px;
-}
-
-.title {
-  letter-spacing: 3px;
-  font-size: 40px;
-  margin-top: 40px;
-  color: blue;
 }
 
 .content {
