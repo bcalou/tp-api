@@ -4,7 +4,6 @@ let URL = 'https://www.themealdb.com/api/json/v1/1/'
 const $name = document.querySelector('.name')
 const $btn = document.querySelector('.btn')
 const $btn_random = document.querySelector('.btn_random')
-
 const $recipe = document.querySelector('.recipe')
 const $recipe__instructions = document.querySelector('.recipe__instructions')
 const $image = document.querySelector('.image')
@@ -13,12 +12,6 @@ const $ingredients = document.querySelector('.ingredients')
 const $country = document.querySelector('.country')
 const $country__icon = document.querySelectorAll('.country__icon')
 const $cards = document.querySelector('.cards')
-
-
-
-
-
-
 
 
 $btn.addEventListener('click', () => {
@@ -43,6 +36,8 @@ $btn_random.addEventListener('click', () => {
 
 
 function showText(facts) {
+    $recipe.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)'
+    $ingredients.classList.add('ingredients_style')
     $recipe__instructions.textContent = '';
     $title.textContent = '';
     $ingredients.textContent = '';
@@ -63,18 +58,6 @@ function showText(facts) {
     }
 }
 
-
-function error(value) {
-    $recipe__instructions.textContent = `Aucune recette trouver a ce nom : ${value}`
-}
-
-function createEl(type, content, src, srcContent, elClass) {
-    const el = document.createElement(type)
-    el.setAttribute(src, srcContent)
-    el.className = elClass
-    el.textContent = content
-    return el
-}
 
 $country__icon.forEach(item => (
     item.addEventListener('click', () => {
@@ -110,25 +93,42 @@ function searchMealById(item) {
 
 function showIdMeal(facts) {
     $cards.textContent = ''
-    card = createEl('div', null, null, null, 'card__img--id')
+    const card = createEl('div', null, null, null, 'card__img--id')
     card.appendChild(createEl('img', null, 'src', facts.meals[0].strMealThumb))
     cardDetails = createEl('div', null, null, null, 'cards__details')
+    cardDetails__ul = createEl('ul')
     cardDetails.appendChild(createEl('p', facts.meals[0].strMeal))
+
+
+
     recipe__instructions = createEl('ol', null, null, null, 'recipe__instructions')
     for (let i = 1; i < 20; i++) {
         if (facts.meals[0][`strIngredient${i}`]) {
-            cardDetails.appendChild(recipe__instructions.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}`)))
+            cardDetails__ul.appendChild(recipe__instructions.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}`)))
         }
     }
+    cardDetails.appendChild(cardDetails__ul)
 
+    cardDetails.appendChild(createEl('a', 'Voir la recette en vidéo', 'href', facts.meals[0].strSource))
     $cards.appendChild(card)
     $cards.appendChild(cardDetails)
 
+
     card.addEventListener('click', () => {
-        console.log(facts.meals[0].strIngredient1);
+        console.log(facts);
     })
 }
 
 
 
+function error(value) {
+    $recipe__instructions.textContent = `Aucune recette trouver a ce nom : ${value}`
+}
 
+function createEl(type, content, src, srcContent, elClass) {
+    const el = document.createElement(type)
+    el.setAttribute(src, srcContent)
+    el.className = elClass
+    el.textContent = content
+    return el
+}

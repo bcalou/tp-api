@@ -17,7 +17,7 @@
   min-height: 500px;
   width: 50%;
   margin: auto;
-	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	// box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
   border-radius: 2px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -35,7 +35,7 @@
   h3 {
     text-align: center;
   }
-  .ingredients {
+  .ingredients_style {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
