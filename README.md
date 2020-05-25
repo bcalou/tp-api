@@ -20,7 +20,7 @@ api.openweathermap.org
 ## Liste des routes sollicitées
 
 - http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=247b84c35424911c499563ba4305dfe2&units=metric
-- À remplir
+- api.openweathermap.org/data/2.5/forecast?id=2988507&appid=247b84c35424911c499563ba4305dfe2&units=metric
 - À remplir
 
 ## Fonctionnement détaillé de l'application
