@@ -1,5 +1,5 @@
 const $cardContainer = document.querySelector('.cards');
-const pokemonMax = 10;
+const pokemonMax = 800;
 
 const fetchPokemon = () => {
   for (let i = 1; i <= pokemonMax; i++) {
