@@ -13,7 +13,7 @@ const fetchPokemon = () => {
         getPokemon(
           data.name,
           data.id,
-          data.types.map(type => type.type.name).join(' | '),
+          data.types.map(type => type.type.name)[0],
           i
         );
       });
@@ -22,7 +22,7 @@ const fetchPokemon = () => {
 
 function getPokemon(name, id, type, i) {
   document.querySelector('.cards').innerHTML += ` 
-   <div class="card">
+   <div class="card card--${type}">
   <h2 class="card__name">${name}</h2>
   <img src="https://pokeres.bastionbot.org/images/pokemon/${i}.png">
   

@@ -15,6 +15,56 @@
     height: 30vh;
     margin: 20px;
     cursor: pointer;
+
+    &--fire {
+      border: 1px solid #ff9c9c;
+    }
+    &--grass {
+      border: 1px solid #5db663;
+    }
+    &--electric {
+      border: 1px solid rgb(238, 205, 41);
+    }
+    &--water {
+      border: 1px solid #60a1be;
+    }
+    &--ground {
+      border: 1px solid #c49a70;
+    }
+    &--rock {
+      border: 1px solid #6e6e6e;
+    }
+    &--fairy {
+      border: 1px solid #c77bd4;
+    }
+    &--poison {
+      border: 1px solid #187e5c;
+    }
+    &--bug {
+      border: 1px solid #cfbfa7;
+    }
+    &--dragon {
+      border: 1px solid #9ab6e9;
+    }
+    &--psychic {
+      border: 1px solid #af91b3;
+    }
+    &--flying {
+      border: 1px solid #8f8f8f;
+    }
+    &--fighting {
+      border: 1px solid #99907e;
+    }
+    &--steel {
+      border: 1px solid #41dba5;
+    }
+    &--dark {
+      border: 1px solid #000100;
+    }
+    &--ghost {
+      border: 1px solid #4544a7;
+    }
+
     &.hidden {
       display: none;
     }

@@ -21,7 +21,7 @@ const fetchPokemon = () => {
 function player1() {
   let numberRandom = Math.floor(Math.random(`id`) * pokemonMax) + 1;
   const player1 = document.querySelector('.battle__player1');
-  player1.innerHTML = `<h2>#${numberRandom}</h2>
+  player1.innerHTML = `<h2>#${numberRandom}</h2> 
   <img src="https://pokeres.bastionbot.org/images/pokemon/${numberRandom}.png">`;
 }
 
