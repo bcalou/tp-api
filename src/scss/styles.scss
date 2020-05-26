@@ -2,6 +2,8 @@
 
 @import 'blocs/header';
 @import 'blocs/navigation';
+@import 'blocs/search';
+
 @import 'blocs/battle';
 
 body {
@@ -41,6 +43,9 @@ img {
   height: 30vh;
   margin: 20px;
   cursor: pointer;
+  &.hidden {
+    display: none;
+  }
   &:hover {
     box-shadow: 0 15px 10px rgba(204, 204, 204, 0.295);
   }

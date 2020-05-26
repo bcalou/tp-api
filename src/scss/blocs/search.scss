@@ -1,0 +1,16 @@
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  &__name {
+    width: 40%;
+    height: 40px;
+    border: 1px solid #b6b6b6;
+    padding-left: 10px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
