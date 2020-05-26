@@ -12,11 +12,11 @@ npm run dev
 JE SAIS PAS ENCOREEE :'(
 
 ## URL de l'API utilisée
-https://pokeapi.co/
+https://pokeapi.co/v2
 
 ## Liste des routes sollicitées
 
-- À remplir
+- GET /api/v2/move/{id or name}/
 - À remplir
 - À remplir
 
