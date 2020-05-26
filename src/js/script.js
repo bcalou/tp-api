@@ -22,7 +22,7 @@ function getMovieInfos(movie) {
         $notFoundArticle.classList.add("not-found--visible");
         console.log("error");
       } else {
-        $notFoundArticle.classList.remove("not-found-visible");
+        $notFoundArticle.classList.remove("not-found--visible");
         console.log("fine");
 
         editArticle(res.data);
