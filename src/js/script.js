@@ -1,5 +1,27 @@
 var pokemonList = document.createDocumentFragment();
 const numberOfPokemon = 807;
+const colors={
+    bug : "#285436",
+     dark : "#000100",
+     dragon : "#46919f",
+     electric : "#e7e805",
+     fairy : "#a41c4c",
+     fighting :"#a64219",
+     fire : "#ba2724",
+     flying : "#507089",
+     ghost : "#383774",
+     grass : "#008842",
+    ground : "#b6791f",
+     ice : "#8cd5f5",
+     normal : "#815c66",
+     poison : "#6e2a9f",
+    psychic : "#b22f7b",
+     rock : "#561c05",
+     steel : "#677e76",
+    water : "#0452e3",
+};
+
+const main_types = Object.keys(colors);
 
 for (let i = 1; i <= numberOfPokemon; i++) {
     const pokemonCard = document.createElement('div');
@@ -20,18 +42,47 @@ for (let i = 1; i <= numberOfPokemon; i++) {
 function getPokemonInfos(data) {
     const pokemonInfosFragment = document.createDocumentFragment();
 
+
+
     const pokemonName = document.createElement('p');
     pokemonName.classList.add('pokemon__name')
     pokemonName.textContent = `${data.name}`;
     pokemonInfosFragment.appendChild(pokemonName);
 
+
+
     const pokemonArtwork = document.createElement('img');
     pokemonArtwork.src = ` https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
     pokemonInfosFragment.appendChild(pokemonArtwork);
 
-    const pokemonType = document.createElement('p');
-    pokemonType.textContent = data.types.map(type => type.type.name).join(' ');
+
+
+    const pokemonType = document.createElement('div');
+    const pokemonCard = document.getElementById(`${data.id}`)
+    pokemonType.classList.add('pokemon__types');
+    const typesArray = data.types.map(type => type.type.name)
+    typesArray.forEach(typeName => {
+        const pokemonTypeName =document.createElement('p');
+        pokemonTypeName.classList.add('type',`${typeName}`)
+        pokemonTypeName.textContent = `${typeName}`;
+        pokemonType.appendChild(pokemonTypeName)
+    });
+    
+    const type = main_types.find(type => typesArray[0].indexOf(type) > -1);
+    const fistTypeColor = colors[type];
+    if(typesArray.length===1){
+        pokemonCard.style.borderColor = fistTypeColor
+    }
+    else{
+        const type = main_types.find(type => typesArray[1].indexOf(type) > -1);
+        const SecTypeColor = colors[type];
+        pokemonCard.style.borderImageSource = `linear-gradient(90deg, ${fistTypeColor},${SecTypeColor}`;
+    }
+    
+    
     pokemonInfosFragment.appendChild(pokemonType);
+
+
 
     const pokemonDetails = document.createElement('div');
     const pokemonHeight = document.createElement('p');

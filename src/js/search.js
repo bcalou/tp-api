@@ -4,11 +4,11 @@ if ($searchBar !== null) {
   $searchBar.addEventListener('input', () => {
     document.querySelectorAll('.pokemon__card').forEach(pokemonCard =>{
       var pokemonName = pokemonCard.querySelector(".pokemon__name").textContent;
-      if(!pokemonName.startsWith($searchBar.value.toLowerCase())){
-        pokemonCard.classList.add("hidden");
+      if(pokemonName.startsWith($searchBar.value.toLowerCase())){
+        pokemonCard.classList.remove("hidden");
       }
       else{
-        pokemonCard.classList.remove('hidden');
+        pokemonCard.classList.add('hidden');
       };
     })
     if(document.querySelectorAll(".pokemon__card.hidden").length ===numberOfPokemon){
