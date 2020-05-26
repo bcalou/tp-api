@@ -32,8 +32,8 @@
 
 .movie {
   width: 90%;
-  height: 70vh;
   display: flex;
+  min-height: 30vh;
   flex-direction: column;
   margin-top: 70px;
   font-family: "Open Sans", sans-serif;
@@ -108,5 +108,6 @@
     font-weight: 600;
     font-size: var(--smalltitle);
     text-align: center;
+    margin-top: 40px;
   }
 }
