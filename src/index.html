@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../assets/img/haw-weather.png" />
     <link rel="stylesheet" href="./scss/styles.scss" />
-    <script src="../src/js/script.js"></script>
+    <!-- <script src="../src/js/script.js"></script> -->
     <title>How is my Weather?</title>
   </head>
   <body>
@@ -15,23 +15,33 @@
 
     <section class="today_w">
       <form>
-        <p>Today</p>
+        <p>Today°</p>
       </form>
-
       <button id="today">Search!</button>
+      <br />
+      <br />
+      <div id="todaycontent"></div>
     </section>
 
     <section class="in5days_w">
-      <p>In 5 days</p>
+      <p>In 5 days°</p>
       <button id="in5days">Search!</button>
+
+      <br />
+      <br />
+      <div id="latercontent"></div>
     </section>
 
     <section class="yourCity_w">
       <p>
-        Search your city weather:
+        Search your city weather°:
         <input id="city" placeholder="Ex: London" />
       </p>
       <button id="yourCity">Search!</button>
+      <br />
+      <br />
+      <div id="result3"></div>
     </section>
   </body>
+  <script src="../src/js/script.js"></script>
 </html>
