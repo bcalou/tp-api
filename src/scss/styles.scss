@@ -7,57 +7,22 @@ body {
 
 .hero {
   padding: 2rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-}
-.red-banner {
-  background-color: rgba(252, 27, 27, 0.815);
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__text {
-    color: #fff;
-    font-size: 14px;
-    animation: linear fadeOut 2.5s infinite;
-  }
-  &__logoDanger {
-    width: 24px;
-    animation: linear jump 1s infinite;
-    margin-right: 0.2rem;
-  }
 }
 
-@keyframes jump {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-0.1rem);
-  }
-  50% {
-    transform: translateY(-0.2rem);
-  }
-  75% {
-    transform: translateY(-0.1rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+.landing {
+  font-family: omnes-narrow, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(29, 82, 197);
+  font-size: 48px;
+  margin: 0.5rem 1rem;
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+  &__hashtags {
+    font-size: 32px;
+    color: #3e3e3e;
   }
 }
 
@@ -65,13 +30,12 @@ body {
   padding-top: 2rem;
   margin: 0.5rem;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 2px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: #fff;
   position: relative;
 
   &__title {
-    border-bottom: 1px solid rgba(27, 39, 50, 0.2);
     padding-bottom: 5px;
     margin-right: 0.5rem;
   }
@@ -92,37 +56,51 @@ body {
 }
 
 .dataContainer {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  padding: 1rem 0;
+  margin: 1rem 0.5rem;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 5rem;
+  }
+
+  &__dataWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      font-size: 12px;
+      color: #3e3e3e;
+    }
+  }
+
   &__data {
-    font-size: 14px;
-    color: #fff;
-    padding: 1rem 0.5rem;
+    font-size: 24px;
+    color: rgb(224, 56, 56);
+    padding: 0.5rem 0.5rem;
     border-radius: 0.2rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    font-family: maple-web, sans-serif;
+    font-weight: 700;
+    font-style: normal;
   }
   &__data--date {
     color: #3e3e3e;
+    font-size: 16px;
   }
   &__data--confirmed {
-    background: rgb(100, 153, 223);
+    color: rgba(13, 170, 26, 0.897);
   }
-  &__data--recovered {
-    background: rgb(48, 216, 104);
-  }
-  &__data--critical {
-    background: rgba(224, 222, 89, 0.911);
-  }
-  &__data--deaths {
-    background: rgb(243, 62, 30);
-  }
-}
-
-.global-infos {
-  display: none;
-
-  &.open {
-    display: initial;
-  }
+  // &__data--recovered {
+  //   background: rgb(48, 216, 104);
+  // }
+  // &__data--critical {
+  //   background: rgba(224, 222, 89, 0.911);
+  // }
+  // &__data--deaths {
+  //   background: rgb(243, 62, 30);
+  // }
 }
 
 .country-wrapper {

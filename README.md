@@ -2,11 +2,12 @@
 
 ## But de l'application en une phrase
 
-Obtenir les dernières statistiques sur la crise sanitaire du Covid-19.
+Obtenez les dernières statistiques et articles en date sur la crise sanitaire du Covid-19 concernant le pays de votre choix.
 
 ## URL de l'API utilisée
 
 api.covid19api.com
+https://api.smartable.ai
 
 ## Liste des routes sollicitées
 
