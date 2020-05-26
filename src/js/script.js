@@ -1,8 +1,8 @@
-const API_GEN3 = `https://pokeapi.co/api/v2/generation/3/`;
-const pokemonMax = 800;
+const $cardContainer = document.querySelector('.cards');
+const pokemonMax = 10;
 
 const fetchPokemon = () => {
-  for (let i = 0; i <= pokemonMax; i++) {
+  for (let i = 1; i <= pokemonMax; i++) {
     const API_URL = `https://pokeapi.co/api/v2/pokemon/${i}`;
 
     fetch(API_URL)
@@ -21,15 +21,60 @@ const fetchPokemon = () => {
 };
 
 function getPokemon(name, id, type, i) {
-  document.querySelector('.cards').innerHTML += ` 
-   <div class="card card--${type}">
-  <h2 class="card__name">${name}</h2>
-  <img src="https://pokeres.bastionbot.org/images/pokemon/${i}.png">
-  
-  <p class="card__id">#${id}</p>
-  <p class="card__type">${type}</p>
-  
-</div>`;
+  document.querySelector('.cards').innerHTML += '';
+  const card = createCardElement({
+    type: 'div',
+    content: '',
+    class: `card card--${type}`,
+    parent: $cardContainer
+  });
+
+  createCardElement({
+    type: 'h2',
+    content: `${name}`,
+    class: 'card__name',
+    parent: card
+  });
+
+  createCardImage(
+    `https://pokeres.bastionbot.org/images/pokemon/${i}.png`,
+    card
+  );
+
+  createCardElement({
+    type: 'p',
+    content: `#${id}`,
+    class: 'card__id',
+    parent: card
+  });
+
+  createCardElement({
+    type: 'p',
+    content: `${type}`,
+    class: 'card__type',
+    parent: card
+  });
+}
+
+function createCardElement(elementCards) {
+  const element = document.createElement(elementCards.type);
+
+  element.textContent = elementCards.content;
+
+  if (elementCards.class) {
+    element.setAttribute('class', elementCards.class);
+  }
+  if (elementCards.parent) {
+    elementCards.parent.appendChild(element);
+  }
+  return element;
+}
+
+function createCardImage(src, parent) {
+  const image = document.createElement('img');
+
+  image.setAttribute('src', src);
+  parent.appendChild(image);
 }
 
 fetchPokemon();
