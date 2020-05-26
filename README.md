@@ -1,5 +1,8 @@
 # TP API
 
+school project
+Only mobile device
+
 ## Installation
 
 ```

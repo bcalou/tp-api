@@ -1,14 +1,17 @@
-const endpoint: string = "https://newsapi.org/v2";
-const API_key: string = "519203cf48914461a65a6d8908306907";
-const proxyUrl: string = 'https://cors-anywhere.herokuapp.com/'
+import {
+  endpoint,
+  API_key, 
+  proxyUrl, 
+  $search_forms, 
+  $language, 
+  $pageSize,
+  $sortBy,
+  $category,
+  $refreshButton
+  } from "./const";
 
-const $search_forms: NodeListOf<Element> = document.querySelectorAll('.search-form');
-const $language: HTMLElement = document.getElementById('language');
-const $pageSize: HTMLElement = document.getElementById('pageSize');
-const $sortBy: HTMLElement = document.getElementById('sortBy');
-const $country: HTMLElement = document.getElementById('country');
-const $category: HTMLElement = document.getElementById('category');
-const $refreshButton: HTMLElement = document.getElementById('refresh');
+// INTERFACES
+import { Article, CreateElement, Values } from "./interface";
 
 let $articlesContainer: HTMLElement = document.getElementById('articlesContainer');
 
@@ -19,31 +22,6 @@ let pageSizeData: number;
 let sortBy: string;
 let category: string;
 
-
-// INTERFACES
-
-interface Article {
-  title: string,
-  urlToImage: string,
-  description: string,
-  url: string,
-  publishedAt: string,
-}
-
-interface CreateElement {
-  type: string;
-  content?: string;
-  urlToImage?: string;
-  url?: string;
-  parent?: HTMLElement;
-}
-
-interface Values {
-  data: string | number,
-  $element: HTMLElement,
-  type: string
-  
-}
 
 
 $search_forms.forEach(search_form => {
