@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Api google news</title>
     <link rel="stylesheet" href="scss/styles.scss" type="text/css"/>
-    <script src="js/script.js" async></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <h1>Recherche d'article par mots clés</h1>
@@ -15,11 +15,11 @@
       <fieldset>
         <legend>Nom du sujet recherché</legend>
       <label for="name">Recherche :</label>
-      <input type="text" input="search" id="search"></input>
-      <button type="submit">Rechercher</button>
+      <input type="search" class="search" name="q" placeholder="Recherche sur google news" required></input>
+      <button id="val" type="button">Valider</button>
       </fieldset>
     </form>
 
-    <div class="articleContainer"></div>
+    <article class="articleContainer"></article>
   </body>
 </html>

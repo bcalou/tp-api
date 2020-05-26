@@ -1,6 +1,18 @@
-@import "vendors/reset.scss";
+@import 'vendors/reset';
 
 body {
   background-color: black;
   color: white;
+}
+
+input:invalid ~ span:after {
+  content: '✖';
+  padding-left: 5px;
+  position: absolute;
+}
+
+input:valid ~ span:after {
+  content: '✓';
+  padding-left: 5px;
+  position: absolute
 }
