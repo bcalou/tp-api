@@ -1,6 +1,6 @@
 .searchBar{
     width: 100vw;
-    height: 5vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,13 +8,23 @@
 
     &__label{
         color: white;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Fjalla One', sans-serif;
     }
 
     &__input{
         margin-left: 10px;
         border: none;
-        background-color: rgba(78, 5, 20, 0.993);
+        background-color: white;
+        color: crimson;
+    }
+
+    &__click{
+        border: none;
+        padding: 2px 10px;
+        background-color: crimson;
         color: white;
+        font-size: 14px;
+        margin-left: 5px;
+        font-family: 'Fjalla One', sans-serif;
     }
 }

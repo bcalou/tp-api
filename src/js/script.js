@@ -1,9 +1,11 @@
 console.log('Hello world');
-
+//create const to stock URL from API
 const Api_Url = "https://pokeapi.co/api/v2/pokemon"
 const $container = document.getElementById('container')
+const pokemonForm = document.querySelector("form");
+const $input = document.querySelector('.searchBar__input[name=pokemon]')
 
-
+//this function do a request to get object from API
 function getPokemons(){
   try {
     return fetch(`${Api_Url}/?limit=50`)
@@ -16,11 +18,12 @@ function getPokemons(){
 }
 getPokemons()
 
+
+//this function do a request to show all the pokemon dynamically in HTML
 function showPokemon(pokemon) {
-  // console.log(pokemon)
     $container.innerHTML = 
     pokemon.map((element) => {
-      console.log(element)
+      // console.log(element)
       return`
         <div class="container__cardsPokemon">
           <p class="container__namePokemon">${element.name}</p>
@@ -29,8 +32,8 @@ function showPokemon(pokemon) {
         </div>
       `
     }).join('');
-}
-
+  }
+//this function get all the img associate to the index of all pokemon id
 window.getThePokemon = function(URL){
   try {
     return fetch(URL)
@@ -40,3 +43,23 @@ window.getThePokemon = function(URL){
     console.log(error)
   }
 }
+
+
+// const $addPokemon = document.querySelector('.searchBar__click')
+
+
+function searchPokemon(){
+  str = $input.value;
+  if (str.length > 0) {
+    $input.value = "";
+    console.log(str)
+  }
+}
+
+
+pokemonForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  searchPokemon()
+  showPokemon(event)
+});
+
