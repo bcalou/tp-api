@@ -3,6 +3,7 @@ const API_KEY = "12976118";
 
 const $movieTitleInput = document.getElementById("movie");
 const $searchButton = document.getElementById("search-button");
+const $notFoundArticle = document.querySelector(".not-found");
 
 // Return the input value
 function getMovieTitle(input) {
@@ -15,7 +16,17 @@ function getMovieInfos(movie) {
     .get(`${API_URL}/?apikey=${API_KEY}&t=${movie}`)
     .then((res) => {
       console.log(res);
-      editArticle(res.data);
+      console.log(res.data.Response);
+
+      if (res.data.Response === "False") {
+        $notFoundArticle.classList.add("not-found--visible");
+        console.log("error");
+      } else {
+        $notFoundArticle.classList.remove("not-found-visible");
+        console.log("fine");
+
+        editArticle(res.data);
+      }
     })
     .then((error) => {
       console.log(error);

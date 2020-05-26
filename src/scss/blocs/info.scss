@@ -83,7 +83,7 @@
   &__infos {
     width: 90%;
     text-align: center;
-    font-family: "Open Sans", sans serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 600;
     line-height: var(--smallline);
     font-size: var(--smalltext);
@@ -94,5 +94,18 @@
       line-height: var(--mediumline);
       font-size: var(--mediumtext);
     }
+  }
+}
+
+.not-found {
+  display: none;
+
+  &--visible {
+    display: block;
+    width: 90%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: var(--smalltitle);
+    text-align: center;
   }
 }
