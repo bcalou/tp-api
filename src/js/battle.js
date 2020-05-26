@@ -31,13 +31,11 @@ function player2() {
    <img src="https://pokeres.bastionbot.org/images/pokemon/${id}.png">`;
 }
 
-//
-const $input = document.getElementById('test');
-const $submit = document.getElementById('submit');
-
-console.log($input);
-$submit.addEventListener('click', () => {
-  console.log($input.value);
-});
+function generatePokemons() {
+  document.querySelector('.generate').addEventListener('click', () => {
+    fetchPokemon();
+  });
+}
 
 fetchPokemon();
+generatePokemons();
