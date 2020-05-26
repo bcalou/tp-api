@@ -69,14 +69,14 @@ function getPokemonInfos(data) {
     });
     
     const type = main_types.find(type => typesArray[0].indexOf(type) > -1);
-    const fistTypeColor = colors[type];
+    const firstTypeColor = colors[type];
     if(typesArray.length===1){
-        pokemonCard.style.borderColor = fistTypeColor
+        pokemonCard.style.borderColor = firstTypeColor
     }
     else{
         const type = main_types.find(type => typesArray[1].indexOf(type) > -1);
         const SecTypeColor = colors[type];
-        pokemonCard.style.borderImageSource = `linear-gradient(90deg, ${fistTypeColor},${SecTypeColor}`;
+        pokemonCard.style.borderImageSource = `linear-gradient(90deg, ${firstTypeColor},${SecTypeColor}`;
     }
     
     
