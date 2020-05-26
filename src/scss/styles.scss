@@ -1,9 +1,11 @@
 @import "vendors/reset";
+@import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Tenali+Ramakrishna&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 
 body {
   background-color: rgb(59, 153, 216);
   text-align: center;
-  font-family: "EastSeaDokdo-Regular";
+  font-family: "East Sea Dokdo", cursive;
 }
 header {
   text-align: center;
@@ -22,7 +24,7 @@ section {
 }
 
 button {
-  font-family: "BalsamiqSans-Regular";
+  font-family: "Balsamiq Sans", cursive;
   border: solid 1px white;
   color: white;
   border-radius: 8px;
