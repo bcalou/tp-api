@@ -15,15 +15,12 @@ function getMovieInfos(movie) {
   axios
     .get(`${API_URL}/?apikey=${API_KEY}&t=${movie}`)
     .then((res) => {
-      console.log(res);
       console.log(res.data.Response);
 
       if (res.data.Response === "False") {
         $notFoundArticle.classList.add("not-found--visible");
-        console.log("error");
       } else {
         $notFoundArticle.classList.remove("not-found--visible");
-        console.log("fine");
 
         editArticle(res.data);
       }
