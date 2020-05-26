@@ -1,0 +1,42 @@
+.cards {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  .card {
+    border: 1px solid rgba(128, 128, 128, 0.486);
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    margin: 20px;
+    cursor: pointer;
+    &.hidden {
+      display: none;
+    }
+    &:hover {
+      box-shadow: 0 15px 10px rgba(204, 204, 204, 0.295);
+    }
+
+    &__name {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &__id {
+      margin-top: 20px;
+    }
+
+    &__type {
+      margin-top: 10px;
+    }
+
+    img {
+      margin-top: 20px;
+    }
+  }
+}

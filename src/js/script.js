@@ -21,13 +21,13 @@ const fetchPokemon = () => {
 };
 
 function getPokemon(name, id, type, i) {
-  document.querySelector('.content').innerHTML += ` 
-   <div class="container">
-  <h2 class="container__name">${name}</h2>
+  document.querySelector('.cards').innerHTML += ` 
+   <div class="card">
+  <h2 class="card__name">${name}</h2>
   <img src="https://pokeres.bastionbot.org/images/pokemon/${i}.png">
   
-  <p class="container__id">#${id}</p>
-  <p class="container__type">${type}</p>
+  <p class="card__id">#${id}</p>
+  <p class="card__type">${type}</p>
   
 </div>`;
 }
