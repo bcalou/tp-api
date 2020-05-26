@@ -7,6 +7,7 @@ if ($searchBar !== null) {
     $pokemonCard.forEach(pokemonCard => {
       const pokemonName = pokemonCard.querySelector('.container__name')
         .textContent;
+
       if (!pokemonName.startsWith($searchBar.value.toLowerCase())) {
         pokemonCard.classList.add('hidden');
       } else {
