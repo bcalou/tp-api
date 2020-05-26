@@ -2,7 +2,7 @@ const API_GEN3 = `https://pokeapi.co/api/v2/generation/3/`;
 const pokemonMax = 800;
 
 const fetchPokemon = () => {
-  for (let i = 750; i <= pokemonMax; i++) {
+  for (let i = 0; i <= pokemonMax; i++) {
     const API_URL = `https://pokeapi.co/api/v2/pokemon/${i}`;
 
     fetch(API_URL)
