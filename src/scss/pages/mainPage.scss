@@ -12,6 +12,10 @@
   height: 50vh;
   width: 100vw;
   background-color: $white;
+  background-image: url("/assets/images/api.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 
   @include desktop-up {
     height: 70vh;
@@ -80,7 +84,7 @@
 
       .foodType__title {
         font-size: 24px;
-        
+
       }
       
     }

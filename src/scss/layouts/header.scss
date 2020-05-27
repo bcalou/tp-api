@@ -13,6 +13,7 @@
   &__title {
     font-family: $fontCookie;
     font-size: rem(28px);
+    color: $primaryColor;
 
     @include desktop-up {
       font-size: rem(64px);
