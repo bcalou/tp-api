@@ -14,31 +14,31 @@ axios.get('anime')
     return console.error(err)
   })
 
-const animeElement = (res):void => { // Créer chaque élément avec son titre et son image.
-    let results = res.data.data
-    results.forEach((result):void => {
-      let image: HTMLImageElement = document.createElement('img') 
-      let div:HTMLElement = document.createElement('div')
-      div.classList.add('animeEl')
-      let h2:HTMLElement = document.createElement('h2')
-      image.src = result.attributes.posterImage.medium 
-      h2.append(result.attributes.slug)
-      div.append(h2)
-      $body.append(image, div) 
-    })
-  }
-  
-  const synopsHover = (res):void => { // Mettre les Synopsis sur les affiche d'animes pour les voir au hover.
-    let results = res.data.data
-    let divsHover = document.querySelectorAll<HTMLElement>('.descHover')
-    results.forEach((result:Data, index:number):void => {
-      let paraph:HTMLElement = document.createElement("p")
-      paraph.textContent = result.attributes.synopsis
-      divsHover[index].append(paraph)
-    })
-  }
-
 const allFunctionsCallsAnimes = (res) => {
     animeElement(res)
     synopsHover(res)
+}
+
+const animeElement = (res):void => { // Créer chaque élément avec son titre et son image.
+    let results = res.data.data
+    results.forEach((result):void => {
+        let image: HTMLImageElement = document.createElement('img') 
+        let div:HTMLElement = document.createElement('div')
+        div.classList.add('animeEl')
+        let h2:HTMLElement = document.createElement('h2')
+        image.src = result.attributes.posterImage.medium 
+        h2.append(result.attributes.slug)
+        div.append(h2)
+        $body.append(image, div) 
+    })
+}
+  
+const synopsHover = (res):void => { // Mettre les Synopsis sur les affiche d'animes pour les voir au hover.
+    let results = res.data.data
+    let divsHover = document.querySelectorAll<HTMLElement>('.descHover')
+    results.forEach((result:Data, index:number):void => {
+        let paraph:HTMLElement = document.createElement("p")
+        paraph.textContent = result.attributes.synopsis
+        divsHover[index].append(paraph)
+    })
 }
