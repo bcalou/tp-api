@@ -8,19 +8,16 @@ npm run dev
 ```
 
 ## But de l'application en une phrase
-
-À remplir
+Rechercher des animes et des mangas
 
 ## URL de l'API utilisée
-
-À remplir
+https://kitsu.io/api/edge
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- '/'
+- '/mangas'
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Changer de page et (dans le meilleur des cas), rechercher un anime
