@@ -1,9 +1,14 @@
 const baseURL = 'https://api.rawg.io/api/';
 
 const games = document.querySelector('.games');
-var ordering = document.getElementById('ordering');
 const gamesFragment = document.createDocumentFragment();
+
+var ordering = document.getElementById('ordering');
 var orderingValue = ordering.value;
+
+var platforms = document.getElementById('platforms');
+var platformsValue = platforms.value;
+
 fetchGames();
 
 ordering.addEventListener('change', () => {
@@ -11,15 +16,22 @@ ordering.addEventListener('change', () => {
     fetchGames();
 });
 
+platforms.addEventListener('change', () => {
+    platformsValue = platforms.value;
+    fetchGames();
+});
+
 function fetchGames() {
     ordering.disabled = true;
+    platforms.disabled = true;
     games.innerHTML = '';
-    const url = ''.concat(baseURL, 'games?ordering=', orderingValue ,'&page_size=20');
+    const url = ''.concat(baseURL, 'games?ordering=', orderingValue, '&parent_platforms=', platformsValue,'&page_size=20');
     fetch(url)
     .then(result => result.json())
     .then(data => {
         createGames(data);
         ordering.disabled = false;
+        platforms.disabled = false;
     });
 }
 
@@ -31,7 +43,7 @@ function createGames(data) {
                 class: 'game',
                 parent: gamesFragment
             });
-            
+
             createElement({
                 type: 'img',
                 class: 'game-img',
