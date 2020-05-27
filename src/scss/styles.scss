@@ -1,5 +1,20 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
 body {
-  background-color: lightblue;
+  background-color: white;
+}
+
+.artists {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  &__img {
+    width: 20%;
+    border-radius: 100%;
+  }
+
+  &__name {
+    font-size: small;
+  }
 }

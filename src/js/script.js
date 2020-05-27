@@ -1,16 +1,52 @@
-fetch(
-  "https://qrcode-monkey.p.rapidapi.com/qr/custom?size=600&file=png&config=%257B%2522bodyColor%2522%253A%20%2522%25230277BD%2522%252C%20%2522body%2522%253A%2522mosaic%2522%257D&data=https%253A%252F%252Fwww.qrcode-monkey.com",
-  {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "qrcode-monkey.p.rapidapi.com",
-      "x-rapidapi-key": "0e3b2f113cmsh6119eec9b8692f4p1ae835jsnad6863134eb4",
-    },
-  }
-)
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((err) => {
-    console.log(err);
+const search = document.getElementById("search");
+const API_URL_searchLomepal = "https://api.deezer.com/search?q=lomepal";
+const Artist_Lomepal = "https://api.deezer.com/artist/27";
+const Artist_picture = "https://api.deezer.com/editorial";
+// _____________________________________________________________________________________________________________
+const $factButton = document.getElementById("search");
+const $Container = document.getElementById("factsContainer");
+const $artiste = document.getElementById("artists");
+
+function getFactsUrl() {
+  return `${API_URL_searchLomepal}`;
+}
+
+function toggleButton($button) {
+  $button.disabled = !$button.disabled;
+}
+
+function getSelectedArtist() {
+  return document.querySelector('input[name="animal"]:checked').value;
+}
+
+function showFacts(facts) {
+  $Container.textContent = "";
+  facts.data.forEach((fact) => {
+    // image
+    $fact = document.createElement("img.artist__img");
+    $fact.setAttribute("src", `${facts.picture}`);
+    $Container.appendChild($fact);
+    // Nom de l'artiste
+    $fact = document.createElement("a");
+    $fact.innertHTML = Artist_Lomepal.name;
+    $Container.appendChild($fact);
   });
+}
+
+function getFacts() {
+  $Container.textContent = "Chargement en cours...";
+
+  return fetch(getFactsUrl())
+    .then((res) => res.json())
+    .then((facts) => showFacts(facts));
+}
+
+search.addEventListener("click", function () {
+  toggleButton(search);
+  getFacts().then(() => toggleButton(search));
+});
+
+$artiste.addEventListener("click", function () {
+  toggleButton(Artist_Lomepal);
+  getFacts().then(() => toggleButton(Artist_Lomepal));
+});
