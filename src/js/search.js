@@ -55,3 +55,4 @@ selectTypes.addEventListener('change',()  =>{
       }
   }) 
 })
+

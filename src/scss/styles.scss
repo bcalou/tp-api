@@ -4,12 +4,33 @@ html{
 }
 
 body{
-  margin: 100px 10% 0px 10%;
+  color: rgb(25,25,25);
+  margin: 0px 10% 0px 10%;
   background-color: rgb(255, 255, 255);
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.header{
+  margin: 20px 0px 60px 0px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title{
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #383774 0%, #0452e3 12.5%, #46919f 25%, #285436 37.5%,#008842 50%, #e7e805 62.5%, #b6791f 75%, #a64219 87.5%, #ba2724 100% );
+    background-clip: text;
+    text-decoration: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__subtitle{
+    font-size:20px;;
+    color: rgb(158,158,158);
+  }
 }
 main {
   width: 100%;
@@ -19,9 +40,14 @@ main {
 }
 .pokemon__searching{
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  
+  display: flex;
+  justify-content: space-evenly;
+}
+.input__name{
+  width: 200px;
+}
+.select__types{
+  width: 200px;
 }
 .pokemon__card{
   border: 6px solid;
