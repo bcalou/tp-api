@@ -21,9 +21,11 @@
   "homepage": "https://github.com/bcalou/tp-api#readme",
   "devDependencies": {
     "parcel": "^1.12.4",
-    "sass": "^1.26.5"
+    "sass": "^1.26.5",
+    "typescript": "^3.9.3"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "pexels": "^1.0.1"
   }
 }
