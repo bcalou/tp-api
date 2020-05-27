@@ -32,14 +32,11 @@ const animeElement = (res):void => { // Créer chaque élément avec son titre e
 }
 
 const synopsHover = (res):void => { // Mettre les Synopsis sur les affiche d'animes pour les voir au hover.
-  let results = res.data.data;
-  console.log("test type ", typeof(results))
-  console.log("test attributes type ", typeof(results.attributes))
-  console.error("test synops ", typeof(results.attributes.synopsis));
-  let divsHover = document.querySelectorAll<HTMLElement>('.descHover') 
+  let results = res.data.data
+  let divsHover = document.querySelectorAll<HTMLElement>('.descHover')
   results.forEach((result:Data, index:number):void => {
     let paraph:HTMLElement = document.createElement("p")
-    paraph.append(result.attributes.synopsis)
-    divsHover[index].append(paraph) 
+    paraph.textContent = result.attributes.synopsis
+    divsHover[index].append(paraph)
   })
 }
