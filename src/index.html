@@ -6,9 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+
   </head>
   <body>
-    <h1>Hello World</h1>
+    <section class="wrapper">
+    <div class="pokedex" id="pokedex">
+      <div class="pokedex-left">
+         <h1 class="pokeTitle">PokéCalou</h1>
+         <div class="pokedex-left-center">
+            <div class="pokedex-screen" id="screen">
+              <img  src="" alt="" id="pokeimg">
+            </div>
+          </div>
+         <form  action="#" class="formName">
+           <label for="name">Nom ou numéro</label>
+           <input type="text" name="name" id="name" placeholder="raichu">
+           <button class="findName" type="submit">Trouver mon pokémon</button>
+         </form>
+    
+      </div>
+      <div class="pokedex-right-back">
+        <div id="description" class="chart">
+        </div>
+        <div class="pokedex-right-back-header">
+        </div>
+      </div>
+      <div class="pokedex-right-front">
+          <div class="pokedex-right-front-header">
+          </div>
+        </div>
+    </div>
+      </div>
+    </div>
+
+  </section>
+    <script src="./js/poke.js"></script>
   </body>
 </html>
