@@ -13,7 +13,9 @@ Application qui donne la météo.
 
 ## URL de l'API utilisée
 
-https://api.meteo-concept.com"
+https://api.meteo-concept.com
+
+https://geo.api.gouv.fr/communes
 
 ## Liste des routes sollicitées
 
@@ -21,8 +23,10 @@ https://api.meteo-concept.com"
 
 ## Fonctionnement détaillé de l'application
 
-1. Sélectionner le jour.
+1. Sélectionner la ville.
 
-2. Appuyer sur le bouton "GO".
+2. Sélectionner le jour.
 
-3. Une image s'affichera ( soleil / pluie ).
+3. Appuyer sur le bouton "GO".
+
+4. Une image s'affichera ( soleil / pluie ).
