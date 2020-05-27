@@ -1,0 +1,40 @@
+.searching{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  @include medium{
+    flex-direction: row;
+  }
+  &__input,&__select{
+    width: 200px;
+    height: 24px;
+    border: none;
+  }
+  &__input:focus{
+    outline: none;
+  }
+  &__input{
+    border-bottom: 2px solid var(--maincolor);
+    color: var(--maincolor);
+  }
+  &__select{
+    border: none;
+    color: white;
+    background-color: var(--maincolor);
+    margin-top: 16px;
+    @include medium{
+      margin-top: 0px;
+    }
+  }
+  &__result{
+    color: var(--maincolor);
+    font-size: 24px;
+    margin-top: 40px;
+    display: none;
+    &.visible{
+      display: block;
+    }
+  }
+}

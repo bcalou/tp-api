@@ -25,12 +25,12 @@ const main_types = Object.keys(colors);
 
 for (let i = 1; i <= numberOfPokemon; i++) {
     const pokemonCard = document.createElement('div');
-    pokemonCard.classList.add('pokemon__card')
+    pokemonCard.classList.add('card')
     pokemonCard.id = i;
     pokemonList.appendChild(pokemonCard);
 }
 
-document.querySelector('main').appendChild(pokemonList);
+document.querySelector('.cards').appendChild(pokemonList);
 
 for (let i = 1; i <= numberOfPokemon; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
@@ -45,7 +45,7 @@ function getPokemonInfos(data) {
 
 
     const pokemonName = document.createElement('p');
-    pokemonName.classList.add('pokemon__name')
+    pokemonName.classList.add('card__name')
     pokemonName.textContent = `${data.name}`;
     pokemonInfosFragment.appendChild(pokemonName);
 
@@ -53,17 +53,18 @@ function getPokemonInfos(data) {
 
     const pokemonArtwork = document.createElement('img');
     pokemonArtwork.src = ` https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
+    pokemonArtwork.classList.add('card__img')
     pokemonInfosFragment.appendChild(pokemonArtwork);
 
 
 
     const pokemonType = document.createElement('div');
     const pokemonCard = document.getElementById(`${data.id}`)
-    pokemonType.classList.add('pokemon__types');
+    pokemonType.classList.add('card__types');
     const typesArray = data.types.map(type => type.type.name)
     typesArray.forEach(typeName => {
         const pokemonTypeName =document.createElement('p');
-        pokemonTypeName.classList.add('type',`${typeName}`)
+        pokemonTypeName.classList.add('card__type',`${typeName}`)
         pokemonTypeName.textContent = `${typeName}`;
         pokemonType.appendChild(pokemonTypeName)
     });

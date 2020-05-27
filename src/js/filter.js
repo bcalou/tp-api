@@ -1,16 +1,16 @@
 const $searchBar = document.querySelector('.searching__input');
-const $pokemonCards =document.querySelectorAll('.pokemon__card');
+const $pokemonCards =document.querySelectorAll('.card');
 const $selectTypes = document.querySelector(".searching__select")
 const numberOfPokemon = 807;
 
 $searchBar.addEventListener('input', () => {
   $pokemonCards.forEach(pokemonCard =>{
-    var pokemonName = pokemonCard.querySelector(".pokemon__name").textContent;
+    var pokemonName = pokemonCard.querySelector(".card__name").textContent;
     if ($selectTypes.value == 0) {
       filterNameOnly(pokemonCard, pokemonName);
     }
     if ($selectTypes.value !== 0) {
-      const pokemonTypes = pokemonCard.querySelectorAll(".type");
+      const pokemonTypes = pokemonCard.querySelectorAll(".card__type");
       filterNameAndTypes(pokemonCard, pokemonName, pokemonTypes);
     }
   })
@@ -19,12 +19,12 @@ $searchBar.addEventListener('input', () => {
 
 $selectTypes.addEventListener('change',()  =>{
   $pokemonCards.forEach(pokemonCard =>{
-    const pokemonTypes = pokemonCard.querySelectorAll(".type");
+    const pokemonTypes = pokemonCard.querySelectorAll(".card__type");
     if($searchBar.value == ''){
       filterTypeOnly(pokemonCard, pokemonTypes);
     }
     if($searchBar.value !== ''){
-      var pokemonName = pokemonCard.querySelector(".pokemon__name").textContent;
+      var pokemonName = pokemonCard.querySelector(".card__name").textContent;
       filterNameAndTypes(pokemonCard, pokemonName, pokemonTypes);
     }
   }) 
@@ -94,8 +94,8 @@ function filterNameAndTypes(pokemonCard, pokemonName, pokemonTypes) {
 }
 
 function noResultDisplay() {
-  const $result = document.querySelector('.result');
-  const $cardHidden = document.querySelectorAll(".pokemon__card.hidden");
+  const $result = document.querySelector('.searching__result');
+  const $cardHidden = document.querySelectorAll(".card.hidden");
   const $cardVisible = numberOfPokemon-$cardHidden.length;
   $result.classList.add('visible');
   if($cardHidden.length === numberOfPokemon){
