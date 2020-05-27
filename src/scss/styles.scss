@@ -1,5 +1,58 @@
-@import 'vendors/reset';
+@import "vendors/reset";
+@import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Tenali+Ramakrishna&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 
 body {
-  background-color: lightblue;
+  background-color: rgb(59, 153, 216);
+
+  font-family: "East Sea Dokdo", cursive;
+}
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+img {
+  max-width: 50%;
+}
+.weather {
+  text-align: center;
+}
+section {
+  display: inline-block;
+
+  font-size: 35px;
+  color: white;
+  margin: 50px;
+}
+
+input {
+  font-family: "Balsamiq Sans", cursive;
+  border: none;
+  height: 20px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: rgb(150, 199, 51);
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  color: white;
+  font-family: "Helvetica Neue", cursive;
+}
+
+button {
+  font-family: "Balsamiq Sans", cursive;
+  border: solid 1px white;
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(150, 199, 51);
+  transition-duration: 0.4s;
+  font-size: 15px;
+}
+button:hover {
+  background-color: rgb(199, 230, 137);
+  color: white;
 }
