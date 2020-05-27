@@ -6,9 +6,41 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
 		<link rel="stylesheet" href="scss/styles.scss" />
-		<script src="js/script.js"></script>
+		<script src="js/script.js" defer></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 	</head>
 	<body>
-		<h1>Hello</h1>
+		
+			<header class="header">
+				<h1 class="header__title">Bienvenue chez les sorciers</h1>
+			</header>
+		<div class="container">
+			<p class=" mb-4">Clique sur le Choixpeau pour savoir ta famille..</p>
+			<div class="d-flex">
+			<button id="getText" class="btn btn-primary mr-4"> <img src="./assets/img/Choixpeau.svg"></img></button>
+			<button id="getUsers" class="btn btn-success mr-4">Text 2</button>
+			<button id="getPosts" class="btn btn-warning mr-4">Text 3</button>
+		</div>
+			<hr>
+			 <div id="outpout"></div>
+			 
+			<!-- <form id="addPost">
+				<div class="form-group">
+					<input type="text" id="title" placeholder="Title" class="form-control">
+				</div>
+				<div class="form-group">
+					<textarea id="body" placeholder="Body" class="form-control">
+				</div>
+				<input type="submit" value="Submit" class="btn btn-secondary">
+			</form>
+		</div>  -->
+			
+			<!-- <button id="coucou"><img src="./assets/img/Choixpeau.svg"></img></button>
+			<p>Clique sur le Choixpeau pour savoir quel sera ta maison..</p>
+			<div id="factsContainer"></div>
+			<button id="yo">Clickkk</button>
+			<div id="yocontainer"></div> -->
+		</div>
 	</body>
 </html>
