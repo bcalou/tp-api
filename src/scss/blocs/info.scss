@@ -30,10 +30,13 @@
   }
 }
 
+.movies {
+  min-height: 30vh;
+}
+
 .movie {
   width: 90%;
   display: flex;
-  min-height: 30vh;
   flex-direction: column;
   margin-top: 70px;
   font-family: "Open Sans", sans-serif;
