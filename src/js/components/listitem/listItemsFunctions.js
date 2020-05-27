@@ -32,7 +32,7 @@ export function addRecipeToFavorites(e) {
         sourceUrl: data.sourceUrl,
         id: data.id,
       };
-      recipesList.push(recipeInfo);
+      recipesList.unshift(recipeInfo);
       localStorage.setItem('favoritesRecipes', JSON.stringify(recipesList));
       e.target.textContent = 'Ajouté :)';
       e.target.className = 'btn btn-primary';
