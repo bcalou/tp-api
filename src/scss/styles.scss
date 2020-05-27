@@ -4,13 +4,21 @@
 @import 'global/utilities';
 @import 'layouts/header';
 @import 'pages/mainPage';
-@import 'pages/researchPage';
+@import 'pages/pageAllRecipes';
+@import 'pages/result.scss';
 
-body {
- * {
-  
+html {
+  * {
     box-sizing: border-box;
   }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+body {
+
 
   scroll-behavior: smooth;
   background-color: $testcolor;

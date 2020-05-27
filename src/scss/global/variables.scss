@@ -22,6 +22,19 @@ $fontCookie: "Cookie-Regular";
   color: $black;
 }
 
+.title {
+  font-size: 24px;
+  padding: 20px;
+  text-align: center;
+}
+
+.foodTitle {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20%;
+  position: relative;
+}
+
 /************* BREAKPOINTS ************/
 
 $tablet-up: 768px;
