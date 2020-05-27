@@ -9,18 +9,18 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Afficher des images de chiens
 
 ## URL de l'API utilisée
 
-À remplir
+https://dog.ceo/dog-api/
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+-https://dog.ceo/api/breeds/image/random
+-https://dog.ceo/api/breed/${getSelectedBreeds()}/images/random
+
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+afficher des images de chiens aléatoires ou par races
