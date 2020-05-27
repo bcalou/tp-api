@@ -1,6 +1,6 @@
 const URL_POKEMON = `https://pokeapi.co/api/v2/pokemon/`;
 
-const pokemonMax = 50;
+const pokemonMax = 200;
 const movesMax = 400;
 
 // FETCH ALL POKEMONS WITH API
@@ -24,7 +24,7 @@ const fetchPokemon = () => {
 };
 
 // GENERATE RANDOM ATTACK
-function generateAttack() {
+function generateAttack(player) {
   let attackRandom = Math.floor(Math.random(`moves`) * movesMax) + 1;
 
   if (attackRandom > movesMax) {
@@ -40,13 +40,12 @@ function generateAttack() {
     .then(data => {
       power = data.power;
       attackName = data.name;
-      console.log(attackName);
-      console.log(power);
       player1(data.power, data.name);
     });
 }
+generateAttack(player1);
+generateAttack(player2);
 
-generateAttack();
 // CREATE PLAYER1
 function player1() {
   const player1 = document.querySelector('.battle__player1');
@@ -54,19 +53,22 @@ function player1() {
 
   createCardElement({
     type: 'p',
+    class: 'battle__pokemon',
     content: `${name}`,
     parent: player1
   });
 
   createCardElement({
     type: 'p',
+    class: 'battle__attacks',
     content: `Attack : ${attackName}`,
     parent: player1
   });
 
   createCardElement({
     type: 'p',
-    content: `Attack : ${power}`,
+    class: 'battle__powers',
+    content: `Power: ${power}`,
     parent: player1
   });
 
@@ -81,7 +83,7 @@ function player2() {
   let numberRandom = Math.floor(Math.random(`id`) * pokemonMax) + 1;
 
   const player2 = document.querySelector('.battle__player2');
-  player2.innerHTML = `<h2>#${id}</h2>
+  player2.innerHTML = `<h2 class="battle__pokemon">#${id}</h2> <h3 class="battle__attacks">ATTACk : ${attackName}</h3> <h3 class="battle__powers"> Power:${power}</h3>
    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${numberRandom}.png">`;
 }
 
@@ -89,6 +91,7 @@ function player2() {
 function generatePokemons() {
   document.querySelector('.generate').addEventListener('click', () => {
     fetchPokemon();
+    generateAttack(player2);
   });
 }
 

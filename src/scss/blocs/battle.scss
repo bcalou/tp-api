@@ -8,6 +8,22 @@
   display: grid;
   text-align: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  &__who {
+    font-weight: bold;
+    color: rgb(128, 128, 231);
+  }
+  &__attacks {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  &__pokemon {
+    font-weight: bold;
+  }
+  &__powers {
+    color: green;
+    margin-top: 12px;
+  }
 
   img {
     width: 120px;
