@@ -35,8 +35,6 @@ export function addRecipeToFavorites(e) {
       recipesList.push(recipeInfo);
       localStorage.setItem('favoritesRecipes', JSON.stringify(recipesList));
     });
-  } else {
-    console.log('deja la');
   }
 }
 
