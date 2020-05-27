@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../scss/styles.scss" />
-  </head>
-  <body>
-    <h1>Hello World</h1>
-    <main></main>
-  </body>
-  <script src="../js/script.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="dns-prefetch" href="https://api.rawg.io/api/">
+		<link rel="preconnect" href="https://api.rawg.io/api/">
+		<link rel="stylesheet" href="../scss/styles.scss" />
+	</head>
+
+	<body>
+		<main>
+			<h1>Find your next game</h1>
+			<div class="parameters">
+				<div>
+					<label for="ordering">Order by:</label>
+					<select name="ordering" id="ordering">
+						<option value="-released">Release date</option>
+						<option value="-popularity" selected>Popularity</option>
+						<option value="-rating">Average rating</option>
+					</select>
+				</div>
+			</div>
+			<div class="games">
+			</div>
+		</main>
+	</body>
+	<script src="../js/script.js"></script>
 </html>
