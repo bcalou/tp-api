@@ -30,11 +30,11 @@ en français
 ## Liste des routes sollicitées
 
 - API superhero
-   GET /{key}/search/{keywords}     //Recherche le nom en mettant un ou plusieurs mots clés
-   GET /{key}/{id}                  //Pour récupérer les données d'une seul personnage
+GET /{key}/search/{keywords}     //Recherche le nom en mettant un ou plusieurs mots clés
+GET /{key}/{id}                  //Pour récupérer les données d'une seul personnage
 
 - API systran
-    GET ?source=${lang input}&target=${lang output}&input=${text} //Traduit un text par exemple en input:"en" et en output: "fr" 
+GET ?source=${lang input}&target=${lang output}&input=${text} //Traduit un text par exemple en input:"en" et en output: "fr" 
     HEADERS : {
         "x-rapidapi-host": "systran-systran-platform-for-language-processing-v1.p.rapidapi.com",
         "x-rapidapi-key": {Your API key}
