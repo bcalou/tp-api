@@ -2,7 +2,7 @@ const API_URL = "https://www.omdbapi.com/";
 const API_KEY = "12976118";
 
 const $movieTitleInput = document.getElementById("movie");
-const $searchButton = document.getElementById("search-button");
+const $movieForm = document.querySelector(".infos__form");
 const $notFoundArticle = document.querySelector(".not-found");
 
 // Return the input value
@@ -86,6 +86,7 @@ function createArticleImage(src, parent) {
   parent.appendChild(image);
 }
 
-$searchButton.addEventListener("click", () => {
+$movieForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   getMovieInfos(getMovieTitle($movieTitleInput));
 });
