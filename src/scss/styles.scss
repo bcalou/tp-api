@@ -252,7 +252,6 @@ Form and element form
   
       @media screen and (max-width: 550px) {
         width: 100%;
-        max-width: 150px;
       }
   
       &:focus {
@@ -311,7 +310,7 @@ Form and element form
 Container after keypress input
 -------------------------------*/
 .top-container {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -320,30 +319,47 @@ Container after keypress input
   border-bottom: 1px solid $border-color;
   background-color: $bg-accent;
   padding: 5px 0;
+  height: 60px;
+  justify-content: space-between;
 
   .hero-logo {
-    width: 60px;
-    height: 60px;
-    margin: 5px;
+    width: 50px;
+    height: 50px;
+    margin: 1px 1px 1px 3px;
     @include tablet{
       margin: 0 20px;
     }
   }
 
   .searchForm {
-    height: 60px;
+    height: 50px;
+    flex-grow: 1;
     display: flex;
     align-items: start;
+    justify-content: space-between;
+
     &_inputContainer {
-      margin: 10px;
-      width: 50vw;
+      flex-grow: 1;
+      margin: 0;
+      @include tablet{
+       width: 60%;
+      }
       &-input {
         width: 100%;
+        height: 80%;
       }
     }
 
     &_button {
-      margin: 13px;
+      margin: 3px 2px 0 4px;
+      padding: 12px 15px;
+      @include tablet{
+        margin: 3px 20px 0 20px;
+      }
+
+      @include desktop{
+        margin: 3px 20px 0 30px;
+      }
       .mobile {
         display: block;
         @include tablet{
@@ -373,7 +389,7 @@ Movies
     width: 85%;
   }
   max-width: 1050px;
-  margin: auto;
+  margin: 50px auto;
   padding: 30px 20px;
   flex-direction: row;
   flex-wrap: wrap;
