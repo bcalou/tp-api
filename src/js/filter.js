@@ -94,11 +94,19 @@ function filterNameAndTypes(pokemonCard, pokemonName, pokemonTypes) {
 }
 
 function noResultDisplay() {
-  const $noResult = document.querySelector('.noResult');
-  if(document.querySelectorAll(".pokemon__card.hidden").length ===numberOfPokemon){
-    $noResult.classList.add('visible');
+  const $result = document.querySelector('.result');
+  const $cardHidden = document.querySelectorAll(".pokemon__card.hidden");
+  const $cardVisible = numberOfPokemon-$cardHidden.length;
+  $result.classList.add('visible');
+  if($cardHidden.length === numberOfPokemon){
+    $result.textContent = 'No pokemon match your criteria ';
   }
   else {
-    $noResult.classList.remove('visible');
+    if ($cardVisible === 1) {
+      $result.textContent = `${$cardVisible} pokemon match your criteria `;
+    }
+    else{
+      $result.textContent = `${$cardVisible} pokemons match your criteria `;
+    }
   }; 
 }
