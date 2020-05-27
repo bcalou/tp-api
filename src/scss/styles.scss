@@ -1,5 +1,44 @@
 @import 'vendors/reset';
+@import 'blocs/apod.scss';
+@import 'config/medias.scss';
+
 
 body {
-  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../assets/jupiter2.jpg);
+  background-position: top;
+  background-size: 550%;
+  background-repeat: no-repeat;
+  
 }
+
+
+
+
+@include small {
+  body {
+    background-size: 250%;
+  }
+}
+
+@include medium {
+  body {
+    background-size: 200%;
+  }
+}
+
+@include large {
+  body {
+    background-size: 150%;
+  }
+}
+
+@include xxl {
+  body {
+    background-size: 120%;
+  }
+}
+
