@@ -16,14 +16,11 @@ img {
   max-width: 50%;
 }
 .weather {
-  float: right;
-  position: relative;
-  left: -50%;
+  text-align: center;
 }
 section {
-  float: left;
-  position: relative;
-  left: 50%;
+  display: inline-block;
+
   font-size: 35px;
   color: white;
   margin: 50px;
