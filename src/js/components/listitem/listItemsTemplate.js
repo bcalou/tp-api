@@ -19,6 +19,9 @@ export function setRecipesList(option) {
 
   createElement({
     type: 'h6',
+    attributes: {
+      class: 'text-center',
+    },
     content: option.recipe.title,
     $parent: $recipeContent,
   });

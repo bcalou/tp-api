@@ -23,6 +23,7 @@ https://spoonacular.com/food-api/
 ## Fonctionnement détaillé de l'application
 
 - Ceci est une application monopage codée sans frameworks.
+- Bootstrap a été utilisé pour le css (autant que possible, le responsive est géré directement..)
 - L'utilisateur peut chercher une recette parmis des milliers, selon différents critères.
 - Puis il peut consulter une recette en détail ou l'ajouter à sa liste de favoris. Celle ci est mise en memoire grâce au localstorage.
 
