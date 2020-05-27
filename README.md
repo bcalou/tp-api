@@ -32,7 +32,7 @@ https://spoonacular.com/food-api/
 
 - Ceci est une application monopage codée sans frameworks.
 - Bootstrap a été utilisé pour le css (autant que possible, le responsive est géré directement..)
-- L'utilisateur peut chercher une recette parmis des milliers, selon différents critères. Les recettes sont chargées 5 par 5, avec un infinite scrolling.
+- L'utilisateur peut chercher une recette parmis des milliers, selon différents critères. Les recettes sont chargées 5 par 5, avec un infinite scroll.
 - Puis il peut consulter une recette en détail ou l'ajouter à sa liste de favoris. Celle ci est mise en memoire grâce au localstorage.
 
 https://keskon-mange.netlify.app
