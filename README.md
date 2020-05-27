@@ -15,7 +15,6 @@ En manque d'idées pour votre repas? 'Keskon Mange' vous propose des milliers d'
 
 https://spoonacular.com/food-api/
 
-
 ## Liste des routes sollicitées
 
 - Après avoir renseigné un des champs du formulaire, un requette est envoyée à l'api via la route search, qui peut contenir différents critères et renvoi un tableau de recettes.
@@ -23,6 +22,7 @@ https://spoonacular.com/food-api/
 
 ## Fonctionnement détaillé de l'application
 
+- Ceci est une application monopage codée sans frameworks.
 - L'utilisateur peut chercher une recette parmis des milliers, selon différents critères.
 - Puis il peut consulter une recette en détail ou l'ajouter à sa liste de favoris. Celle ci est mise en memoire grâce au localstorage.
 
