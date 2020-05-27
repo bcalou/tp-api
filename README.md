@@ -9,7 +9,7 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+L'application renvoit des blagues selon la catégorie
 
 ## URL de l'API utilisée
 
