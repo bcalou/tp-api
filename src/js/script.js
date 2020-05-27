@@ -30,6 +30,7 @@ function fetchGames() {
     .then(result => result.json())
     .then(data => {
         createGames(data);
+        createLinks();
         ordering.disabled = false;
         platforms.disabled = false;
     });
@@ -39,9 +40,11 @@ function createGames(data) {
     data.results.forEach(result => {
         if (result.background_image) {
             const game = createElement({
-                type: 'div',
+                type: 'a',
+                id: result.id,
                 class: 'game',
-                parent: gamesFragment
+                href: 'infos.html',
+                parent: gamesFragment,
             });
 
             createElement({
@@ -60,6 +63,14 @@ function createGames(data) {
         }
     });
     games.appendChild(gamesFragment);
+}
+
+function createLinks() {
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            localStorage.setItem('id', link.id);
+        });
+    });
 }
 
 function createElement(options) {

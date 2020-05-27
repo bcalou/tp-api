@@ -1,8 +1,10 @@
 main {
+    margin: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    text-align: center;
+    max-width: 1080px;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -16,12 +18,10 @@ h1 {
 }
 
 .games {
-    left: 0;
-    right: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 320px);
-    grid-column-gap: 48px;
-    grid-row-gap: 24px;
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    grid-column-gap: 24px;
+    grid-row-gap: 36px;
     justify-items: center;
     align-items: center;
 }
@@ -34,7 +34,7 @@ label {
 select {
     width: 128px;
     font-size: 16px;
-    margin-left: 4px
+    margin-left: 4px;
 }
 
 img {

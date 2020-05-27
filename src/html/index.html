@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Document</title>
-		<link rel="dns-prefetch" href="https://api.rawg.io/api/">
-		<link rel="preconnect" href="https://api.rawg.io/api/">
-		<link rel="stylesheet" href="../scss/styles.scss" />
-	</head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="dns-prefetch" href="https://api.rawg.io/api/">
+	<link rel="preconnect" href="https://api.rawg.io/api/">
+	<link rel="stylesheet" href="../scss/styles.scss" />
+</head>
 
-	<body>
-		<main>
-			<h1>Find your next game</h1>
-			<div class="parameters">
-				<div>
-					<label for="ordering">Order by:</label>
-					<select name="ordering" id="ordering">
-						<option value="-released">Release date</option>
-						<option value="-popularity" selected>Popularity</option>
-						<option value="-rating">Average rating</option>
-					</select>
-				</div>
-				<div>
-					<label for="platforms">Parent platform:</label>
-					<select name="platforms" id="platforms">
-						<option value="1,2,3,7">All</option>
-						<option value="1">PC</option>
-						<option value="2" selected>PlayStation</option>
-						<option value="3">Xbox</option>
-						<option value="7">Nintendo</option>
-				</div>
+<body>
+	<main>
+		<h1>Find your next game</h1>
+		<div class="parameters">
+			<div>
+				<label for="ordering">Order by:</label>
+				<select name="ordering" id="ordering">
+					<option value="-released">Release date</option>
+					<option value="-popularity" selected>Popularity</option>
+					<option value="-rating">Average rating</option>
+				</select>
 			</div>
-			<div class="games">
+			<div>
+				<label for="platforms">Parent platform:</label>
+				<select name="platforms" id="platforms">
+					<option value="1,2,3,7">All</option>
+					<option value="1">PC</option>
+					<option value="2" selected>PlayStation</option>
+					<option value="3">Xbox</option>
+					<option value="7">Nintendo</option>
 			</div>
-		</main>
-	</body>
-	<script src="../js/script.js"></script>
+		</div>
+		<div class="games">
+		</div>
+	</main>
+</body>
+<script src="../js/script.js"></script>
 </html>
