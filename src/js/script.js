@@ -30,7 +30,9 @@ function laterclick() {
     "http://api.openweathermap.org/data/2.5/forecast?id=2988507&appid=247b84c35424911c499563ba4305dfe2&units=metric";
   let text = get(url);
   let json = JSON.parse(text);
-  var textnode = document.createTextNode(json.list[1].main.temp + "°");
+  var textnode = document.createTextNode(
+    json.list[json.list.length - 1].main.temp + "°"
+  );
   latercontent.innerHTML = "";
   latercontent.appendChild(textnode);
 }
