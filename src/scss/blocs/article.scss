@@ -1,0 +1,31 @@
+@mixin center($center : center) {
+    text-align: $center;
+}
+
+#articlesContainer {
+    #articles{
+.article__h1 {
+    text-align: center;
+    padding-top: 150px;
+    color: black;
+    font-size: 30px;
+         }
+         .article__img {
+            width: 50vw;
+            margin-left: 25%;
+            padding: 20px;
+         }
+         .article__desc {
+             font-size: 18px;
+            @include center()
+         }
+         .article__date {
+             font-size: 16px;
+            @include center()
+         }
+         .article__author {
+             font-size: 14px;
+            @include center()
+         }
+    }
+}

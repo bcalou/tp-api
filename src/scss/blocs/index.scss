@@ -1,0 +1,16 @@
+.background {
+    position: absolute;
+    border: 1px solid black;
+    height: 30vh;
+    width: 100vw;
+    z-index: -10;
+.background__img {
+ position: absolute;
+ background-image: url("../../assets/Pattern-Randomized.svg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100vw;
+ height: 30vh;
+
+}
+}
