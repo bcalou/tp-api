@@ -12,7 +12,10 @@ const $ingredients = document.querySelector('.ingredients')
 const $country = document.querySelector('.country')
 const $country__icon = document.querySelectorAll('.country__icon')
 const $cards = document.querySelector('.cards')
+const $form = document.querySelector('.form')
 
+
+$recipe.style.display = 'none'
 
 $btn.addEventListener('click', () => {
     event.preventDefault()
@@ -36,6 +39,8 @@ $btn_random.addEventListener('click', () => {
 
 
 function showText(facts) {
+
+    $recipe.style.display = 'block'
     $recipe.style.boxShadow = '0px 3px 5px rgba(0,0,0,0.2)'
     $ingredients.classList.add('ingredients_style')
     $recipe__instructions.textContent = '';
@@ -44,18 +49,19 @@ function showText(facts) {
     $image.textContent = '';
     $title.textContent = facts.meals[0].strMeal
 
-    $image.appendChild(createEl('img', null, 'src', facts.meals[0].strMealThumb))
+    $image.appendChild(createEl({ type: 'img', content: null, attribut: 'src', attributContent: facts.meals[0].strMealThumb }))
 
     for (let i = 1; i < 20; i++) {
         if (facts.meals[0][`strIngredient${i}`]) {
-            $ingredients.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]}`))
+            $ingredients.appendChild(createEl({ type: 'li', content: `${facts.meals[0][`strIngredient${i}`]}` }))
         }
     }
     for (let i = 1; i < 20; i++) {
         if (facts.meals[0][`strIngredient${i}`]) {
-            $recipe__instructions.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}`))
+            $recipe__instructions.appendChild(createEl({ type: 'li', content: `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}` }))
         }
     }
+
 }
 
 
@@ -75,10 +81,10 @@ function showCountryMeal(facts) {
     $cards.textContent = ''
 
     facts.meals.forEach(item => {
-        card = createEl('div', null, null, null, 'card')
-        card.appendChild(createEl('img', null, 'src', item.strMealThumb, 'card__img'))
-        card.appendChild(createEl('p', item.strMeal))
-        card.appendChild(createEl('p', 'Decouvrir plus_', null, null, 'linkToMeal'))
+        card = createEl({ type: 'div', content: null, attribut: null, attibutContent: null, class: 'card' })
+        card.appendChild(createEl({ type: 'img', content: null, attribut: 'src', attributContent: item.strMealThumb, class: 'card__img' }))
+        card.appendChild(createEl({ type: 'p', content: item.strMeal }))
+        card.appendChild(createEl({ type: 'p', content: 'Decouvrir plus_', attribut: null, attibutContent: null, class: 'linkToMeal' }))
         $cards.appendChild(card)
         card.addEventListener('click', () => searchMealById(item))
     })
@@ -93,23 +99,30 @@ function searchMealById(item) {
 
 function showIdMeal(facts) {
     $cards.textContent = ''
-    const card = createEl('div', null, null, null, 'card__img--id')
-    card.appendChild(createEl('img', null, 'src', facts.meals[0].strMealThumb))
-    cardDetails = createEl('div', null, null, null, 'cards__details')
-    cardDetails__ul = createEl('ul')
-    cardDetails.appendChild(createEl('p', facts.meals[0].strMeal))
+    const card = createEl({ type: 'div', content: null, attribut: null, attributContent: null, class: 'card__img--id' })
+    card.appendChild(createEl({ type: 'img', content: null, attribut: 'src', attributContent: facts.meals[0].strMealThumb }))
+    cardDetails = createEl({ type: 'div', content: null, attribut: null, attributContent: null, class: 'cards__details' })
+    cardDetails__ul = createEl({ type: 'ul' })
+    cardDetails.appendChild(createEl({ type: 'p', content: facts.meals[0].strMeal }))
 
 
 
-    recipe__instructions = createEl('ol', null, null, null, 'recipe__instructions')
+    recipe__instructions = createEl({ type: 'ol', content: null, attribut: null, attributContent: null, class: 'recipe__instructions' })
     for (let i = 1; i < 20; i++) {
         if (facts.meals[0][`strIngredient${i}`]) {
-            cardDetails__ul.appendChild(recipe__instructions.appendChild(createEl('li', `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}`)))
+            cardDetails__ul.appendChild(recipe__instructions.appendChild(createEl({ type: 'li', content: `${facts.meals[0][`strIngredient${i}`]} - ${facts.meals[0][`strMeasure${i}`]}` })))
         }
     }
     cardDetails.appendChild(cardDetails__ul)
-
-    cardDetails.appendChild(createEl('a', 'Voir la recette en vidéo', 'href', facts.meals[0].strSource))
+    if (facts.meals[0].strSource) {
+        cardDetails.appendChild(createEl({
+            type: 'a', content: 'Voir la recette en détails', attribut: 'href', attributContent: facts.meals[0].strSource, secondAttribut: 'target', secondAttributContent: '_blank'
+        }))
+    } else {
+        cardDetails.appendChild(createEl({
+            type: 'p', content: "La video ne comporte pas de video ou d'article 🧐"
+        }))
+    }
     $cards.appendChild(card)
     $cards.appendChild(cardDetails)
 
@@ -122,12 +135,18 @@ function showIdMeal(facts) {
 
 
 function error(value) {
-    $recipe__instructions.textContent = `Aucune recette trouver a ce nom : ${value}`
+    const errorMessage = createEl({
+        type: 'p',
+        content: `Aucune recette trouver a ce nom : ${value}`,
+        class: 'error'
+    })
+    $recipe__instructions.appendChild(errorMessage)
 }
 
-function createEl(type, content, src, srcContent, elClass) {
+function createEl({ type: type, content: content, attribut: attribut, attributContent: attributContent, class: elClass, secondAttribut: secondAttribut, secondAttributContent: secondAttributContent }) {
     const el = document.createElement(type)
-    el.setAttribute(src, srcContent)
+    el.setAttribute(attribut, attributContent)
+    el.setAttribute(secondAttribut, secondAttributContent)
     el.className = elClass
     el.textContent = content
     return el
