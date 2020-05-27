@@ -6,6 +6,12 @@
 .svg {
   width: $bigSvg;
   height: $bigSvg;
+  cursor: pointer;
+}
+
+.svgBis {
+  width: $smallSvg;
+  height: $smallSvg;
 }
 
 .svg--arrow {
@@ -15,11 +21,6 @@
   &.is-rotate {
     transform: rotate(180deg);
   }
-}
-
-.svgExit {
-  width: $smallSvg;
-  height: $smallSvg;
 }
 
 body {
