@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Get facts about Chuck norris
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.chucknorris.io/jokes/random
 
 ## Liste des routes sollicitées
 
@@ -23,4 +23,4 @@ npm run dev
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Mon prototype peut au clique donner de célèbre blague de Chuck Norris
