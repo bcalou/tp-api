@@ -1,9 +1,10 @@
-import { url, apiKey } from './../../global/constants';
+import { url, apiKey } from '../../settings/constants';
 
 import {
   $form,
   $searchInput,
   $cuisinesSelect,
+  $dietSelect,
   $intolerancesSelect,
   $recipesList,
   $submitButton,
@@ -21,7 +22,7 @@ function recipesQuery(search) {
   return fetch(
     `${url}/recipes/search?apiKey=${apiKey}&query=${search.query}&cuisine=${
       search.cuisine ? search.cuisine : ''
-    }&intolerances=${
+    }&diet=${search.diet ? search.diet : ''}&intolerances=${
       search.intolerances ? search.intolerances : ''
     }&number=${returnresultsLength}&offset=${queryOffset}`
   ).then((response) => response.json());
@@ -37,32 +38,36 @@ function getRecipesList(parameters) {
 }
 
 export function handleInputChanges() {
-  [$searchInput, $cuisinesSelect, $intolerancesSelect].forEach((el) => {
-    el.addEventListener('input', () => {
-      $recipesList.innerHTML = '';
-      $submitButton.disabled = true;
-      if (
-        $searchInput.value ||
-        $intolerancesSelect.value ||
-        $cuisinesSelect.value
-      ) {
-        formInfos.query = $searchInput.value;
-        formInfos.cuisine = $cuisinesSelect.value;
-        formInfos.intolerances = $intolerancesSelect.value;
-
-        recipesQuery(formInfos).then((data) => {
-          totalResultsLength = data.totalResults;
-          $submitButton.textContent = `Voir ${totalResultsLength} résultats`;
-          if (totalResultsLength > 0) {
-            $submitButton.disabled = false;
-          }
-        });
-      } else {
-        $submitButton.textContent = 'Voir';
+  [$searchInput, $cuisinesSelect, $intolerancesSelect, $dietSelect].forEach(
+    (el) => {
+      el.addEventListener('input', () => {
+        $recipesList.innerHTML = '';
         $submitButton.disabled = true;
-      }
-    });
-  });
+        if (
+          $searchInput.value ||
+          $intolerancesSelect.value ||
+          $cuisinesSelect.value ||
+          $dietSelect.value
+        ) {
+          formInfos.query = $searchInput.value;
+          formInfos.cuisine = $cuisinesSelect.value;
+          formInfos.intolerances = $intolerancesSelect.value;
+          formInfos.diet = $dietSelect.value;
+
+          recipesQuery(formInfos).then((data) => {
+            totalResultsLength = data.totalResults;
+            $submitButton.textContent = `Voir ${totalResultsLength} résultats`;
+            if (totalResultsLength > 0) {
+              $submitButton.disabled = false;
+            }
+          });
+        } else {
+          $submitButton.textContent = 'Voir';
+          $submitButton.disabled = true;
+        }
+      });
+    }
+  );
 }
 
 export function submitForm() {

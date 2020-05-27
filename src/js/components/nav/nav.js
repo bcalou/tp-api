@@ -1,4 +1,4 @@
-import { createElement } from '../../global/creatElements';
+import { createElement } from '../../settings/creatElements';
 
 export const $nav = createElement({
   type: 'nav',

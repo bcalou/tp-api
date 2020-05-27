@@ -1,4 +1,4 @@
-import { createElement } from './../../global/creatElements';
+import { createElement } from '../../settings/creatElements';
 
 export const $recipesPageContent = createElement({
   type: 'section',
@@ -145,6 +145,60 @@ cuisineTypes.forEach((cuisine) =>
     $parent: $cuisinesSelect,
   })
 );
+//Regime select
+
+const $diet = createFormGroup();
+
+const dietTypes = [
+  'Gluten Free',
+  'Ketogenic',
+  'Vegetarian',
+  'Lacto-Vegetarian',
+  'Ovo-Vegetarian',
+  'Vegan',
+  'Pescetarian',
+  'Paleo',
+  'Primal',
+  'Whole30',
+];
+
+createElement({
+  type: 'label',
+  attributes: {
+    for: 'diet',
+  },
+  content: 'Régime spécial',
+  $parent: $diet,
+});
+
+export const $dietSelect = createElement({
+  type: 'select',
+  attributes: {
+    class: 'form-control form-control-sm',
+    id: 'diet',
+  },
+  $parent: $diet,
+});
+
+createElement({
+  type: 'option',
+  attributes: {
+    value: '',
+  },
+  content: '--choisir--',
+  $parent: $dietSelect,
+});
+
+dietTypes.forEach((diet) => {
+  createElement({
+    type: 'option',
+    attributes: {
+      value: diet,
+    },
+    content: diet,
+    $parent: $dietSelect,
+  });
+});
 
 //intolerances select
 const $intolerances = createFormGroup();

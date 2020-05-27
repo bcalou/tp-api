@@ -8,7 +8,7 @@ import { setFavoritesRecipesList } from './pages/favorites/favoritesFunctions';
 
 //localStorage.removeItem('favoritesRecipes');
 
-import { createElement } from './global/creatElements';
+import { createElement } from './settings/creatElements';
 import { $nav, $list } from './components/nav/nav';
 import { $recipesPageContent } from './pages/recipes/recipesFormTemplate';
 import { $favoritePageTemplate } from './pages/favorites/favotitesTemplate';

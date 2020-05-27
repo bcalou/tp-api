@@ -1,4 +1,4 @@
-import { url, apiKey } from './../../global/constants';
+import { url, apiKey } from '../../settings/constants';
 import { $favoritesList } from './../../pages/favorites/favotitesTemplate';
 
 function getRecipeInfoById(id) {
