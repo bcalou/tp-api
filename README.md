@@ -6,7 +6,7 @@ Obtenez les dernières statistiques et articles en date sur la crise sanitaire d
 
 ## URL de l'API utilisée
 
-- api.covid19api.com
+- https://covid19-api.com/
 - https://api.smartable.ai/coronavirus
 
 ## Liste des routes sollicitées

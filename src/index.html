@@ -474,13 +474,29 @@
       </svg>
     </section>
     <div id="globalInfos" class="global-infos"></div>
+    <section class="history">
+      <h2 class="country__title">Get the daily report: choose a date</h2>
+      <div class="history__infoWrapper">
+        <form class="form form--history">
+          <input
+            class="form__input"
+            type="date"
+            min="2020-01-22"
+            id="reportDate"
+            name="reportDate"
+          />
+          <input class="form__submit" type="submit" value="get the report" />
+        </form>
+        <div class="history__report"></div>
+      </div>
+    </section>
     <div class="global">
       <h2 class="country__title">Around the world</h2>
       <section class="global__articles articles"></section>
     </div>
     <div class="country">
       <svg
-        class="country__logoArrow"
+        class="country__logoArrow open"
         width="20"
         version="1.1"
         id="Layer_1"
@@ -512,22 +528,23 @@
         </p>
       </div>
 
-      <div class="country__infosWrapper">
+      <div class="country__infosWrapper open">
         <div class="country__headWrapper">
-          <form class="country__countryForm countryForm">
+          <form class="form form--country">
             <input
               type="text"
-              class="countryForm__input"
+              class="form__input"
               id="countryInput"
               name="country"
               placeholder="Enter a country"
             />
-            <input class="countryForm__submit" type="submit" value="Search" />
+            <input class="form__submit" type="submit" value="Search" />
           </form>
           <div id="countryInfos" class="country-infos"></div>
         </div>
         <section class="country__articles articles"></section>
       </div>
     </div>
+    <footer></footer>
   </body>
 </html>

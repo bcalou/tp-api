@@ -161,7 +161,76 @@ const createStatsTemplate = (infos) => {
   return info;
 };
 
-document.querySelector(".countryForm").addEventListener("submit", (e) => {
+document.querySelector(".form--country").addEventListener("submit", (e) => {
   e.preventDefault();
   getCountry(e.target);
+});
+
+const getDate = (form) => {
+  const date = form.querySelector("input[name]").value;
+  if (date) {
+    getReportByDate(date);
+  }
+};
+
+const getReportByDate = (date) => {
+  fetch(
+    `https://covid-19-data.p.rapidapi.com/report/totals?date-format=YYYY-MM-DD&date=${date}`,
+    {
+      headers: {
+        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+        "x-rapidapi-key": "3d86517768msh18b4bf9f9e7c3f5p11f8c5jsn94a6ed37a08b",
+      },
+    }
+  )
+    .then((res) => res.json())
+    .then((res) => displayReport(res[0]))
+    .catch((err) => console.log(err));
+};
+
+let today = new Date();
+let dd = today.getDate() - 1;
+let mm = today.getMonth() + 1;
+let yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = `0${dd}`;
+}
+if (mm < 10) {
+  mm = `0${mm}`;
+}
+today = `${yyyy}-${mm}-${dd}`;
+document.getElementById("reportDate").setAttribute("max", today);
+
+const displayReport = (report) => {
+  document.querySelector(
+    ".history__report"
+  ).innerHTML = `${createReportTemplate(report)}`;
+};
+
+const createReportTemplate = (report) => {
+  const infos = `
+  <div class="dataContainer">
+  <div class="dataContainer__dataWrapper">
+    <p class="dataContainer__data dataContainer__data--date">${report.date}</p>
+  </div>
+  <div class="dataContainer__dataWrapper">
+    <p class="dataContainer__data dataContainer__data--confirmed">${report.confirmed}</p>
+    <span>Confirmed cases</span>
+    </div>
+  <div class="dataContainer__dataWrapper">
+    <p class="dataContainer__data dataContainer__data--recovered">${report.recovered}</p>
+    <span> Recovered</span>
+    </div>
+  <div class="dataContainer__dataWrapper">
+    <p class="dataContainer__data dataContainer__data--deaths">${report.deaths}</p>
+    <span>Deaths</span>
+  </div>
+</div>
+  `;
+  return infos;
+};
+
+document.querySelector(".form--history").addEventListener("submit", (e) => {
+  e.preventDefault();
+  getDate(e.target);
 });
