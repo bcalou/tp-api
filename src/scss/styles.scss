@@ -15,12 +15,18 @@ header {
 img {
   max-width: 50%;
 }
-
-section {
+main {
   display: inline-block;
+}
+section {
+  float: left;
   font-size: 35px;
   color: white;
   margin: 50px;
+}
+
+input {
+  border: none;
 }
 
 button {
@@ -30,7 +36,7 @@ button {
   border-radius: 8px;
   background-color: rgb(150, 199, 51);
   transition-duration: 0.4s;
-  margin-top: 20px;
+  // margin-top: 20px;
   font-size: 15px;
 }
 button:hover {

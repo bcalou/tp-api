@@ -12,7 +12,7 @@
     <header>
       <img src="../assets/img/logo_w.png" alt="image logo" />
     </header>
-
+    <div class="weather">
     <section class="today_w">
       <form>
         <p>Today°</p>
@@ -34,14 +34,20 @@
 
     <section class="yourCity_w">
       <p>
-        Search your city weather°:
-        <input id="city" placeholder="Ex: London" />
+        Search your city weather
+        <div class="input">
+        <input type="text" id="city" placeholder="Ex: London" />
+        </div>
       </p>
-      <button id="yourCity">Search!</button>
-      <br />
-      <br />
-      <div id="result3"></div>
+      <input type="button" id="yourCity" value="Submit"></button>
+      <br>
+      <br>
+      <div id="citycontent">
+        
+      </div>
     </section>
+
+  </div>
   </body>
   <script src="../src/js/script.js"></script>
 </html>

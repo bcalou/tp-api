@@ -20,8 +20,6 @@ function todayclick() {
 var today = document.getElementById("today");
 today.addEventListener("click", todayclick, false);
 
-let input = document.getElementById("city");
-
 function laterclick() {
   let url =
     "http://api.openweathermap.org/data/2.5/forecast?id=2988507&appid=247b84c35424911c499563ba4305dfe2&units=metric";
@@ -35,3 +33,18 @@ function laterclick() {
 
 var later = document.getElementById("in5days");
 later.addEventListener("click", laterclick, false);
+
+let input = document.getElementById("city").value;
+input = Object.keys(input);
+console.log(input);
+
+function cityclick() {
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${input}&appid=247b84c35424911c499563ba4305dfe2&units=metric`;
+  let text = get(url);
+  let json = JSON.parse(text);
+  var textnode = document.createTextNode(json.main.temp);
+  citycontent.appendChild(textnode);
+  console.log(input);
+}
+
+yourCity.addEventListener("click", cityclick, false);
