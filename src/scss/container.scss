@@ -1,4 +1,5 @@
 .container{
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   width: auto;
@@ -20,6 +21,20 @@
     color: rgb(6, 33, 41);
   }
 
+  &__namePokemon{
+    font-size: 18px;
+  }
+
+  &__caract{
+    font-size: 12px;
+  }
+
+  &__descriptions{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+  }
+
   &__imgPokemon{
     width: 55%;
     object-fit: contain;
@@ -32,5 +47,18 @@
     color: white;
     font-size: 14px;
     font-family: 'Fjalla One', sans-serif;
+  }
+
+  &__infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 30vh;
+    width: 100vw;
+  }
+
+  &__infoTitle{
+    color: rgb(6, 33, 41);
   }
 }
