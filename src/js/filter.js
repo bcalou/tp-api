@@ -1,6 +1,6 @@
-const $searchBar = document.querySelector('.input__name');
+const $searchBar = document.querySelector('.searching__input');
 const $pokemonCards =document.querySelectorAll('.pokemon__card');
-const $selectTypes = document.querySelector(".select__types")
+const $selectTypes = document.querySelector(".searching__select")
 const numberOfPokemon = 807;
 
 $searchBar.addEventListener('input', () => {

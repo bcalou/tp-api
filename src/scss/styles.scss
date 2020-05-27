@@ -2,7 +2,6 @@
 html{
   cursor :url(../assets/pokeball.png), auto;
 }
-
 body{
   color: rgb(25,25,25);
   margin: 0px 10% 0px 10%;
@@ -13,7 +12,7 @@ body{
   align-items: center;
 }
 .header{
-  margin: 20px 0px 60px 0px ;
+  margin: 20px 0px 40px 0px ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,16 +34,36 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
 }
-.pokemon__searching{
+.searching{
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
-}
-.input__name{
-  width: 200px;
-}
-.select__types{
-  width: 200px;
+  @media  (min-width: 600px){
+    flex-direction: row;
+  }
+  &__input,&__select{
+    width: 200px;
+    height: 24px;
+    border: none;
+  }
+  &__input:focus{
+    outline: none;
+  }
+  &__input{
+    border-bottom: 2px solid #383774;
+    color: #383774;
+  }
+  &__select{
+    border: none;
+    color: white;
+    background-color: #383774;
+    margin-top: 16px;
+    @media  (min-width: 600px){
+      margin-top: 0px;
+    }
+  }
 }
 .pokemon__card{
   border: 6px solid;
