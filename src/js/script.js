@@ -37,7 +37,7 @@ function getPokemon(name, id, type, i) {
   });
 
   createCardImage(
-    `https://pokeres.bastionbot.org/images/pokemon/${i}.png`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
     card
   );
 
