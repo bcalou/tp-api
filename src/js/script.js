@@ -15,7 +15,7 @@ const $cards = document.querySelector('.cards')
 const $form = document.querySelector('.form')
 
 
-$recipe.style.display = 'none'
+displayNoneRecipe()
 
 $btn.addEventListener('click', () => {
     event.preventDefault()
@@ -72,6 +72,7 @@ $country__icon.forEach(item => (
 
         fetch(`${URL}filter.php?a=${value}`)
             .then(res => res.json())
+            .then(displayNoneRecipe())
             .then(facts => showCountryMeal(facts))
             .catch(e => error(value))
     })
@@ -150,4 +151,7 @@ function createEl({ type: type, content: content, attribut: attribut, attributCo
     el.className = elClass
     el.textContent = content
     return el
+}
+function displayNoneRecipe() {
+    $recipe.style.display = 'none'
 }
