@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       .then(response => response.json())
       .then(recipes => {
         console.log(recipes.results)
+        foodsContainer.innerHTML = ""
         let divRecipies = recipes.results.map((recipe) => {
           return generateRecipeDiv(recipe, true)
         })
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function detailsRecipe(recipe) {
     console.log(recipe);
+    
     let divDetails = generateRecipeDiv(recipe, false);
     results.innerHTML = ""
     results.appendChild(divDetails);
