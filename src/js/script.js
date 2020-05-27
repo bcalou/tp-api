@@ -2,18 +2,28 @@ document.getElementById("getText").addEventListener("click", getHouse);
 document.getElementById("getUsers").addEventListener("click", getSpells);
 document.getElementById("getPosts").addEventListener("click", getCharacters);
 // document.getElementById("addPost").addEventListener("submit", addPost);
+const container = document.getElementById("container");
 
 API_URL = "https://www.potterapi.com/v1/";
 API_KEY = "/?key=$2a$10$ic.wdemGvyXtUA5jugCjreRaG1HZKSuT3wLAia24ElmSuCFyUo3Xq";
 
 function getHouse() {
 	fetch(API_URL + "sortingHat")
-		.then((response) => response.text())
+		.then((response) => response.json())
 		.then((data) => {
-			document.getElementById("outpout").innerHTML = "Tu es.. " + data;
+			let txt = (document.getElementById("outpout").innerHTML =
+				"Tu es.. " + data);
+			let house = data;
+			if (house === "Gryffindor") {
+				container.style.backgroundColor = "#7f0909";
+			} else if (house === "Ravenclaw") {
+				container.style.backgroundColor = "#000A90";
+			} else if (house === "Slytherin") {
+				container.style.backgroundColor = "#0d6217";
+			} else {
+				container.style.backgroundColor = "#EEE117";
+			}
 		});
-
-	console.log(123);
 }
 
 function getSpells() {
@@ -21,6 +31,7 @@ function getSpells() {
 		.then((response) => response.json())
 		.then((data) => {
 			let outpout = '<h2 class="mb-4">Tu trouveras ici la liste des sorts</h2>';
+
 			data.forEach(function (spells) {
 				outpout += `<ul class="list-group mb-3">
 				<li class="list-group-item">Nom : ${spells.spell}</li>
