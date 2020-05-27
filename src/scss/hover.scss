@@ -1,10 +1,11 @@
 .descHover {
-    overflow-y: hidden;
+    overflow: hidden;
     position: absolute;
     left: 42px;
     height: 340px;
     width: 240px;
     background: blue;
+    border-radius: 6px;
     z-index: 2;
     opacity: 0;
     transition: opacity 0.3s ease-out;
@@ -23,13 +24,13 @@
         width: 220px;
     }
 }
-#hover1 {top: 250px}
-#hover2 {top: 720px}
-#hover3 {top: 1186px}  
-#hover4 {top: 1656px}
-#hover5 {top: 2124px}
-#hover6 {top: 2592px}
-#hover7 {top: 3060px}
-#hover8 {top: 3527px}
-#hover9 {top: 3994px}
-#hover10 {top: 4463px}
+#hover1 {top: 268px}
+#hover2 {top: 738px}
+#hover3 {top: 1204px}  
+#hover4 {top: 1674px}
+#hover5 {top: 2142px}
+#hover6 {top: 2608px}
+#hover7 {top: 3078px}
+#hover8 {top: 3545px}
+#hover9 {top: 4012px}
+#hover10 {top: 4481px}

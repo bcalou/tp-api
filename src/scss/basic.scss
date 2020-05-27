@@ -10,7 +10,7 @@ img {
     height: 400px;
     border-radius: 6px;
 }
-div {
+.animeEl {
     height: 76px;
     width: 220px;
     position: relative;
@@ -24,13 +24,49 @@ div {
     background: white;
 }
 .header {
-    height: 52px;
+    height: 116px;
     width: 320px;
     background: blue;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     color: white;
     font-family: 'sen-bold';
     font-size: 24px;
+}
+h1 {
+    width: 100%;
+    padding:8px 0 8px 0;
+    height: 0px;
+    padding: 0 0 32px 0;
+}
+.pages:nth-last-child(1) {margin-left: 16px}
+.pages {
+    width: 80px;
+    height: 38px;
+    border-radius: 6px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-family: "sen-bold";
+    cursor: pointer;
+    &:hover {
+        background: white;
+        border: none;
+        color: blue;
+    }
+}
+.active {
+    background: white;
+    border: none;
+    color: blue;
+}
+.centerHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height:90px;
+    width: 320px;
 }
