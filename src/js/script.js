@@ -182,7 +182,7 @@ function displayBio(data) {
             pouvoir: ${data.powerstats.power} , 
             vitesse: ${data.powerstats.speed} , 
             force: ${data.powerstats.strength} , 
-            résistance: ${data.powerstats.durability} , 
+            endurance: ${data.powerstats.durability} , 
             intelligence: ${data.powerstats.intelligence}
           </div>
         </div>
