@@ -1,5 +1,525 @@
-@import 'vendors/reset';
+@import 'vendors/normalize';
+
+
+/*--------------------
+Variables
+--------------------*/
+$white: #fff;
+$blue: #0E76A8;
+$title: #525661;
+$gray: #757575;
+$green: green;
+$red: red;
+$bg-accent: #f5f5f5;
+$black: #000000;
+$border-color: #e0e0e0;
+
+/*--------------------
+Mixins
+--------------------*/
+@mixin transition($value) {
+  -webkit-transition: $value;
+       -o-transition: $value;
+          transition: $value;
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin position_0 {
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+@mixin w-e_100 {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*--------------------
+Generic
+--------------------*/
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 body {
-  background-color: lightblue;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  &.open-bio {
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.bad {
+  color: $red;
+}
+
+.good {
+  color: $green;
+}
+
+.neutral {
+  color: $blue;
+}
+
+/*--------------------
+Container
+--------------------*/
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  @media screen and (max-width: 550px) {
+    width: 90%;
+  }
+}
+
+.bg {
+  position: fixed;
+  @include position_0();
+  @include w-e_100();
+  z-index:-2;
+
+  img {
+    @include w-e_100();
+  }
+}
+
+.calc {
+  position: fixed;
+  @include position_0();
+  @include w-e_100();
+  z-index:-1;
+  background: $white;
+  opacity: 0.7;
+}
+
+/*--------------------
+Logo
+--------------------*/
+.hero-logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+  height: 100px;
+  @include tablet {
+    width: 250px;
+    height: 250px;
+  }
+  background: url("../images/logo.png") top center no-repeat;
+  background-size: cover;
+}
+
+/*--------------------
+Form and element form
+--------------------*/
+.searchForm {
+  &_inputContainer {
+    border: 1px solid $border-color;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+  
+    &__input {
+      width: 500px;
+      border: none;
+      border-radius: 3px;
+      padding: 14px 20px;
+      font-size: 1.6rem;
+      outline: none;
+  
+      @media screen and (max-width: 550px) {
+        width: 100%;
+        max-width: 150px;
+      }
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &_button {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    color: $blue;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    overflow: hidden;
+    vertical-align: top;
+    cursor: pointer;
+    background: transparent;
+    margin: 3rem 0.8rem;
+    box-shadow: 0 1px 1px rgba($black,0.1);
+    
+    .mobile {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150%;
+      height: 100%;
+      z-index: -1;
+      background-color: $blue;
+      transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -10em, 0);
+      transition: transform 0.3s, opacity 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+    }
+  
+    &:hover {
+      color:$white;
+      border-color: $blue;
+      &::before {
+        opacity: 1;
+        transform: rotate3d(0, 0, 1, 0deg);
+      }
+    }
+  }
+}
+
+
+/*-----------------------------
+Container after keypress input
+-------------------------------*/
+.top-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  transform: translate(0, 0);
+  border-bottom: 1px solid $border-color;
+  background-color: $bg-accent;
+  padding: 5px 0;
+
+  .hero-logo {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    @include tablet{
+      margin: 0 20px;
+    }
+  }
+
+  .searchForm {
+    height: 60px;
+    display: flex;
+    align-items: start;
+    &_inputContainer {
+      margin: 10px;
+      width: 50vw;
+      &-input {
+        width: 100%;
+      }
+    }
+
+    &_button {
+      margin: 13px;
+      .mobile {
+        display: block;
+        @include tablet{
+          display: none;
+        }
+      }
+
+      .large {
+        display: none;
+        @include tablet{
+          display: block;
+        }
+      }
+    }
+  }
+
+}
+
+
+/*--------------------
+Movies
+--------------------*/
+.resultsContainer {
+  display: flex;
+  width: 98%;
+  @include tablet {
+    width: 85%;
+  }
+  max-width: 1050px;
+  margin: auto;
+  padding: 30px 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .perso {
+    padding: 10px;
+    width: 50%;
+    display: $blue;
+    color: initial;
+    text-decoration: initial;
+    cursor: pointer;
+
+    @include tablet {
+      width: 25%;
+    }
+    @include desktop() {
+      width: 16%;
+    }
+
+    &_poster {
+      width: 100%;
+      height: 75%;
+      margin-bottom: 6px;
+      border-radius: 4px;
+    }
+
+    &_title {
+      //text-transform: uppercase;
+      color: $title;
+      margin-bottom: 4px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    &_info {
+      font-size: 11px;
+      opacity: .8;
+    }
+
+  }
+}
+
+/*--------------------
+Error message
+--------------------*/
+.errorMessage {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+
+  .keyword {
+    font-weight: 700;
+  }
+}
+
+
+/*--------------------
+Info superhero
+--------------------*/
+.panel {
+  background: url("../images/bg.jpg") top center no-repeat;
+  background-size: cover;
+  position: fixed;
+  @include position_0();
+  @include w-e_100();
+  box-shadow: 4px -4px 4px rgba($black, 0.2);
+  margin-left: -102%;
+  z-index: 255;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  overflow: hidden;
+
+  &:target {
+    margin-left: 0%;
+  }
+
+  &_top { 
+    .close-button {
+      width: 40px;
+      position: absolute;
+      right: 5px;
+      top: 10px;
+      @include tablet{
+        right: 30px;
+        top: 20px;
+      }
+    }
+  }
+
+}
+
+
+.panel_body {
+
+  .errorMessage {
+    width: 80%;
+    margin: 80px auto;
+  }
+  .card {
+    @include w-e_100();
+    @include desktop {
+      max-width: 1366px;
+    }
+    @include desktop {
+      max-height: 920px;
+    }
+    background:transparent;
+    position:absolute;
+   @include position_0();
+    display: flex;
+    flex-direction: column;
+    background:$blue;
+    color: $white;
+    overflow: auto;
+    z-index:-1;
+
+    @include tablet {
+      flex-direction: row;
+      overflow: initial;
+    }
+    justify-content: space-between;
+
+    &_left {
+      width:100%;
+      height: 420px;
+      background:transparent;
+      @include tablet {
+        width:40%;
+        height:100%;
+      }
+      img {
+        @include w-e_100();
+        @include tablet {
+          height: auto;
+        }
+        @include desktop() {
+          @include w-e_100();
+        }
+        border-radius:10px 0 10px 0;
+        -webkit-border-radius:0 10px 10px 0;
+        -moz-border-radius:0 10px 10px 0;
+      }
+    }
+    &_right {
+      width:100%;
+      padding:0 20px 50px 20px;
+      @include tablet {
+        width:59%;
+        height:100%;
+        overflow: auto;
+        padding:0 40px 50px 40px;
+      }
+      border-radius:0 10px 10px 0;
+      -webkit-border-radius:0 10px 10px 0;
+      -moz-border-radius:0 10px 10px 0;
+    
+    h1 {
+      font-weight:400;
+      text-align:left;
+      font-size:40px;
+      margin:5px 0 0 0;
+      letter-spacing:1px;
+    }
+      &__details {
+        ul {
+          list-style-type:none;
+          padding: 0;
+          margin:5px 0;
+          li {
+            display:inline;
+            color: $border-color;
+            font-weight:400;
+            font-size:14px;
+            padding:0 40px 0 0;
+          }
+        }
+      }
+
+      &__review {
+        p {
+          font-size:12px;
+          padding:0 10px 0 10px;
+          letter-spacing:1px;
+          margin:5px 0 5px 0;
+          line-height:20px;
+          display: inline-block;
+          border: 1px solid $border-color;
+          border-radius: 4px;
+          color: $white;
+          text-transform: uppercase;
+          margin-right: 5px;
+          @include tablet{
+            margin-right: 15px;
+            padding:0 20px 0 20px;
+          }
+
+          &.bad {
+            background-color: $red;
+            border-color: $red;
+          }
+          
+          &.good {
+            background-color: $green;
+            border-color: $green;
+          }
+          
+          &.neutral {
+            background-color: orange;
+            border-color: orange;
+          }
+          
+        }
+      }
+
+      &__after{
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+        padding: 10px 0 5px 0;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 5px 0 5px 0;
+
+  &_get {
+    text-transform: uppercase;
+    width: 30%;
+    padding-right: 10px;
+  }
+
+  &_value {
+    width: 70%;
+    padding-left: 10px;
+  }
 }
