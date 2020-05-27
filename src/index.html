@@ -7,14 +7,21 @@
   <link rel="stylesheet" href="scss/styles.scss"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
-<body>
+<body class="body__home">
   <div class="jumbotron">
     <h1 class="display-4">Hello, welcome to Space Picture</h1>
     <p class="lead">here you can discover the photo of the day or discover a random picture.</p>
-    <hr class="my-4">
-    <p>check this out !</p>
+    <hr class="my-2">
     <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;"><a href="apod.html" class="text-decoration-none text-reset">See today's image</a></button>
-    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;"><a href="randomapod.html" class="text-decoration-none text-reset">Discover a random image !</a></button>
+    <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;"><a href="randomapod.html" class="text-decoration-none text-reset">Discover a random image</a></button>
+    
+    <form class="form-inline" style="margin-top: 20px;">
+      
+      <input class="form-control mr-sm-2" type="search" placeholder="Enter a date" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+
+    </form>
   </div>
+  
 </body>
 </html>

@@ -18,9 +18,11 @@ fetch(API_URL)
     const $title = apod.title;
     const $image = apod.hdurl;
     const $description = apod.explanation;
-    const $date = apod.date;
     const $author = apod.copyright;
-    
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const $date = new Date(apod.date).toLocaleDateString(undefined, options);
+
     document.getElementById('description').innerHTML = $description;
     document.getElementById('date').innerHTML = $date;
     document.getElementById('image').src = $image;

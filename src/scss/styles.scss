@@ -8,37 +8,66 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+
+.body__apod {
   background-image: url(../assets/jupiter2.jpg);
   background-position: top;
-  background-size: 550%;
+
   background-repeat: no-repeat;
+
+  @include small {
+    .body__apod {
+      background-size: 300%;
+    }
+  }
   
-}
-
-
-
-
-@include small {
-  body {
-    background-size: 250%;
+  @include medium {
+    .body__apod {
+      background-size: 275%;
+    }
+  }
+  
+  @include large {
+    .body__apod {
+      background-size: 200%;
+    }
+  }
+  
+  @include xxl {
+    .body__apod {
+      background-size: 150%;
+    }
   }
 }
 
-@include medium {
-  body {
-    background-size: 200%;
+.body__home {
+  background-image: url(../assets/SpaceX.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  @include small {
+    .body__home {
+      background-size: 300%;
+    }
+  }
+  
+  @include medium {
+    .body__home {
+      background-size: 275%;
+    }
+  }
+  
+  @include large {
+    .body__home {
+      background-size: 200%;
+    }
+  }
+  
+  @include xxl {
+    .body__home{
+      background-size: 150%;
+    }
   }
 }
-
-@include large {
-  body {
-    background-size: 150%;
-  }
-}
-
-@include xxl {
-  body {
-    background-size: 120%;
-  }
-}
-
