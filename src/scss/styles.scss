@@ -21,15 +21,12 @@ body{
     font-size: 48px;
     font-weight: bold;
     letter-spacing: 3px;
-    background: linear-gradient(90deg, #383774 0%, #0452e3 12.5%, #46919f 25%, #285436 37.5%,#008842 50%, #e7e805 62.5%, #b6791f 75%, #a64219 87.5%, #ba2724 100% );
-    background-clip: text;
-    text-decoration: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #383774;
   }
   &__subtitle{
     font-size:20px;;
-    color: rgb(158,158,158);
+    color: #383774;
+    opacity: 0.5;
   }
 }
 main {
