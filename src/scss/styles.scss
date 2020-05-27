@@ -4,14 +4,14 @@
 @import './actor.scss';
 
 body {
-  background-color: lightblue;
+  background-color: #add8e6;
   background-size: cover !important;
   background-position: center center !important;
   background-attachment: fixed !important;
 }
 
 .movie-detals{
-  color: white;
+  color: #fff;
 
   .movie-poster{
     height: 400px;
@@ -80,7 +80,7 @@ body {
       
       .percentage {
       // fill: #666;
-      fill: black;
+      fill: #000;
       font-family: sans-serif;
       font-size: 0.5em;
       text-anchor: middle;
