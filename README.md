@@ -9,18 +9,19 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Découvrir des recettes en fonction du régime alimentaire de l'utilisateur.
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.spoonacular.com/
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- Recipes
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Il y'a un filtre du nombre de recette que l'utilisateur veut afficher (possibilité entre 10, 50 et 100 recettes).
+Il y'a trois types de régime alimentaire comme filtre (végétarien, vegan, sans gluten).
+Possibilité d'avoir la recette en entière en appuyant sur le bouton `see this recipe`.
+Il y'a le nombre de personne et le nombre de minutes de préparation des recettes.

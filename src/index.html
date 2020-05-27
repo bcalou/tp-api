@@ -4,11 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Marmithon</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script src="js/script.ts" defer></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="homepage">
+      <div class="logo">
+        <h1>Marmithon</h1>
+        <img src="assets/img/tuna.svg" alt="thon" />
+      </div>
+      <div class="diet">
+        <button id="vegetarian" class="recipes__button">
+          Vegetarian recipes
+        </button>
+        <button id="vegan" class="recipes__button">Vegan recipes</button>
+        <button id="nogluten" class="recipes__button">Gluten Free</button>
+      </div>
+
+      <div id="recipesContainer" class="recipes"></div>
+      <div class="recipes__addmore">
+        <p>Choice the number of recipes you want:</p>
+        <button id="tenimage">10</button>
+        <button id="fiftyimage">50</button>
+        <button id="hundredimage">100</button>
+      </div>
+    </div>
   </body>
 </html>
