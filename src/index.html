@@ -9,24 +9,27 @@
     <script src="js/script.js"></script>
   </head>
   <body>
-    <h1>
+    <div class="containt">
       <div>
         <button id="randomJokeButton">Découvrir une blague aléatoire</button>
       </div>
       <form>
-        <div 
-        <select name="blague" size="1">
-          <option>Aveugles</option>
-          <option>Cochons</option>
-          <option>Français</option>
-          <option>Fumeurs </option>
-          <option>Nains</option>
-          <option>Parigos</option>
-        </select>
+        <div class="idBlague">
+          <select id="select" name="blague" size="1">
+            <option value="aveugles">Aveugles</option>
+            <option value="cochons">Cochons</option>
+            <option value="francais">Français</option>
+            <option value="fumeurs">Fumeurs </option>
+            <option value="nains">Nains</option>
+            <option value="parigos">Parigos</option>
+            <option value="test">test</option>
+          </select>
+        </div>
       </form>
       <div>
         <button id="jokeButton">Découvrir une blague selon la catégorie</button>
       </div>
       <section id="jokeContainer"></section>
+    </div>
   </body>
 </html>

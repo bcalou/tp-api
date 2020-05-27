@@ -4,3 +4,11 @@ body {
   background-color: lightblue;
   color: black;
 }
+
+.containt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+}

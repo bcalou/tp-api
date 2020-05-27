@@ -6,54 +6,57 @@ const $randomJokeButton = document.getElementById("randomJokeButton");
 const $jokeButton = document.getElementById("jokeButton");
 const $jokeContainer = document.getElementById("jokeContainer");
 
-// Fetch random fact from API
-function getJoke() {
-  $jokeContainer.textContent = "Chargement en cours";
+console.log("valeur de randomJokeButton : " + $randomJokeButton);
+console.log("valeur de jokeButton : " + $jokeButton);
 
-  return fetch(getFactsUrl())
+// Fetch random joke from API
+function getRandomJoke() {
+  $jokeContainer.textContent = "Chargement en cours";
+  console.log("Listener OK!");
+  return fetch(getRandomJokeUrl(), { mode: "no-cors" })
     .then(res => res.json())
-    .then(facts => showFacts(facts));
+    .then(joke => showJoke(joke));
 }
 
+// Fetch category joke from API
+function getCategoryJoke() {
+  $jokeContainer.textContent = "Chargement en cours";
+
+  return fetch(getCategoryJokeUrl(), { mode: "no-cors" })
+    .then(res => res.json())
+    .then(joke => showJoke(joke));
+}
 // Include parameters inside the API url
 function getRandomJokeUrl() {
+  console.log("Generated random url OK!");
+
   return `${API_URL}/random`;
 }
 
 function getCategoryJokeUrl() {
+  console.log("Generated category url OK!");
+
   return `${API_URL}/jokes/random?category=${getSelectedCategory}`;
 }
 
-//function getCategoryJokeUrl() {
-//  return `${API_URL}/facts/random?animal_type=${getSelectedAnimal()}&amount=${NUMBER_OF_FACTS}`;
-//}
+// Display joke into <p> tag
+function showJoke(joke) {
+  $jokeContainer.textContent = "";
 
-// Display fact into <p> tag
-function showFacts(facts) {
-  $factsContainer.textContent = "";
+  const $jokeFragment = document.createDocumentFragment();
 
-  const $factsFragment = document.createDocumentFragment();
+  $jokeFragment.appendChild(getJokeElement(joke));
 
-  facts.forEach(fact => $factsFragment.appendChild(getFactElement(fact)));
-
-  $factsContainer.appendChild($factsFragment);
+  $jokeContainer.appendChild($jokeFragment);
 }
 
-// Generate a fact element from a fact object
-function getFactElement(fact) {
-  const $fact = createElement({ type: "article" });
+// Generate a joke element from a joke object
+function getJokeElement(joke) {
+  const $joke = createElement({ type: "article" });
 
-  createElement({ type: "p", text: fact.text, parent: $fact });
+  createElement({ type: "p", text: joke.value, parent: $value });
 
-  const updatedAt = new Date(fact.updatedAt).toLocaleString();
-  const $updatedAt = createElement({
-    type: "time",
-    text: updatedAt,
-    parent: $fact
-  });
-  $updatedAt.setAttribute("datetime", fact.updatedAt);
-
-  return $fact;
+  return $joke;
 }
 
 // Create an element and append it to the given parent
@@ -77,13 +80,18 @@ function toggleButton($button) {
 }
 
 // Get value of selected animal radio button
-function getSelectedAnimal() {
-  return document.getElementbyId('select[name="blague"]').option;
+function getSelectedCategory() {
+  return document.querySelectorAll("#select :selected").text;
 }
 
 //document.getElementById('liste').value;
 
-$factButton.addEventListener("click", () => {
-  toggleButton($factButton);
-  getFacts().then(() => toggleButton($factButton));
+$randomJokeButton.addEventListener("click", () => {
+  toggleButton($randomJokeButton);
+  getRandomJoke().then(() => toggleButton($randomJokeButton));
+});
+
+$jokeButton.addEventListener("click", () => {
+  toggleButton($jokeButton);
+  getCategoryJoke().then(() => toggleButton($jokeButton));
 });
