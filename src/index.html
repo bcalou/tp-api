@@ -4,11 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Super Héro API</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+    integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+    crossorigin="anonymous"
+    />
+    <link rel="icon" href="images/logo.jpg" />
+
+    <script src="js/script.js" defer ></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+
+    <div class="bg">
+      <img src="./images/bg.jpg" alt="">
+    </div>
+    <div class="calc"></div>
+
+    <main>
+      <div class="container">
+        <a href="/" class="hero-logo"></a>
+        <form class="searchForm">
+          <div class="searchForm_inputContainer">
+            <input type="search" class="searchForm_inputContainer__input" autofocus placeholder="Tapez le nom de votre super héro ou super vilain" />
+          </div>
+          <a class="searchForm_button" href="http://Linkedin.com/in/jarceb" target="_blank" title="Jarce Boukoro">
+            <span class="large">Mon Linkedin</span>
+            <span class="mobile"><i class="fab fa-linkedin-in"></i></span>
+          </a>
+        </form>
+      </div>
+
+      <section class="resultsContainer">
+       
+      </section>
+    </main>
+
+    <div id="bio" class="panel">
+      <div class="panel_top">
+        <div class="close-button" >
+            <a href="#" class="close-icon-container">
+                <span class="close-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" enable-background="new 0 0 40 40">
+                    <line x1="15" y1="15" x2="25" y2="25" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10"></line>
+                    <line x1="25" y1="15" x2="15" y2="25" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10"></line>    
+                    <circle class="circle" cx="20" cy="20" r="19" opacity="0" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" fill="none"></circle>
+                    <path d="M20 1c10.45 0 19 8.55 19 19s-8.55 19-19 19-19-8.55-19-19 8.55-19 19-19z" class="progress" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" fill="none"></path>
+                    </svg>
+                </span>
+            </a >
+        </div>
+      </div>
+      <div class="panel_body">
+        <div class='errorMessage'>
+          <p>Faites une recherche pour voir la biographie de votre personnage.</p>
+            <li>Vérifier l'orthographe de votre recherche</li>
+            <li>Essayez un n'importe quel mot</li>
+            <li>Ou mettez une lettre en générale</li>
+          </p>
+        </div>
+      </div>
+    </div>
+    <img src="images/anonyme.jpeg" id="anonyme" class="hidden"/>
+
   </body>
 </html>
+  
