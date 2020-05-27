@@ -17,7 +17,7 @@ function getHouse() {
 			if (house === "Gryffindor") {
 				container.style.backgroundColor = "#7f0909";
 			} else if (house === "Ravenclaw") {
-				container.style.backgroundColor = "#000A90";
+				container.style.backgroundColor = "#946B2D";
 			} else if (house === "Slytherin") {
 				container.style.backgroundColor = "#0d6217";
 			} else {
