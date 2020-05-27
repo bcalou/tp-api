@@ -1,0 +1,36 @@
+h2 {
+    font-size: 18px;
+    color: #101010;
+    width: 188px;
+    line-height: 27px;
+    font-family: 'sen-bold';
+}
+img {
+    width: 260px;
+    height: 400px;
+    border-radius: 6px;
+}
+div {
+    height: 76px;
+    width: 220px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: -8px;
+    transform: translate(-2px, -46px);
+    border-radius: 6px;
+    background: white;
+}
+.header {
+    height: 52px;
+    width: 320px;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'sen-bold';
+    font-size: 24px;
+}
