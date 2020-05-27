@@ -55,7 +55,11 @@ Retrieves data by fetch call
 ----------------------------*/
 function fetchResults (keywords,containerResults) {
     keywords = keywords.trim();
-    if (!keywords.length) return;
+    
+    if (!keywords.length){
+      containerResults.innerHTML="";
+      return;
+    } 
 
     const url = `${urlApiHero}/${keyHero}/search/${keywords}`;
 
@@ -66,7 +70,7 @@ function fetchResults (keywords,containerResults) {
           ErrorMessage(keywords);
           return;
         }
-        displayResults(data,containerResults);
+        displayResults(data,containerResults,keywords);
     })
     .catch(error=>console.log(error));
 }
@@ -86,8 +90,10 @@ function fetchResult (id) {
 /*--------------------------
 Displays results on the DOM
 ----------------------------*/
-function displayResults(data,contenair){
+function displayResults(data,contenair,keywords){
   const results = data.results;
+  contenair.innerHTML = "";
+  viewAbstract(results,contenair,keywords);
   results.forEach(result => {
     contenair.insertAdjacentHTML("beforeend",
       `<a href="#bio" class="perso" id="perso_${result.id}" data-all="${result.id}">
@@ -246,6 +252,18 @@ data.appearance.key = function(n) {
   translate(listTranslate,english_french);
 }
 
+
+function viewAbstract(data,contenair,keywords) {
+  let end = data.length>1?"s":"";
+  let para = document.createElement("span");
+  para.setAttribute('class', 'abstract');
+  contenair.appendChild(para);
+
+  para.insertAdjacentHTML("beforeend",
+      `Environ ${data.length} résultat${end} pour le mot clé <b>"${keywords}"</b>`
+    );
+}
+
 /*--------------------------
 Transform text
 ----------------------------*/
@@ -267,6 +285,7 @@ Results not found
 ------------------*/
 function ErrorMessage(keywords) {
   const $resultsContainer = resetResults();
+  $resultsContainer.innerHTML="";
   $resultsContainer.insertAdjacentHTML("beforeend",
     `<div class='errorMessage'>
       <p>Votre recherche - <span class='keyword'>${keywords}</span> - ne correspondait à aucun personnage.</p>
@@ -284,6 +303,11 @@ Empty the content before the new data
 function resetResults(){
   const $resultsContainer = document.querySelector(".resultsContainer");
   $resultsContainer.innerHTML = "";
+  $resultsContainer.insertAdjacentHTML("beforeend",
+    `<svg class="circular-loader" viewBox="25 25 50 50" >
+      <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#0E76A8" stroke-width="2" />
+  </svg>`
+  );
   return $resultsContainer;
 }
 
