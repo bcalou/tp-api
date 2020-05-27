@@ -42,6 +42,9 @@ function createArticle(movie) {
   const article = document.createElement("article");
 
   article.classList.add("movie");
+  article.addEventListener("click", () => {
+    getMovieInfos(movie.imdbID);
+  });
   createArticleElement({
     type: "h2",
     content: movie.Title,
@@ -55,9 +58,7 @@ function createArticle(movie) {
     parent: article,
   });
 
-  if (movie.Poster !== "N/A") {
-    createArticleImage(movie.Poster, article);
-  }
+  if (movie.Poster !== "N/A") createArticleImage(movie.Poster, article);
 
   $movies.appendChild(article);
 }
@@ -79,66 +80,65 @@ function createArticleImage(src, parent) {
   image.classList.add("movie__poster");
   parent.appendChild(image);
 }
+
+// get the movie infos w/ API
+function getMovieInfos(movieId) {
+  axios
+    .get(`${API_URL}/?apikey=${API_KEY}&i=${movieId}`)
+    .then((res) => {
+      console.log(res.data.Response);
+
+      if (res.data.Response === "False") {
+        $notFoundArticle.classList.add("not-found--visible");
+      } else {
+        $notFoundArticle.classList.remove("not-found--visible");
+
+        editArticle(res.data);
+      }
+    })
+    .then((error) => {
+      console.log(error);
+    });
+}
+
+// fill the article with request infos
+function editArticle(infos) {
+  $movies.innerHTML = "";
+  createArticleElement({
+    type: "h2",
+    content: infos.Title,
+    cssClass: "movie__title",
+    parent: $movies,
+  });
+  createArticleElement({
+    type: "h3",
+    content: `${infos.Runtime} - ${infos.Released}`,
+    cssClass: "movie__sub-infos",
+    parent: $movies,
+  });
+  createArticleImage(infos.Poster, $movies);
+  createArticleElement({
+    type: "p",
+    content: infos.Plot,
+    cssClass: "movie__plot",
+    parent: $movies,
+  });
+  createArticleElement({
+    type: "p",
+    content: `Actors: ${infos.Actors}`,
+    cssClass: "movie__actors",
+    parent: $movies,
+  });
+  createArticleElement({
+    type: "p",
+    content: `IMDb Rating: ${infos.imdbRating}`,
+    cssClass: "movie__rating",
+    parent: $movies,
+  });
+}
+
 $movieForm.addEventListener("submit", (e) => {
   e.preventDefault();
   getMovies(getMovieTitle($movieTitleInput));
   // getMovieInfos(getMovieTitle($movieTitleInput));
 });
-
-// // get the movie infos w/ API
-// function getMovieInfos(movie) {
-//   axios
-//     .get(`${API_URL}/?apikey=${API_KEY}&t=${movie}`)
-//     .then((res) => {
-//       console.log(res.data.Response);
-
-//       if (res.data.Response === "False") {
-//         $notFoundArticle.classList.add("not-found--visible");
-//       } else {
-//         $notFoundArticle.classList.remove("not-found--visible");
-
-//         editArticle(res.data);
-//       }
-//     })
-//     .then((error) => {
-//       console.log(error);
-//     });
-// }
-
-// // fill the article with request infos
-// function editArticle(infos) {
-//   const $movieArticle = document.querySelector(".movie");
-
-//   $movieArticle.innerHTML = "";
-//   createArticleElement({
-//     type: "h2",
-//     content: infos.Title,
-//     cssClass: "movie__title",
-//     parent: $movieArticle,
-//   });
-//   createArticleElement({
-//     type: "h3",
-//     content: `${infos.Runtime} - ${infos.Released}`,
-//     cssClass: "movie__sub-infos",
-//     parent: $movieArticle,
-//   });
-//   createArticleImage(infos.Poster, $movieArticle);
-//   createArticleElement({
-//     type: "p",
-//     content: infos.Plot,
-//     cssClass: "movie__plot",
-//     parent: $movieArticle,
-//   });
-//   createArticleElement({
-//     type: "p",
-//     content: `Actors: ${infos.Actors}`,
-//     cssClass: "movie__actors",
-//     parent: $movieArticle,
-//   });
-//   createArticleElement({
-//     type: "p",
-//     content: `IMDb Rating: ${infos.imdbRating}`,
-//     cssClass: "movie__rating",
-//     parent: $movieArticle,
-//   });
-// }
