@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>The Meal finder</title>
+  <link rel="stylesheet" href="scss/styles.scss" />
+  <link rel="icon" type="image/png" href="assets/meal-1320568026248944827.png" />
+
+  <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+  <form action="" class='form'>
+    <h1>Search a recipe by name<img src="assets/meal-1320568026248944827.png" alt="meal-icon"></h1>
+    <input type="text" name="name" class="name">
+    <button class='btn' type="submit">Search</button>
+    <button class='btn_random' type="submit">Random Search</button>
+
+  </form>
+
+  <div class="recipe">
+    <h3 class="title"></h3>
+    <div class="image">
+    </div>
+    <div class="ingredients "></div>
+    <ol class="recipe__instructions">
+    </ol>
+  </div>
+
+
+  <div class="country">
+
+    <img src="assets/vietnam.png" class='country__icon' data-country='Vietnamese' alt="country icon" title="Vietnamese">
+    <img src="assets/india.png" class='country__icon' data-country='Indian' alt="country icon" title="Indian">
+    <img src="assets/greece.png" class='country__icon' data-country='Greek' alt="country icon" title="Greek">
+    <img src="assets/germany.png" class='country__icon' data-country='Dutch' alt="country icon" title="Dutch">
+    <img src="assets/egypt.png" class='country__icon' data-country='Egyptian' alt="country icon" title="Egyptian">
+    <img src="assets/france.png" class='country__icon' data-country='French' alt="country icon" title="French">
+    <img src="assets/china.png" class='country__icon' data-country='Chinese' alt="country icon" title="Chinese">
+    <img src="assets/canada.png" class='country__icon' data-country='Canadian' alt="country icon" title="Canadian">
+    <img src="assets/usa.png" class='country__icon' data-country='American' alt="country icon" title="American">
+    <img src="assets/uk.png" class='country__icon' data-country='British' alt="country icon" title="British">
+    <img src="assets/mexico.png" class='country__icon' data-country='Mexican' alt="country icon" title="Mexican">
+    <img src="assets/japan.png" class='country__icon' data-country='Japanese' alt="country icon" title="Japanese">
+    <img src="assets/italy.png" class='country__icon' data-country='Italian' alt="country icon" title="Italian">
+  </div>
+
+  <div class="cards">
+
+  </div>
+</body>
+
 </html>
