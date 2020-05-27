@@ -25,6 +25,7 @@ const $header = createElement({
   },
   $parent: $recipesPageContent,
 });
+
 const $title = createElement({
   type: 'h1',
   content: 'Keskon mange??',
@@ -70,8 +71,7 @@ export const $searchInput = createElement({
     type: 'text',
     class: 'form-control',
     id: 'recipe',
-    placeholder: 'Infredients, nom...',
-    required: true,
+    placeholder: 'Ingredients, nom...',
   },
   $parent: $search,
 });
@@ -213,11 +213,12 @@ export const $totalresults = createElement({
 });
 
 //submit
-createElement({
+export const $submitButton = createElement({
   type: 'button',
   attributes: {
     type: 'submit',
     class: 'btn btn-warning w-100',
+    disabled: true,
   },
   content: 'Voir',
   $parent: $form,

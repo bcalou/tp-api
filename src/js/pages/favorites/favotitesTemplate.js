@@ -23,3 +23,11 @@ createElement({
   },
   $parent: $header,
 });
+
+export const $favoritesList = createElement({
+  type: 'ul',
+  attributes: {
+    class: 'recipes',
+  },
+  $parent: $favoritePageTemplate,
+});

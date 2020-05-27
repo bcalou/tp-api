@@ -1,21 +1,25 @@
-import { $recipesList } from './../../pages/recipes/formTemplate';
 import { createElement } from '../../global/creatElements';
+import {
+  addRecipeToFavorites,
+  deleteFromFavorites,
+} from './listItemsFunctions';
 
-export function setRecipesList(recipe) {
-  const fragment = document.createDocumentFragment();
+export function setRecipesList(option) {
+  const $listFragment = document.createDocumentFragment();
 
   const $recipeContent = createElement({
     type: 'li',
-
     attributes: {
-      class: 'p-2 mt-2 border border-secondary rounded',
+      class: `p-2 mt-2 border border-secondary rounded ${
+        option.favorites ? 'favoritListItem' : 'recipeListItem'
+      }`,
     },
-    $parent: fragment,
+    $parent: $listFragment,
   });
 
   createElement({
     type: 'h6',
-    content: recipe.title,
+    content: option.recipe.title,
     $parent: $recipeContent,
   });
 
@@ -29,7 +33,7 @@ export function setRecipesList(recipe) {
 
   createElement({
     type: 'p',
-    content: `⏲ : ${recipe.readyInMinutes} min`,
+    content: `⏲ : ${option.recipe.readyInMinutes} min`,
     attributes: {
       //class: 'mb-0',
     },
@@ -38,7 +42,7 @@ export function setRecipesList(recipe) {
 
   createElement({
     type: 'p',
-    content: `👥 : ${recipe.servings} pers`,
+    content: `👥 : ${option.recipe.servings} pers`,
     attributes: {
       //class: 'mb-0',
     },
@@ -58,7 +62,7 @@ export function setRecipesList(recipe) {
     content: 'voir la recette',
     $parent: $buttons,
     attributes: {
-      href: recipe.sourceUrl,
+      href: option.recipe.sourceUrl,
       target: 'blank',
       class: 'btn btn-success text-light mb-2',
     },
@@ -66,19 +70,18 @@ export function setRecipesList(recipe) {
 
   createElement({
     type: 'button',
-    id: recipe.id,
-    content: 'Ajouter aux favoris',
+    id: option.recipe.id,
+    content: `${
+      option.favorites ? 'Supprimer de la liste' : 'Ajouter aux favoris'
+    }`,
     $parent: $buttons,
     attributes: {
-      class: 'btn btn-info',
+      class: `${option.favorites ? 'btn btn-danger' : 'btn btn-info'}`,
     },
-    clickFunction: addRecipeToFavorite,
+    clickFunction: option.favorites
+      ? deleteFromFavorites
+      : addRecipeToFavorites,
   });
 
-  $recipesList.appendChild(fragment);
-}
-
-function addRecipeToFavorite(e) {
-  const id = e.target.dataset.id;
-  console.log(id);
+  return $listFragment;
 }

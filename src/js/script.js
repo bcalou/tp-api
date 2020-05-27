@@ -4,9 +4,13 @@ import {
   infiniteLoading,
 } from './pages/recipes/recipesFuntions';
 
+import { setFavoritesRecipesList } from './pages/favorites/favoritesFunctions';
+
+//localStorage.removeItem('favoritesRecipes');
+
 import { createElement } from './global/creatElements';
 import { $nav, $list } from './components/nav/nav';
-import { $recipesPageContent } from './pages/recipes/formTemplate';
+import { $recipesPageContent } from './pages/recipes/recipesFormTemplate';
 import { $favoritePageTemplate } from './pages/favorites/favotitesTemplate';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,10 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         submitForm();
         infiniteLoading();
       };
+      this.favoritesDynamism = () => {
+        setFavoritesRecipesList(
+          JSON.parse(localStorage.getItem('favoritesRecipes'))
+        );
+      };
       this.pages = [
         {
           url: '#',
-          documentTitle: 'Trouve ta recette',
+          documentTitle: 'Keskon mange??',
           content: $recipesPageContent,
           dynamism: this.recipesDynamism,
         },
@@ -29,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
           url: '#favoris',
           documentTitle: 'Mes favoris',
           content: $favoritePageTemplate,
+          dynamism: this.favoritesDynamism,
         },
       ];
     }

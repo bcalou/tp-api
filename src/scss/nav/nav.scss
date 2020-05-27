@@ -4,17 +4,20 @@ nav {
   left: 0;
   display: flex;
   padding-right: 10px;
-  width: 200px;
   color: white;
 
   & ul {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
     width: 80vw;
-    padding: 50px 0;
-    position: absolute;
-    background-color: $backgroundColor;
+    max-width: 300px;
+    padding: 55px 0;
+    background-color: whitesmoke;
+    color: $backgroundColor;
+
     transform: translateX(-100%);
     transition: transform 0.2s;
 
@@ -23,11 +26,11 @@ nav {
       font-size: 1.5rem;
       padding: 20px 0;
       padding-left: 40px;
-      border-bottom: 0.5px solid whitesmoke;
+      border-bottom: 0.5px solid $backgroundColor;
       &:hover {
         cursor: pointer;
-        background-color: whitesmoke;
-        color: $backgroundColor;
+        background-color: $backgroundColor;
+        color: whitesmoke;
       }
     }
 
@@ -38,7 +41,7 @@ nav {
 
   & .open-menu {
     background-color: $backgroundColor;
-    z-index: 2;
+    z-index: 1;
     cursor: pointer;
     height: 55px;
     width: 65px;
@@ -70,9 +73,13 @@ nav {
 nav.is-visible {
   & ul {
     transform: none;
+    border-right: 0.5px solid $backgroundColor;
+    border-bottom: 0.5px solid $backgroundColor;
   }
 
   & .open-menu {
+    background-color: whitesmoke;
+
     & .menu-icon {
       width: 0;
       height: 0;
@@ -80,9 +87,11 @@ nav.is-visible {
 
     & .menu-icon::before {
       transform: rotate(-45deg);
+      background-color: $backgroundColor;
     }
     & .menu-icon::after {
       transform: rotate(45deg) translateX(-7px) translateY(-7px);
+      background-color: $backgroundColor;
     }
   }
 }
