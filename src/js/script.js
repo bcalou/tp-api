@@ -6,11 +6,12 @@ import {
 
 import { setFavoritesRecipesList } from './pages/favorites/favoritesFunctions';
 
-//localStorage.removeItem('favoritesRecipes');
-
 import { createElement } from './settings/creatElements';
 import { $nav, $list } from './components/nav/nav';
-import { $recipesPageContent } from './pages/recipes/recipesFormTemplate';
+import {
+  $recipesPageContent,
+  $recipesList,
+} from './pages/recipes/recipesFormTemplate';
 import { $favoritePageTemplate } from './pages/favorites/favotitesTemplate';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     constructor() {
       this.test = document.getElementById('recipe');
       this.recipesDynamism = () => {
+        $recipesList.innerHTML = '';
         handleInputChanges();
         submitForm();
         infiniteLoading();

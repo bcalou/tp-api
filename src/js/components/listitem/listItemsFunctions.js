@@ -34,7 +34,12 @@ export function addRecipeToFavorites(e) {
       };
       recipesList.push(recipeInfo);
       localStorage.setItem('favoritesRecipes', JSON.stringify(recipesList));
+      e.target.textContent = 'Ajouté :)';
+      e.target.className = 'btn btn-primary';
     });
+  } else {
+    e.target.textContent = 'Cette recette est déjà dans les favoris!';
+    e.target.className = 'btn btn-danger';
   }
 }
 
