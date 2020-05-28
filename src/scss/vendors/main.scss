@@ -2,53 +2,60 @@ body {
   display: flex;
   align-items: center;
 }
+.hero {
+  &__title {
+    text-align: center;
+    transform: translateY(-140px);
+    color: ghostwhite;
+    font-size: 30px;
+  }
+}
 
 img {
   width: 100%;
   height: 100%;
 }
 
+.dogDiscover {
+  transform: translateY(-60px);
+
+  &__contenaire {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__result {
+    border: 10px solid rgba(255, 152, 0, 0.51);
+    width: 320px;
+    height: 380px;
+    border-radius: 40px;
+    box-sizing: border-box;
+
+    img {
+      border-radius: 30px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+    background-color: rgba(255, 152, 0, 0.51);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 330px;
+    margin-top: 40px;
+    padding: 10px;
+  }
+}
+
 .results {
   display: flex;
-}
-
-.result {
-  border: 10px solid rgba(255, 152, 0, 0.51);
-  width: 320px;
-  height: 380px;
-  border-radius: 40px;
-  box-sizing: border-box;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  background-color: rgba(255, 152, 0, 0.51);
-  border: none;
-  color: white;
-  border-radius: 10px;
-  font-size: 20px;
-  width: 330px;
-  margin-top: 40px;
-  padding: 10px;
-}
-
-.contenaireImg {
-  display: flex;
-}
-
-.contenaireImg {
-  margin-top: 30px;
-  justify-content: center;
-}
-
-.result {
-  img {
-    border-radius: 30px;
-  }
 }
 
 .txtPlaceholder {
