@@ -1,18 +1,26 @@
 const api_container: HTMLElement = document.querySelector(".api-container");
-const team_label = document.getElementById("teams");
-const matches_label = document.getElementById("matches");
-const players_label = document.getElementById("players");
+const team_label = document.querySelector(".teams");
+const matches_label = document.querySelector(".matches");
+const players_label = document.querySelector(".players");
 
 team_label.addEventListener("click", function () {
   team_label.classList.add("checked");
+  matches_label.classList.remove("checked");
+  players_label.classList.remove("checked");
   getTeams();
 });
 
 matches_label.addEventListener("click", function () {
+  team_label.classList.remove("checked");
+  matches_label.classList.add("checked");
+  players_label.classList.remove("checked");
   getMatches();
 });
 
 players_label.addEventListener("click", function () {
+  team_label.classList.remove("checked");
+  matches_label.classList.remove("checked");
+  players_label.classList.add("checked");
   getPlayers();
 });
 
