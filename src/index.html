@@ -6,9 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script async src="js/script.ts"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hello World</h1>
+    <p>
+      Find the perfect beer and the perfect brewery with any keyword you want !
+    </p>
+    <form class="keyword__form">
+      <h2>Search by Keyword</h2>
+      <div class="keyword__inputs">
+        <input name="keywords" type="text" class="keyword__inputs--search" />
+        <input type="submit" value="Valider" class="keyword__inputs--button" />
+      </div>
+    </form>
+    <div class="results__container"></div>
   </body>
 </html>

@@ -9,18 +9,12 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Trouver toutes les bières et les brasseries possible a partir d'un mot clé
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.brewerydb.com/v2
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
-
-## Fonctionnement détaillé de l'application
-
-À remplir : que peux faire votre prototype ?
+- /search
