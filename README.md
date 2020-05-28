@@ -17,7 +17,7 @@ https://dog.ceo/api/breeds/image/random
 
 ## Liste des routes sollicitées
 
-- À remplir
+- /image/random
 - À remplir
 - À remplir
 
