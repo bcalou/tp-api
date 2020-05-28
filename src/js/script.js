@@ -1,3 +1,5 @@
+// search-bar
+
 $(document).ready(() => {
   $("#searchForm").on("submit", (e) => {
     let searchText = $("#searchText").val();
@@ -6,20 +8,7 @@ $(document).ready(() => {
   });
 });
 
-function createContent(options) {
-  const $content = document.createElement(options.type);
-
-  if (options.text) {
-    $content.textContent = options.text;
-  }
-
-  if (options.$parent) {
-    options.$parent.appendChild($content);
-  }
-
-  return $content;
-}
-
+//get meal whith axios ( get (API Mealdb))
 function getMeals(searchText) {
   axios
     .get("https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchText)
