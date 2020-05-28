@@ -10,64 +10,25 @@ body {
   align-items: center;
 }
 
+.body__home {
+  background-image: url(../assets/SpaceX.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .body__apod {
   background-image: url(../assets/jupiter2.jpg);
   background-position: top;
-
   background-repeat: no-repeat;
-
-  @include small {
-    .body__apod {
-      background-size: 300%;
-    }
-  }
-  
-  @include medium {
-    .body__apod {
-      background-size: 275%;
-    }
-  }
-  
-  @include large {
-    .body__apod {
-      background-size: 200%;
-    }
-  }
-  
-  @include xxl {
-    .body__apod {
-      background-size: 150%;
-    }
-  }
+  background-attachment: fixed;
 }
 
-.body__home {
-  background-image: url(../assets/SpaceX.jpg);
+.body__rdapod {
+  background-image: url(../assets/jupiter2.jpg);
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: 100%;
-
-  @include small {
-    .body__home {
-      background-size: 300%;
-    }
-  }
-  
-  @include medium {
-    .body__home {
-      background-size: 275%;
-    }
-  }
-  
-  @include large {
-    .body__home {
-      background-size: 200%;
-    }
-  }
-  
-  @include xxl {
-    .body__home{
-      background-size: 150%;
-    }
-  }
+  background-attachment: fixed;
 }
+

@@ -9,8 +9,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script defer src="js/randomapod.js"></script>
   </head>
-	<body>
+	<body class="body__rdapod">
     
-    
+        
+    <h1 class="text-center h1 text-white" style="margin: 20px 0 10px 10px">Random astronomy pictures</h1>
+   
+    <div class="card mb-3 card-apod" style="max-width: 90vw; margin-top: 20px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img id="image" class="card-img  "/>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <time id="date" class="text-muted"></time>
+            <h2 id="title" class="card-title"></h2>
+            <p id="description" class="card-text"></p>
+            <p id="author" class="text-center blockquote-footer"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" id="getApod" class="btn btn-outline-light apodButton">Click here to get a random image</button>
   </body>
 </html>

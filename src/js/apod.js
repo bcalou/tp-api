@@ -27,6 +27,6 @@ fetch(API_URL)
     document.getElementById('date').innerHTML = $date;
     document.getElementById('image').src = $image;
     document.getElementById('title').innerHTML = $title;
-    document.getElementById('author').innerHTML = `author: ${copyright}`;
+    document.getElementById('author').innerHTML = `Image Credits: ${$author}`;
   }));
 });
