@@ -9,18 +9,18 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Découvrir les photos journalières de la nasa.
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.nasa.gov/planetary/apod
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+https://api.nasa.gov/planetary/apod
+https://api.nasa.gov/planetary/apod&date=
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Le prototype peut afficher l'apod de la nasa et afficher une apod aléatoire
+depuis la création de l'api via une date générée aléatoirement.
