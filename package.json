@@ -4,7 +4,8 @@
   "description": "For educational purposes",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "accueil": "parcel src/index.html",
+    "intro": "parcel src/intro.html",
     "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

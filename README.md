@@ -9,18 +9,17 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Generer des blagues.
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.chucknorris.io
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- selectionner une categories et generer une joke de cette categorie.
+-
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Mon prototype peut au clique donner une célèbre blague de Chuck Norris en fonction de la categorie selectionnée auparavant.
