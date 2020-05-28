@@ -20,12 +20,24 @@
     color: rgb(6, 33, 41);
   }
 
+  &__cardsPokemonAppear{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 10px 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(73, 143, 167);
+    border-radius: 5px;
+    color: rgb(6, 33, 41);
+  }
+
   &__namePokemon{
     font-size: 18px;
   }
 
   &__caract{
-    font-size: 12px;
+    font-size: 16px;
   }
 
   &__descriptions{
@@ -35,7 +47,7 @@
   }
 
   &__imgPokemon{
-    width: 55%;
+    width: 60%;
     object-fit: contain;
   }
 
@@ -49,6 +61,7 @@
   }
 
   &__infos{
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;

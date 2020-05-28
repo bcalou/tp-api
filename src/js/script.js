@@ -9,7 +9,7 @@ let DATA = [];
 // retrieve data from API
 Promise.all(
   Array.from(
-    { length: 50 },
+    { length: 100 },
     (_, index) => fetch(`${Api_Url}/${index + 1}`)
     .then(value => value.json())
     )
@@ -63,7 +63,7 @@ function showInfo(pokemon) {
   `
     <section class="container__infos">
     <a href=""><button>retour au menu</button></a>
-    <div class="container__cardsPokemon">
+    <div class="container__cardsPokemonAppear">
       <h2 class="container__namePokemon">${pokemon.name}</h2>
       <img class="container__imgPokemon" src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png"/>
       <div class="container__descriptions">
@@ -71,7 +71,8 @@ function showInfo(pokemon) {
         <p class="container__caract">${pokemon.height} height</p>
       </div>
     </div>
-    </section>`;
+    </section>
+    `;
 }
 
 search.addEventListener("click", event => {
