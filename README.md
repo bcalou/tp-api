@@ -15,6 +15,8 @@ Vous permet d'avoir accés a un certain nombres de pokémon
 
 URL: https://pokeapi.co/api/v2
 
+site: https://pokepi.netlify.app/
+
 ## Liste des routes sollicitées
 
 - Au moment du chargement de la page une requête est envoyée à l'API afin d'afficher un certain nombre de   pokemon
