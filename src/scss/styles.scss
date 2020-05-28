@@ -1,5 +1,43 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
-body {
-  background-color: lightblue;
+@media (max-width: 640px) {
+  body {
+    margin-top: 50px;
+    align-items: center;
+    color: black;
+    background-image: url("../assets/image_de_fond.png");
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+  }
+
+  .containt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    &__idBlague {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .jokeContainer {
+    padding-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #1c1c1c;
+  }
+
+  button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 6px 0 6px 0;
+    border-radius: 75%;
+    border-bottom: 3px solid #64a1fc;
+    color: #1c1c1c;
+    background: #fff;
+  }
 }

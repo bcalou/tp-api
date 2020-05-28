@@ -6,9 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="containt">
+      <div>
+        <button id="randomJokeButton">Découvrir une blague aléatoire</button>
+      </div>
+      <form>
+        <div class="containt__idBlague">
+          <select id="select" name="blague" size="1">
+            <option value="animal">Animal</option>
+            <option value="history">History</option>
+            <option value="money">Money</option>
+            <option value="food">Food </option>
+            <option value="religion">Religion</option>
+            <option value="political">Political</option>
+          </select>
+        </div>
+      </form>
+      <div>
+        <button id="jokeButton">Découvrir une blague selon la catégorie</button>
+      </div>
+      <section class="jokeContainer" id="jokeContainer"></section>
+    </div>
   </body>
 </html>
