@@ -13,7 +13,7 @@ Découvrir des photos de chien
 
 ## URL de l'API utilisée
 
-https://dog.ceo/api/breeds/image/random
+https://dog.ceo
 
 ## Liste des routes sollicitées
 
