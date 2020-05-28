@@ -2,7 +2,7 @@
 
 ## But de l'application en une phrase
 
-Obtenez les dernières statistiques et articles en date sur la crise sanitaire du Covid-19 concernant le pays de votre choix.
+Obtenez les derniers chiffres clés et articles en date sur la crise sanitaire du Covid-19 concernant le pays de votre choix.
 
 ## URL de l'API utilisée
 
@@ -11,13 +11,15 @@ Obtenez les dernières statistiques et articles en date sur la crise sanitaire d
 
 ## Liste des routes sollicitées
 
-- https://covid-19-data.p.rapidapi.com/country?name=FR (nom du pays)
+- https://covid-19-data.p.rapidapi.com/country?name=${countryName}
+- https://covid-19-data.p.rapidapi.com/report/totalsdate-format=YYYY-MM-DD&date=${date}
+- https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&date=${date}&name=${country}
 - https://api.smartable.ai/coronavirus/news/global
-- https://api.smartable.ai/coronavirus/news/US (code ISO du pays)
+- https://api.smartable.ai/coronavirus/news/${countryCode}
 
 ## Fonctionnement détaillé de l'application
 
-Récupération des dernières statistiques concernant le covid-19 à l'échelle internationnale sous la forme :
+Récupération des dernières chiffres clés concernant le covid-19 à l'échelle internationnale sous la forme :
 
 - date et heure de la dernière actualisation des données
 - Nombre de cas confirmés
@@ -25,6 +27,9 @@ Récupération des dernières statistiques concernant le covid-19 à l'échelle 
 - Nombre de patients dans un état critique
 - Nombre de morts
 
-Récupération de 3 articles récents concernant le covid-19 à l'échelle internationnale, actualisés à chaque rechargement de la page.
+Récupération et affichage de 3 articles récents concernant le covid-19 à l'échelle internationnale, actualisés à chaque rechargement de la page.
 
-L'application permet la recherche d'un pays grâce à un formulaire et de récupérer les dernières statistiques et plusieurs dizaines d'articles récents concernant le covid-19 et le pays en question.
+Récupération et affichage des chiffres clés selon une date choisie grâce à un formulaire.
+Récupération et affichage des chiffres clés selon une date et un pays choisis grâce à un formulaire.
+
+Recherche d'un pays grâce à un formulaire, récupération et affichage des dernières statistiques et de plusieurs dizaines d'articles récents concernant le covid-19 et le pays en question.

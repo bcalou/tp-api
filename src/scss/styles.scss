@@ -112,6 +112,13 @@ body {
   &__data--confirmed {
     color: #2b2d42;
   }
+  &__data--reportDate {
+    font-size: 22px;
+    color: #2b2d42;
+  }
+  &__data--report {
+    color: #73b0b8;
+  }
 }
 
 .history {
@@ -204,7 +211,7 @@ body {
 .form {
   padding: 1rem 0;
   display: flex;
-
+  margin-right: 1rem;
   &__input {
     border-radius: 2px;
     border: none;
@@ -289,5 +296,40 @@ body {
     color: #73b0b8;
     text-decoration: none;
     font-weight: 500;
+  }
+}
+
+footer {
+  background: #2b2d42;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  @include medium {
+    flex-direction: row;
+    justify-content: center;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.brands {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+}
+.credentials {
+  @include flexColumn-alignCenter();
+  a {
+    margin-bottom: 1rem;
   }
 }
