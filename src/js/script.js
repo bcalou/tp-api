@@ -1,6 +1,8 @@
+// API variables
 const API_URL = "https://www.omdbapi.com/";
 const API_KEY = "12976118";
 
+// DOM variables
 const $movieTitleInput = document.getElementById("movie");
 const $movieForm = document.querySelector(".infos__form");
 const $notFoundArticle = document.querySelector(".not-found");
@@ -140,5 +142,4 @@ function editArticle(infos) {
 $movieForm.addEventListener("submit", (e) => {
   e.preventDefault();
   getMovies(getMovieTitle($movieTitleInput));
-  // getMovieInfos(getMovieTitle($movieTitleInput));
 });
