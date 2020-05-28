@@ -1,5 +1,48 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
 body {
-  background-color: lightblue;
+  background: linear-gradient(90deg, #dce35b, #45b649);
+  font-family: "Rubik", sans-serif;
+}
+
+.global-container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  & > h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 30px;
+    color: white;
+  }
+  & > h2 {
+    font-size: 25px;
+    color: white;
+  }
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 30px;
+}
+
+input {
+  display: none;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+article {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
 }

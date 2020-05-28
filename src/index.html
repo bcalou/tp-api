@@ -6,10 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+    />
   </head>
   <body>
-    <h1>Hello World</h1>
-    <h2>It's me</h2>
+    <div class="global-container">
+      <h1>2014 World Cup APi</h1>
+      <nav>
+        <form class="nav__list">
+          <div class='nav__element'>
+            <input type='radio' id='teams' value='teams' name='choice' checked></input>
+            <label for='teams'>Teams</label>
+          </div>
+          <div class='nav__element'>
+            <input type='radio' id='matches' value='matches' name='choice'></input>
+            <label for='matches'>Matches</label>
+          </div>
+          <div class='nav__element'>
+            <input type='radio' id='players' value='players' name='choice'></input>
+            <label for='players'>Players</label>
+          </div>
+        </form> 
+      </nav>
+      <section class="api-container"></section>
+    </div>
+    <script src="js/script.ts"></script>
   </body>
 </html>
