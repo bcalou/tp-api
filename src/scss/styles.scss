@@ -4,7 +4,10 @@ body {
   background-color: lightblue;
   font-family: sans-serif;
 }
-
+h1 {
+  font-size: 40px;
+  font-family: monospace;
+}
 .container {
   padding: 40px;
   max-width: 800px;
@@ -15,8 +18,13 @@ body {
 }
 
 #chuckImg {
-  height: 120px;
-  width: 120px;
+  height: 170px;
+  width: 170px;
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+#jokeText {
+  font-size: 20px;
+  margin-top: 20px;
 }
