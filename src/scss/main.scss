@@ -21,6 +21,8 @@
     margin-bottom: 15px;
   }
   #formButton{
+    width:150px;
+    height:30px;
     font-size: 16px;
     font-weight:500;
     color: white;
@@ -33,6 +35,8 @@
     display:none;
   }
   #showButton {
+    width:75px;
+    height:25px;
     margin-top:15px;
     margin-left:5px;
     display: none;
@@ -51,6 +55,8 @@
     font-weight:500;
   }
   #randomButton {
+    width:75px;
+    height:25px;
     margin-top: 20px;
     margin-left: 120px;
     display: flex;
@@ -60,6 +66,12 @@
     background-color: #1a91db;
     border: none;
     border-radius: 8px;
+  }
+
+  #photosContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
   }
 }
 
