@@ -1,5 +1,13 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
 body {
   background-color: lightblue;
+
+  header {
+    display: flex;
+    justify-content: center;
+    height: 210px;
+    width: 100%;
+    background-image: url(../assets/fond.jpg);
+  }
 }
