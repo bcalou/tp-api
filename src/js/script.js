@@ -154,6 +154,7 @@ function generateInstructionText(stepInfo) {
     
     buttonSeeRecipe.addEventListener('click', () => {
       // change the class
+      sectionSearch.style.display = "none"
       sectionResult.classList.toggle('result-is-open')
       detailsRecipe(recipe)
         })
