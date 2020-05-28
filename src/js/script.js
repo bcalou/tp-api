@@ -2,6 +2,7 @@ const API_URL = 'http://newsapi.org/v2/top-headlines?';
 
 const $articles = document.getElementById("articles");
 const $langue = document.getElementById("langue");
+const $popularity = document.getElementById("popularity");
 const $documentFragment = document.createDocumentFragment();
 
 
@@ -12,9 +13,9 @@ document.querySelector(".form").addEventListener("submit", (e) => {
 });
 
 function getUrl() {
-    return 'http://newsapi.org/v2/top-headlines?' +
+    return API_URL +
         `country=${getSelectedlanguage()}&` +
-        'apiKey=22b60a92c33b41d29c5931d3c7be8ae0';;
+        'apiKey=22b60a92c33b41d29c5931d3c7be8ae0';
 }
 
 function getSelectedlanguage() {
