@@ -41,23 +41,32 @@ for (let i = 1; i <= numberOfPokemon; i++) {
 
 function getPokemonInfos(data) {
     const pokemonInfosFragment = document.createDocumentFragment();
+    createName(data, pokemonInfosFragment);
+    createCardImage(
+        'card__img',
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`,
+        pokemonInfosFragment
+    );
+    createTypes(data, pokemonInfosFragment);
+    createDetails(data, pokemonInfosFragment);
+    document.getElementById(data.id).appendChild(pokemonInfosFragment); 
+}
 
 
 
-    const pokemonName = document.createElement('p');
-    pokemonName.classList.add('card__name')
-    pokemonName.textContent = `${data.name}`;
-    pokemonInfosFragment.appendChild(pokemonName);
+//function that allows you to create name in the card 
 
+function createName(data, pokemonInfosFragment) {
+    createCardElement({
+        type: 'p',
+        content: `${data.name}`,
+        class: 'card__name',
+        parent: pokemonInfosFragment
+    })
+}
 
-
-    const pokemonArtwork = document.createElement('img');
-    pokemonArtwork.src = ` https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
-    pokemonArtwork.classList.add('card__img')
-    pokemonInfosFragment.appendChild(pokemonArtwork);
-
-
-
+//Function which allows to create the types of each pokémon with their color backgrounds and a border radient according to the type
+function createTypes(data, pokemonInfosFragment){
     const pokemonType = document.createElement('div');
     const pokemonCard = document.getElementById(`${data.id}`)
     pokemonType.classList.add('card__types');
@@ -68,7 +77,13 @@ function getPokemonInfos(data) {
         pokemonTypeName.textContent = `${typeName}`;
         pokemonType.appendChild(pokemonTypeName)
     });
-    
+    pokemonInfosFragment.appendChild(pokemonType);
+    createBorderRadientType(typesArray, pokemonCard)
+
+}
+
+// function that allows you to create a border gradient according to the type of pokémon
+function createBorderRadientType(typesArray, pokemonCard) {
     const type = main_types.find(type => typesArray[0].indexOf(type) > -1);
     const firstTypeColor = colors[type];
     if(typesArray.length===1){
@@ -79,21 +94,50 @@ function getPokemonInfos(data) {
         const SecTypeColor = colors[type];
         pokemonCard.style.borderImageSource = `linear-gradient(90deg, ${firstTypeColor},${SecTypeColor}`;
     }
-    
-    
-    pokemonInfosFragment.appendChild(pokemonType);
+}
 
+// function that allows you to create details on the map such as height and weight
 
-
+function createDetails(data, pokemonInfosFragment) {
     const pokemonDetails = document.createElement('div');
-    const pokemonHeight = document.createElement('p');
-    const pokemonWeight = document.createElement('p');
-    pokemonHeight.textContent = `Height: ${data.height} ft`;
-    pokemonWeight.textContent = `Weight: ${data.weight} lbs`;
-    pokemonDetails.appendChild(pokemonHeight);
-    pokemonDetails.appendChild(pokemonWeight);
-    pokemonInfosFragment.appendChild(pokemonDetails);
+    createCardElement({
+        type: 'p',
+        content: `Height: ${data.height} ft`,
+        class: 'card__height',
+        parent: pokemonDetails
+    })
+    createCardElement({
+        type: 'p',
+        content: `Weight: ${data.weight} lbs`,
+        class: 'card__weight',
+        parent: pokemonDetails
+    })
+    pokemonInfosFragment.appendChild(pokemonDetails);  
+}
 
 
-    document.getElementById(data.id).appendChild(pokemonInfosFragment); 
+
+//function that allows you to quickly create elements
+
+//create tag like div or p or other
+function createCardElement(elementCards) {
+    const element = document.createElement(elementCards.type);
+  
+    element.textContent = elementCards.content;
+  
+    if (elementCards.class) {
+      element.setAttribute('class', elementCards.class);
+    }
+    if (elementCards.parent) {
+      elementCards.parent.appendChild(element);
+    }
+    return element;
+}
+
+//create img
+function createCardImage(className, src, parent) {
+    const image = document.createElement('img');
+    image.setAttribute('class', className);
+    image.setAttribute('src', src);
+    parent.appendChild(image);
 }
