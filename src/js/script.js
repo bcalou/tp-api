@@ -21,7 +21,6 @@ var lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 lettres.forEach(function (lettre) {
     var lettre_content = document.createElement("a");
     lettre_content.textContent = lettre;
-    lettre_content.href = "#";
     lettre_content.addEventListener("click", function () {
         afficherMots(lettre);
     });
