@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-around;
   color: white;
-  padding: 30px;
+  margin-bottom: 20px;
 }
 
 input {
@@ -45,4 +45,9 @@ article {
 
 p {
   text-align: center;
+}
+
+.checked {
+  background-color: red;
+  text-decoration: underline;
 }

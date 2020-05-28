@@ -1,4 +1,20 @@
 const api_container: HTMLElement = document.querySelector(".api-container");
+const team_label = document.getElementById("teams");
+const matches_label = document.getElementById("matches");
+const players_label = document.getElementById("players");
+
+team_label.addEventListener("click", function () {
+  team_label.classList.add("checked");
+  getTeams();
+});
+
+matches_label.addEventListener("click", function () {
+  getMatches();
+});
+
+players_label.addEventListener("click", function () {
+  getPlayers();
+});
 
 function createElement(options: any): any {
   const $element: HTMLElement = document.createElement(options.type);
@@ -15,6 +31,7 @@ function createElement(options: any): any {
 }
 
 function getTeams() {
+  api_container.innerHTML = "";
   fetch("https://montanaflynn-fifa-world-cup.p.rapidapi.com/teams", {
     method: "GET",
     headers: {
@@ -45,6 +62,7 @@ function getTeams() {
 }
 
 function getMatches() {
+  api_container.innerHTML = "";
   fetch("https://montanaflynn-fifa-world-cup.p.rapidapi.com/games", {
     method: "GET",
     headers: {
@@ -78,6 +96,7 @@ function getMatches() {
 }
 
 function getPlayers() {
+  api_container.innerHTML = "";
   fetch("https://montanaflynn-fifa-world-cup.p.rapidapi.com/persons", {
     method: "GET",
     headers: {
@@ -125,7 +144,3 @@ function getTeamNameByID(teamID) {
 }
 
 function selectMenu() {}
-
-function main() {}
-
-main();
