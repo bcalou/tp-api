@@ -24,11 +24,10 @@ URL: https://pokeapi.co/api/v2
   fetch(`${Api_Url}/${index + 1}`)
   
   //afficher l'image du pokémon
-  <img class="container__imgPokemon" src="https://pokeres.bastionbot.org/images/pokemon/${element.id}.png"/>
+  img class="container__imgPokemon" src="https://pokeres.bastionbot.org/images/pokemon/${element.id}.png"
 
-- lors du click sur le bouton "see more"
-  on rappel l'API: fetch(`${Api_Url}/${index + 1}`)
-  en plus d'avoir le nom et l'image on fait apparaitre son poid et ça taille
+- Lors du click sur le bouton "see more" on rappel l'API: fetch(${Api_Url}/${index + 1}) en plus d'avoir le nom et l'image on fait apparaitre son poid et ça taille
+on filtre le contenus que nous a renvoyé la permière requête pour afficher seulement l'item sur lequel l'utilisateur a clické
 
 
 - lors de la recherche dans la search bar 
@@ -52,4 +51,3 @@ mais aussi au click sur le bouton "see more" d'avoir accés à d'autre informati
 ## -> fonction à venir:
 
 - Rajouter les types des pokémon et les accorder avec leurs couleurs
-- Ajouter un pokédex personnel ou l'on pourra rajouter nos pokémon que l'on possède par exmple dans les différent jeux... 
