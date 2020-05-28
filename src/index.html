@@ -12,42 +12,37 @@
 	</head>
 	<body>
 		
-			<header class="header">
-				<h1 class="header__title">Bienvenue chez les sorciers</h1>
-			</header>
+		<header class="header">
+			<h1 class="header__title">Bienvenue chez les sorciers</h1>
+		</header>
 
-		<div class="container" id="container">
+		<section class="container" id="container">
 			<p class="container--title">Clique sur le Choixpeau pour savoir ta famille..</p>
-
 			<div class="container__choixpeau">
-			<button id="getText" class="container__choixpeau--btn"> <img src="./assets/img/Choixpeau.svg"></img></button>
-		</div>
+				<button id="getText" class="container__choixpeau--btn"> <img src="./assets/img/Choixpeau.svg"></img></button>
+			</div>
+			<div id="outpout"></div>
+		</section>
 
-		<div id="outpout"></div>
-<div class="container__others">
-		<button id="getUsers" class="container__spells">Dictionnaire des sorts</button>
-		<button id="getPosts" class="container__characters">Text 3</button>
+		<section class="container__others">
+			<button id="getUsers" class="container__spells">Dictionnaire des sorts</button>
+			<button id="getPosts" class="container__characters">La liste des élèves</button>
+		</section>
 			<hr>
-			 <div id="outpout"></div>
-</div>
+			 <div id="outpout__others"></div>
+			 <div id="outpout__others1"></div>
+
 	
 			 
-			<!-- <form id="addPost">
+			<form id="container__search">
 				<div class="form-group">
-					<input type="text" id="title" placeholder="Title" class="form-control">
+					<input type="text" id="title" placeholder="Cherche un sorcier" class="form-control">
 				</div>
-				<div class="form-group">
-					<textarea id="body" placeholder="Body" class="form-control">
-				</div>
-				<input type="submit" value="Submit" class="btn btn-secondary">
+				<input type="submit" value="Submit" class="btn btn-secondary" id="submit">
 			</form>
-		</div>  -->
+		</div> 
 			
-			<!-- <button id="coucou"><img src="./assets/img/Choixpeau.svg"></img></button>
-			<p>Clique sur le Choixpeau pour savoir quel sera ta maison..</p>
-			<div id="factsContainer"></div>
-			<button id="yo">Clickkk</button>
-			<div id="yocontainer"></div> -->
+		
 		</div>
 	</body>
 </html>

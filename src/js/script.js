@@ -1,19 +1,23 @@
 document.getElementById("getText").addEventListener("click", getHouse);
 document.getElementById("getUsers").addEventListener("click", getSpells);
 document.getElementById("getPosts").addEventListener("click", getCharacters);
+document.getElementById("title").addEventListener("click", getCharactersSearch);
+
 // document.getElementById("addPost").addEventListener("submit", addPost);
 const container = document.getElementById("container");
 
 API_URL = "https://www.potterapi.com/v1/";
 API_KEY = "/?key=$2a$10$ic.wdemGvyXtUA5jugCjreRaG1HZKSuT3wLAia24ElmSuCFyUo3Xq";
 
+let house;
+
 function getHouse() {
 	fetch(API_URL + "sortingHat")
 		.then((response) => response.json())
 		.then((data) => {
-			let txt = (document.getElementById("outpout").innerHTML =
-				"Tu es.. " + data);
-			let house = data;
+			house = data;
+			let txt = (document.getElementById("outpout").innerHTML = data);
+
 			if (house === "Gryffindor") {
 				container.style.backgroundColor = "#7f0909";
 			} else if (house === "Ravenclaw") {
@@ -23,6 +27,7 @@ function getHouse() {
 			} else {
 				container.style.backgroundColor = "#EEE117";
 			}
+			console.log(house);
 		});
 }
 
@@ -40,7 +45,7 @@ function getSpells() {
 				</ul>`;
 			});
 
-			document.getElementById("outpout").innerHTML = outpout;
+			document.getElementById("outpout__others").innerHTML = outpout;
 		});
 }
 
@@ -49,7 +54,6 @@ function getCharacters() {
 		.then((response) => response.json())
 		.then((data) => {
 			let outpout = '<h2 class="mb-4">La liste de tous les élèves</h2>';
-			console.log(data);
 			data.forEach(function (character) {
 				outpout += `
 				<div class="card card-body mb-3>
@@ -57,6 +61,34 @@ function getCharacters() {
 				<p>${character.house}</p>
 				</div>`;
 			});
-			document.getElementById("outpout").innerHTML = outpout;
+			document.getElementById("outpout__others").innerHTML = outpout;
 		});
 }
+
+function getCharactersSearch() {
+	fetch(API_URL + "characters" + API_KEY)
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
+			let outpout = '<h2 class="mb-4">La liste de tous les élèves</h2>';
+			let input = document.getElementById("title").value;
+			console.log(input);
+			var text = "";
+			data.forEach(function () {
+				for (var i = 0; i < data.length; i++) {
+					if (input == data[i].name) {
+						text += data[i].name;
+					}
+				}
+			});
+
+			document.getElementById("outpout__others").innerHTML = text;
+		});
+}
+
+/**
+ * Je veux détecter la valeur de l'input
+ * si la valeur de l'input correspond au nom du personnage
+ * Alors je retourne la fiche du personnage
+ * sinon error
+ */
