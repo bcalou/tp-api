@@ -22,4 +22,5 @@ https://api.nasa.gov/planetary/apod&date=
 
 ## Fonctionnement détaillé de l'application
 
-Le prototype peut afficher l'apod de la nasa et afficher une apod aléatoire de l'api via une date.
+Le prototype peut afficher l'apod de la nasa et afficher une apod aléatoire
+depuis la création de l'api via une date générée aléatoirement.
