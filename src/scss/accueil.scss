@@ -1,0 +1,58 @@
+@media(max-width: 320px){
+  .categories{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    color: white;
+    margin-top: 20px;
+  }
+
+  .accueil_category{
+    color: white;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-left: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .cn__img {
+    width: 150px;
+    height: 150px;
+    margin-left: 25%;
+    margin-top: 20px;
+  }
+
+  .accueil_title{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  #jokeButton{
+    width: 100px;
+    height: 25px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 34%;
+    margin-top: 20px;
+    background-color: rgb(47, 156, 245);
+    border-radius: 10px;
+    color: white;
+  }
+
+  #jokesContainer{
+    color: white;
+    font-size: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    background-color: rgb(255, 155, 6);
+  }
+}
+
