@@ -9,18 +9,15 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Choisir un repas à préparer
 
 ## URL de l'API utilisée
 
-À remplir
+https://www.themealdb.com/api.php
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
-
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Elle fait apparaitre un repas aléatoire en éxpliquant la recette et donnant la liste de tout ces ingrédients
+suivi d'une vidéo youtube montrant comment la réaliser.

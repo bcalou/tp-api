@@ -1,5 +1,49 @@
-@import 'vendors/reset';
+@import "vendors/reset";
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
 
 body {
-  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  min-height: 100vh;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 36px;
+}
+
+h5 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.meal {
+  margin: 20px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+.click {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.button-primary {
+  background-color: skyblue;
+  border-radius: 5px;
 }
