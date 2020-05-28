@@ -1,6 +1,6 @@
 const apiurl = 'https://api.chucknorris.io/jokes/random';
 const $container= document.getElementById("Container")
-const $button = document.querySelector(".hey")
+const $button = document.querySelector(".chuck__button")
 
 
 function getjokes(){

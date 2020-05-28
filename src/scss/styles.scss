@@ -1,5 +1,21 @@
 @import 'vendors/reset';
 
 body {
-  background-color: lightblue;
+  background-color: #D0C4A4;
 }
+
+.chuck {
+  &__title {
+    font-size: 14px;
+  }
+  &__button {
+    width: 77px;
+  height: 34px;
+  margin-left: 75px;
+  margin-top: 191px;
+  background: #4B3F2F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  }
+}
+
