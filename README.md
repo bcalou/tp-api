@@ -9,18 +9,20 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+L'univers d'Harry Potter
 
 ## URL de l'API utilisée
 
-À remplir
+https://www.potterapi.com/
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- https://www.potterapi.com/v1/ + "sortingHat"
+- https://www.potterapi.com/v1/ + "spells" + API_KEY +
+- https://www.potterapi.com/v1/ + "characters" + API_KEY
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Assigner une maison
+Lister les sorts avec leur effet et leur type
+Lister tous les personnages avec leurs maison associée
