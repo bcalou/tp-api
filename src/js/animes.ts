@@ -3,6 +3,7 @@ import './script'
 import axios from 'axios'
 
 const $body = document.querySelector('body')
+const $inputAnime = document.querySelector('#search')
 
 axios.defaults.baseURL = 'https://kitsu.io/api/edge'
 axios.get('anime')
@@ -29,6 +30,18 @@ const animeElement = (res):void => { // Créer chaque élément avec son titre e
         image.src = result.attributes.posterImage.medium 
         h2.append(result.attributes.slug)
         div.append(h2)
+
+        $inputAnime.addEventListener('keyup', (e) => {
+          if (e.target === h2 ) { // Je ne trouve pas la propriété qui permet de dire "e.target par rapport au 1er caractère, puis au 2ème etc. J'avais pas exemple essayé avec h2.length mais ça ne marche pas"
+            h2.style.display = "block"
+            image.style.display = "block"
+            div.style.display = "block"
+          } else {
+            h2.style.display = "none"
+            image.style.display = "none"
+            div.style.display = "none"
+          }
+        })
         $body.append(image, div) 
     })
 }
@@ -39,6 +52,15 @@ const synopsHover = (res):void => { // Mettre les Synopsis sur les affiche d'ani
     results.forEach((result:Data, index:number):void => {
         let paraph:HTMLElement = document.createElement("p")
         paraph.textContent = result.attributes.synopsis
+        $inputAnime.addEventListener('click', (e) => {
+          if (e.target === paraph /* je sais que c'est faux mais je n'ai pas le temps */) {
+            paraph.style.display = "block";
+            divsHover[index].style.display = "block";
+          } else {
+            paraph.style.display = "none";
+            divsHover[index].style.display = "none";
+          }
+        })
         divsHover[index].append(paraph)
     })
 }
