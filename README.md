@@ -1,7 +1,10 @@
 # TP API
 
-school project
+School project
+
 Only mobile device
+
+https://api-news.netlify.app/
 
 ## Installation
 
