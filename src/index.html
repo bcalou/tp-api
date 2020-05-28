@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Meal</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>api</h1>
+    <div class="container">
+      <div class="row text-center">
+        <h3>
+          Envie de manger ?
+        </h3>
+        <h5>Obtenez un repas au hasard en cliquant ci-dessous !</h5>
+        <button class="button-primary" id="get_meal">
+          <p class="click">Choisir un repas 🍔</p>
+        </button>
+      </div>
+      <div id="meal" class="row meal"></div>
+    </div>
   </body>
 </html>
