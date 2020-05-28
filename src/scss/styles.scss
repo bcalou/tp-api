@@ -14,8 +14,7 @@ header {
   margin-right: auto;
 }
 
-.box,
-.box2 {
+.box {
   max-width: 500px;
   margin: 0 auto;
   position: relative;
@@ -30,7 +29,8 @@ h1 {
 }
 
 .call,
-.call2 {
+.call2,
+.call3 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -43,14 +43,16 @@ h1 {
 }
 
 .call:hover,
-.call2:hover {
+.call2:hover,
+.call3:hover {
   cursor: pointer;
   background-color: black;
   color: lightblue;
 }
 
 .result,
-.result2 {
+.result2,
+.result3 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;

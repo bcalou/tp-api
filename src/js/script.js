@@ -39,3 +39,27 @@ $callAPI2.addEventListener("click", () => {
 function listMovies(item, index) {
   $showResult2.innerHTML += (index += 1) + "- " + item.name + "<br>";
 }
+
+// ----------------
+
+const $callAPI3 = document.getElementById("call3");
+const $showResult3 = document.getElementById("result3");
+
+headers = new Headers({
+  Authorization: "Bearer HDDZurhwaoc4RKzZ29sg",
+});
+
+$callAPI3.addEventListener("click", () => {
+  $showResult3.innerHTML = "Loading...";
+  return fetch("https://the-one-api.herokuapp.com/v1/character", { headers })
+    .then((res) => res.json())
+    .then((characters) => {
+      console.log(characters);
+      $showResult3.innerHTML = "";
+      var $characterList = characters.docs;
+      $characterList.forEach(listCharacters);
+    });
+});
+function listCharacters(item, index) {
+  $showResult3.innerHTML += (index += 1) + "- " + item.name + "<br>";
+}
