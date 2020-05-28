@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeFilter</title>
+    <link href="assets/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+    <script src="js/script.js" defer></script>
+    <script src="js/filter.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">PokeFilter</h1>
+    <h3 class="header__subtitle">Find your pokemon</h3>
+  </header>
+  <section class="searching">
+    <input class="searching__input" type="text" placeholder="Name">
+    <select class="searching__select">
+      <option class="searching__option" value="0">All types</option>
+      <option class="searching__option" value="normal">Normal</option>
+      <option class="searching__option" value="fighting">Fighting</option>
+      <option class="searching__option" value="flying">Flying</option>
+      <option class="searching__option" value="poison">Poison</option>
+      <option class="searching__option" value="ground">Ground</option>
+      <option class="searching__option" value="rock">Rock</option>
+      <option class="searching__option" value="bug">Bug</option>
+      <option class="searching__option" value="ghost">Ghost</option>
+      <option class="searching__option" value="steel">Steel</option>
+      <option class="searching__option" value="fire">Fire</option>
+      <option class="searching__option" value="water">Water</option>
+      <option class="searching__option" value="grass">Grass</option>
+      <option class="searching__option" value="electric">Electric</option>
+      <option class="searching__option" value="psychic">Psychic</option>
+      <option class="searching__option" value="ice">Ice</option>
+      <option class="searching__option" value="dragon">Dragon</option>
+      <option class="searching__option" value="dark">Dark</option>
+      <option class="searching__option" value="fairy">Fairy</option>
+    </select>
+  </section>
+  <p class="searching__result"></p>
+  <section class="cards">
+  </section>
+</body>
+
+
 </html>

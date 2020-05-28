@@ -1,5 +1,16 @@
 @import 'vendors/reset';
 
-body {
-  background-color: lightblue;
-}
+@import "config/medias";
+@import "config/global";
+@import "config/variables";
+@import "blocs/header";
+@import "blocs/searching";
+@import "blocs/cards";
+@import "blocs/colorType";
+
+
+
+
+
+
+
