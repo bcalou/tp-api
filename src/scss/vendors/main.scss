@@ -10,14 +10,19 @@
         margin-top: 2%;
         width: 5%;
     }
-    .container {
+    #container {
         background-color: lightblue;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: center;
         margin: 10px;
-        height: 400px;
-        width: 300px;
+        height: 40vh;
+        width: 100vw;
     }
-
+}
+.image {
+    width: 30%;
+    height: 30%;
+    object-fit: contain;
 }

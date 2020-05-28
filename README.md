@@ -9,18 +9,19 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Afficher des images (ou gift) de chiens aléatoirements
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.thedogapi.com/v1/images/search?limit=5&page=10&order=Desc
+
+
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- Fetch => permettant d'appeler les images de chien aléatoirements
+
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Au click de "press", il y a des chiens qui apparaissent aléatoirement.

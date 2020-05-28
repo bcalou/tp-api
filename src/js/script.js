@@ -13,7 +13,7 @@ function call() {
 function showDogs(dog) {
     element.innerHTML = 
     dog.map(el=>{
-        return `<img src="${el.url}"/>`
-    });
+        return `<img class="image" src="${el.url}"/>`
+    }).join("");
 }
 press.addEventListener('click', call)
