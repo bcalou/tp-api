@@ -16,13 +16,14 @@ $discoverAge.addEventListener("click", function (e) {
         .then(res => {
             if (val == "") {
                 $responseAge.innerHTML = "Entre un nom valide !"
+                $responseCount.innerHTML = "";
             } else {
                 let responseAge = res.age == null ? "Ton prénom n'est pas connu ! " : " Voilà l'âge moyen de " + val + " en France " + ": " + res.age + " ans. ";
                 let responseCount = "Il y a " + res.count + " " + val + " en France " + " ! ";
                 $responseCount.value = responseCount;
                 $responseAge.value = responseAge;
-                $responseAge.innerHTML = $responseAge.value;
-                $responseCount.innerHTML = $responseCount.value;
+                $responseAge.innerHTML = responseAge;
+                $responseCount.innerHTML = responseCount;
             }
         })
         .catch(error => console.log(error));
