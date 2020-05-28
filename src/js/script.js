@@ -12,7 +12,7 @@ function getJokes(firstName, lastName) {
     `http://api.icndb.com/jokes/random?firstName=${firstName}&lastName=${lastName}`
   )
     .then(res => res.json())
-    .then(data => seeJoke(e))
+    .then(data => seeJoke(data))
     .catch(error => console.log(error));
 }
 function getNames(form) {
@@ -23,3 +23,4 @@ function getNames(form) {
 function seeJoke(data) {
   jokeText.innerText = data.value.joke;
 }
+
