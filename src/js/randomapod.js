@@ -3,7 +3,9 @@ const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
 
 const $getApod = document.getElementById('getApod');
 
-document.querySelector('.card-apod').style.display = "none";
+const randomApodDisplay = document.querySelector('.card-apod');
+
+randomApodDisplay.style.display = "none";
 
 var now = new Date(); 
 var min = new Date(1995, 5, 16).getTime(); 
@@ -38,11 +40,10 @@ fetch(API_URL_RANDOM)
 })
   .then(apod =>  {
   if ($getApod.addEventListener('click',() => {
-    document.querySelector('.apodButton').style.display = "none";
-    document.querySelector('.card-apod').style.display = "block";
-    
+    randomApodDisplay.style.display = "block";
+
     const $title = apod.title;
-    const $image = apod.hdurl;
+    const $image = apod.url;
     const $description = apod.explanation;
     const $author = apod.copyright;
 
@@ -55,4 +56,8 @@ fetch(API_URL_RANDOM)
     document.getElementById('title').innerHTML = $title;
     document.getElementById('author').innerHTML = `Image Credits: ${$author}`;
   }));
+  if ($getApod.addEventListener('dblclick',() => {
+    document.location.reload(true);
+  }));
 });
+

@@ -4,7 +4,9 @@ const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
 const $getApod = document.getElementById('getApod');
 const $apodsContainer = document.getElementById('apodsContainer');
 
-document.querySelector('.card-apod').style.display = "none";
+const apodDisplay = document.querySelector('.card-apod')
+
+apodDisplay.style.display = "none";
 
 fetch(API_URL)
   .then(response => {
@@ -13,10 +15,10 @@ fetch(API_URL)
   .then(apod =>  {
   if ($getApod.addEventListener('click',() => {
     document.querySelector('.apodButton').style.display = "none";
-    document.querySelector('.card-apod').style.display = "block";
+    apodDisplay.style.display = "block";
     
     const $title = apod.title;
-    const $image = apod.hdurl;
+    const $image = apod.url;
     const $description = apod.explanation;
     const $author = apod.copyright;
 
