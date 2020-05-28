@@ -19,15 +19,20 @@ https://superheroapi.com/index.html
 
 - https://superheroapi.com/api/access-token/search/name
   -> Permet la recherche par nom
-
-- https://superheroapi.com/api/access-token/character-id/powerstats
-  -> Permet de récupérer les statistiques du super héro
-
-- https://superheroapi.com/api/access-token/character-id/appearance
-  -> Permet de récupérer l'apparence du super héro
+  -> Renvoi toutes les données du héro
 
 ## Fonctionnement détaillé de l'application
 
+[ Toutes les actions possibles sont caractérisées par la couleur rouge ]
+
 - Recherche d'un super héro par son nom via une barre de recherche.
+- Le bouton loupe lance la recherche.
+- Une fois la recherche lancée, le bouton loupe et 'Ajouter à ma team' se désactivent le temps de la réponse.
 - Une fois la recherche effectuée, une carte regroupant les caractéristiques du super héro s'affiche.
-- Le bouton 'Ajouter à ma Team' permet d'ajouter' un nouveau Super à sa Team.
+- Le bouton contenant un chevron plein permet d'ouvrir le volet contenant l'image du super héro
+  -> Ce même volet sur la carte 'Ma Team' contient au fur et à mesure les images des héros ajoutés à la Team.
+- Le bouton 'Ajouter à ma Team' permet d'ajouter un nouveau Super à sa Team.
+- Les caractéristiquent s'ajoutent à celles des héros déjà présents dans la Team.
+- Le bouton 'Rafraîchir ma Team' permet de mettre à zéro sa Team sans reload la page.
+- Le bouton 'Tous les héros' renvoi sur la page qui liste tous les héros présents dans l'API.
+- Clic sur le titre recharge index.html.
