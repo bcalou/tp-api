@@ -32,11 +32,11 @@ const animeElement = (res):void => { // Créer chaque élément avec son titre e
         div.append(h2)
 
         $inputAnime.addEventListener('keyup', (e) => {
-          if (e.target === h2 ) { // Je ne trouve pas la propriété qui permet de dire "e.target par rapport au 1er caractère, puis au 2ème etc. J'avais pas exemple essayé avec h2.length mais ça ne marche pas"
-            h2.style.display = "block"
+          if (e.target === h2) { // Je ne trouve pas la propriété qui permet de dire "e.target par rapport au 1er caractère, puis au 2ème etc. J'avais pas exemple essayé avec h2.length mais ça ne marche pas"
+            h2.style.display = "block" // Lorsqu'on efface tout les caractères dans l'input, on est obligé d'appuyer sur entrer pour que ça re-affiche (ce qui fait charger la page). Même un preventDefault() ne fait rien
             image.style.display = "block"
             div.style.display = "block"
-          } else {
+          } else { 
             h2.style.display = "none"
             image.style.display = "none"
             div.style.display = "none"
