@@ -9,18 +9,17 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Affichent des images exclusives de la NASA
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.nasa.gov/planetary/apod?api_key=hNbh4bjOeNIfhirPFzKPjM6WlMA4pLT4rQeAk1u0
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+/planetary/apod
+
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Affichent une imags prise par la NASA
