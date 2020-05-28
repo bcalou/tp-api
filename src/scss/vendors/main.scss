@@ -1,0 +1,23 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    font-size: 20px;
+    & button {
+        border: 1px solid blue;
+        background-color: cornflowerblue;
+        margin-top: 2%;
+        width: 5%;
+    }
+    .container {
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        height: 400px;
+        width: 300px;
+    }
+
+}
