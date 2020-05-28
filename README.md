@@ -17,10 +17,12 @@ https://api.spoonacular.com
 
 ## Liste des routes sollicitées
 
-- https://api.spoonacular.com/recipes/${recipe.id}/analyzedInstructions?apiKey=${API_key}
-- https://api.spoonacular.com/recipes/search?query=${searchBox.value}&number=${numberOfRecipes}&apiKey=${API_key}
-- https://api.spoonacular.com/recipes/${recipe.id}/ingredientWidget.json?apiKey=${API_key}`)
+- https://api.spoonacular.com/recipes/search?query=banana&number=6&apiKey=XXXX
+- https://api.spoonacular.com/recipes/474033/analyzedInstructions?apiKey=XXXX
+- https://api.spoonacular.com/recipes/474033/ingredientWidget.json?apiKey=XXXX
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+- Sur la bar recherche (search) => Chercher les recettes souhaiter avec le nom des recette ou les ingredients. example: pasta, banana, etc.
+- Trouver les recettes proposes depuis la bar recherche.
+- Trouver les details des recettes (nom, image, les ingredients, les temps de cuisson et les etapes de cuisson.
