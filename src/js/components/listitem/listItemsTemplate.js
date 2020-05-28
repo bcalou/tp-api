@@ -11,7 +11,7 @@ export function setRecipesList(option) {
     type: 'li',
     attributes: {
       class: `p-2 mt-2 border border-secondary rounded ${
-        option.favorites ? 'favoritListItem' : 'recipeListItem'
+        option.itemOfFavoritesList ? 'favoritListItem' : 'recipeListItem'
       }`,
     },
     $parent: $listFragment,
@@ -37,18 +37,12 @@ export function setRecipesList(option) {
   createElement({
     type: 'p',
     content: `⏲ : ${option.recipe.readyInMinutes} min`,
-    attributes: {
-      //class: 'mb-0',
-    },
     $parent: $recipeDescription,
   });
 
   createElement({
     type: 'p',
     content: `👥 : ${option.recipe.servings} pers`,
-    attributes: {
-      //class: 'mb-0',
-    },
     $parent: $recipeDescription,
   });
 
@@ -71,20 +65,37 @@ export function setRecipesList(option) {
     },
   });
 
-  createElement({
-    type: 'button',
-    id: option.recipe.id,
-    content: `${
-      option.favorites ? 'Supprimer de la liste' : 'Ajouter aux favoris'
-    }`,
-    $parent: $buttons,
-    attributes: {
-      class: `${option.favorites ? 'btn btn-danger' : 'btn btn-info'}`,
-    },
-    clickFunction: option.favorites
-      ? deleteFromFavorites
-      : addRecipeToFavorites,
-  });
+  if (option.itemOfFavoritesList) {
+    createElement({
+      type: 'button',
+      id: option.recipe.id,
+      content: 'Supprimer de la liste',
+      $parent: $buttons,
+      attributes: {
+        class: 'btn btn-danger',
+      },
+      clickFunction: deleteFromFavorites,
+    });
+  } else {
+    createElement({
+      type: 'button',
+      id: option.recipe.id,
+      content: `${
+        option.recipesAlreadyAddedInFavorites
+          ? 'Recette déjà dans les favoris'
+          : 'Ajouter aux favoris'
+      }`,
+      $parent: $buttons,
+      attributes: {
+        class: `${
+          option.recipesAlreadyAddedInFavorites
+            ? 'btn btn-primary'
+            : 'btn btn-info'
+        }`,
+      },
+      clickFunction: addRecipeToFavorites,
+    });
+  }
 
   return $listFragment;
 }

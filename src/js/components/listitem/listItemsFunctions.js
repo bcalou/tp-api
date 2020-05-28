@@ -1,5 +1,5 @@
-import { url, apiKey } from '../../settings/constants';
-import { $favoritesList } from './../../pages/favorites/favotitesTemplate';
+import { url, apiKey, favoritesRecipesList } from '../../settings/constants';
+import { $favoritesList } from '../../pages/favorites/favotitesRecipesTemplate';
 
 function getRecipeInfoById(id) {
   return fetch(
@@ -9,21 +9,10 @@ function getRecipeInfoById(id) {
 
 export function addRecipeToFavorites(e) {
   const actualId = e.target.dataset.id;
-  let reciprAlreadyExist = false;
-  let recipesList;
 
-  if (!localStorage.getItem('favoritesRecipes')) {
-    recipesList = [];
-  } else {
-    recipesList = JSON.parse(localStorage.getItem('favoritesRecipes'));
-    recipesList.forEach((recipe) => {
-      if (recipe.id == actualId) {
-        reciprAlreadyExist = true;
-      }
-    });
-  }
-
-  if (!reciprAlreadyExist) {
+  if (
+    favoritesRecipesList.find((recipe) => recipe.id == actualId) === undefined
+  ) {
     getRecipeInfoById(e.target.dataset.id).then((data) => {
       let recipeInfo = {
         title: data.title,
@@ -32,13 +21,17 @@ export function addRecipeToFavorites(e) {
         sourceUrl: data.sourceUrl,
         id: data.id,
       };
-      recipesList.unshift(recipeInfo);
-      localStorage.setItem('favoritesRecipes', JSON.stringify(recipesList));
+      favoritesRecipesList.unshift(recipeInfo);
+      localStorage.setItem(
+        'favoritesRecipes',
+        JSON.stringify(favoritesRecipesList)
+      );
       e.target.textContent = 'Ajouté :)';
       e.target.className = 'btn btn-primary';
     });
   } else {
-    e.target.textContent = 'Cette recette est déjà dans les favoris!';
+    e.target.textContent =
+      'Du calme pépito, la recette est déjà dans tes favoris!';
     e.target.className = 'btn btn-danger';
   }
 }
@@ -46,12 +39,18 @@ export function addRecipeToFavorites(e) {
 export function deleteFromFavorites(e) {
   const actualId = e.target.dataset.id;
 
-  const recipesList = JSON.parse(localStorage.getItem('favoritesRecipes'));
-  const index = recipesList.findIndex((recipe) => recipe.id == actualId);
-  recipesList.splice(index, 1);
+  console.log(favoritesRecipesList);
+  //const recipesList = JSON.parse(localStorage.getItem('favoritesRecipes'));
+  const index = favoritesRecipesList.findIndex(
+    (recipe) => recipe.id == actualId
+  );
+  favoritesRecipesList.splice(index, 1);
 
   $favoritesList.removeChild(
     document.querySelectorAll('.favoritListItem')[index]
   );
-  localStorage.setItem('favoritesRecipes', JSON.stringify(recipesList));
+  localStorage.setItem(
+    'favoritesRecipes',
+    JSON.stringify(favoritesRecipesList)
+  );
 }

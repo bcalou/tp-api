@@ -25,6 +25,12 @@ function showHideMenu() {
   $nav.classList.toggle('is-visible');
 }
 
+window.addEventListener('resize', (e) => {
+  if (e.target.innerWidth < 768) {
+    $nav.classList.remove('is-visible');
+  }
+});
+
 export const $list = createElement({
   type: 'ul',
   $parent: $nav,

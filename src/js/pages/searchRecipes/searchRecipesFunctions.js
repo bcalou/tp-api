@@ -1,4 +1,4 @@
-import { url, apiKey } from '../../settings/constants';
+import { url, apiKey, favoritesRecipesList } from '../../settings/constants';
 
 import {
   $form,
@@ -8,7 +8,7 @@ import {
   $intolerancesSelect,
   $recipesList,
   $submitButton,
-} from './recipesFormTemplate';
+} from './searchRecipesTemplate';
 
 import { setRecipesList } from '../../components/listitem/listItemsTemplate';
 
@@ -31,7 +31,13 @@ function recipesQuery(search) {
 function getRecipesList(parameters) {
   recipesQuery(parameters).then((data) => {
     data.results.forEach((recipe) => {
-      $recipesList.appendChild(setRecipesList({ recipe }));
+      const recipesAlreadyAddedInFavorites =
+        favoritesRecipesList.find((item) => item.id == recipe.id) === undefined
+          ? false
+          : true;
+      $recipesList.appendChild(
+        setRecipesList({ recipe, recipesAlreadyAddedInFavorites })
+      );
       isLoaded = true;
     });
   });

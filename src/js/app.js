@@ -2,32 +2,27 @@ import {
   handleInputChanges,
   submitForm,
   infiniteLoading,
-} from './pages/recipes/recipesFuntions';
-
-import { setFavoritesRecipesList } from './pages/favorites/favoritesFunctions';
-
+} from './pages/searchRecipes/searchRecipesFunctions';
+import { setFavoritesRecipesList } from './pages/favorites/favoritesRecipesFunctions';
 import { createElement } from './settings/creatElements';
 import { $nav, $list } from './components/nav/nav';
-import {
-  $recipesPageContent,
-  $recipesList,
-} from './pages/recipes/recipesFormTemplate';
-import { $favoritePageTemplate } from './pages/favorites/favotitesTemplate';
+import { $recipesPageContent } from './pages/searchRecipes/searchRecipesTemplate';
+import { $favoritePageTemplate } from './pages/favorites/favotitesRecipesTemplate';
+import { favoritesRecipesList } from './settings/constants';
+
+//localStorage.removeItem('favoritesRecipes');
 
 document.addEventListener('DOMContentLoaded', () => {
   class Model {
     constructor() {
       this.test = document.getElementById('recipe');
       this.recipesDynamism = () => {
-        $recipesList.innerHTML = '';
         handleInputChanges();
         submitForm();
         infiniteLoading();
       };
       this.favoritesDynamism = () => {
-        setFavoritesRecipesList(
-          JSON.parse(localStorage.getItem('favoritesRecipes'))
-        );
+        setFavoritesRecipesList(favoritesRecipesList);
       };
       this.pages = [
         {
