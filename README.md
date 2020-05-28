@@ -22,9 +22,10 @@ https://pokeapi.co/
 ## Fonctionnement détaillé de l'application
 
 À remplir : que peux faire votre prototype ?
-
-Consulter la liste de tout les pokémons de toutes les générations jusqu'au pokémon 807
-Rechercher un/des pokémons via leurs noms grace à une searchBar
-Rechercher un/des pokémons via leurs types grace à un select 
-Rechercher un/des pokémons via leurs types ET de leurs noms (en même temps) 
-Connaitre le nombre de pokémons qui corresponds à nos critère
+<ul>
+  <li>Consulter la liste de tout les pokémons de toutes les générations jusqu'au pokémon 807</li>
+  <li>Rechercher un/des pokémons via leurs noms grace à une searchBar</li>
+  <li>Rechercher un/des pokémons via leurs types grace à un select </li>
+  <li>Rechercher un/des pokémons via leurs types ET de leurs noms (en même temps) </li>
+  <li>Connaitre le nombre de pokémons qui corresponds à nos critère</li>
+</ul>
