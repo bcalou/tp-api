@@ -4,11 +4,150 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Fun Translations</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hello World</h1>
+    <article class="luckyTranslation">
+      <button type="button" onclick="getRandomSentence()" class="lucky">
+        I'm Feeling Lucky
+      </button>
+      <p class="randomSentence">
+        <span class="original">"Have you seen my lady’s dragon?"</span></br> 
+        in <span class="language">Dothraki</span> is said </br>
+        <span class="translated">"Hash yeri ray tih erinak’s zhavorsa?"</span>
+      </p>
+    </article>
+    <article class="main">
+      <form class="prompt">
+        <label for="phrase">Enter a sentence to translate</label>
+        <input
+          type="text"
+          class="prompt__sentence"
+          placeholder="Hello World"
+          id="phrase"
+        />
+        <label for="selectbox">Choose a language</label>
+        <select name="selectbox" id="selectbox" class="prompt__select">
+          <option value="">--Please choose an option--</option>
+          <option value="dothraki">Dothraki</option>
+          <option value="valyrian">Valyrian</option>
+        </select>
+        <button type="button" onclick="translateSentence()">
+          Translate
+        </button>
+      </form>
+
+      <article>
+        <h2 id="textTranslated"></h2>
+      </article>
+    </article>
+
+    <!--<script src="/script.js" type="text/javascript"></script>-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+      const FT_API_URL = "https://api.funtranslations.com/translate/";
+      var sentenceList = [
+        "He spiked his hair green to support his iguana.",
+        "Malls are great places to shop; I can find everything I need under one roof.",
+        "He was so preoccupied with whether or not he could that he failed to stop to consider if he should.",
+      ];
+      var languageList = ["southern-accent", "groot"];
+
+      function displayTextTranslation(data) {
+        document.getElementById("textTranslated").innerHTML = data.translated;
+      }
+
+      function getRandomSentence() {
+        var sntc = sentenceList[Math.floor(Math.random() * 3)];
+        var lng = languageList[Math.floor(Math.random() * 2)];
+        var tmp = {
+          text: sntc,
+          type: lng,
+        };
+        translation(tmp, true);
+      }
+
+      function displayRandomSentence(body) {
+        document.getElementsByClassName("original").innerHTML =
+          body.contents.text;
+        document.getElementsByClassName("language").innerHTML =
+          body.contents.translation;
+        document.getElementsByClassName("translated").innerHTML =
+          body.contents.translated;
+      }
+
+      function translateSentence() {
+        var tmp = verifyInput();
+        if (!tmp.result) {
+          console.log(tmp);
+          return;
+        }
+        translation(tmp, false);
+      }
+
+      function translation(tmp, rdm) {
+        var query = `?text=${encodeURI(tmp.text)}`;
+        var url = FT_API_URL + tmp.type + query;
+
+        makeAPIRequest(url, function (res) {
+          if (!res.result) {
+            console.log("Error contacting api, see error", res);
+            return;
+          }
+
+          var body = res.body;
+          // console.log("BODY", body);
+
+          if (body.hasOwnProperty("error")) {
+            // i think i reach api limit
+            console.log("API Error", body);
+            return;
+          } else if (!body.hasOwnProperty("contents")) {
+            console.log("Cannot read API answer", body);
+            return;
+          }
+          if (rdm) {
+            displayRandomSentence(body);
+          } else {
+            displayTextTranslation(body.contents);
+          }
+        });
+      }
+
+      function makeAPIRequest(url, callback) {
+        axios
+          .get(url)
+          .then(function (body) {
+            callback({ result: true, body: body.data });
+          })
+          .catch(function (error) {
+            callback({ result: false, error: error });
+          });
+      }
+
+      function verifyInput() {
+        var elem = document.getElementById("phrase");
+        var type = document.getElementById("selectbox");
+
+        if (!elem.value || elem.value == "") {
+          return { result: false };
+        }
+
+        if (type.value == "") {
+          return { result: false };
+        }
+
+        return {
+          result: true,
+          text: elem.value,
+          type: type.value,
+        };
+      }
+    </script>
   </body>
 </html>
