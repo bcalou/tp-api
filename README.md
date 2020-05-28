@@ -24,5 +24,5 @@ https://api.spoonacular.com
 ## Fonctionnement détaillé de l'application
 
 - Sur la bar recherche (search) => Chercher les recettes souhaiter avec le nom des recette ou les ingredients. example: pasta, banana, etc.
-- Trouver les recettes proposes depuis la bar recherche.
-- Trouver les details des recettes (nom, image, les ingredients, les temps de cuisson et les etapes de cuisson.
+- Trouver les recettes proposées depuis la bar recherche.
+- Trouver les details des recettes (nom, image, les ingredients, les temps de cuisson et les étapes de cuisson.
