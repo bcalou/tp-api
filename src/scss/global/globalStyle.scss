@@ -1,0 +1,26 @@
+$backgroundColor: rgb(29, 53, 87);
+
+@mixin large {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+h1 {
+  font-family: 'Lobster';
+
+  @include large {
+    font-size: 4rem;
+  }
+  & .subtitle {
+    font-size: 0.7rem;
+
+    @include large {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+header {
+  background-color: $backgroundColor;
+}

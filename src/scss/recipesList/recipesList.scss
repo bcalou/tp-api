@@ -1,0 +1,17 @@
+.recipes {
+  width: 90%;
+  max-width: 900px;
+
+  @include large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+
+    & p {
+      grid-column: 1 / end;
+    }
+    & img {
+      grid-column: 1 / end;
+    }
+  }
+}
