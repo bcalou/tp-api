@@ -6,9 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="container">
+      <h1>Chuck Norris Jokes</h1>
+      <img id="chuckImg" src="pngwave.png" alt="chuck" />
+      <form id="jokeForm">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="Chuck" />
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" placeholder="Norris" />
+        <button type="submit" id="jokeBtn">Get Joke!</button>
+      </form>
+
+      <p id="jokeText"></p>
+    </div>
   </body>
 </html>
