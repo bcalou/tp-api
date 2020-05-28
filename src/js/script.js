@@ -13,7 +13,9 @@ const $jokeContainer = document.getElementById("jokeContainer");
 function getRandomJoke() {
   $jokeContainer.textContent = "Chargement en cours";
   console.log("Listener OK!");
-  return fetch(getRandomJokeUrl(), { mode: "no-cors" })
+  var result = fetch(getRandomJokeUrl()).then(res => res.json());
+  console.log(result);
+  return fetch(getRandomJokeUrl())
     .then(res => res.json())
     .then(joke => showJoke(joke));
 }
@@ -22,7 +24,7 @@ function getRandomJoke() {
 function getCategoryJoke() {
   $jokeContainer.textContent = "Chargement en cours";
 
-  return fetch(getCategoryJokeUrl(), { mode: "no-cors" })
+  return fetch(getCategoryJokeUrl())
     .then(res => res.json())
     .then(joke => showJoke(joke));
 }
@@ -36,7 +38,7 @@ function getRandomJokeUrl() {
 function getCategoryJokeUrl() {
   console.log("Generated category url OK!");
 
-  return `${API_URL}/jokes/random?category=${getSelectedCategory}`;
+  return `${API_URL}/random?category=${getSelectedCategory()}`;
 }
 
 // Display joke into <p> tag
@@ -54,7 +56,7 @@ function showJoke(joke) {
 function getJokeElement(joke) {
   const $joke = createElement({ type: "article" });
 
-  createElement({ type: "p", text: joke.value, parent: $value });
+  createElement({ type: "p", text: joke.value, parent: $joke });
 
   return $joke;
 }
@@ -81,7 +83,8 @@ function toggleButton($button) {
 
 // Get value of selected animal radio button
 function getSelectedCategory() {
-  return document.querySelectorAll("#select :selected").text;
+  //return document.querySelectorAll("#select :selected").text;
+  return document.getElementById("select").value;
 }
 
 //document.getElementById('liste').value;
