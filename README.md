@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-Parler le langage des Minions
+Découvrir des photos de chien
 
 ## URL de l'API utilisée
 
-https://api.funtranslations.com/translate/minion.json
+https://dog.ceo/api/breeds/image/random
 
 ## Liste des routes sollicitées
 

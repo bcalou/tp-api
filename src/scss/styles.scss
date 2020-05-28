@@ -1,5 +1,7 @@
-@import 'vendors/reset';
+@import "vendors/reset";
+@import "vendors/main.scss";
 
 body {
-  background-color: lightblue;
+  display: flex;
+  align-items: center;
 }
