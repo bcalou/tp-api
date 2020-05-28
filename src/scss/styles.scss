@@ -1,5 +1,21 @@
 @import 'vendors/reset';
 
 body {
-  background-color: lightblue;
+  background-color: white;
+}
+
+.title {
+  display: flex; 
+  justify-content: center;
+}
+
+.img {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
