@@ -117,6 +117,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     /************* create div of recipe on page as result ************/
 
+    function controlbutton(divRecipe, buttonDisplay, recipe) {
+        if (buttonDisplay === true) {
+            let buttonSeeRecipe = document.createElement('button')
+            buttonSeeRecipe.className = 'buttonSeeRecipe'
+            buttonSeeRecipe.innerText = 'See Recipe'
+            divRecipe.appendChild(buttonSeeRecipe)
+
+            buttonSeeRecipe.addEventListener('click', () => {
+                // change the class
+                sectionSearch.style.display = 'none'
+                sectionDisplayResult.classList.toggle('displayResult-is-open')
+                sectionResult.style.display = 'none'
+                detailsRecipe(recipe)
+            })
+        }
+    }
+
     function generateRecipeDiv(recipe, buttonDisplay) {
         let divRecipe = document.createElement('div')
         divRecipe.className = 'wantedFood'
@@ -137,26 +154,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
         cookTime.innerText = 'Cook Time ' + recipe.readyInMinutes + 'min'
         divRecipe.appendChild(cookTime)
 
-        if (buttonDisplay === true) {
-            let buttonSeeRecipe = document.createElement('button')
-            buttonSeeRecipe.className = 'buttonSeeRecipe'
-            buttonSeeRecipe.innerText = 'See Recipe'
-            divRecipe.appendChild(buttonSeeRecipe)
+        controlbutton(divRecipe, buttonDisplay, recipe)
 
-            buttonSeeRecipe.addEventListener('click', () => {
-                // change the class
-                sectionSearch.style.display = 'none'
-                sectionDisplayResult.classList.toggle('displayResult-is-open')
-                sectionResult.style.display = 'none'
-                detailsRecipe(recipe)
-            })
-        }
         return divRecipe
     }
 
-  searchbutton.addEventListener('click', () => {
+    searchbutton.addEventListener('click', () => {
         sectionResult.classList.toggle('result-is-open')
-        
+
         sectionSearch.classList.toggle('search-haved-result')
         searchWrap.classList.toggle('wrap-result-is-open')
         resultFoodIngredients.innerHTML = ''
