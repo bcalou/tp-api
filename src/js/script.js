@@ -3,13 +3,12 @@ document.getElementById("getUsers").addEventListener("click", getSpells);
 document.getElementById("getPosts").addEventListener("click", getCharacters);
 document.getElementById("title").addEventListener("click", getCharactersSearch);
 
-// document.getElementById("addPost").addEventListener("submit", addPost);
-const container = document.getElementById("container");
-
 API_URL = "https://www.potterapi.com/v1/";
 API_KEY = "/?key=$2a$10$ic.wdemGvyXtUA5jugCjreRaG1HZKSuT3wLAia24ElmSuCFyUo3Xq";
 
 let house;
+// document.getElementById("addPost").addEventListener("submit", addPost);
+const container = document.getElementById("container");
 
 function getHouse() {
 	fetch(API_URL + "sortingHat")
@@ -35,10 +34,10 @@ function getSpells() {
 	fetch(API_URL + "spells" + API_KEY)
 		.then((response) => response.json())
 		.then((data) => {
-			let outpout = '<h2 class="mb-4">Tu trouveras ici la liste des sorts</h2>';
+			let outpout = "<h2>Tu trouveras ici la liste des sorts</h2>";
 
 			data.forEach(function (spells) {
-				outpout += `<ul class="list-group mb-3">
+				outpout += `<ul class="list-group mb-3 ml-4 card-body">
 				<li class="list-group-item">Nom : ${spells.spell}</li>
 				<li class="list-group-item">Effet : ${spells.effect}</li>
 				<li class="list-group-item">Type : ${spells.type}</li>
@@ -56,7 +55,7 @@ function getCharacters() {
 			let outpout = '<h2 class="mb-4">La liste de tous les élèves</h2>';
 			data.forEach(function (character) {
 				outpout += `
-				<div class="card card-body mb-3>
+				<div class="card card-body mb-3 text-center">
 				<h3>${character.name}</h3>
 				<p>${character.house}</p>
 				</div>`;
