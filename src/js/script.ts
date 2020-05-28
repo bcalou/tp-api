@@ -1,38 +1,120 @@
-const API_KEY: string = "3831083750296778";
-const API_URL: string = "https://superheroapi.com/api/";
-const PROXY_URL: string = "https://cors-anywhere.herokuapp.com/";
+const api_key: string = "key=89b0fc47e532d27c5c3b997595156649";
+const api_url: string = "https://api.brewerydb.com/v2";
+const proxy_url: string = "https://cors-anywhere.herokuapp.com/";
 
-let $keywordForm: HTMLElement = document.querySelector(".keyword__form");
-console.log($keywordForm);
+const $searchButton: HTMLElement = document.querySelector(".keyword__form");
+const $container: HTMLElement = document.querySelector(".results__container");
+const $randomBeer: HTMLElement = document.getElementById("randomBeer");
+const $randomBreewery: HTMLElement = document.getElementById("randomBrewery");
 
-interface Heroes {
-  id: number;
-  image: string;
+interface ResultDB {
+  id: string;
   name: string;
+  description: string;
+  type: string;
+  established?: number;
+  isOrganic?: string;
 }
 
-function getHeroUrl(): string {
-  let keyword: string = (document.querySelector(
-    ".keyword__form--search"
-  ) as HTMLInputElement).value;
-  if (!keyword) {
-    alert("Rentrez un input svp");
-  } else {
-    let myKeyword: string = `search/${keyword}`;
-    return myKeyword;
+interface CreateElement {
+  type: string;
+  content?: string;
+  parent?: HTMLElement;
+  class?: string;
+  img?: string;
+}
+
+//  5 - CREATE HTML ELEMENTS
+function createElement(options: CreateElement): HTMLElement {
+  const $element: HTMLElement = document.createElement(options.type);
+
+  if (options.parent) {
+    options.parent.appendChild($element);
   }
+
+  if (options.content) {
+    $element.textContent = options.content;
+  }
+
+  if (options.class) {
+    $element.setAttribute("class", options.class);
+  }
+
+  return $element;
 }
 
-function getHero(): string {
-  fetch(`${PROXY_URL}${API_URL}${API_KEY}/` + getHeroUrl())
+// 4 -
+function getResultElement(result: ResultDB): HTMLElement {
+  const $listItem: HTMLElement = createElement({
+    type: "div",
+    class: "result",
+  });
+  console.log(result);
+
+  createElement({
+    type: "h1",
+    content: result.name + " | " + result.type,
+    parent: $listItem,
+    class: "result__title",
+  });
+
+  createElement({
+    type: "p",
+    content: result.description,
+    parent: $listItem,
+    class: "result__description",
+  });
+
+  return $listItem;
+}
+
+// 3 - SHOW ALL RESULTS
+function showResults(results): void {
+  $container.textContent = "";
+
+  const $fragment: any = document.createDocumentFragment();
+
+  results.forEach((result) => {
+    $fragment.appendChild(getResultElement(result));
+  });
+
+  $container.appendChild($fragment);
+}
+
+// 2 - FETCH FOR API
+function fetchBeerAPI(): void {
+  $container.innerHTML = "Chargement...";
+  console.log(getFetchUrl());
+  fetch(getFetchUrl())
     .then((res) => res.json())
-    .then((heroDatas) => {
-      let heros: Array<Heroes> = heroDatas.results;
-      console.log(heros);
+    .then((data) => {
+      let result: Array<ResultDB> = data.data;
+      if (result.length === 0) {
+        alert("No match found, try again.");
+      }
+      showResults(result);
     });
 }
 
-$keywordForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  getHero();
-});
+// 2-1 - GET THE URL FOR FETCH
+function getFetchUrl(): string {
+  let keyword: string = (document.querySelector(
+    ".keyword__inputs--search"
+  ) as HTMLInputElement).value;
+  if (!keyword) {
+    alert("Renseignez un keyword");
+  } else if (keyword) {
+    let searchKeyword: string = `q=${keyword}`;
+    return `${proxy_url}${api_url}/search/?${api_key}&${searchKeyword}`;
+  }
+}
+
+// 1 - MAIN
+function main(): void {
+  $searchButton.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetchBeerAPI();
+  });
+}
+
+main();

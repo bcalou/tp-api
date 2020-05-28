@@ -7,13 +7,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
     <script async src="js/script.ts"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <p>
+      Find the perfect beer and the perfect brewery with any keyword you want !
+    </p>
     <form class="keyword__form">
       <h2>Search by Keyword</h2>
-      <input name="keywords" type="text" class="keyword__form--search" />
-      <button class="keyword__form--button">Valider</button>
+      <div class="keyword__inputs">
+        <input name="keywords" type="text" class="keyword__inputs--search" />
+        <input type="submit" value="Valider" class="keyword__inputs--button" />
+      </div>
     </form>
-    <div id="here"></div>
+    <div class="results__container"></div>
   </body>
 </html>
