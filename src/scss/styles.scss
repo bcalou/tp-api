@@ -1,2 +1,11 @@
 @import "vendors/reset";
+@import "vendors/fonts.scss";
 @import "index.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}

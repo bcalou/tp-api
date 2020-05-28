@@ -1,11 +1,48 @@
-.blackList {
-  font-size: 22px;
+.container {
+  background-color: #efefef;
+
+  &__title {
+    font-size: 34px;
+    text-align: center;
+    color: #e6b2ae;
+    font-family: $cosmic;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+  }
 }
 
-.factButton {
-  height: 40px;
-  width: 200px;
-  border: solid 1px black;
-  background-color: pink;
+.blackList {
   font-size: 22px;
+  font-family: $cosmic;
+  color: #76588b;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  color: #76588b;
+  font-family: $cosmic;
+  font-size: 16px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  .wrapper__button {
+    height: 40px;
+    width: 200px;
+    border: solid 3px #76588b;
+    background-color: #e6b2ae;
+    font-size: 22px;
+    border-radius: 30%;
+  }
+}
+.backgroundImg {
+  position: absolute;
+  bottom: 0;
+}
+
+.div {
+  display: flex;
 }
