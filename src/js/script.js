@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const numberOfRecipes = 6;
   const searchbutton = document.querySelector(".searchBox__searchButton");
   const searchBox = document.querySelector(".searchBox__searchTerm");
-  const foodsContainer = document.querySelector(".popular__food");
+  const foodsContainer = document.querySelector(".result__food");
   const headerResult = document.querySelector(".displayResult__searchValue");
   const results = document.querySelector(".resultSearch__details");
   const resultFoodName = document.querySelector(".resultSearch__name");
@@ -125,10 +125,11 @@ function generateInstructionText(stepInfo) {
   
   function generateRecipeDiv(recipe, buttonDisplay) {
     let divRecipe = document.createElement('div')
-    divRecipe.className ='foopopularFood__type foodType'
+    divRecipe.className = 'wantedFood';
     
 
     let foodName = document.createElement('h4');
+    foodName.className = 'foodTitle';
     foodName.innerText = recipe.title;
     divRecipe.appendChild(foodName);
 
@@ -138,7 +139,7 @@ function generateInstructionText(stepInfo) {
     divRecipe.appendChild(foodPicture);
 
     let cookTime = document.createElement('h5');
-    cookTime.innerText = recipe.readyInMinutes;
+    cookTime.innerText = "Cook Time " + recipe.readyInMinutes + "min";
     divRecipe.appendChild(cookTime);
 
    

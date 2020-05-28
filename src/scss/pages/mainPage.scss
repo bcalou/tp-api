@@ -72,14 +72,14 @@
   width: 100vw;
 }
 
-.popular {
+.result {
   width: 100vw;
   min-height: 100vh;
-  background-color: seashell;
+  background-color: white;
   
 
   
- 
+  resultFood__type foodType
     
 
   &__food {
@@ -88,17 +88,25 @@
     grid-auto-rows: 400px;
     grid-gap: 4px;
 
-    .popularFood__type {
-      background-color: skyblue;
-      border: 1px solid $black;
-      margin: 20px;
-      @include flexbox(column, space-around, center);
-
-      .foodType__title {
-        font-size: 24px;
-
-      }
-      
-    }
+    
   }
 }
+
+.wantedFood {
+
+  
+  border: 1px solid $black;
+  margin: 20px;
+  height: 360px;
+  min-width: 280px;
+  @include flexbox(column, space-around, center);
+  border-radius: 8px;
+
+
+  .food {
+    font-size: 24px;
+
+  }
+  
+}
+
