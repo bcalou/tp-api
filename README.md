@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Avoir des blagues de Chuck Norris
 
 ## URL de l'API utilisée
 
-À remplir
+http://api.icndb.com/jokes/random
 
 ## Liste des routes sollicitées
 
@@ -23,4 +23,4 @@ npm run dev
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Mon prototype permet a l'utilisateur de entrer son nom et de faire ensuite afficher une blague avec.
