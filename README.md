@@ -9,17 +9,16 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+vous pouvez rechercher des film par leur nom
 
 ## URL de l'API utilisée
 
-À remplir
+`https://api.themoviedb.org/3/search/movie`
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- `https://api.themoviedb.org/3/search/movie?api_key=${apiToken}`
+- `https://api.themoviedb.org/3/search/movie?api_key=${apiToken}&language=fr&query=${text}`
 
 ## Fonctionnement détaillé de l'application
 
