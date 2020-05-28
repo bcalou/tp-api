@@ -1,5 +1,34 @@
 @import 'vendors/reset';
+@import 'blocs/apod.scss';
+@import 'config/medias.scss';
+
 
 body {
-  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+
+.body__home {
+  background-image: url(../assets/SpaceX.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.body__apod {
+  background-image: url(../assets/jupiter2.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.body__rdapod {
+  background-image: url(../assets/jupiter2.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+

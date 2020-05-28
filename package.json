@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
+    "apod": "parcel src/apod.html",
     "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +22,10 @@
   "homepage": "https://github.com/bcalou/tp-api#readme",
   "devDependencies": {
     "parcel": "^1.12.4",
-    "sass": "^1.26.5"
+    "sass": "^1.26.5",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0"
   }
 }
