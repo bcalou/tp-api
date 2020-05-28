@@ -15,6 +15,20 @@ function ajaxGet(url, callback) {
     req.send(null);
 }
 
+var lettres_title = document.getElementById("lettres");
+
+var lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+lettres.forEach(function (lettre) {
+    var lettre_content = document.createElement("a");
+    lettre_content.textContent = lettre;
+    lettre_content.href = "#";
+    lettre_content.addEventListener("click", function () {
+        afficherMots(lettre);
+    });
+    lettres_title.appendChild(lettre_content);
+    lettres_title.appendChild(document.createTextNode(" | "));
+});
+
 var motsId = document.getElementById("mots");
 
 function afficherMots(lettre) {
@@ -37,17 +51,3 @@ function afficherMots(lettre) {
         }
     });
 }
-
-var lettres_title = document.getElementById("lettres");
-
-var lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-lettres.forEach(function (lettre) {
-    var lettre_content = document.createElement("a");
-    lettre_content.textContent = lettre;
-    lettre_content.href = "#";
-    lettre_content.addEventListener("click", function () {
-        afficherMots(lettre);
-    });
-    lettres_title.appendChild(lettre_content);
-    lettres_title.appendChild(document.createTextNode(" | "));
-});
