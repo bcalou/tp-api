@@ -1,8 +1,12 @@
 @import "vendors/reset";
 
 body {
-  background-color: lightblue;
+  margin-top: 50px;
+  align-items: center;
   color: black;
+  background-image: url("../assets/image_de_fond.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .containt {
@@ -10,5 +14,13 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: black;
+  padding-top: 100px;
+  &__idBlague {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
 }

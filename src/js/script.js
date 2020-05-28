@@ -6,8 +6,8 @@ const $randomJokeButton = document.getElementById("randomJokeButton");
 const $jokeButton = document.getElementById("jokeButton");
 const $jokeContainer = document.getElementById("jokeContainer");
 
-console.log("valeur de randomJokeButton : " + $randomJokeButton);
-console.log("valeur de jokeButton : " + $jokeButton);
+//console.log("valeur de randomJokeButton : " + $randomJokeButton);
+//console.log("valeur de jokeButton : " + $jokeButton);
 
 // Fetch random joke from API
 function getRandomJoke() {
