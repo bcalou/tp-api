@@ -1,0 +1,21 @@
+.index-button {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    padding: 20px;
+}
+
+.game-infos {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 20px;
+}

@@ -1,5 +1,4 @@
-@import 'vendors/reset';
-
-body {
-  background-color: lightblue;
-}
+@import 'reset';
+@import 'body';
+@import 'main';
+@import 'game-infos';
