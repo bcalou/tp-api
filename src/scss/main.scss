@@ -1,0 +1,78 @@
+@media (max-width:320px){
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .logo__dog{
+    width:100px;
+    height: 120px;
+    margin-top:30px;
+  }
+  .formTitle {
+    display: flex;
+    justify-content: center;
+    font-size:16px;
+    font-weight:500;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  #formButton{
+    width:150px;
+    height:30px;
+    font-size: 16px;
+    font-weight:500;
+    color: white;
+    background-color: #1a91db;
+    border: none;
+    border-radius: 8px;
+    margin-top: 25px;
+  }
+  #formBreeds {
+    display:none;
+  }
+  #showButton {
+    width:75px;
+    height:25px;
+    margin-top:15px;
+    margin-left:5px;
+    display: none;
+    font-size: 16px;
+    font-weight:500;
+    color: white;
+    background-color: #1a91db;
+    border: none;
+    border-radius: 8px;
+  }
+  .discover__more{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight:500;
+  }
+  #randomButton {
+    width:75px;
+    height:25px;
+    margin-top: 20px;
+    margin-left: 120px;
+    display: flex;
+    font-size: 16px;
+    font-weight:500;
+    color: white;
+    background-color: #1a91db;
+    border: none;
+    border-radius: 8px;
+  }
+
+  #photosContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
