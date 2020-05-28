@@ -9,11 +9,11 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Pouvoir voir les infos de chaques personnages + si possible une citation
 
 ## URL de l'API utilisée
 
-À remplir
+https://the-one-api.herokuapp.com/documentation
 
 ## Liste des routes sollicitées
 
