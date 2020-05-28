@@ -23,5 +23,8 @@
     "parcel": "^1.12.4",
     "sass": "^1.26.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "unirest": "^0.6.0"
+  }
 }

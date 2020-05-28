@@ -1,5 +1,78 @@
 @import 'vendors/reset';
 
-body {
-  background-color: lightblue;
+.selector-for-some-widget {
+  box-sizing: content-box;
 }
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-intro{
+  width: 100vw;
+  padding: 20px;
+  color: white;
+  object-fit: fill;
+  background-attachment:fixed;
+  background-image: url(../img/pizzabg.png);
+  background-size: 450px ;
+  &__title{
+  font-size: 60px;
+  align-items: center;
+  margin-bottom: 10%;
+  }
+  &__text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    
+  }
+}
+
+button{
+  margin-top: 10%;
+  padding:8px;
+  padding-right: 18px;
+  padding-left:18px ;
+  font-size: 14px;
+  border-radius:4px;
+  background-color:#002939;
+  color: white;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+.add-recipe{
+  justify-content: flex-end;
+  margin-top: 10%;
+  margin-left: 60%;
+}
+
+.pizzatype{
+  margin-top: 80%;
+  margin-left: 8%;
+  font-size: 30px;
+}
+.pizza{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10%;
+  
+}
+
+div{
+  width: 100%;
+  height: 50vh;
+  background-color: lightblue;
+  margin-bottom: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
