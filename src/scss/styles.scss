@@ -21,6 +21,8 @@ form {
 body {
   background-color: rgb(231, 231, 231);
   text-align: center;
+  background: url("../assets/pokemon2.jpg") no-repeat center fixed;
+  background-size: cover;
 }
 
 .logo--pokemon {
@@ -31,6 +33,7 @@ body {
 
 .label__title {
   font-weight: 600;
+  color: white;
 }
 
 .subtitle {
@@ -38,5 +41,5 @@ body {
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 20px;
-  opacity: 0.5;
+  color: white;
 }
