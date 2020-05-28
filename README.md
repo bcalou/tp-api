@@ -21,11 +21,11 @@ site: https://pokepi.netlify.app/
 
 - Au moment du chargement de la page une requête est envoyée à l'API afin d'afficher un certain nombre de   pokemon
 
-  // affiche rles donnée du pokémon
+  --afficher les données des pokémons :
   const Api_Url = "https://pokeapi.co/api/v2/pokemon";
   fetch(`${Api_Url}/${index + 1}`)
   
-  //afficher l'image du pokémon
+  --afficher l'image du pokémon :
   img class="container__imgPokemon" src="https://pokeres.bastionbot.org/images/pokemon/${element.id}.png"
 
 - Lors du click sur le bouton "see more" on rappel l'API: fetch(${Api_Url}/${index + 1}) en plus d'avoir le nom et l'image on fait apparaitre son poid et ça taille
