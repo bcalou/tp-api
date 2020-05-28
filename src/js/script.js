@@ -10,7 +10,7 @@ const placeholderimage = require("../asset/media/no-image-available.jpg");
 
 document.getElementById("form-search").addEventListener("submit", (e) => {
   e.preventDefault();
- // removeArticle(); <- don't work
+  removeArticle();
 
 	const API_EVERYTHING = "http://newsapi.org/v2/everything";
 
@@ -72,12 +72,6 @@ const renderArticle = ({ title, source, description, url, urlToImage }) => {
 	return article;
 };
 
-/*function removeArticle(){ <- don't work
-  article.remove();
-  link.remove();
-  hOne.remove();
-  img.remove();
-  $description.remove();
-  articleContent.remove();
-  newspaper.remove();
-}*/
+function removeArticle(){ 
+  document.querySelector(".articleContainer").innerHTML = "";
+}
