@@ -18,7 +18,6 @@ const fetchPokemon = () => {
         moves = data.moves.map(move => move.move.name)[0];
         player1(data.id);
         player2(data.id);
-        generateAttack(data.moves.map(move => move.move.name)[0]);
       });
   }
 };
@@ -58,10 +57,17 @@ function player1() {
     parent: player1
   });
 
+  // createCardElement({
+  //   type: 'p',
+  //   class: 'battle__attacks',
+  //   content: `Attack : ${attackName}`,
+  //   parent: player1
+  // });
+
   createCardElement({
     type: 'p',
     class: 'battle__attacks',
-    content: `Attack : ${attackName}`,
+    content: `Attack : ${moves}`,
     parent: player1
   });
 
@@ -83,7 +89,7 @@ function player2() {
   let numberRandom = Math.floor(Math.random(`id`) * pokemonMax) + 1;
 
   const player2 = document.querySelector('.battle__player2');
-  player2.innerHTML = `<h2 class="battle__pokemon">#${id}</h2> <h3 class="battle__attacks">ATTACk : ${attackName}</h3> <h3 class="battle__powers"> Power:${power}</h3>
+  player2.innerHTML = `<h2 class="battle__pokemon">#${numberRandom}</h2> <h3 class="battle__attacks">ATTACk : ${attackName}</h3> <h3 class="battle__powers"> Power:${power}</h3>
    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${numberRandom}.png">`;
 }
 
