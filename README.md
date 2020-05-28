@@ -9,18 +9,18 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Montrer les noms des livres de "Lord of rings"
 
 ## URL de l'API utilisée
 
-À remplir
+https://the-one-api.herokuapp.com/v1/book
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- book
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+que peux faire votre prototype ?
+
+Vous devrez appuyer sur le button et il vous montre les livres de lord of rings

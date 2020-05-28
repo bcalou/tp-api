@@ -1,5 +1,60 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
 body {
   background-color: lightblue;
+}
+
+header {
+  display: flex;
+}
+
+.logo {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.call,
+.call2,
+.call3 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  height: 50px;
+  width: 120px;
+  border-radius: 9px;
+  border: 3px solid black;
+  background-color: lightblue;
+  outline: none;
+}
+
+.call:hover,
+.call2:hover,
+.call3:hover {
+  cursor: pointer;
+  background-color: black;
+  color: lightblue;
+}
+
+.result,
+.result2,
+.result3 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  line-height: 40px;
 }
