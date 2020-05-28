@@ -76,10 +76,12 @@
   width: 100vw;
   min-height: 100vh;
   background-color: white;
+  padding: 32px 0;
   
 
-  
-  resultFood__type foodType
+  .buttonBack {
+    display: none;
+  }
     
 
   &__food {
@@ -90,6 +92,10 @@
 
     
   }
+}
+
+.result-is-open {
+  display: none;
 }
 
 .wantedFood {
@@ -108,5 +114,28 @@
 
   }
   
+}
+
+.wantedFood-is-open {
+
+  
+  margin: 20px;
+  height: 360px;
+  min-width: 280px;
+  @include flexbox(column, space-around, center);
+  border-radius: 8px;
+
+
+  .food {
+    font-size: 24px;
+
+  }
+  
+}
+
+.buttonBack-is-open {
+  display: block;
+  text-decoration: none;
+  color: $black;
 }
 

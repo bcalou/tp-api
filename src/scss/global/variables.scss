@@ -1,10 +1,10 @@
 
 /************* COLORS ************/
 
-$testcolor: pink;
 $white: white;
 $black: black;
 $primaryColor: #37a0ae;
+$secondaryColor: #7a2761;
 
 /************* FONTS ************/
 
@@ -28,10 +28,33 @@ $fontCookie: "Cookie-Regular";
   text-align: center;
 }
 
+.foodType{
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  color: $primaryColor;
+  padding-top: 20%;
+}
+
 .foodTitle {
   font-size: 20px;
   text-align: center;
   position: relative;
+  color: $primaryColor;
+}
+
+.cookTime {
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  color: $secondaryColor;
+}
+
+.buttonSeeRecipe {
+  background-color: $primaryColor;
+  color: $white;
+  border-radius: 2px;
+  border: none;
 }
 
 /************* BREAKPOINTS ************/

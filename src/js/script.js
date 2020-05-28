@@ -14,8 +14,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const resultFoodIngredients = document.querySelector(".resultSearch__ingredients");
   const resultFoodCookInstruction = document.querySelector(".resultSearch__cookInstruction");
   const sectionSearch = document.querySelector(".search");
+  const sectionResult= document.querySelector(".result");
   const sectionDisplayResult = document.querySelector(".displayResult");
   const searchWrap = document.querySelector(".wrap");
+  const buttonBack = document.querySelector(".buttonBack");
  
  
 
@@ -74,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function detailsRecipe(recipe) {
     console.log(recipe);
-    
     let divDetails = generateRecipeDiv(recipe, false);
     results.innerHTML = ""
     results.appendChild(divDetails);
@@ -112,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   
 function generateInstructionText(stepInfo) {
   let instructionsDetails = document.createElement('p');
-  instructionsDetails.innerHTML = `${stepInfo.number} ${stepInfo.step}`;
+  instructionsDetails.innerHTML = `${stepInfo.number}. ${stepInfo.step}`;
   resultFoodCookInstruction.appendChild(instructionsDetails);
   
 
@@ -139,6 +140,7 @@ function generateInstructionText(stepInfo) {
     divRecipe.appendChild(foodPicture);
 
     let cookTime = document.createElement('h5');
+    cookTime.className = 'cookTime';
     cookTime.innerText = "Cook Time " + recipe.readyInMinutes + "min";
     divRecipe.appendChild(cookTime);
 
@@ -146,14 +148,14 @@ function generateInstructionText(stepInfo) {
 
     if (buttonDisplay === true) {
       let buttonSeeRecipe = document.createElement('button');
-    buttonSeeRecipe.className = "buttonSeeRecipe";
-    buttonSeeRecipe.innerText = 'See Recipe';
-    divRecipe.appendChild(buttonSeeRecipe);
+      buttonSeeRecipe.className = "buttonSeeRecipe";
+      buttonSeeRecipe.innerText = 'See Recipe';
+      divRecipe.appendChild(buttonSeeRecipe);
     
     buttonSeeRecipe.addEventListener('click', () => {
       // change the class
-    
-          detailsRecipe(recipe)
+      sectionResult.classList.toggle('result-is-open')
+      detailsRecipe(recipe)
         })
 
     }
@@ -162,6 +164,7 @@ function generateInstructionText(stepInfo) {
   }
 
   searchbutton.addEventListener('click', () => {
+    buttonBack.classList.toggle('buttonBack-is-open')
     sectionSearch.classList.toggle('search-haved-result')
     searchWrap.classList.toggle('wrap-result-is-open')
     resultFoodIngredients.innerHTML = ""
