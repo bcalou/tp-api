@@ -4,11 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>POK'BATTLE - POKEDEX</title>
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="header">
+      <h1 class="header__title">POK'BATTLE</h1>
+      <h1 class="header__subtitle">minimalist.</h1>
+    </div>
+
+    <nav class="navigation">
+      <ul class="navigation__links">
+        <li class="is-active"><a href="index.html">pokedex</a></li>
+        <li><a href="battle.html">battle</a></li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <input
+        type="text"
+        class="search__name"
+        placeholder="enter a pokemon name"
+      />
+    </div>
+
+    <div class="cards"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

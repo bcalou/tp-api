@@ -1,0 +1,19 @@
+.navigation {
+  display: flex;
+  margin-top: 80px;
+  width: 100%;
+  justify-content: center;
+  &__links {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .is-active {
+      a {
+        color: rgb(128, 128, 231);
+        text-decoration: overline;
+      }
+      font-weight: 600;
+    }
+  }
+}

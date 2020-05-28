@@ -1,0 +1,92 @@
+.cards {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  .card {
+    border: 1px solid rgba(128, 128, 128, 0.486);
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    margin: 20px;
+    cursor: pointer;
+
+    &--fire {
+      border: 1px solid #ff9c9c;
+    }
+    &--grass {
+      border: 1px solid #5db663;
+    }
+    &--electric {
+      border: 1px solid rgb(238, 205, 41);
+    }
+    &--water {
+      border: 1px solid #60a1be;
+    }
+    &--ground {
+      border: 1px solid #c49a70;
+    }
+    &--rock {
+      border: 1px solid #6e6e6e;
+    }
+    &--fairy {
+      border: 1px solid #c77bd4;
+    }
+    &--poison {
+      border: 1px solid #187e5c;
+    }
+    &--bug {
+      border: 1px solid #cfbfa7;
+    }
+    &--dragon {
+      border: 1px solid #9ab6e9;
+    }
+    &--psychic {
+      border: 1px solid #af91b3;
+    }
+    &--flying {
+      border: 1px solid #8f8f8f;
+    }
+    &--fighting {
+      border: 1px solid #99907e;
+    }
+    &--steel {
+      border: 1px solid #41dba5;
+    }
+    &--dark {
+      border: 1px solid #000100;
+    }
+    &--ghost {
+      border: 1px solid #4544a7;
+    }
+
+    &.hidden {
+      display: none;
+    }
+    &:hover {
+      box-shadow: 0 15px 10px rgba(204, 204, 204, 0.295);
+    }
+
+    &__name {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &__id {
+      margin-top: 20px;
+    }
+
+    &__type {
+      margin-top: 10px;
+    }
+
+    img {
+      margin-top: 20px;
+    }
+  }
+}
