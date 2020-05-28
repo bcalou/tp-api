@@ -9,18 +9,17 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Générer des blagues avec la possibilité de les filtrer
 
 ## URL de l'API utilisée
 
-À remplir
+https://sv443.net/jokeapi/v2/joke/
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Générer des blagues avec la possibilité de les filtrer.
+en cochant les thèmes indésirables.

@@ -25,12 +25,11 @@ function getSelectedFlag() {
     .querySelectorAll('input[name="blackList"]:checked')
     .forEach(element => {
       return element.value;
-      console.log(element.value);
     });
 }
 
 $factButton.addEventListener("click", () => {
-  fetch(`${API_URL}Any?blacklistFlags=nsfw`)
+  fetch(`${API_URL}Any?blacklistFlags=${getSelectedFlag()}`)
     .then(res => res.json())
     .then(res => ($factsContainer.textContent = console.log(res)));
   getSelectedFlag();
