@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const resultFoodIngredients = document.querySelector(".resultSearch__ingredients");
   const resultFoodCookInstruction = document.querySelector(".resultSearch__cookInstruction");
   const sectionSearch = document.querySelector(".search");
+  const sectionDisplayResult = document.querySelector(".displayResult");
+  const searchWrap = document.querySelector(".wrap");
+ 
  
 
 
@@ -158,6 +161,8 @@ function generateInstructionText(stepInfo) {
   }
 
   searchbutton.addEventListener('click', () => {
+    sectionSearch.classList.toggle('search-haved-result')
+    searchWrap.classList.toggle('wrap-result-is-open')
     resultFoodIngredients.innerHTML = ""
     searchRecipes()
   })

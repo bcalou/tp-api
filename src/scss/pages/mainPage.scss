@@ -8,6 +8,13 @@
   transform: translate(-50%, -50%);
 }
 
+.wrap-result-is-open {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .search {
   height: 50vh;
   width: 100vw;
@@ -58,6 +65,11 @@
   }
 
   
+}
+
+.search-haved-result {
+  height: 20vh;
+  width: 100vw;
 }
 
 .popular {
