@@ -8,12 +8,10 @@ npm run dev
 ```
 
 ## But de l'application en une phrase
-
-À remplir
+Le but du site est de passer du temps, et pour ceux qui aiment le monde pokemon, ils s’amusent en voyant les batailles qui tombent.
 
 ## URL de l'API utilisée
-
-À remplir
+https://pokeapi.co/api/v2/pokemon/5
 
 ## Liste des routes sollicitées
 
@@ -23,4 +21,4 @@ npm run dev
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Lorsque vous cliquez sur le bouton "New Battle!" le site crée différents pokemons pour une bataille!
