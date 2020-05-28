@@ -2,6 +2,10 @@ const API_URL = 'https://dog.ceo/api';
 const $showButton = document.getElementById('showButton');
 const $photosContainer = document.getElementById('photosContainer');
 const $randomButton = document.getElementById('randomButton');
+const $img = createElement({ type: 'img', parent: $photo });
+const $photo = createElement({type: 'article'});
+const $formButton = document.getElementById('formButton');
+const $form = document.getElementById('formBreeds');
 
 
 
@@ -19,35 +23,36 @@ function getPhotosUrl() {
 }
 
 
-function showPhotos(photo) {
-  $photosContainer.appendChild(getPhotoElement(photo));
+function showPhotos($photo) {
+  $photosContainer.appendChild(getPhotoElement($photo));
   return getPhotoElement();
 
 }
 
-function getPhotoElement(photo) {
-  const $photo = createElement({type: 'article'});
+function getPhotoElement(getPhotosUrl) {
+  //const $photo = createElement({type: 'article'});
     
-  createElement({type: 'img', img: photo.text, parent: $photo});
-
+  //createElement({type: 'img', img: photo.text, parent: $photo});
+  //const $img = createElement({ type: 'img', parent: $photo });
+  //$img.src = photo.message;
     
-  return $photo;
+  return $img;
 }
 
 
 
-function createElement(options) {
-  const $element = document.createElement(options.type);
+function createElement(photo) {
+  //const $img = createElement({ type: 'img', parent: $photo });
   
-  if (options.text) {
-    $element.textContent = options.text;  
+  if (photo.img) {
+    $photo.textContent = photo.message;  
   }
   
-  if (options.parent) {
+  if (photo.parent) {
     options.parent.appendChild($element);
   }
   
-  return $element;
+  return $photo;
 }
 
 
@@ -65,11 +70,17 @@ $showButton.addEventListener('click', () => {
   getPhotos().then(() => toggleButton($showButton)); 
 });
 
-function randomPhoto(){
-  return `${API_URL}/breeds/image/random`;
-}
 
-$randomButton.addEventListener('click', () => {
-  toggleButton($randomButton);
-  getPhotos().then(() => toggleButton($randomButton)); 
-});
+
+$formButton.addEventListener('click', () => {
+  if(getComputedStyle($form).display != "none"){
+    $form.style.display = "none";
+    $formButton.innerHTML = "afficher les races";
+    $showButton.style.display="none";
+  } else {
+    $form.style.display = "block";
+    $formButton.innerHTML = "masquer les races";
+    $showButton.style.display="block";
+  }
+})
+

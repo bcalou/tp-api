@@ -9,7 +9,13 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <form>
+    <section class="logo">
+      <img src="./img/47865.svg" alt="icone de chien" class="logo__dog">
+      <button id="formButton">Afficher les races</button>
+    </section>
+    
+    <form id="formBreeds">
+      <h2 class="formTitle">Veuillez selectionner une race </h2>
 
       <div>
         <input id="affenpinscher" type="radio" value="affenpinscher" name="breeds"/>
@@ -83,6 +89,7 @@
     </form>
     <section id="photosContainer"></section>
     <button id="showButton">Show </button>
+    <h2 class="discover__more"> en decouvrir plus !</h2>
     <button id="randomButton">Random </button>
   </body>
 </html>
