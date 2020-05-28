@@ -3,6 +3,7 @@ const $container= document.getElementById("Container")
 const $button = document.querySelector(".chuck__button")
 
 
+
 function getjokes(){
     $container.textContent= 'Chargement...'
 return fetch(`${apiurl}`)
@@ -33,8 +34,26 @@ getjokes()
      showjokes()
  })
 
+// Set counter default to zero
+var counter = 0
+
+// Display total
+$("#counter").text(counter);
+
+// When button is clicked
+$("#add").click(function(){
+  //Add 10 to counter
+  counter = counter + 1;
+	// Display total
+	$("#counter").text(counter);
+});
 
 
+//Subtract
+$("#subtract").click(function(){
+  counter = counter - 1;
+  $("#counter").text(counter);
+});
 
 
   /*{

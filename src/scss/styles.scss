@@ -5,17 +5,90 @@ body {
 }
 
 .chuck {
+
   &__title {
-    font-size: 14px;
+    font-size: 34px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      display: flex;
+      text-align: center; 
+      justify-content: center;
+      margin-top: 20px;
+  }
+  &__picture {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+
+    
   }
   &__button {
-    width: 77px;
-  height: 34px;
-  margin-left: 75px;
-  margin-top: 191px;
-  background: #4B3F2F;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
+    
+    display: flex;
+      align-items: center; 
+      justify-content: center;
+    width: 122px;
+    height: 54px;
+    margin-top: 10px;
+    background: #4B3F2F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: #4B3F2F;
+    color: white;
+    font-size: 20px;
+    button {
+      display: flex;
+    justify-content: center;
+    }
+    
+    
+  }
+  &__more {
+    width: 50px;
+    height: 54px;
+    margin-left: 10px;
+    background: #4B3F2F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: #4B3F2F;
+    color: white;
+    font-size: 20px;
+  }
+  &__less {
+    width: 50px;
+    height: 54px;
+    margin-left: 10px;
+    background: #4B3F2F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: #4B3F2F;
+    color: white;
+    font-size: 20px;
+  }
+  &__total {
+    width: 50px;
+    height: 54px;
+    margin-left: 10px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #80705B;
+    color: white;
+    font-size: 20px;
   }
 }
+  div{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    text-align: center; 
+    justify-content: center;
+  }
+
+
+
 
