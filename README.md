@@ -1,26 +1,30 @@
 # TP API
-
-## Installation
+## __***PAS FINI***__ ### commentaire écrit en anglais
+### Installation
 
 ```
 npm install
 npm run dev
 ```
 
-## But de l'application en une phrase
+### But de l'application en une phrase
 
-À remplir
+Etre utilisé peu avant l'apéro pour connaitre/improviser un cocktail
 
-## URL de l'API utilisée
+### URL de l'API utilisée
 
-À remplir
+https://www.thecocktaildb.com/api.php
 
-## Liste des routes sollicitées
+### Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+* /api/json/v1/1/search.php?s=${name}
+* /api/json/v1/1/search.php?f=${fristletter}
+* /api/json/v1/1/search.php?i=${ingredient}
+* /api/json/v1/1/random.php
 
-## Fonctionnement détaillé de l'application
+### Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Rechercher le nom d'un Cocktail
+Rechercher les Cocktails par leur première lettre
+Rechercher l'ignrédient d'un Cocktail
+Donner un cocktail du jour (aléatoire)

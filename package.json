@@ -1,8 +1,16 @@
 {
   "name": "tp-api",
   "version": "1.0.0",
-  "description": "For educational purposes",
+  "description": "```\r npm install\r npm run dev\r ```",
   "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "sass": "^1.26.5"
+  },
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
@@ -10,17 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bcalou/tp-api.git"
+    "url": "git+https://github.com/QuentinHuber/tp-api.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bcalou/tp-api/issues"
+    "url": "https://github.com/QuentinHuber/tp-api/issues"
   },
-  "homepage": "https://github.com/bcalou/tp-api#readme",
-  "devDependencies": {
-    "parcel": "^1.12.4",
-    "sass": "^1.26.5"
-  }
+  "homepage": "https://github.com/QuentinHuber/tp-api#readme"
 }
