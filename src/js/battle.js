@@ -47,13 +47,15 @@ generateAttack(player2);
 
 // CREATE PLAYER1
 function player1() {
+  let numberRandom = Math.floor(Math.random(`id`) * pokemonMax) + 1;
+
   const player1 = document.querySelector('.battle__player1');
   player1.innerHTML = '';
 
   createCardElement({
     type: 'p',
     class: 'battle__pokemon',
-    content: `${name}`,
+    content: `#${numberRandom}`,
     parent: player1
   });
 
@@ -79,7 +81,7 @@ function player1() {
   });
 
   createCardImage(
-    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${numberRandom}.png`,
     player1
   );
 }
