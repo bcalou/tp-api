@@ -1,28 +1,33 @@
-// AXIOS
+/*** AXIOS ***/
 
 import axios from "axios";
 
-// CONFIG API
+/*** CONFIG API ***/
 
-const URL_CORS: string = "https://cors-anywhere.herokuapp.com/";
+const URL_CORS: string = "https://cors-anywhere.herokuapp.com/"; // Fix l'erreur "Access-Control-Allow-Origin"
 const URL_API: string = "https://superheroapi.com/api/";
 const ACCESS_TOKEN: string = "10218347135043962";
 
-// ÉLÉMENTS
+/*** ELEMENTS ***/
 
 /* Call to action */
-const $searchButton = document.getElementById("searchButton");
-const $addButton = document.getElementById("addButton");
-const $imgButtonHero = document.getElementById("imgButtonHero");
-const $imgButtonTeam = document.getElementById("imgButtonTeam");
+const $searchButton = document.getElementById("searchButton") as HTMLElement;
+const $addButton = document.getElementById("addButton") as HTMLElement;
+const $refreshButton = document.getElementById("refreshButton") as HTMLElement;
+const $imgButtonHero = document.getElementById("imgButtonHero") as HTMLElement;
+const $imgButtonTeam = document.getElementById("imgButtonTeam") as HTMLElement;
 
 /* Image */
-const $imgHeroContainer = document.getElementById("imgHero");
-const $img = document.querySelector(".card__img img");
-const $imgTeamContainer = document.getElementById("imgTeam");
+const $imgHeroContainer = document.getElementById("imgHero") as HTMLElement;
+const $img = document.querySelector(".card__img img") as HTMLElement;
+const $imgTeamContainer = document.getElementById("imgTeam") as HTMLElement;
 
-const $svgArrowHero = document.querySelector("#imgButtonHero .svg--arrow");
-const $svgArrowTeam = document.querySelector("#imgButtonTeam .svg--arrow");
+const $svgArrowHero = document.querySelector(
+  "#imgButtonHero .svg--arrow"
+) as HTMLElement;
+const $svgArrowTeam = document.querySelector(
+  "#imgButtonTeam .svg--arrow"
+) as HTMLElement;
 
 /* Bloc content */
 const $contentPresentation = document.querySelector(
@@ -34,44 +39,53 @@ const $contentIdentity = document.querySelector(
 const $logoContainer = document.querySelector(
   ".card__containerLogo"
 ) as HTMLElement;
+const $nameContainer = document.getElementById("heroNameTeam") as HTMLElement;
 
 /* Caracteristic */
-const $name = document.getElementById("name");
-const $id = document.getElementById("id");
-const $realName = document.getElementById("realName");
-const $race = document.getElementById("race");
-const $poids = document.getElementById("poids");
-const $intelligence = document.getElementById("intelligence");
-const $force = document.getElementById("force");
-const $vitesse = document.getElementById("vitesse");
-const $puissance = document.getElementById("puissance");
-const $combat = document.getElementById("combat");
+const $name = document.getElementById("name") as HTMLElement;
+const $id = document.getElementById("id") as HTMLElement;
+const $realName = document.getElementById("realName") as HTMLElement;
+const $race = document.getElementById("race") as HTMLElement;
+const $poids = document.getElementById("poids") as HTMLElement;
+const $intelligence = document.getElementById("intelligence") as HTMLElement;
+const $force = document.getElementById("force") as HTMLElement;
+const $vitesse = document.getElementById("vitesse") as HTMLElement;
+const $puissance = document.getElementById("puissance") as HTMLElement;
+const $combat = document.getElementById("combat") as HTMLElement;
 
-const $intelligenceTeam = document.getElementById("intelligenceTeam");
-const $forceTeam = document.getElementById("forceTeam");
-const $vitesseTeam = document.getElementById("vitesseTeam");
-const $puissanceTeam = document.getElementById("puissanceTeam");
-const $combatTeam = document.getElementById("combatTeam");
+const $intelligenceTeam = document.getElementById(
+  "intelligenceTeam"
+) as HTMLElement;
+const $forceTeam = document.getElementById("forceTeam") as HTMLElement;
+const $vitesseTeam = document.getElementById("vitesseTeam") as HTMLElement;
+const $puissanceTeam = document.getElementById("puissanceTeam") as HTMLElement;
+const $combatTeam = document.getElementById("combatTeam") as HTMLElement;
 
-// TEAM OBJECT
+/** TEAM OBJECT **/
 
 let herosOnMyTeam: {
   count: number;
   imgHero: string;
+  name: string;
 };
 
 herosOnMyTeam = {
   count: 0,
   imgHero: "",
+  name: "",
 };
 
-// ACTIONS
+/** ACTIONS **/
 
+/* Récupère la valeur d'entré de l'utilisateur */
 function getHeroName(): string {
   return (document.querySelector('input[name="nameHero"]') as HTMLInputElement)
     .value;
 }
 
+/* Lance une requête à l'API SuperHero avec l'entrée de l'utlisateur */
+
+// Si erreur : le contenu de présentation reste en place et son contenu est changé avec l'erreur renvoyé par l'API
 function searchHeroByName(): Promise<any> {
   $contentPresentation.textContent = "Recherche en cours";
   return axios
@@ -92,6 +106,9 @@ function searchHeroByName(): Promise<any> {
     });
 }
 
+/* Récupère les infos de la reponse API et les affiches dans le DOM */
+
+// Suppression des logos réseaux sociaux sur l'image de présentation
 function getHeroInfo(response): void {
   $logoContainer.style.display = "none";
 
@@ -109,12 +126,16 @@ function getHeroInfo(response): void {
   $combat.textContent = result.powerstats["combat"];
 }
 
+/* Ajoute les caractéristics du héro présenté dans le bloc team */
+
+// Vérification que le nombre max de héro ne soit pas atteint
+// Ajout de l'image et du nom du héro dans l'objet herosOnMyTeam
+// MAJ du nombre de héros dans la team
 function addToMyTeam(herosOnMyTeam): void {
   if (herosOnMyTeam.count < 4) {
     const $liElement = document.createElement("li");
     $liElement.textContent = $name.textContent;
-    const $ulElement = document.getElementById("heroNameTeam");
-    $ulElement.appendChild($liElement);
+    $nameContainer.appendChild($liElement);
     $intelligenceTeam.textContent = `${
       parseInt($intelligenceTeam.textContent) +
       parseInt($intelligence.textContent)
@@ -131,8 +152,10 @@ function addToMyTeam(herosOnMyTeam): void {
     $combatTeam.textContent = `${
       parseInt($combatTeam.textContent) + parseInt($combat.textContent)
     }`;
-    herosOnMyTeam.count += 1;
     herosOnMyTeam.imgHero = $img.getAttribute("src");
+    herosOnMyTeam.count += 1;
+    herosOnMyTeam.name = $name.textContent;
+    isAdd();
   } else {
     alert(
       "Ton équipe comprend déjà 4 Super Héros. Clic sur le bouton de rafraîssement pour remettre à zéro ta Team."
@@ -144,44 +167,93 @@ function toggleButton($button): void {
   $button.disabled = !$button.disabled;
 }
 
-function openImage($button, $container, $svg): void {
+function openImage(
+  $button: HTMLElement,
+  $container: HTMLElement,
+  $svg: HTMLElement
+): void {
   $button.addEventListener("click", () => {
     $container.classList.toggle("is-open");
     $svg.classList.toggle("is-rotate");
   });
 }
 
-function showImgTeam(team) {
+/* Place l'image du héro au bon emplacement dans le bloc Team selon le nombre de héros déjà dans la Team */
+
+//Ajout de la source et du nom du héro dans le alt récupérés dans l'objet herosOnMyTeam
+function showImgTeam(team): void {
   const imgHero = team.imgHero;
+  const nameHero = team.name;
+
   switch (team.count) {
     case 1:
-      document.getElementById("imgHero1").setAttribute("src", imgHero);
+      const $miniImg1 = document.getElementById("imgHero1");
+      $miniImg1.setAttribute("src", imgHero);
+      $miniImg1.setAttribute("alt", nameHero);
       break;
     case 2:
-      document.getElementById("imgHero2").setAttribute("src", imgHero);
+      const $miniImg2 = document.getElementById("imgHero2");
+      $miniImg2.setAttribute("src", imgHero);
+      $miniImg2.setAttribute("alt", nameHero);
       break;
     case 3:
-      document.getElementById("imgHero3").setAttribute("src", imgHero);
+      const $miniImg3 = document.getElementById("imgHero3");
+      $miniImg3.setAttribute("src", imgHero);
+      $miniImg3.setAttribute("alt", nameHero);
       break;
     case 4:
-      document.getElementById("imgHero4").setAttribute("src", imgHero);
+      const $miniImg4 = document.getElementById("imgHero4");
+      $miniImg4.setAttribute("src", imgHero);
+      $miniImg4.setAttribute("alt", nameHero);
       break;
     default:
       console.log("error");
   }
 }
 
-// ÉVÈNNEMENTS
+/* Remise à zéro de la Team */
+function reset(): void {
+  herosOnMyTeam.count = 0;
+  $nameContainer.textContent = "";
+  const $valuesTeam = document.querySelectorAll(".card__valuesTeam");
+  $valuesTeam.forEach(($li) => {
+    $li.textContent = "0";
+  });
+  const $imgHero = document.querySelectorAll(".imgHero");
+  $imgHero.forEach(($img) => {
+    $img.setAttribute("src", "");
+    $img.setAttribute("alt", "");
+  });
+}
+
+/* Transformation du bouton add en une notification lorqu'un héro à bien été ajouté à la Team */
+function isAdd(): void {
+  $addButton.classList.add("is-add");
+  $addButton.textContent = "Héro Ajouté !";
+}
+
+function resetIsAdd(): void {
+  $addButton.classList.remove("is-add");
+  $addButton.textContent = "Ajouter à ma team";
+}
+
+/** ÉVÈNNEMENTS **/
 
 $searchButton.addEventListener("click", () => {
   toggleButton($searchButton);
-  searchHeroByName().then(() => toggleButton($searchButton));
+  toggleButton($addButton);
+  searchHeroByName()
+    .then(() => toggleButton($searchButton))
+    .then(() => toggleButton($addButton));
+  resetIsAdd();
 });
 
 $addButton.addEventListener("click", () => {
   addToMyTeam(herosOnMyTeam);
   showImgTeam(herosOnMyTeam);
 });
+
+$refreshButton.addEventListener("click", reset);
 
 openImage($imgButtonHero, $imgHeroContainer, $svgArrowHero);
 openImage($imgButtonTeam, $imgTeamContainer, $svgArrowTeam);

@@ -110,7 +110,7 @@
 
 .card__caracteristic {
   display: flex;
-  font-size: 12px;
+  font-size: $textFontSize;
 
   ul:first-child {
     margin-right: 8px;
@@ -139,16 +139,23 @@
 
 .card--team {
   margin-top: 24px;
+  height: 476px;
 }
 
 .card__content--team {
+  height: 445px;
   .card__caracteristic {
-    font-size: 14px;
+    font-size: $textFontSize;
 
     li {
       margin-bottom: 12px;
     }
   }
+}
+
+.card__img--team {
+  padding: 20px;
+  background-color: $secondBgColor;
 }
 
 .card__imgTeam {
@@ -160,17 +167,21 @@
   grid-template-areas:
     "first second"
     "third fourth";
+  grid-gap: 10px;
   background-color: $secondBgColor;
   overflow-x: hidden;
   img {
-    width: 150%;
-    height: 100%;
+    width: 100%;
+    height: 80%;
+    border-radius: $radius;
   }
   img:first-child {
     grid-area: first;
+    align-self: center;
   }
   img:nth-child(2) {
     grid-area: second;
+    align-self: center;
   }
   img:nth-child(3) {
     grid-area: third;
