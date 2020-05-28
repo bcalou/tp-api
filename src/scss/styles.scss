@@ -8,20 +8,15 @@
 @import 'pages/result.scss';
 
 html {
-  * {
-    box-sizing: border-box;
-  }
+    * {
+        box-sizing: border-box;
+    }
 
-  img {
-    max-width: 100%;
-  }
+    img {
+        max-width: 100%;
+    }
 }
 
 body {
-
-
-  scroll-behavior: smooth;
-  
-
-
+    scroll-behavior: smooth;
 }
