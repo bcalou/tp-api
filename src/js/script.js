@@ -1,10 +1,17 @@
-/**Doc API:
- * Everything : ?q=word + &language=
+
+
+/** Doc API:
+ *  Everything : ?q=word + &language= + &sort= + &pageSize= + &page= + Apikey
+ * 
+ * TODO: Remove previous article if new search, actually don't work.
  */
+
 const placeholderimage = require("../asset/media/no-image-available.jpg");
 
 document.getElementById("form-search").addEventListener("submit", (e) => {
-	e.preventDefault();
+  e.preventDefault();
+ // removeArticle(); <- don't work
+
 	const API_EVERYTHING = "http://newsapi.org/v2/everything";
 
 	const params = {
@@ -26,41 +33,51 @@ document.getElementById("form-search").addEventListener("submit", (e) => {
 		.then((data) => data.json())
 		.then((response) => {
 			console.log(response);
-			let status = response.status;
-			var articles = status ? response.articles : noContent();
+      let totalResult = response.totalResults;
+			var articles = (totalResult > 1) ? response.articles : noContent();
 
 			//Save value for each article
 			articles.forEach((response) => {
-				document
-					.querySelector(".articleContainer")
-					.appendChild(renderArticle(response));
+				document.querySelector(".articleContainer").appendChild(renderArticle(response));
 			});
 		});
 });
 
 function noContent() {
-	hOne.textContent += "Articles correspondants : 0";
+  let resultNone = document.querySelector(".articleContainer").appendChild(document.createElement("h1")); 
+  resultNone.textContent += "Articles correspondants : 0";
 	return [];
 }
 
 const renderArticle = ({ title, source, description, url, urlToImage }) => {
-	var image = urlToImage || placeholderimage;
+
 	var article = document.createElement("article");
 	var link = article.appendChild(document.createElement("a"));
 	var hOne = article.appendChild(document.createElement("h1"));
 	var img = article.appendChild(document.createElement("img"));
 	var $description = article.appendChild(document.createElement("ul"));
-	var articleContent = $description.appendChild(document.createElement("li"));
+  var articleContent = $description.appendChild(document.createElement("li"));
 	var newspaper = $description.appendChild(document.createElement("li"));
 
 	link.setAttribute("href", url);
-	img.setAttribute("src", image);
-	link.href = url;
-	hOne.textContent += title;
+  img.setAttribute("src", image);
+  link.href = url;
+  hOne.textContent += title;
+  var image = urlToImage || placeholderimage;
 	img.src = image;
 	articleContent.textContent += description;
 	newspaper.textContent += source.name;
 	link.appendChild(hOne);
-	link.appendChild(img);
+  link.appendChild(img);
 	return article;
 };
+
+/*function removeArticle(){ <- don't work
+  article.remove();
+  link.remove();
+  hOne.remove();
+  img.remove();
+  $description.remove();
+  articleContent.remove();
+  newspaper.remove();
+}*/
