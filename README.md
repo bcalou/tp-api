@@ -23,4 +23,4 @@ https://dog.ceo/api/breeds/image/random
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+À remplir : au clic sur le bouton des photos de chien apparaissent aléatoirement.
