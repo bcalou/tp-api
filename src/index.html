@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <title>weather</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+      body {
+        max-width: 375px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <p></p>
+
+    <p id="weather_zone"></p>
+    <iframe
+      seamless
+      width="888"
+      height="336"
+      frameborder="0"
+      src="https://www.infoclimat.fr/public-api/mixed/iframeSLIDE?_ll=48.85341,2.3488&_inc=WyJQYXJpcyIsIjQyIiwiMjk4ODUwNyIsIkZSIl0=&_auth=CRMCFQd5VXdQfVViBnBQeVkxU2YKfAcgUCwCYQxpAH1UPwJjB2ddO1M9A34GKQcxAC0EZw02BzcEbwtzCngFZAljAm4HbFUyUD9VMAYpUHtZd1MyCioHIFA7AmYMfwBiVD4Cbwd6XT1TPwNgBigHMQA3BGQNLQcgBGYLaQpuBWYJbAJhB2ZVNVA%2BVTQGKVB7WW9TZgpmB2lQYQI3DGQAZlRkAmcHbV06U28DZQYoBzAANgRhDTQHPgRgC2gKZwV5CXUCHwcXVSpQf1V1BmNQIll3U2YKawdr&_c=9d9198f2bd443a6a886d2711cf3dfb94"
+    ></iframe>
   </body>
 </html>
