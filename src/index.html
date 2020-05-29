@@ -6,9 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
-  <body>
-    <h1>Hello World</h1>
+  <body class="container">
+    <main>
+      <h1 class="container__title">welcome</h1>
+      <h2 class="blackList">Blacklist Flags:</h2>
+      <form class="form">
+        <div class="form__input">
+          <input
+            id="religious"
+            type="checkbox"
+            value="religious"
+            name="blackList"
+          />
+          <label for="religious">religious</label>
+        </div>
+        <div class="form__input">
+          <input
+            id="political"
+            type="checkbox"
+            value="political"
+            name="blackList"
+          />
+          <label for="political">political</label>
+        </div>
+        <div class="form__input">
+          <input id="racist" type="checkbox" value="racist" name="blackList" />
+          <label for="racist">racist</label>
+        </div>
+        <div class="form__input">
+          <input id="sexist" type="checkbox" value="sexist" name="blackList" />
+          <label for="sexist">sexist</label>
+        </div>
+      </form>
+      <div class="wrapper">
+        <button class="wrapper__button" id="factButton">
+          discover a joke
+        </button>
+      </div>
+      <section id="factsContainer"></section>
+      <img src="/assets/img/personnages-img.svg" alt="" class="backgroundImg" />
+    </main>
   </body>
 </html>

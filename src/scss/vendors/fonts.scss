@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "cosmic sans MS";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/Comic\ Sans\ MS.ttf"),
+    url("/assets/fonts/Comic\ Sans\ MS\ Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "cosmic sans MS";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/Comic\ Sans\ MS\ Bold.ttf"),
+    url("/assets/fonts/Comic\ Sans\ MS\ Bold.ttf") format("truetype");
+}
+
+$cosmic: "cosmic sans MS";

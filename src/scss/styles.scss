@@ -1,5 +1,11 @@
-@import 'vendors/reset';
+@import "vendors/reset";
+@import "vendors/fonts.scss";
+@import "index.scss";
 
-body {
-  background-color: lightblue;
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
 }
