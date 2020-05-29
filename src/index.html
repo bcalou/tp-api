@@ -2,13 +2,104 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    
+    <script src="js/script.ts" defer></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <header>
+      <h1>📰 NEWS 📰</h1>
+    </header>
+
+    <section class="forms">
+
+      <div class="first-form">
+        <h2>🔑 Search by keyword</h2>
+        <form class="search-form">
+
+          <input name="keywords" class="search" placeholder="Enter a keyword">
+
+          <div class="selects">
+            <select id= "language" name="language" size="1">
+              <option selected value="">Language</option>
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+              <option value="it">IT</option>
+              <option value="de">DE</option>
+              <option value="ru">RU</option>
+            </select>
+
+            <select id= "pageSize" name="pageSize" size="1">
+              <option selected value="">Articles</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+            </select>
+
+            <select id= "sortBy" name="sortBy" size="1">
+              <option selected value="">Filter</option>
+              <option value="relevancy">Closely</option>
+              <option value="popularity">Popular</option>
+              <option value="publishedAt">Newest</option>
+            </select>
+          </div>
+          
+          <button id="searchButton">Search</button>
+        </form>
+      </div>
+
+      <hr width="70%" color="#F6AE2D" align=center size="2">
+
+      <div class="second-form">
+        <h2>🌍 Search by country</h2>
+        <form class="search-form">
+
+          <div class="selects">
+            <select id= "country" name="country" size="1">
+              <option selected value="">Country</option>
+              <option value="fr">France</option>
+              <option value="en">England</option>
+              <option value="es">Spain</option>
+              <option value="it">Italy</option>
+              <option value="de">Germany</option>
+              <option value="ru">Russia</option>
+              <option value="ch">China</option>
+              <option value="us">United States</option>
+            </select>
+
+            <select id= "category" name="category" size="1">
+              <option selected value="">Category</option>
+              <option value="business">Business</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="general">general</option>
+              <option value="health">health</option>
+              <option value="science">science</option>
+              <option value="sports">sports</option>
+              <option value="technology">technology</option>
+
+            </select>
+          </div>
+          <button id="searchButton">Search</button>
+
+            <hr width="70%" color="#F6AE2D" align=center size="2">
+            <button id="refresh">New research</button>
+
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <section id="articlesContainer">
+    </section>
+
+
   </body>
 </html>

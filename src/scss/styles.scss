@@ -1,5 +1,177 @@
 @import 'vendors/reset';
+@import 'config/variables.scss';
+@import 'config/mixins.scss';
+@import 'config/fonts.scss';
 
 body {
-  background-color: lightblue;
+  background-color: $secondary-grey;
 }
+
+
+header {
+  width: 100vw;
+  font-family: Avenir Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  background-color: $primary-blue;
+  color: white;
+  height: 12vw;
+  display: table-cell;
+  vertical-align: middle;
+  @include desktop {
+    height: 9vw;
+  }
+  
+  h1 {
+    @include h1-style;
+    background-color: $primary-blue;
+
+  }
+  
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-grey;
+  padding-bottom: 5vw;
+  @include desktop {
+    padding-bottom: 3vw;
+  }
+
+}
+
+.selects {
+  padding-top: 2vw;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2vw;
+
+
+  input {
+    margin: 4vw 0;
+    text-align: center;
+    outline: 0;
+    border: 0.5vw solid #F7F7F7;
+    width: 50%;
+    border-radius: 5px;
+    font-size: 5vw;
+    box-shadow:$box-shadow;
+    color: $primary-blue;
+
+    @include desktop {
+      margin: 2vw 0;
+      font-size: 3vw;
+      width: 40%;
+    }
+
+  }
+
+}
+
+button {
+  margin: 2vw 0;
+  @include CTA-style;
+
+
+  &:hover{
+    @include hover-CTA;
+    
+  }
+}
+
+
+article {
+  margin: 0vw 3vw 10vw 3vw;
+  border: 1px solid $primary-blue;
+  position: relative;
+  background-color: $secondary-white;
+  @include desktop {
+    max-width: 40vw;
+  }
+
+
+  h3 {
+    @include h3-style;
+    margin-bottom: 4vw;
+
+  }
+
+  img {
+    width: 90vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include desktop {
+      max-width: 35vw;
+  }
+  }
+
+  p {
+    margin: 4vw 0;
+    @include p-style;
+  }
+
+  a {
+    @include CTA-style;
+    margin-bottom: 2vw;
+    position: absolute;
+    bottom: 0;
+    right: 2vw;
+    cursor: pointer;
+
+    &:hover {
+      @include hover-CTA;
+    }
+  }
+
+  time {
+    display:block;
+    margin: 2vw ;
+    @include time-style;
+
+  }
+
+}
+
+select {
+  margin: 2vw 0;
+  padding: 1vw;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+  width: 30vw;
+  font-size: 4vw;
+  color: $primary-blue;
+  @include desktop {
+    width: 20vw;
+    font-size: 2vw;
+  }
+}
+
+h2 {
+  @include h2-style;
+
+}
+
+#articlesContainer {
+  background-color: $secondary-grey;
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
