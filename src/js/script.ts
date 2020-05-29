@@ -1,7 +1,3 @@
-/*** AXIOS ***/
-
-import axios from "axios";
-
 /*** CONFIG API ***/
 
 const URL_CORS: string = "https://cors-anywhere.herokuapp.com/"; // Fix l'erreur "Access-Control-Allow-Origin"
