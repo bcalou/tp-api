@@ -7,6 +7,7 @@
  */
 
 const placeholderimage = require("../asset/media/no-image-available.jpg");
+const proxy_url = "https://cors-anywhere.herokuapp.com/";
 
 document.getElementById("form-search").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -29,7 +30,7 @@ document.getElementById("form-search").addEventListener("submit", (e) => {
 		paramsObject.append(key, params[key]);
 	}
 
-	fetch(`${API_EVERYTHING}?${paramsObject.toString()}`)
+	fetch(`${proxy_url}${API_EVERYTHING}?${paramsObject.toString()}`)
 		.then((data) => data.json())
 		.then((response) => {
 			console.log(response);
