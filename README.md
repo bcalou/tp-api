@@ -13,14 +13,19 @@ Afficher les 10 derniers articles tech de google news
 
 ## URL de l'API utilisée
 
-https://newsapi.org/s/google-news-api
+- https://newsapi.org/s/google-news-api
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- Route principale : " http://newsapi.org/v2/everything " <- sur laquel on modifie dynamiquement la recherche
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+Permet la recherche des articles les plus populaires sur le sujet choisi par l'utilisateur classé par popularité,
+&
+Affiche les 10 premiers articles (titre, image, lien, description, source) de la première page.
+
+
+## Lien pour tester l'application 
+
+- [cliquez moi](http://romain-feregotto.fr/google-news/dist/) "Trust me, it's a beautiful design website"
