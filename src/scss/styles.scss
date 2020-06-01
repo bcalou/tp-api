@@ -1,5 +1,18 @@
+// SETTINGS
+@import 'font';
 @import 'vendors/reset';
 
+// ELEMENTS
+@import 'basic'; // Élements basiques ou qui se répètent
+@import 'hover'; // au hover sur les images
+@import 'form'; // pour rechercher un anime
+@import 'header';
+
+
 body {
-  background-color: lightblue;
+  background-color: rgb(212, 220, 247);
+  width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

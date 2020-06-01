@@ -1,0 +1,36 @@
+.descHover {
+    overflow: hidden;
+    position: absolute;
+    left: 42px;
+    height: 340px;
+    width: 240px;
+    background: blue;
+    border-radius: 6px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.85;
+    }
+    p {
+        font-family: "sen-reg";
+        color: white;
+        font-size: 13px;
+        line-height: 19px;
+        text-align: left;
+        padding: 15px 15px 0 15px;
+        height: 330px;
+        width: 220px;
+    }
+}
+#hover1 {top: 268px}
+#hover2 {top: 738px}
+#hover3 {top: 1204px}  
+#hover4 {top: 1674px}
+#hover5 {top: 2142px}
+#hover6 {top: 2608px}
+#hover7 {top: 3078px}
+#hover8 {top: 3545px}
+#hover9 {top: 4012px}
+#hover10 {top: 4481px}

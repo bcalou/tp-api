@@ -1,0 +1,42 @@
+.header {
+    height: 116px;
+    width: 320px;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+    font-family: 'sen-bold';
+    font-size: 24px;
+}
+h1 {
+    width: 100%;
+    padding:8px 0 8px 0;
+    height: 0px;
+    padding: 0 0 8px 0;
+}
+.pages:nth-last-child(1) {margin-left: 16px}
+.pages {
+    outline:  none;
+    user-select: none;
+    width: 80px;
+    height: 38px;
+    border-radius: 6px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-family: "sen-bold";
+    cursor: pointer;
+    &:hover {
+        background: white;
+        border: none;
+        color: blue;
+    }
+}
+.active {
+    background: white;
+    border: none;
+    color: blue;
+}
