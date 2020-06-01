@@ -6,9 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <header class="Header">
+      <img class="Header__logo" src="../src/asset/img/pokeapi_256.png" alt="Pokédex">
+    </header>
+    <div class="searchBar">
+          <label class="searchBar__label" for="pokemon">Search</label>
+          <input class="searchBar__input" type="text" name="pokemon" id="pokemon">
+          <button class="searchBar__click">search</button>
+    </div>
+    <section class="container" id="container">
+    </section>
   </body>
 </html>
