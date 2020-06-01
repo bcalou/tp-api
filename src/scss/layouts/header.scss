@@ -1,0 +1,32 @@
+.header{
+  height: 10vh;
+  width: 100vw;
+  background-color: $white;
+  line-height: 1.5;
+  @include flexbox(column, center, center);
+  border-bottom: 1px solid $black;
+
+  @include desktop-up {
+    height: 18vh;
+  }
+
+  &__title {
+    font-family: $fontCookie;
+    font-size: rem(28px);
+    color: $primaryColor;
+
+    @include desktop-up {
+      font-size: rem(64px);
+    }
+  }
+
+  &__menu {
+    @include flexbox(row, space-around, space-around);
+    font-size: rem(18px);
+  }
+
+  li {
+    margin: 0 12px,
+  }
+
+}

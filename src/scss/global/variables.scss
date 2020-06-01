@@ -1,0 +1,100 @@
+
+/************* COLORS ************/
+
+$white: white;
+$black: black;
+$primaryColor: #37a0ae;
+$secondaryColor: #7a2761;
+
+/************* FONTS ************/
+
+$fontCookie: "Cookie-Regular";
+
+/************* GLOBAL ************/
+
+@mixin format {
+  height: 100vh;
+  width: 100vw;
+}
+
+.link {
+  text-decoration: none;
+  color: $black;
+}
+
+.title {
+  font-size: 24px;
+  padding: 20px;
+  text-align: center;
+}
+
+.foodType{
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  color: $primaryColor;
+  padding-top: 20%;
+}
+
+.foodTitle {
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  color: $primaryColor;
+}
+
+.cookTime {
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  color: $secondaryColor;
+}
+
+.buttonSeeRecipe {
+  background-color: $primaryColor;
+  color: $white;
+  border-radius: 2px;
+  border: none;
+}
+
+/************* BREAKPOINTS ************/
+
+$tablet-up: 768px;
+$tablet-down: 767px;
+
+$desktop-up: 1200px;
+$desktop-down: 1199px;
+
+@mixin tablet-up {
+  @media (min-width: $tablet-up) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: $tablet-down) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $desktop-up) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: $desktop-down) {
+    @content;
+  }
+}
+
+/************* DISPLAY ************/
+
+@mixin flexbox($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+

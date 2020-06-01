@@ -1,5 +1,22 @@
 @import 'vendors/reset';
+@import 'global/typography';
+@import 'global/variables';
+@import 'global/utilities';
+@import 'layouts/header';
+@import 'pages/mainPage';
+@import 'pages/pageAllRecipes';
+
+
+html {
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
 
 body {
-  background-color: lightblue;
+    scroll-behavior: smooth;
 }

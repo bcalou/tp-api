@@ -9,18 +9,20 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+Trouver la recette souhaiter du jour 
 
 ## URL de l'API utilisée
 
-À remplir
+https://api.spoonacular.com
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- https://api.spoonacular.com/recipes/search?query=banana&number=6&apiKey=XXXX
+- https://api.spoonacular.com/recipes/474033/analyzedInstructions?apiKey=XXXX
+- https://api.spoonacular.com/recipes/474033/ingredientWidget.json?apiKey=XXXX
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+- Sur la bar recherche (search) => Chercher les recettes souhaiter avec le nom des recette ou les ingredients. example: pasta, banana, etc.
+- Trouver les recettes proposées depuis la bar recherche.
+- Trouver les details des recettes (nom, image, les ingredients, les temps de cuisson et les étapes de cuisson.

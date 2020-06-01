@@ -13,6 +13,12 @@
     "url": "git+https://github.com/bcalou/tp-api.git"
   },
   "keywords": [],
+  "prettier":{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -21,6 +27,7 @@
   "homepage": "https://github.com/bcalou/tp-api#readme",
   "devDependencies": {
     "parcel": "^1.12.4",
+    "prettier": "2.0.5",
     "sass": "^1.26.5"
   }
 }
