@@ -1,3 +1,0 @@
-RewriteEngine On
-RewriteRule ^tp-api/rest-api/webdocressources/?$ tp-api/rest-api/handler.php
-RewriteRule ^tp-api/rest-api/webdocressources/([0-9]+)?$ tp-api/rest-api/handler.php?id=$1

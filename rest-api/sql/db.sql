@@ -1,3 +1,0 @@
-CREATE TABLE `space`.`webdocressources` ( `id` INT NOT NULL , `videoURL` VARCHAR(522) NOT NULL , `videoName` VARCHAR(522) NOT NULL , `descritpion` TEXT NOT NULL ) ENGINE = InnoDB;
-
-INSERT INTO `webdocressources` (`id`, `videoURL`, `videoName`, `descritpion`) VALUES ('1', 'https://www.youtube.com/watch?v=afnvvqpKG-U', 'John Kridge Part 1', 'Point de vue scientifique pour la lune n\'est plus si intéressante'), ('2', 'https://www.youtube.com/watch?v=1ewbcNKzxzc', 'John Kridge Part 2', 'Point de vue scientifique pour la lune n\'est plus si intéressante')
