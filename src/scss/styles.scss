@@ -1,5 +1,96 @@
 @import 'vendors/reset';
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../../node_modules//toastr/build/toastr.css';
+@import './actor.scss';
 
 body {
-  background-color: lightblue;
+  background-color: #add8e6;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
 }
+
+.movie-detals{
+  color: #fff;
+
+  .movie-poster{
+    height: 400px;
+  }
+
+  .movie-title{
+    font-size: 40px;
+  }
+
+  .movie-overview{
+    font-size: 20px;
+  }
+
+  .movie-video-label{
+		font-size: 30px;
+  }
+  
+  .movie-actors-label{
+		font-size: 30px;
+  }
+  
+  .movie-vote{
+    .movie-vote-label{
+      font-size: 30px;
+    }
+    .flex-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      }
+      
+      .single-chart {
+      width: 33%;
+      justify-content: space-around ;
+      }
+      
+      .circular-chart {
+      display: block;
+      // margin: 40px auto;
+      // left: 0;
+      max-width: 100%;
+      max-height: 150px;
+      }
+      
+      .circle-bg {
+      fill: none;
+      stroke: #eee;
+      stroke-width: 3.8;
+      }
+      
+      .circle {
+      fill: none;
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      animation: progress 1s ease-out forwards;
+      }
+      
+      @keyframes progress {
+      0% {
+        stroke-dasharray: 0 100;
+      }
+      }
+      
+      .circular-chart.orange .circle {
+      stroke: #ff9f00;
+      }
+      
+      .percentage {
+      // fill: #666;
+      fill: #000;
+      font-family: sans-serif;
+      font-size: 0.5em;
+      text-anchor: middle;
+      }
+  }
+
+  iframe{
+    width: 100% !important;
+    height: auto !important;
+    margin: auto;
+  }
+}
+
