@@ -1,5 +1,6 @@
 @import 'vendors/reset';
-
-body {
-  background-color: lightblue;
-}
+@import 'blocs/header.scss';
+@import 'blocs/article.scss';
+@import 'blocs/contain.scss';
+@import 'blocs/index.scss';
+@import 'blocs/form.scss'

@@ -1,0 +1,17 @@
+.contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+ .contain__h1 {
+        font-size: 100px;
+        text-align: center;
+        padding-bottom: 10%;
+    }
+    .contain__button {
+        width: 200px;
+        height: 75px;
+        padding: 20px;
+   }
+}

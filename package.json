@@ -4,8 +4,8 @@
   "description": "For educational purposes",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "dev": "parcel src/view/index.html",
+    "build": "parcel build src/view/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

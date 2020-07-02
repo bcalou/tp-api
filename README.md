@@ -9,18 +9,17 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+En apprendre plus sur l'infos
 
 ## URL de l'API utilisée
 
-À remplir
+http://newsapi.org/v2/top-headlines?
 
 ## Liste des routes sollicitées
 
-- À remplir
-- À remplir
-- À remplir
+- Article fr
+- Article us
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+L'on peut choisir la langue des article à afficher puis les afficher.
