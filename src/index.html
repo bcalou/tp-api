@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Météo</title>
     <link rel="stylesheet" href="scss/styles.scss" />
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>Hello World</h1>
+
+    <section class="title">
+      <h1>Météo</h1>
+    </section>
+
+    <section class="information">
+      <input type="text" id="ville">
+      <div id="liste"></div>
+      <select id="selection">
+        <option value="0">Aujourd'hui</option>
+        <option value="1">Demain</option>
+        <option value="2">Jour 2</option>
+        <option value="3">Jour 3</option>
+      </select>
+      <button id="go">GO</button>
+      <img src="https://lh3.googleusercontent.com/proxy/GKpjistj7mv3MmUbGRqt7jNEcRTXrQXPGN9zthZzGf42bmFZeGX2bF-4UY7pmulrv7EzR2D_zgaTPBmQEwkwnrXU30tpymeQmNyUxZMZ2R4EQFUEp7sTeq5QZ-ljoZV4V5uTMSds_j-o9JR8wflOSoq6mDUM" id="image" alt="temps">
+    </section>
+
   </body>
 </html>

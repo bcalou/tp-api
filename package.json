@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -22,5 +21,8 @@
   "devDependencies": {
     "parcel": "^1.12.4",
     "sass": "^1.26.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
   }
 }
