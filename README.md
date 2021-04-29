@@ -9,7 +9,7 @@ npm run dev
 
 ## But de l'application en une phrase
 
-Découvrir des photos de chien
+test api random img
 
 ## URL de l'API utilisée
 
