@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movinfo | OMDb API</title>
+    <link rel="stylesheet" href="../scss/styles.scss" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="../js/script.js" defer></script>
+  </head>
+  <body>
+    <main class="infos">
+      <a href="../index.html" class="header">
+        <h1 class="header__title">Mov!nfo</h1>
+      </a>
+      <form class="infos__form">
+        <input
+          type="text"
+          id="movie"
+          name="movie"
+          placeholder="Movie title"
+          class="infos__input"
+        />
+        <button class="button button--info" id="search-button">
+          Search
+        </button>
+      </form>
+    </main>
+    <article class="not-found">Movie not found !</article>
+    <article class="movies"></article>
+    <footer class="footer">
+      <p class="footer__infos">
+        Mov!nfo is a school project to understand how APIs work in JavaScript.
+        <a href="https://github.com/rqphy/tp-api" target="_blank">GitHub</a> for
+        more infos.
+      </p>
+    </footer>
+  </body>
+</html>

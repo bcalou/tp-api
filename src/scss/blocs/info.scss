@@ -1,0 +1,134 @@
+.infos {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  width: 90%;
+  max-width: 343px;
+
+  @include medium {
+    max-width: 520px;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    height: 60px;
+    width: 100%;
+    border: none;
+    border-bottom: 0.5px solid var(--secondarytext);
+    color: var(--secondarytext);
+    font-family: "Open Sans", sans-serif;
+    font-size: var(--smalltext);
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    padding-left: 20px;
+  }
+}
+
+.movies {
+  min-height: 30vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: var(--smalltext);
+  line-height: var(--smallline);
+  max-width: 1000px;
+
+  @include medium {
+    font-size: var(--mediumtext);
+    line-height: var(--mediumline);
+  }
+}
+
+.movie {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: var(--smalltext);
+  line-height: var(--smallline);
+  max-width: 1000px;
+  cursor: pointer;
+
+  @include medium {
+    font-size: var(--mediumtext);
+    line-height: var(--mediumline);
+  }
+
+  &__title {
+    font-size: var(--smalltitle);
+
+    @include medium {
+      font-size: var(--mediumtitle);
+    }
+  }
+
+  &__sub-infos {
+    color: var(--secondarytext);
+    margin-top: 5px;
+  }
+
+  &__poster {
+    width: 300px;
+  }
+
+  &__plot,
+  &__actors,
+  &__rating,
+  &__poster {
+    color: var(--maintext);
+    margin-top: 24px;
+  }
+}
+
+.footer {
+  margin-top: 32px;
+  border-top: 2px solid var(--secondarytext);
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+
+  &__infos {
+    width: 90%;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    line-height: var(--smallline);
+    font-size: var(--smalltext);
+    color: var(--maintext);
+    margin-top: 24px;
+
+    @include medium {
+      line-height: var(--mediumline);
+      font-size: var(--mediumtext);
+    }
+  }
+}
+
+.not-found {
+  display: none;
+
+  &--visible {
+    display: block;
+    width: 90%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: var(--smalltitle);
+    text-align: center;
+    margin-top: 40px;
+  }
+}
