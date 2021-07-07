@@ -9,18 +9,18 @@ npm run dev
 
 ## But de l'application en une phrase
 
-À remplir
+test api random img
 
 ## URL de l'API utilisée
 
-À remplir
+https://dog.ceo
 
 ## Liste des routes sollicitées
 
-- À remplir
+- /image/random
 - À remplir
 - À remplir
 
 ## Fonctionnement détaillé de l'application
 
-À remplir : que peux faire votre prototype ?
+À remplir : au clic sur le bouton des photos de chien apparaissent aléatoirement.
